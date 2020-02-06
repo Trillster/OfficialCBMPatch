@@ -1,0 +1,14 @@
+actor ClassBase : ClassBase1
+{
+states
+{
+
+Pain.JunkmanCube:
+"----" H 0 A_GiveInventory("JunkmanCubeProtect",1)
+Goto Pain+2
+
+}
+}
+
+
+
