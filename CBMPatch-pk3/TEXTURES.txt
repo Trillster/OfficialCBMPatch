@@ -6,3 +6,9 @@ texture 03_S_BAR,8,56{patch BARENERG,0,0{Translation"192:192=4:4","198:198=218:2
 texture 03_S_VAR,56,8{patch 03_5_BAR,0,0{rotate 90}}
 texture 03_T_BAR,8,56{patch BARENERG,0,0{Translation"192:192=218:218","198:198=220:220"}}
 texture 03_T_VAR,56,8{patch 03_5_BAR,0,0{rotate 90}}
+
+//Plant
+graphic PLATICON,30,30{XScale 2.0 YScale 2.0 Patch PLABS0,0,0}
+graphic PLNTHEAL,25,26{XScale 1.5 YScale 1.5 Patch PLATHEAL,0,0}
+texture 6E_F_BAR,8,56{patch BARENERG,0,0{Translation"192:192=104:104", "198:198=60:60"}}
+texture 6E_F_VAR,56,8{patch VARENERG,0,0{Translation"192:192=104:104", "198:198=60:60"}}

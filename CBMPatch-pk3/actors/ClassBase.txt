@@ -2,7 +2,10 @@ actor ClassBase : ClassBase1
 {
 states
 {
-   
+
+Pain.IceSlashSlow2:
+"----" H 0 A_GiveInventory("IceSlashSlow2Protect",1)
+goto Pain.IceSlashSlow
 Pain.AirShooterWall:
 "----" H 0 A_GiveInventory("AirShooterWallProtect",1)
 Goto Pain    

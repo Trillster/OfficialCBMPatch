@@ -1,0 +1,522 @@
+actor FlameBlastBoss : BaseMM8BDMWep_CBM
+{
+tag "$TAGC_6C"
+dropitem "FlameBlastWepCDropped"
+Weapon.AmmoUse 2
+Weapon.AmmoUse2 0
+Weapon.AmmoGive 56
+Obituary "$OB_FLAMEBLAST"
+Inventory.Pickupmessage "Cheats."
+weapon.ammotype "YogaInfernoAmmo"
+weapon.ammotype2 "YogaInfernoAmmo"
+States
+{
+Spawn:
+C_06 C 1
+loop
+Ready:
+FLAB A 0 ACS_ExecuteAlways(998,0,DYE_FLAMEMAN)
+goto Ready1
+Ready1:
+FLAB A 0 A_JumpIfInventory("YogaInfernoAmmo",2,"Ready2")
+FLAB A 4 A_WeaponReady(12)
+FLAB A 0 A_GiveInventory("YogaInfernoAmmo",1)
+goto Ready1
+Ready2:
+FLAB A 0 A_JumpIfInventory("YogaInfernoAmmo",56,"Ready3")
+FLAB A 4 A_WeaponReady(8)
+FLAB A 0 A_GiveInventory("YogaInfernoAmmo",1)
+loop
+Ready3:
+FLAB A 1 A_WeaponReady
+loop
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+FLAB A 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+FLAB A 1 A_Raise
+Loop
+Fire:
+FLAB A 0 //A_JumpIfNoAmmo("NoAmmo")
+FLAB A 0 A_PlaySoundEx("weapon/FlameBall","Weapon")
+FLAB B 0 A_GiveInventory("FlamemanMain_CI",1)
+FLAB BC 3
+FLAB B 2
+FLAB A 12
+goto Ready1
+AltFire:
+FLAB A 0 A_JumpIfInventory("YogaInfernoAmmo",56,"FlameX")
+goto Ready1
+FlameX:
+FLAB A 0 A_GiveInventory("VivifyDelay8",1)
+FLAB A 0 A_Refire(1)
+FLAB A 2
+FLAB BC 3
+FLAB A 0 A_PlaySoundEx("weapon/FlameWave","Weapon")
+FLAB B 0 A_TakeInventory("YogaInfernoAmmo",56)
+FLAB B 0 A_GiveInventory("FlamemanAlt_CI",1)
+FLAB B 2
+FLAB A 4
+goto Ready1
+NoAmmo:
+FLAB A 0
+Goto Ready1
+}
+}
+
+actor YogaInfernoAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 56
++INVENTORY.IGNORESKILL
+}
+
+actor FlameM_Shot
+{
+Translation "198:198=227:227", "192:192=216:216"
+PROJECTILE
+Obituary "$OB_FLAMEBLAST"
+damagetype "FlameBlast"
+Damage (15)
+Radius 10
+Height 10
+Speed 28//40
+Scale 2.5
+States
+{
+Spawn:
+FLAB MN 2
+loop
+Crash:
+XDeath:
+TNT1 A 0 A_SpawnItemEx("OilPitIgnite",0,0,8)
+Stop
+Death:
+TNT1 A 0 A_JumpIf(CeilingZ - FloorZ <=48 , "FireCheckOnly")
+TNT1 A 0 A_JumpIf(z-ceilingz==0-10,"FireCheckOnly")
+FLMB H 0 A_SpawnItemEx("OilPitIgnite",0,0,8)
+FLMB H 0 A_CheckFloor("Floor")
+FLMB H 0 A_JumpIf(CeilingZ-Z < 12, "Floor")
+Goto Wall
+Floor:
+TNT1 A 0 A_SpawnItemEx("FlameM_FloorPillar",0,0,0,0,0,0,0,1)
+TNT1 A 0 A_SpawnItemEx("FlameM_PillarWaveW",20,20,0,0,0,0,5,1)
+TNT1 A 0 A_SpawnItemEx("FlameM_PillarWaveW",20,-20,0,0,0,0,-5,1)
+Stop
+Wall:
+FLAB H 0 A_SpawnItemEx("FlameM_WallPillar",0,0,0,-33,0,0,0,1)//22
+stop
+FireCheckOnly:
+TNT1 A 0 A_SpawnItemEx("OilPitIgnite",0,0,-16)
+stop
+}
+}
+
+actor FlameM_ShotB : FlameM_Shot{Translation"198:198=74:74","192:192=205:205"}
+actor FlameM_ShotR : FlameM_Shot{Translation"198:198=41:41","192:192=171:171"}
+actor FlameM_ShotO : FlameM_Shot{Translation"198:198=128:128","192:192=104:104"}
+actor FlameM_ShotP : FlameM_Shot{Translation"198:198=232:232","192:192=229:229"}
+
+actor FlameM_PillarWave_H : BasicHelper
+{
+Translation "198:198=227:227","192:192=216:216"
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 A_SpawnItemEx("FlameM_PillarWave",20,30,0,0,0,0,15,1)
+TNT1 A 0 A_SpawnItemEx("FlameM_PillarWave",20,10,0,0,0,0,5,1)
+TNT1 A 0 A_SpawnItemEx("FlameM_PillarWave",20,-10,0,0,0,0,-5,1)
+TNT1 A 0 A_SpawnItemEx("FlameM_PillarWave",20,-30,0,0,0,0,-15,1)
+stop
+}
+}
+
+actor FlameM_PillarWave_HB : FlameM_PillarWave_H{Translation"198:198=74:74","192:192=205:205"}
+actor FlameM_PillarWave_HR : FlameM_PillarWave_H{Translation"198:198=41:41","192:192=171:171"}
+actor FlameM_PillarWave_HO : FlameM_PillarWave_H{Translation"198:198=128:128","192:192=104:104"}
+actor FlameM_PillarWave_HP : FlameM_PillarWave_H{Translation"198:198=232:232","192:192=229:229"}
+
+actor FlameM_PillarWave
+{
+scale 2.5
+PROJECTILE
+Obituary "$OB_FLAMEBLAST"
+damagetype "FlameBlastB"
++DONTBLAST
++RIPPER
++THRUACTORS
++FLOORHUGGER
++DONTREFLECT
++THRUGHOST
++HEXENBOUNCE
+Bouncefactor 1.0
+WallBouncefactor 1.0
+BounceCount 7
+ReactionTime 11//15
+Damage (0)
+Radius 8
+Height 48
+Speed 20
+States
+{
+Spawn:
+FLAB D 0 A_SpawnItemEx("FlameM_FloorPillar2",0,0,0,0,0,0,0,1) //I purposely have this on the first line
+FLAB D 0 A_CountDown
+FLAB DED 1
+FLAB D 0 A_SetAngle(angle+random(-15,15))
+FLAB D 0 A_ChangeVelocity(20,0,0,3)
+FLAB D 0 A_Jump(128,3)
+FLAB D 0 A_Jump(96,3)
+FLAB ED 1
+FLAB ED 1
+Loop
+}
+}
+
+actor FlameM_PillarWaveW : FlameM_PillarWave
+{
+BounceCount 4
+ReactionTime 3//15
+}
+
+actor FlameM_FloorPillar
+{
+PROJECTILE
+Obituary "$OB_FLAMEBLAST"
+damagetype "FlameBlastB"
++DONTBLAST
++FLOORHUGGER
+Mass 12
+Damage (14)
+Radius 8
+Height 48
+Speed 0
+Scale 2.5
+States
+{
+Spawn:
+FLAB D 0
+FLAB D 0 A_SpawnItemEx("OilPitIgnite",0,0,0)
+FLAB H 0 A_PlaySoundEx("weapon/FlameWave","Weapon")
+FLAB DEFGHI 1
+Spawn2:
+FLAB HIHIHIHIHI 1
+FLAB H 0 A_GiveInventory("WeaponCharge",1)
+FLAB H 0 A_JumpIfInventory("WeaponCharge",Mass,"SpawnEnd")
+goto Spawn+3
+SpawnEnd:
+FLAB HIHGFED 1
+stop
+Death:
+TNT1 A 0
+Stop
+}
+}
+
+actor FlameM_FloorPillar2 : FlameM_FloorPillar
+{
+Mass 6
+}
+
+actor FlameBlastBProtect : PowerProtection
+{
+Powerup.Duration 5
+DamageFactor "FlameBlastB", 0.25
+}
+
+actor FlameM_WallPillar
+{
+PROJECTILE
+damagetype "FlameBlastB"
+Obituary "$OB_FLAMEBLAST"
++DONTBLAST
++DONTREFLECT
+reactiontime 12
+Damage(14)
+Radius 6
+Height 5
+Speed 0
+Scale 2.5
+states
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 A_PlaySoundEx("weapon/FlameWave","Weapon")
+TNT1 A 0 A_SpawnItemEx("FlameWallPillarFX1_H",33,0,0,0,0,0,0,9)
+TNT1 A 1
+TNT1 A 0 A_ScaleVelocity(-2.0)
+goto Spawn3
+Spawn2:
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX1_H",0,0,0,0,0,0,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+Spawn3:
+TNT1 A 0 A_SpawnItemEx("OilPitIgnite",0,0,0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX2_H",0,0,0,momx/2,momy/2,momz/2,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX3_H",0,0,0,0,0,0,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX2_H2",0,0,0,momx/6,momy/6,momz/6,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX3_H2",0,0,0,momx/3,momy/3,momz/3,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX2_H3",0,0,0,momx/6,momy/6,momz/6,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX3_H3",0,0,0,momx/3,momy/3,momz/3,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX2_H4",0,0,0,momx/6,momy/6,momz/6,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX3_H4",0,0,0,momx/3,momy/3,momz/3,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX2_H4",0,0,0,momx/6,momy/6,momz/6,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX3_H4",0,0,0,momx/3,momy/3,momz/3,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX2_H4",0,0,0,momx/6,momy/6,momz/6,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX3_H4",0,0,0,momx/3,momy/3,momz/3,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX2_H4",0,0,0,momx/6,momy/6,momz/6,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX3_H4",0,0,0,momx/3,momy/3,momz/3,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX2_H4",0,0,0,momx/6,momy/6,momz/6,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX3_H4",0,0,0,momx/3,momy/3,momz/3,0,9)
+TNT1 A 0 A_CountDown
+TNT1 A 0 A_ScaleVelocity(-1.0)
+
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX1_H",0,0,0,momx/2,momy/2,momz/2,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX2_H",0,0,0,0,0,0,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX3_H",0,0,0,momx/2,momy/2,momz/2,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX2_H2",0,0,0,momx/3,momy/3,momz/3,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX3_H2",0,0,0,momx/6,momy/6,momz/6,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX2_H3",0,0,0,momx/3,momy/3,momz/3,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX3_H3",0,0,0,momx/6,momy/6,momz/6,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX2_H4",0,0,0,momx/3,momy/3,momz/3,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX3_H4",0,0,0,momx/6,momy/6,momz/6,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX2_H4",0,0,0,momx/3,momy/3,momz/3,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX3_H4",0,0,0,momx/6,momy/6,momz/6,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX2_H4",0,0,0,momx/3,momy/3,momz/3,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX3_H4",0,0,0,momx/6,momy/6,momz/6,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX2_H4",0,0,0,momx/3,momy/3,momz/3,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX3_H4",0,0,0,momx/6,momy/6,momz/6,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX2_H4",0,0,0,momx/3,momy/3,momz/3,0,9)
+TNT1 A 0 A_ScaleVelocity(-1.0)
+TNT1 A 1 A_SpawnItemEx("FlameWallPillarFX3_H4",0,0,0,momx/6,momy/6,momz/6,0,9)
+TNT1 A 0 A_CountDown
+TNT1 A 0 A_ScaleVelocity(-1.0)
+goto Spawn2
+Death:
+TNT1 A 1
+stop
+}
+}
+
+actor FlameWallPillarFX1_H : BasicExplosion
+{
+states
+{
+Spawn:
+TNT1 A 0
+TNT1 A 1
+TNT1 A 0 A_SpawnItemEx("FlameWallPillarFX1",0,0,0,0,0,0,0,1)
+stop
+}
+}
+
+
+actor FlameWallPillarFX2_H : BasicExplosion
+{
+states
+{
+Spawn:
+TNT1 A 0
+TNT1 A 1
+TNT1 A 0 A_SpawnItemEx("FlameWallPillarFX2",0,0,0,0,0,0,0,1)
+stop
+}
+}
+actor FlameWallPillarFX2_H2 : BasicExplosion
+{
+states
+{
+Spawn:
+TNT1 A 0
+TNT1 A 1
+TNT1 A 0 A_SpawnItemEx("FlameWallPillarFX2",44,0,0,0,0,0,0,1)
+TNT1 A 0 A_SpawnItemEx("FlameWallPillarFX2",22,0,0,0,0,0,0,1)
+stop
+}
+}
+actor FlameWallPillarFX2_H3 : BasicExplosion
+{
+states
+{
+Spawn:
+TNT1 A 0
+TNT1 A 1
+TNT1 A 0 A_SpawnItemEx("FlameWallPillarFX2",44,0,0,0,0,0,0,1)
+TNT1 A 0 A_SpawnItemEx("FlameWallPillarFX2",22,0,0,0,0,0,0,1)
+TNT1 A 0 A_SpawnItemEx("FlameWallPillarFX2",0,0,0,0,0,0,0,1)
+stop
+}
+}
+actor FlameWallPillarFX2_H4 : BasicExplosion
+{
+states
+{
+Spawn:
+TNT1 A 0
+TNT1 A 1
+TNT1 A 0 A_SpawnItemEx("FlameWallPillarFX2",44,0,0,0,0,0,0,1)
+TNT1 A 0 A_SpawnItemEx("FlameWallPillarFX2",22,0,0,0,0,0,0,1)
+TNT1 A 0 A_SpawnItemEx("FlameWallPillarFX2",0,0,0,0,0,0,0,1)
+TNT1 A 0 A_SpawnItemEx("FlameWallPillarFX2",-22,0,0,0,0,0,0,1)
+stop
+}
+}
+
+actor FlameWallPillarFX3_H : BasicExplosion
+{
+states
+{
+Spawn:
+TNT1 A 0
+TNT1 A 1
+TNT1 A 0 A_SpawnItemEx("FlameWallPillarFX3",0,0,0,0,0,0,0,1)
+stop
+}
+}
+actor FlameWallPillarFX3_H2 : BasicExplosion
+{
+states
+{
+Spawn:
+TNT1 A 0
+TNT1 A 1
+TNT1 A 0 A_SpawnItemEx("FlameWallPillarFX3",44,0,0,0,0,0,0,1)
+TNT1 A 0 A_SpawnItemEx("FlameWallPillarFX3",22,0,0,0,0,0,0,1)
+stop
+}
+}
+actor FlameWallPillarFX3_H3 : BasicExplosion
+{
+states
+{
+Spawn:
+TNT1 A 0
+TNT1 A 1
+TNT1 A 0 A_SpawnItemEx("FlameWallPillarFX3",44,0,0,0,0,0,0,1)
+TNT1 A 0 A_SpawnItemEx("FlameWallPillarFX3",22,0,0,0,0,0,0,1)
+TNT1 A 0 A_SpawnItemEx("FlameWallPillarFX3",0,0,0,0,0,0,0,1)
+stop
+}
+}
+actor FlameWallPillarFX3_H4 : BasicExplosion
+{
+states
+{
+Spawn:
+TNT1 A 0
+TNT1 A 1
+TNT1 A 0 A_SpawnItemEx("FlameWallPillarFX3",44,0,0,0,0,0,0,1)
+TNT1 A 0 A_SpawnItemEx("FlameWallPillarFX3",22,0,0,0,0,0,0,1)
+TNT1 A 0 A_SpawnItemEx("FlameWallPillarFX3",0,0,0,0,0,0,0,1)
+TNT1 A 0 A_SpawnItemEx("FlameWallPillarFX3",-22,0,0,0,0,0,0,1)
+stop
+}
+}
+
+
+actor FlameWallPillarFX1 : BasicClientSide
+{
+states
+{
+Spawn:
+FLAB J 0
+FLAB J 1
+stop
+}
+}
+actor FlameWallPillarFX2 : BasicClientSide
+{
+states
+{
+Spawn:
+FLAB K 0
+FLAB K 1
+stop
+}
+}
+actor FlameWallPillarFX3 : BasicClientSide
+{
+states
+{
+Spawn:
+FLAB L 0
+FLAB L 1
+stop
+}
+}
+
+actor FlamemanMain_CI : TeamColor_CI
+{
+states
+{
+FireX:
+TNT1 A 0 A_FireCustomMissile("FlameM_Shot",0,1,-8,0)
+goto Done
+FireB:
+TNT1 A 0 A_FireCustomMissile("FlameM_ShotB",0,1,-8,0)
+goto Done
+FireR:
+TNT1 A 0 A_FireCustomMissile("FlameM_ShotR",0,1,-8,0)
+goto Done
+FireO:
+TNT1 A 0 A_FireCustomMissile("FlameM_ShotO",0,1,-8,0)
+goto Done
+FireP:
+TNT1 A 0 A_FireCustomMissile("FlameM_ShotP",0,1,-8,0)
+goto Done
+}
+}
+
+actor FlamemanAlt_CI : TeamColor_CI
+{
+states
+{
+FireX:
+TNT1 A 0 A_FireCustomMissile("FlameM_PillarWave_H",0,1,-8,0)
+goto Done
+FireB:
+TNT1 A 0 A_FireCustomMissile("FlameM_PillarWave_HB",0,1,-8,0)
+goto Done
+FireR:
+TNT1 A 0 A_FireCustomMissile("FlameM_PillarWave_HR",0,1,-8,0)
+goto Done
+FireO:
+TNT1 A 0 A_FireCustomMissile("FlameM_PillarWave_HO",0,1,-8,0)
+goto Done
+FireP:
+TNT1 A 0 A_FireCustomMissile("FlameM_PillarWave_HP",0,1,-8,0)
+goto Done
+}
+}

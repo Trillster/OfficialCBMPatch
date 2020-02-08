@@ -1,3 +1,4 @@
 item/mm4heal MM4HEAL
+classes/icemanfog STATSNOW
 classes/shocklob SHOCKLOB
 classes/junkshieldloop JNKSHLDL

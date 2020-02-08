@@ -537,7 +537,8 @@ IsSelected CentaurFlashBoss{Drawbar"VARAMM26","VAREMPTY",Ammo1,horizontal,58,184
 IsSelected FlameBlastBoss{Drawbar"VARAMM20","VAREMPTY",Ammo1,horizontal,58,184;}
 IsSelected KnightCrushBoss{Drawbar"VARAMM27","VAREMPTY",Ammo1,horizontal,58,184;}
 IsSelected PlantbarrierBoss{Drawbar"VARAMM28","VAREMPTY",Ammo1,horizontal,58,184;
-	InInventory ShieldCheck,1{DrawBar"VARFLS7","VAREMPTY",Ammo1,horizontal,58,184;}}
+	InInventory ShieldCheck,1{DrawBar"VARFLS7","VAREMPTY",Ammo1,horizontal,58,184;}
+	DrawBar"6E_F_VAR","VAREMPTY",BioticFieldAmmo,horizontal,58,176;}
 IsSelected SilverTomahawkBoss{Drawbar"VARAMM29","VAREMPTY",Ammo1,horizontal,58,184;}
 IsSelected WindStormBoss{Drawbar"VARAMMO1","VAREMPTY",Ammo2,horizontal,58,184;
 	Drawbar"06_7_VAR","VAREMPTY",Ammo1,horizontal,58,176;}
@@ -804,6 +805,7 @@ InInventory DiveBossLockon{DrawImage"DIVLOCN",150,8;}
 InInventory PowerDiveSonarLockon{DrawImage"DIVLOCN",150,8;}
 InInventory ChargeManLink,1{DrawImage"CHRGM_R3",235,2;}
 InInventory ChargeWildRideFlag,1{DrawImage"CHRGM_R4",235,2;}
+InInventory PlantAuraHealDelay{DrawImage"PLNTHEAL",280,97;}
 InInventory HomingLockedVision,1{DrawImage"HomVisA",0,0;}
 InInventory PowerSplashSinewyEtude,1||PowerSplashSinewyEtudeX{DrawImage"SPLWBUF1",302,79;}
 InInventory PowerSplashMightyMarch,1||PowerSplashMightyMarchX{DrawImage"SPLWBUF2",302,98;}
