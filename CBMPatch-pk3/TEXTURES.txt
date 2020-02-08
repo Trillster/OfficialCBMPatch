@@ -12,3 +12,6 @@ graphic PLATICON,30,30{XScale 2.0 YScale 2.0 Patch PLABS0,0,0}
 graphic PLNTHEAL,25,26{XScale 1.5 YScale 1.5 Patch PLATHEAL,0,0}
 texture 6E_F_BAR,8,56{patch BARENERG,0,0{Translation"192:192=104:104", "198:198=60:60"}}
 texture 6E_F_VAR,56,8{patch VARENERG,0,0{Translation"192:192=104:104", "198:198=60:60"}}
+
+//Hornet
+graphic HornIcon,30,30{XScale 2.0 YScale 2.0 Patch HORHI0,0,0}

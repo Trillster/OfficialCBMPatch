@@ -717,7 +717,7 @@ IsSelected WaterShieldBoss{Drawbar"BAMMO101","BAREMPTY",Ammo2,vertical,16,8;
 	}
 IsSelected CommandoBombBoss,CommandoMineBoss{DrawBar"10_3_BAR","BAREMPTY",Ammo1,vertical,16,8;}
 IsSelected ChillSpikeBoss{Drawbar"BAMMO103","BAREMPTY",Ammo1,vertical,16,8;
-	InInventory ChillSlideAmmo,168{Drawbar"BARAMM31","BAREMPTY",Ammo2,vertical,8,8;}
+	InInventory ChillSlideAmmo,95{Drawbar"BARAMM31","BAREMPTY",Ammo2,vertical,8,8;}
 		else{Drawbar"WT_2_BAR","BAREMPTY",Ammo2,vertical,8,8;}
 	InInventory ChillShield,1{DrawBar"BARHEALT","BAREMPTY",ChillHealthFlag,vertical,24,8;
 		DrawNumber 5,"8BDMAFONT",Untranslated,ChillHealthFlag,alignment(left),31,31;

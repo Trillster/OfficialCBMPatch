@@ -3,15 +3,48 @@ actor ClassBase : ClassBase1
 states
 {
 
+Pain.LightRyuShoryu:
+"----" H 0 A_GiveInventory("RyuL_ShoryukenProtect")
+"----" H 0 A_SpawnItemEx("PainLightRyu1Hit")
+"----" H 0 A_JumpIfInventory("FlightDisableFlag",1,2)
+"----" H 0 ThrustThingZ(0,56,0,0)
+"----" H 0
+Goto Pain+2
+Pain.LightRyuShoryuA:
+"----" H 0 A_GiveInventory("RyuL_ShoryukenAProtect")
+"----" HH 0 A_SpawnItemEx("PainLightRyu1Hit")
+Goto Pain.LightRyuShoryu+1
+Pain.LightRyuShoryuB:
+"----" H 0 A_GiveInventory("RyuL_ShoryukenBProtect")
+Goto Pain.LightRyuShoryu+2
+Pain.LightRyuShoryuC:
+"----" H 0 A_GiveInventory("RyuL_ShoryukenCProtect")
+Goto Pain.LightRyuShoryu+2
+    
+Death.LightRyuShoryu:
+"----" H 0 A_GiveToTarget("SuperComboGauge",1)
+"----" H 0 ThrustThingZ(0,200,0,0)
+"----" H 0 A_SpawnItemEx("DeathLightRyuShinShoryuHit",1)
+Goto FlingDeath
+Death.LightRyuShoryuA:
+"----" H 0 A_GiveToTarget("SuperComboGauge",2)
+Goto Death.LightRyuShoryu
+Death.LightRyuShoryuB:
+Death.LightRyuShoryuC:
+Goto Death.LightRyuShoryu+1
+
 Pain.IceSlashSlow2:
 "----" H 0 A_GiveInventory("IceSlashSlow2Protect",1)
 goto Pain.IceSlashSlow
+
 Pain.AirShooterWall:
 "----" H 0 A_GiveInventory("AirShooterWallProtect",1)
 Goto Pain    
+
 Pain.SparkShockP:
 "----" H 0 A_GiveInventory("SparkShockPProtect",1)
 Goto Pain.SparkShock
+
 Pain.JunkmanCube:
 "----" H 0 A_GiveInventory("JunkmanCubeProtect",1)
 Goto Pain+2

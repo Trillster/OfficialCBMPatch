@@ -1,0 +1,122 @@
+actor ChillMan : GlassClassBase
+{
+Player.ScoreIcon "C_10D0X"
+player.displayname "Chillman"
+player.soundclass "chillManc"
+
+player.startitem "ChillSpikeBoss"
+player.startitem "SpikesAndChillAmmo", 84
+player.startitem "ChillSlideAmmo", 95
+player.startitem "ChillmanSpawnStart_P", 1
+player.startitem "ChillmanSuperItem"
+Player.StartItem "CanWallJump"
+player.startitem "CanWallJumpStack", 3
+
+player.jumpz 12
+player.forwardmove 0.69, 0.69
+player.sidemove 0.67, 0.67
+
+player.startitem "SolarBlazeWeakness2", 1
+
+player.startitem "FireStormWeakness", 1
+player.startitem "AtomicFireWeakness", 1
+player.startitem "PharaohShotWeakness", 1
+player.startitem "FlameBlastWeakness", 1
+player.startitem "ScorchWheelWeakness", 1
+player.startitem "FlameSwordWeakness", 1
+player.startitem "WaveBurnerWeakness", 1
+player.startitem "MagmaBazookaWeakness", 1
+player.startitem "SolarBlazeWeakness", 1
+States
+{
+Spawn:
+CHIM A 0
+CHIM A 0 A_JumpIfInventory("GuarddownFlag",1,3)
+CHIM B 1
+CHIM A -1
+CHIM R 1
+CHIM Q 1 A_JumpIfInventory("ChillShield",1,"Spawn_C")
+wait
+Spawn_C:
+CHIM AQAQ 2
+goto Spawn+3
+
+See:
+CHIM B 0 A_JumpIfInventory("GuarddownFlag",1,"See_C")
+CHIM B 6 A_GiveInventory("ChillSlideSnd_P",1)
+CHIM B 0 A_JumpIfInventory("ChillSliding",1,"See2")
+Goto See2+1
+See2:
+CHIM B 2
+CHIM C 4
+CHIM C 0 A_JumpIfInventory("ChillSliding",1,"See3")
+Goto See3+1
+See3:
+CHIM C 2
+CHIM D 6 A_GiveInventory("ChillSlideSnd_P",1)
+CHIM D 0 A_JumpIfInventory("ChillSliding",1,"See4")
+Goto See4+1
+See4:
+CHIM D 2
+CHIM E 4
+CHIM E 0 A_JumpIfInventory("ChillSliding",1,"See5")
+Goto Spawn
+See5:
+CHIM E 2
+Goto Spawn
+
+See_C:
+CHIM R 0 A_GiveInventory("ChillSlideSnd_P",1)
+CHIM RRR 2 A_JumpIfInventory("ChillShield",1,"See2")
+CHIM R 0 A_JumpIfInventory("ChillSliding",1,"See_C2")
+Goto See_C2+1
+See_C2:
+CHIM RSS 2 A_JumpIfInventory("ChillShield",1,"See3")
+CHIM S 0 A_JumpIfInventory("ChillSliding",1,"See_C3")
+Goto See_C3+1
+See_C3:
+CHIM S 2 A_JumpIfInventory("ChillShield",1,"See4")
+CHIM T 0 A_GiveInventory("ChillSlideSnd_P",1)
+CHIM TTT 2 A_JumpIfInventory("ChillShield",1,"See4")
+CHIM T 0 A_JumpIfInventory("ChillSliding",1,"See_C4")
+Goto See_C4+1
+See_C4:
+CHIM TSS 2 A_JumpIfInventory("ChillShield",1,"See")
+CHIM S 0 A_JumpIfInventory("ChillSliding",1,"See_C5")
+Goto Spawn+4
+See_C5:
+CHIM S 2
+Goto Spawn+4
+
+Missile:
+CHIM F 0 A_JumpIfInventory("GuarddownFlag",1,"Missile2")
+CHIM FG 4
+goto Spawn
+Missile2:
+CHIM UU 4
+goto Spawn+4
+
+ClassPain:
+CHIM H 0 ACS_NamedExecuteAlways("C_CHILLSHIELD",0,0)
+CHIM H 0 A_JumpIfInventory("GuarddownFlag",1,"ClassPain2")
+CHIM H 0
+goto PainContinue
+ClassPain2:
+CHIM V 0
+goto PainContinue
+
+Pain.WilyIce:
+CHIM H 0 ACS_NamedExecuteAlways("C_CHILLSHIELD",0,0)
+goto Super::Pain.WilyIce
+Pain.LightRyuStop:
+CHIM H 0 ACS_NamedExecuteAlways("C_CHILLSHIELD",0,0)
+goto Super::Pain.LightRyuStop
+
+DeathFix:
+CHIM H 0
+goto DeathContinue
+ClassDeath:
+CHIM H 1
+goto MegaDeathEnd
+}
+}
