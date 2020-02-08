@@ -1,0 +1,858 @@
+//VERTICAL BARS
+height 0;
+
+statusbar fullscreen,forcescaled
+{
+InInventory not NoHud,1
+{
+DrawImage"EmptIcon",24,64;//Scroll down for rest of Classes stuff, its past the MEGAMAN art
+
+InInventory not NoHealthBar,1
+{
+DrawBar"BARHEALT","BAREMPTY",Health,vertical,24,8;
+	InInventory LightTeamFlag,1{DrawImage"LBAR",24,3;}
+	InInventory WilyTeamFlag,1{DrawImage"WBAR",24,3;}
+	InInventory CossackTeamFlag,1{DrawImage"CBAR",24,3;}
+	InInventory KingTeamFlag,1{DrawImage"KBAR",24,3;}
+
+InInventory SkullShieldCheck,1{DrawBar"4H_A_BAR","NOBAR",SkullShieldCheck,vertical,24,8;}
+InInventory SkullBarrierProtection,1{DrawBar"4H_A_BAR","NOBAR",SkullShieldCheck,vertical,24,8;}
+//InInventory BasicArmor,1{DrawBar"BARAMT31","NOBAR",Armor,vertical,24,8;}
+
+PlayerClass Maestro{
+	//InInventory AmmoNumberFlag,1{
+		WeaponAmmo BusterAmmo{}
+		else WeaponAmmo not VanillaAmmo{DrawNumber 5,"8BDMAFONT",Untranslated,Ammo1,alignment(right),15,31;}
+	//}
+}
+//InInventory HealthNumberFlag,1{
+	DrawNumber 5,"8BDMAFONT",Untranslated,Health,alignment(left),31,31;
+//}
+
+DrawSelectedInventory INDEXFONT,24,64,37,64,white;
+DrawImage weaponicon,16,64;
+}
+
+//MM1 Bars
+IsSelected RollingCutterWepC{Drawbar"BARAMMO1","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected SuperArmWepC{Drawbar"BARAMMO2","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected IceSlasherWepC{Drawbar"BARAMMO3","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected HyperBombWepC{Drawbar"BARAMMO4","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected FireStormWepC{Drawbar"BARAMMO5","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected ThunderBeamWepC{Drawbar"BARAMMO6","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected TimeSlowWepC{DrawBar"BARAMMO7","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected OilSliderWepC{DrawBar"BARAMMO8","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory OilSliderFlag,1{DrawBar"BARFLS1","NOBAR",OilSliderFlag,vertical,16,8;}}
+
+//MM2
+IsSelected MetalBladeWepC{Drawbar"BARAMMO9","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected AirShooterWepC{Drawbar"BARAMM10","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected BubbleLeadWepC{Drawbar"BARAMMO1","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected QuickBoomerangWepC{Drawbar"BARAMM11","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected CrashBombWepC{Drawbar"BARAMM12","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected TimeStopperWepC{Drawbar"BARAMMO7","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected AtomicFireWepC{Drawbar"BARAMM13","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory WeaponCharge,70{DrawBar"BARFLS2","BAREMPTY",Ammo1,vertical,16,8;}}
+IsSelected LeafShieldWepC{Drawbar"BARAMMO4","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory ShieldCheck,1{DrawBar"BARFLS1","NOBAR",LeafShieldCharge,vertical,16,8;}}
+
+//MM3
+IsSelected NeedleCannonWepC{Drawbar"BARAMMO2","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected MagnetMissileWepC{Drawbar"BARAMM14","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected GeminiLaserWepC{Drawbar"BARAMM15","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected HardKnuckleWepC{Drawbar"BARAMM16","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected TopSpinWepC{Drawbar"BARAMM17","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected SearchSnakeWepC{Drawbar"BARAMMO4","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected SparkShockWepC{Drawbar"BARAMM12","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected ShadowBladeWepC{Drawbar"BARAMMO7","BAREMPTY",Ammo1,vertical,16,8;}
+
+//MM4
+IsSelected FlashStopperWepC{Drawbar"BARAMM18","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected RainFlushWepC{Drawbar"BARAMM19","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected DrillBombWepC{Drawbar"BARAMM14","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected PharaohShotWepC{Drawbar"BARAMM20","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory WeaponCharge,78{DrawBar"BARFLS4","BAREMPTY",Ammo1,vertical,16,8;}
+	else InInventory PharaohCharge,1{DrawBar"BARFLS1","NOBAR",PharaohCharge,vertical,16,8;}}
+IsSelected RingBoomerangWepC{Drawbar"BARAMMO9","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected DustCrusherWepC{Drawbar"BARAMMO1","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected DiveMissileWepC{Drawbar"BARAMM10","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected SkullbarrierWepC{Drawbar"BARAMM21","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory SkullBarrierCooldown,1{DrawBar"BARAMM65","BAREMPTY",Ammo1,vertical,16,8;}}
+
+//MM5
+IsSelected GravityHoldWepC{Drawbar"BARAMM18","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected WaterWaveWepC{Drawbar"BARAMM10","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected PowerStoneWepC{Drawbar"BARAMM22","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected GyroAttackWepC{Drawbar"BARAMMO4","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected StarCrashWepC{Drawbar"BARAMM23","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory ShieldCheck,1{DrawBar"BARFLS6","BAREMPTY",Ammo1,vertical,16,8;}}
+IsSelected ChargeKickWepC{Drawbar"BARAMM12","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected NapalmBombWepC{Drawbar"BARAMM24","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected CrystalEyeWepC{Drawbar"BARAMM25","BAREMPTY",Ammo1,vertical,16,8;}
+
+//MM6
+IsSelected BlizzardAttackWepC{Drawbar"BARAMM15","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected CentaurFlashWepC{Drawbar"BARAMM26","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected FlameBlastWepC{Drawbar"BARAMM20","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected KnightCrushWepC{Drawbar"BARAMM27","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected PlantbarrierWepC{Drawbar"BARAMM28","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory ShieldCheck,1{DrawBar"BARFLS7","BAREMPTY",Ammo1,vertical,16,8;
+		DrawBar"6E_A_BAR","NOBAR",Health,vertical,24,8;}}
+IsSelected SilverTomahawkWepC{Drawbar"BARAMM29","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected WindStormWepC{Drawbar"BARAMMO1","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected YamatoSpearWepC{Drawbar"BARAMM30","BAREMPTY",Ammo1,vertical,16,8;}
+
+//MM7
+IsSelected FreezeCrackerWepC{Drawbar"BARAMM31","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected JunkShieldWepC{Drawbar"BARAMM32","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory ShieldCheck,1{DrawBar"BARFLS1","NOBAR",JunkDuration,vertical,16,8;}}
+IsSelected DangerWrapWepC{Drawbar"BARAMM33","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected ThunderBoltWepC{Drawbar"BARAMM34","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected WildCoilWepC{Drawbar"BARAMM35","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory WeaponCharge,23{DrawBar"BARFLS9","BAREMPTY",Ammo1,vertical,16,8;}}
+IsSelected SlashClawWepC{Drawbar"BARAMM36","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected NoiseCrushWepC{Drawbar"BARAMM37","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory WeaponCharge,1{DrawBar"BARFLS10","BAREMPTY",Ammo1,vertical,16,8;}}
+IsSelected ScorchWheelWepC{Drawbar"BARAMM38","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory WheelCount,1{DrawBar"BARFLS1","NOBAR",WheelCount,vertical,16,8;}}
+
+//MM8
+IsSelected MegaBallWepC{Drawbar"BARAMM39","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected TornadoHoldWepC{Drawbar"BARAMM40","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected AstroCrushWepC{Drawbar"BARAMM41","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected FlameSwordWepC{Drawbar"BARAMM42","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected ThunderClawWepC{Drawbar"BARAMM43","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected HomingSniperWepC{Drawbar"BARAMM44","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory WeaponCharge,35{DrawBar"BARFLS11","BAREMPTY",Ammo1,vertical,16,8;}}
+IsSelected IceWaveWepC{DrawBar"BARAMM45","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected FlashBombWepC{Drawbar"BARAMM46","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected WaterBalloonWepC{Drawbar"BARAMM47","BAREMPTY",Ammo1,vertical,16,8;}
+
+//MMB
+IsSelected TenguBladeWepC{Drawbar"BARAMMO1","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected CopyVisionWepC{Drawbar"BARAMM52","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected LightningBoltWepC{Drawbar"BARAMM53","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected IceWallWepC{Drawbar"BARAMM54","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected SpreadDrillWepC{DrawBar"BARAMM55","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected RemoteMineWepC{Drawbar"BARAMM56","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory WeaponCharge,5{DrawBar"BARFLS14","BAREMPTY",Ammo1,vertical,16,8;}}
+IsSelected WaveBurnerWepC{Drawbar"BARAMM57","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected MagicCardWepC{Drawbar"BARAMM58","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected TrebleBoostC{Drawbar"BARAMM59","BAREMPTY",Ammo1,vertical,16,8;}
+
+//MM9
+IsSelected PlugBallWepC{DrawBar"BARAMM60","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected LaserTridentWepC{DrawBar"BARAMM61","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected TornadoBlowWepC{DrawBar"BARAMM68","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected JewelSatelliteWepC{DrawBar"BARAMM63","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory JewelShieldCheck,1{DrawBar"BARFLS1","NOBAR",JewelShieldCheck,vertical,16,8;}}
+IsSelected MagmaBazookaWepC{DrawBar"BARAMM64","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory WeaponCharge,19{DrawBar"BARFLS13","BAREMPTY",Ammo1,vertical,16,8;}}
+IsSelected ConcreteShotWepC{DrawBar"BARAMM65","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected BlackHoleBombWepC{DrawBar"BARAMM66","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory BlackHoleBombCooldown,1{DrawBar"BARFLS15","BAREMPTY",Ammo1,vertical,16,8;}}
+IsSelected HornetChaserWepC{DrawBar"BARAMM67","BAREMPTY",Ammo1,vertical,16,8;}
+
+//MM10
+IsSelected TripleBladeWepC{DrawBar"BAMMO100","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected WaterShieldWepC{DrawBar"BAMMO101","VAREMPTY",Ammo1,vertical,16,8;
+	InInventory WaterShieldCheck,1{DrawBar"BARFLS1","NOBAR",WaterShieldCheck,vertical,16,8;}}
+IsSelected CommandoBombWepC{DrawBar"BAMMO102","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected ChillSpikeWepC{DrawBar"BAMMO103","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected ThunderWoolWepC{DrawBar"BAMMO104","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected ReboundStrikerWepC{DrawBar"BAMMO105","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected WheelCutterWepC{DrawBar"BAMMO106","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory WheelCutterCheck,1{DrawBar"BARFLS1","NOBAR",WheelCutterCheck,vertical,16,8;}}
+IsSelected SolarBlazeWepC{DrawBar"BAMMO107","BAREMPTY",Ammo1,vertical,16,8;}
+
+//MMV
+IsSelected SparkChaserWepC{DrawBar"BAMMO_V0","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected GrabBusterWepC{DrawBar"BAMMO_V1","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected BubbleBombWepC{DrawBar"BAMMO_V2","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected PhotonMissileWepC{DrawBar"BAMMO_V3","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected ElectricShockWepC{DrawBar"BAMMO_V4","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected BlackHoleWepC{DrawBar"BAMMO_V5","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected DeepDiggerWepC{DrawBar"BAMMO_V6","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected BreakDashWepC{DrawBar"BAMMO_V7","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected SaltWaterWepC{DrawBar"BAMMO_V8","BAREMPTY",Ammo1,vertical,16,8;}
+
+//MMK
+IsSelected SakugarneWepC{Drawbar"BARAMM48","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected MirrorBusterWepC{Drawbar"BARAMM49","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory MirrorBusterFlag,1{DrawBar"BARFLS1","NOBAR",MirrorBusterFlag,vertical,16,8;}}
+IsSelected ScrewCrusherWepC{Drawbar"BARAMM50","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected BalladeCrackerWepC{Drawbar"BARAMM51","BAREMPTY",Ammo1,vertical,16,8;}
+
+//Assists
+InInventory RushJetCounter,5{DrawImage"RUSHH2H8",290,8;}
+InInventory RushJetCounter,1{DrawImage"RUSHOUT",290,8;}
+InInventory RushMarineCounter,1{InInventory IsUnderWater,1{
+		InInventory RushMarineCounter,5{DrawImage"RUSHO0",290,8;}
+		InInventory RushMarineCounter,1{DrawImage"RUSHMOUT",290,8;}}
+	InInventory Not IsUnderWater,1{DrawImage"RUSHP0",290,8;}}
+
+InInventory ProtoJetCounter,1{InInventory ProtoJetCounter,5{DrawImage"PJETF0",290,8;}
+else InInventory ProtoJetCounter,1{DrawImage"PJETE0",290,8;}}
+InInventory ProtoMarineCounter,1{InInventory IsUnderWater,1{
+		InInventory ProtoMarineCounter,20{DrawImage"PJETQ0",290,16;}
+		else InInventory ProtoMarineCounter,1{DrawImage"PJETR0",290,16;}}
+	InInventory Not IsUnderWater,1{DrawImage"PJETP0",290,16;}}
+InInventory BassJetCounter,1{InInventory BassJetCounter,5{DrawImage"TRBL20",284,16;}
+else InInventory BassJetCounter,1{DrawImage"TRBL10",284,16;}}
+InInventory BassMarineCounter,1{InInventory IsUnderWater,1{
+		InInventory BassMarineCounter,20{DrawImage"TRBLY0",294,18;}
+		else InInventory BassMarineCounter,1{DrawImage"TRBLX0",294,18;}}
+	InInventory Not IsUnderWater,1{DrawImage"TRBLZ0",294,18;}}
+
+InInventory BeatCallCheck,1{DrawImage"BEATD0",298,16;}
+InInventory BeatCounter,5{DrawImage"BEATB8B2",298,16;}
+InInventory BeatCounter,1{DrawImage"BEATOUT",298,16;}
+InInventory BeatSupportActivated,1{DrawImage"BSPTA0",314,16;}
+InInventory BeatSupportFired,1{DrawImage "BSPTB0",314,16;}
+InInventory Flashed,1{DrawImage"FBLIND",-30,-20;}
+InInventory EnergyBalancerActive,1{DrawImage"NRGOUT",267,10;}
+
+//Boss Health
+InInventory BossHealth1,1{DrawBar"BARHEALT","BAREMPTY",BossHealth1,vertical,292,8;}
+InInventory BossHealth2,1{DrawBar"BARHEALT","BAREMPTY",BossHealth2,vertical,292,8;}
+InInventory BossHealth3,1{DrawBar"BARHEALT","BAREMPTY",BossHealth3,vertical,292,8;}
+InInventory BossHealth4,1{DrawBar"BARHEALT","BAREMPTY",BossHealth4,vertical,292,8;}
+InInventory BossHealth5,1{DrawBar"BARHEALT","BAREMPTY",BossHealth5,vertical,292,8;}
+InInventory BossHealth6,1{DrawBar"BARHEALT","BAREMPTY",BossHealth6,vertical,292,8;}
+InInventory BossHealth7,1{DrawBar"BARHEALT","BAREMPTY",BossHealth7,vertical,306,8;}
+InInventory BossHealth8,1{DrawBar"BARHEALT","BAREMPTY",BossHealth8,vertical,292,8;}
+InInventory EvilRobotShield,1{DrawBar"BARAMM32","BAREMPTY",BossHealth1,vertical,292,8;}
+
+// Misc
+InInventory TimeStoppedCounter,1{DrawImage"FLASHS",36,0;}
+
+/*
+        ▄▄█▀▀▄
+      ▄█████▄▄█▄
+     ▄▀██████▄▄██
+     █ █▀  ▄▄▀█ █
+     ▄██   ▀▀ ▀ █
+  ▄█▀  ▀█ ▀▀▀▀▄▀▀█▄
+ ▄███ ▄  ▀▀▀▀▀▄ ███▄
+ ██████       ██████
+ ▀███▀█████████▀███▀
+    ▄█▄ ▀▀█▀   █▄
+ ▄▄█████▄▀ ▀▄█████▄▄
+█████████   █████████ 
+*/
+
+//Classes start//
+
+InInventory not NoHealthBar,1{
+
+DrawImage playericon,20,0;//24
+DrawMugShot 1,20,0;
+
+InInventory StaminaFlag||UnSolid,1{
+	InInventory ForceStaminaFlag{InInventory not StaminaFlag,500{
+		InInventory StaminaFlag,1{DrawImage"ARCSTAM",2,113;}
+		else{DrawImage"ARCSTAMX",2,113;}//94
+		DrawNumber 3,CMBHPFONT,Untranslated,StaminaFlag,alignment(right),fillzeros,30,116;}}
+	else{InInventory not StaminaFlag,250{
+		InInventory StaminaFlag,1{DrawImage"ARCSTAM",2,113;}
+		else{DrawImage"ARCSTAMX",2,113;}
+		DrawNumber 3,CMBHPFONT,Untranslated,StaminaFlag,alignment(right),fillzeros,30,116;}}
+}
+
+InInventory IsInvunFlag,1{DrawBar"0H_I_BAR","NOBAR",Health,vertical,24,8;
+	DrawBar"0H_M_BAR","NOBAR",IsInvunFlag,vertical,24,8;}
+else InInventory GuardUpFlag,1{DrawBar"0H_R_BAR","NOBAR",Health,vertical,24,8;}
+else InInventory GuardDownFlag,1{DrawBar"0H_W_BAR","NOBAR",Health,vertical,24,8;}
+
+InInventory BasicArmor,1{
+	DrawNumber 4,CMBHRFONT,DarkGray,Armor,alignment(left),31,40;
+	DrawNumber 4,CMBHRFONT,DarkGray,SavePercent,alignment(left),31,46;
+	InInventory BossBasicArmorAmount,1{DrawBar"BARAMT31","NOBAR",Armor BossBasicArmorAmount,vertical,24,8;}
+	else{DrawBar"BARAMT31","NOBAR",Armor,vertical,24,8;}
+}
+
+InInventory CanAirJump,1{InInventory CanAirJumpLimit,1{DrawImage"JMPAIR_1",4,94;}//110
+	else{DrawImage"JMPAIR_2",4,94;}
+	DrawNumber 2,CMBHQFONT,Untranslated,CanAirJumpLimit,alignment(left),12,96;}
+InInventory CanWallJump,1{InInventory CanWallJumpLimit,1{DrawImage"JMPWAL_1",4,103;}
+	else{DrawImage"JMPWAL_2",4,103;}
+	DrawNumber 2,CMBHQFONT,Untranslated,CanWallJumpLimit,alignment(left),12,105;}
+}
+
+
+
+
+//Extra Copy Weapons
+IsSelected HyperStormHWepC{Drawbar"XTR0BR_U","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected MegaWaterSWepC{Drawbar"XTR0BR_T","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory MWSShieldCharge,1{DrawBar"BARFLS1","NOBAR",MWSShieldCharge,vertical,16,8;}}
+IsSelected BusterRodGWepC{Drawbar"XTR0BR_S","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected FakeRepeaterWepC{DrawBar"XTR0BR_R","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory RepeaterChamber,1{DrawBar"BARFLS1","NOBAR",RepeaterChamber,vertical,16,8;}}
+IsSelected RainbowGalaxyWepC{DrawBar"BARAMM66","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected DynamoTendrilWepC{Drawbar"XTR0BR_P","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected PlantTrapperWepC{Drawbar"XTR0BR_O","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected CentaurArrowWepC{DrawBar"BARAMM26","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected DarkShieldWepC{DrawBar"BARAMMO1","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected GravitySphereWepC{DrawBar"BARAMM18","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected SkullSniperWepC{DrawBar"BARAMM21","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected DiveSonarWepC{Drawbar"BARAMM10","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected FlashBulbWepC{DrawBar"BARAMM18","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected DocScannerWepC{Drawbar"XTR0BR_H","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected TopTwistWepC{Drawbar"BARAMM17","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected BoobeamBarrierWepC{Drawbar"XTR0BR_F","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected TimeBenderWepC{DrawBar"BARAMMO7","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory TimeBenderFlag,1{DrawBar"BARFLS1","NOBAR",TimeBenderFlag,vertical,16,8;}}
+IsSelected FragBomberWepC{DrawBar"XTR0BR_D","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory FragBomberCharge,1{DrawBar"BARFLS1","NOBAR",FragBomberCharge,vertical,16,8;}}
+IsSelected WaveBusterWepC{Drawbar"XTR0BR_C","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected RisingFistWepC{Drawbar"XTR0BR_B","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected RollSweepWepC{Drawbar"XTR0BR_A","BAREMPTY",Ammo1,vertical,16,8;}
+
+PlayerClass Protoman{DrawBar"00_0_BAR","BAREMPTY",SlideLimitFlag,vertical,8,8;}
+PlayerClass Megaman{InInventory MegaBusterFlag,1{DrawBar"00_1_BAR","BAREMPTY",SlideLimitFlag,vertical,8,8;}
+	else{DrawBar"00___BAR","BAREMPTY",SlideLimitFlag,vertical,8,8;}}
+PlayerClass Bass{DrawBar"00_4_BAR","BAREMPTY",SlideLimitFlag,vertical,8,8;}
+PlayerClass Duo{DrawBar"08_9_BAR","BAREMPTY",SlideLimitFlag,vertical,8,8;}
+//MM0
+IsSelected JetBusterC{DrawBar"00_A_BAR","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected PowerFistC{DrawBar"00_A_BAR","BAREMPTY",Ammo1,vertical,16,8;}
+
+IsSelected MegaBallBoss{DrawBar"BARAMM39","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected MegaCutBallBoss{DrawBar"BARAMMO1","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected MegaGutsBallBoss{DrawBar"BARAMMO2","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected MegaIceBallBoss{DrawBar"BARAMMO3","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected MegaBombBallBoss{DrawBar"BARAMMO4","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected MegaFireBallBoss{DrawBar"BARAMMO5","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected MegaElecBallBoss{DrawBar"BARAMMO6","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected MegaTimeBallBoss{DrawBar"BARAMMO7","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected MegaOilBallBoss{DrawBar"BARAMMO8","BAREMPTY",Ammo1,vertical,16,8;}
+WeaponAmmo BallsOfSteelAmmo&&RockmanSoccerAmmo{DrawBar"BARFLS1","NOBAR",Ammo2,vertical,16,8;
+	DrawBar"00_B_BAR","NOBAR",RockBallJumpStamina,vertical,16,8;}
+
+IsSelected RollSwingBoss{DrawBar"00_2_BAR","BAREMPTY",Ammo1,vertical,16,8;
+	DrawBar"00_C_BAR","BAREMPTY",Ammo2,vertical,8,8;}
+IsSelected RollBucketBoss{DrawBar"00_2_BAR","BAREMPTY",Ammo1,vertical,16,8;
+	DrawBar"00_C_BAR","BAREMPTY",Ammo2,vertical,8,8;}
+
+IsSelected TrebleBoosterWepC{DrawBar"00_D_BAR","BAREMPTY",Ammo1,vertical,16,8;}
+
+WeaponAmmo AutoIsRightAmmo&&ScrewYouBuySomeAmmo{DrawImage"AUTOAMMS",1,8;
+	InInventory PowerAutoAmmoRegen,1{DrawNumber 3,CMBHRFONT,Gold,Ammo2,alignment(right),13,24;}
+	else {DrawNumber 3,CMBHRFONT,Yellow,Ammo2,alignment(right),13,24;}
+	DrawBar"00_G_BAR","BAREMPTY",Ammo1,vertical,16,8;
+	IsSelected AutoShopperBoss,AutoMetShopperBoss{DrawBar"BARFLS1","NOBAR",AutoCreationFlag,vertical,16,8;
+		InInventory AutoItemTypeFlag,7{DrawImage"AUTOAMM8",3,32;DrawString CMBHRFONT,Yellow,"100",13,44;}
+		else InInventory AutoItemTypeFlag,6{DrawImage"AUTOAMM7",3,32;DrawString CMBHRFONT,MenuGreen,"50%",13,44;DrawImage"00_GA_BR",16,36;}
+		//else InInventory AutoItemTypeFlag,6{DrawImage"AUTOAMM6",3,32;DrawString CMBHRFONT,Yellow,"90",13,44;}
+		else InInventory AutoItemTypeFlag,5{DrawImage"AUTOAMM5",3,32;DrawString CMBHRFONT,Yellow,"70",13,44;}
+		else InInventory AutoItemTypeFlag,4{DrawImage"AUTOAMM4",3,32;DrawString CMBHRFONT,Yellow,"50",13,44;}
+		else InInventory AutoItemTypeFlag,3{DrawImage"AUTOAMM3",3,32;DrawString CMBHRFONT,Yellow,"30",13,44;}
+		else InInventory AutoItemTypeFlag,2{DrawImage"AUTOAMM2",3,32;DrawString CMBHRFONT,MenuGreen,"50%",13,44;DrawImage"00_GA_BR",16,36;}
+		else InInventory AutoItemTypeFlag,1{DrawImage"AUTOAMM1",3,32;DrawString CMBHRFONT,Yellow,"130",13,44;}
+}}
+
+IsSelected ShotokanLightBoss{Drawbar"0R_V_BAR","0R_U_BAR",Ammo1,vertical,16,8;
+	Drawbar"0R_T_BAR","0R_S_BAR",Ammo2,vertical,reverse,8,8;
+	DrawImage"0R_W_BAR",16,64;
+	InInventory SuperComboGauge,7{DrawImage"0R_A_BAR",17,51;DrawImage"0R_X_BAR",16,64;}
+	InInventory SuperComboGauge,14{DrawImage"0R_A_BAR",17,37;}
+	InInventory SuperComboGauge,21{DrawImage"0R_A_BAR",17,23;}
+	InInventory SuperComboGauge,28{DrawImage"0R_A_BAR",17,9;}}
+
+IsSelected SniperJoeBoss{DrawBar"BARAMMO4","BAREMPTY",JoeGrenadeCharge,vertical,8,8;
+	InInventory JoeUpgradeAmmo,420{DrawBar"BARFLSJ","BAREMPTY",Ammo2,vertical,16,8;}
+	else{DrawBar"BARAMM48","BAREMPTY",Ammo2,vertical,16,8;}}
+IsSelected MachineGunJoeBoss{DrawBar"BARAMMO1","BAREMPTY",Ammo1,vertical,8,8;
+	InInventory JoeUpgradeAmmo,420{DrawBar"BARFLSJ","BAREMPTY",Ammo2,vertical,16,8;}
+	else{DrawBar"BARAMM48","BAREMPTY",Ammo2,vertical,16,8;}}
+IsSelected JoeSelectBoss{DrawBar"BARFLSJ","BAREMPTY",Ammo1,vertical,16,8;
+	DrawImage"JoeIcon1",60,60;DrawImage"JoeIcon2",180,12;
+	InInventory JoeSelectApacheFlag,1{DrawString DBIGFONT,Green,"MAINFIRE",50,110,0,alignment(left);}
+	else{DrawString DBIGFONT,Untranslated,"MAINFIRE",50,110,0,alignment(left);}
+	InInventory JoeSelectTruckFlag,1{DrawString DBIGFONT,Green,"ALTFIRE",198,110,0,alignment(left);}
+	else{DrawString DBIGFONT,Untranslated,"ALTFIRE",198,110,0,alignment(left);}}
+IsSelected ApacheJoeBoss{DrawBar"BARFLSJ","BAREMPTY",Ammo2,vertical,16,8;}
+IsSelected TruckJoeBoss{DrawBar"BARFLSJ","BAREMPTY",Ammo2,vertical,16,8;}
+
+WeaponAmmo BBA_Money{
+	Drawbar"BBBBAR","BBBBARN",BBA_Money,vertical,16,8;
+
+	InInventory BBA_Money,600{DrawImage"BBBRDA6",16,8;}
+	else InInventory BBA_Money,500{DrawImage"BBBRDA5",16,8;}
+	else InInventory BBA_Money,400{DrawImage"BBBRDA4",16,8;}
+	else InInventory BBA_Money,300{DrawImage"BBBRDA3",16,8;}
+	else InInventory BBA_Money,200{DrawImage"BBBRDA2",16,8;}
+	else InInventory BBA_Money,100{DrawImage"BBBRDA1",16,8;}
+
+	DrawImage"BBBBARF",16,8;
+	InInventory not BBA_Shotgun,1{DrawImage"BBBWEP1A",16,8;}
+	InInventory not BBA_Chaingun,1{DrawImage"BBBWEP2A",16,8;}
+	InInventory not BBA_SuperShotgun,1{DrawImage"BBBWEP3A",16,8;}
+	InInventory not BBA_RocketLauncher,1{DrawImage"BBBWEP4A",16,8;}
+	InInventory not BBA_PlasmaRifle,1{DrawImage"BBBWEP5A",16,8;}
+	InInventory not BBA_BFG9000,1{DrawImage"BBBWEP6A",16,8;}
+
+	IsSelected BBA_Pistol{DrawImage"BBAAMM1",4,48;DrawNumber 3,CMBHQFONT,Untranslated,Ammo1,23,59;}
+	IsSelected BBA_Shotgun{DrawImage"BBAAMM2",4,48;DrawNumber 3,CMBHQFONT,Untranslated,Ammo1,23,59;}
+	IsSelected BBA_Chaingun{DrawImage"BBAAMM1",4,48;DrawNumber 3,CMBHQFONT,Untranslated,Ammo1,23,59;}
+	IsSelected BBA_SuperShotgun{DrawImage"BBAAMM2",4,48;DrawNumber 3,CMBHQFONT,Untranslated,Ammo1,23,59;}
+	IsSelected BBA_RocketLauncher{DrawImage"BBAAMM3",4,48;DrawNumber 3,CMBHQFONT,Untranslated,Ammo1,23,59;}
+	IsSelected BBA_PlasmaRifle{DrawImage"BBAAMM4",4,48;DrawNumber 3,CMBHQFONT,Untranslated,Ammo1,23,59;}
+	IsSelected BBA_BFG9000{DrawImage"BBAAMM4",4,48;DrawNumber 3,CMBHQFONT,Untranslated,Ammo1,23,59;}
+	}
+IsSelected WildBearBoss{DrawImage "C_00X0X",20,0;}
+
+
+//MM1
+//IsSelected RollingCutterBoss{Drawbar"BARAMMO1","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected IceSlasherBoss{Drawbar"BARAMMO3","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected HyperBombBoss{Drawbar"BARAMMO4","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected FireStormBoss{Drawbar"BARAMMO5","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected ThunderBeamBoss{Drawbar"BARAMMO6","BAREMPTY",Ammo1,vertical,16,8;}
+WeaponAmmo TimeToDefeatYouAmmo{DrawBar"BARAMMO7","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected OilSliderBoss{DrawBar"BARAMMO8","BAREMPTY",Ammo1,vertical,16,8;
+	DrawBar"01_8_BAR","BAREMPTY",Ammo2,vertical,8,8;
+	InInventory OilSledFlag,1{DrawBar"1H_S_BAR","NOBAR",OilSledFlag,vertical,16,8;}
+	InInventory not OilStaminaFlag,127{DrawBar"1H_R_BAR","NOBAR",OilStaminaFlag,vertical,16,8;}}
+
+//MM2
+IsSelected MetalBladeBoss{Drawbar"BARAMMO9","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory MetalFloatFlag,1{DrawImage"METSTALA",282,8;}
+	InInventory not MetalHoverBootsAmmo,140{DrawBar"2A_R_BAR","NOBAR",MetalHoverBootsAmmo,vertical,16,8;}}
+IsSelected AirShooterBoss{Drawbar"BARAMM10","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory not AirTurbineNotActive,1{DrawImage"AIRICON0",268,2;}}
+IsSelected BubbleLeadBoss{Drawbar"BARAMMO1","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory IsTreadingWater,1{DrawBar"2C_S_BAR","NOBAR",Ammo2,vertical,16,8;}
+	else InInventory not BubbleDabbleAmmo,280{DrawBar"2C_R_BAR","NOBAR",Ammo2,vertical,16,8;}}
+IsSelected QuickBoomerangBoss{Drawbar"BARAMM11","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory QuickManTrail,1{Drawbar"2D_A_BAR","NOBAR",Ammo1,vertical,16,8;}}
+IsSelected CrashBombBoss{Drawbar"BARAMM12","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected TimeStopperBoss{Drawbar"BARAMMO7","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected AtomicFireBoss{Drawbar"BARAMM13","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory ZippoAmmo,200{DrawImage"HeatIco5",16,64;}
+	else InInventory ZippoAmmo,150{DrawImage"HeatIco4",16,64;}
+	else InInventory ZippoAmmo,100{DrawImage"HeatIco3",16,64;}
+	else InInventory ZippoAmmo,50{DrawImage"HeatIco2",16,64;}}
+IsSelected AtomicPillarBoss{Drawbar"BARAMM13","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected LeafShieldBoss{
+	InInventory IncredibleAmmo,42{Drawbar"BARAMMO4","BAREMPTY",Ammo1,vertical,16,8;
+		InInventory ShieldCheck,1{DrawBar"BARFLS3","NOBAR",Ammo1,vertical,16,8;}}
+	else {Drawbar"BARAMXO4","BAREMPTY",Ammo1,vertical,16,8;
+		InInventory ShieldCheck,1{DrawBar"BARFLS3X","NOBAR",Ammo1,vertical,16,8;}}}
+WeaponAmmo WahweeAmmo{DrawBar"WILYBAR","BAREMPTY",Ammo1,vertical,16,8;
+	DrawBar"BARAMMO1","BAREMPTY",CapsuleAmmo,vertical,8,8;}//Dr. Wily
+IsSelected AlienTrapBoss{Drawbar"02_A_BAR","BAREMPTY",Ammo1,vertical,16,8;}
+
+//MM3
+WeaponAmmo NoodleAmmo{Drawbar"BARAMMO2","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected MagnetMissileBoss{Drawbar"BARAMM14","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected GeminiLaserBoss{Drawbar"BARAMM15","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory CloneSpawned,1{Drawbar"3C_G_BAR","NOBAR",Ammo1,vertical,16,8;}}
+IsSelected HardKnuckleBoss{Drawbar"BARAMM16","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected TopSpinBoss{InInventory Top_Charge,105{Drawbar"03_5_BAR","BAREMPTY",Top_Charge,vertical,16,8;}
+else{Drawbar"BARAMM17","BAREMPTY",Top_Charge,vertical,16,8;}}
+IsSelected SearchSnakeBoss{Drawbar"BARAMMO4","BAREMPTY",Ammo1,vertical,16,8;
+	DrawBar"BARAMMO1","BAREMPTY",Ammo2,vertical,8,8;
+	InInventory SnakeClimbing,1{DrawImage"SNACRAWA",282,8;}
+	InInventory not SnakeClamberAmmo,250{DrawBar"3F_R_BAR","NOBAR",SnakeClamberAmmo,vertical,16,8;}}
+IsSelected SparkShockBoss
+{
+InInventory SparkmanHoldFlag,7{Drawbar"03_T_BAR","BAREMPTY",SparkmanHoldFlag,vertical,16,8;}
+else{Drawbar"03_S_BAR","BAREMPTY",SparkmanHoldFlag,vertical,16,8;}
+Drawbar"BARAMM12","BAREMPTY",MightyGodAmmo,vertical,8,8;
+}
+IsSelected ShadowBladeBoss{Drawbar"BARAMMO7","BAREMPTY",Ammo1,vertical,16,8;
+	DrawBar"BARAMMO1","BAREMPTY",Ammo2,vertical,8,8;}
+
+InInventory DocBusterC,1{DrawBar"03_9_BAR","BAREMPTY",DocVirusAmmo,vertical,8,8;
+	InInventory DocRobotSpeed_F,130{DrawImage"DOC_130S",2,136;}
+	else InInventory DocRobotSpeed_F,120{DrawImage"DOC_120S",2,136;}
+	else InInventory DocRobotSpeed_F,115{DrawImage"DOC_115S",2,136;}
+	else InInventory DocRobotSpeed_F,110{DrawImage"DOC_110S",2,136;}
+	else InInventory DocRobotSpeed_F,105{DrawImage"DOC_105S",2,136;}
+	else InInventory DocRobotSpeed_F,100{DrawImage"DOC_100S",2,136;}
+	else InInventory DocRobotSpeed_F,95{DrawImage"DOC_095S",2,136;}
+	else InInventory DocRobotSpeed_F,90{DrawImage"DOC_090S",2,136;}
+	else{DrawImage"DOC_NULS",2,136;}
+	DrawString CMB_DOCNUM_FONT,Untranslated,"%",19,146,0,alignment(left);
+	DrawNumber 3,CMB_DOCNUM_FONT,Untranslated,DocRobotSpeed_F,alignment(right),19,146;
+
+	InInventory DocRobotJump_F,160{DrawImage"DOC_160J",2,164;}
+	else InInventory DocRobotJump_F,130{DrawImage"DOC_130J",2,164;}
+	else InInventory DocRobotJump_F,120{DrawImage"DOC_120J",2,164;}
+	else InInventory DocRobotJump_F,110{DrawImage"DOC_110J",2,164;}
+	else InInventory DocRobotJump_F,100{DrawImage"DOC_100J",2,164;}
+	else{DrawImage"DOC_NULJ",2,164;}
+	DrawString CMB_DOCNUM_FONT,Untranslated,"%",19,176,0,alignment(left);
+	DrawNumber 3,CMB_DOCNUM_FONT,Untranslated,DocRobotJump_F,alignment(right),19,176;
+}
+
+//MM4
+IsSelected FlashStopperBoss{DrawBar"BARAMM12","BAREMPTY",Ammo1,vertical,16,8;
+	DrawBar"BARAMM18","BAREMPTY",Ammo2,vertical,8,8;}
+IsSelected RainFlushBoss{Drawbar"BARAMM19","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected DrillBombBoss{Drawbar"BARAMM14","BAREMPTY",Ammo1,vertical,16,8;
+	DrawBar"BARAMMO1","BAREMPTY",DigLimit,vertical,8,8;}
+IsSelected PharaohShotBoss{Drawbar"BARAMM20","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory WeaponCharge,78{DrawBar"BARFLS4","BAREMPTY",Ammo1,vertical,16,8;}
+	DrawBar"04_4_BAR","NOBAR",PharaohHover,vertical,16,8;
+	InInventory PharaohHoverFlag,1{DrawImage"PHAFLS1",290,8;}}
+IsSelected RingBoomerangBoss{
+	InInventory HasRing,1{DrawImage"4E_A_BAR",6,16;}
+	else InInventory RingFlag,1{DrawImage"4E_B_BAR",6,16;}
+	else{DrawImage"4E_C_BAR",6,16;}
+	InInventory HasRing2,1{DrawImage"4E_A_BAR",6,36;}
+	else InInventory RingFlag2,1{DrawImage"4E_B_BAR",6,36;}
+	else{DrawImage"4E_C_BAR",6,36;}}
+WeaponAmmo CrushEmAmmo{DrawBar"DUSBAR","DUSEMPTY",Ammo1,vertical,16,8;}
+WeaponAmmo YouSunkMyAmmo{Drawbar"BARAMM10","BAREMPTY",Ammo1,vertical,16,8;
+	Drawbar"04_7_BAR","BAREMPTY",Ammo2,vertical,8,8;}
+IsSelected SkullBarrierBoss{DrawBar"BARAMMO1","BAREMPTY",Ammo1,vertical,16,8;
+	DrawBar"BARAMM21","BAREMPTY",Ammo2,vertical,8,8;
+	InInventory ShieldCheck,1{DrawBar"BARFLS5X","BAREMPTY",Ammo2,vertical,8,8;}
+	InInventory SkullRageFlag,1{DrawBar"4H_S_BAR","NOBAR",SkullRageFlag,vertical,16,8;}}
+
+//MM5
+IsSelected GravityHoldBoss{Drawbar"BARAMM18","BAREMPTY",Ammo1,vertical,16,8;
+	DrawBar"05_1_BAR","BAREMPTY",Ammo2,vertical,8,8;}
+IsSelected WaterWaveBoss{Drawbar"BARAMM10","BAREMPTY",Ammo1,vertical,16,8;
+	DrawImage"WAVEHOKB",1,16;
+	InInventory HookshotStamina,200{DrawNumber 3,CMBHRFONT,Orange,HookshotStamina,alignment(left),fillzeros,1,40;}
+	else{DrawNumber 3,CMBHRFONT,Red,HookshotStamina,alignment(left),fillzeros,1,40;}}
+IsSelected PowerStoneBoss{Drawbar"BARAMM22","BAREMPTY",StoneBossCharge,vertical,16,8;}
+IsSelected PowerStoneCoreBoss{Drawbar"BARAMM22","BAREMPTY",StoneCoreFlagX,vertical,16,8;}
+IsSelected GyroAttackBoss{Drawbar"BARAMMO4","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected StarCrashBoss{Drawbar"BARAMM23","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory ShieldCheck,1{DrawBar"BARFLS6","BAREMPTY",Ammo1,vertical,16,8;}}
+IsSelected ChargeKickBoss{Drawbar"BARAMM12","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected NapalmBombBoss{Drawbar"BARAMM24","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected CrystalEyeBoss{Drawbar"BARAMM25","BAREMPTY",CrystalEyeCharge,vertical,16,8;
+	InInventory CrystalEyeDelay,1{DrawBar"BARFLS1","NOBAR",CrystalEyeDelay,vertical,16,8;}}
+IsSelected DarkTankBoss{DrawBar"BARAMMO4","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected DarkSniperBoss{DrawBar"BARAMM51","BAREMPTY",Ammo1,vertical,16,8;}
+
+//MM6
+WeaponAmmo BowloramaAmmo{Drawbar"BARAMM15","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected CentaurFlashBoss{Drawbar"BARAMM26","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected FlameBlastBoss{Drawbar"BARAMM20","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected KnightCrushBoss{Drawbar"BARAMM27","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected PlantbarrierBoss{Drawbar"BARAMM28","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory ShieldCheck,1{DrawBar"BARFLS7","BAREMPTY",Ammo1,vertical,16,8;}}
+IsSelected SilverTomahawkBoss{Drawbar"BARAMM29","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected WindStormBoss{Drawbar"BARAMMO1","BAREMPTY",Ammo2,vertical,16,8;
+	Drawbar"06_7_BAR","BAREMPTY",Ammo1,vertical,8,8;}
+IsSelected YamatoSpearBoss{Drawbar"BARAMM30","BAREMPTY",Ammo1,vertical,16,8;}
+
+//MM7
+IsSelected FreezeCrackerBoss{Drawbar"BARAMM31","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory MrFreezeAltCharge,1{DrawBar"BARFLS1","NOBAR",MrFreezeAltCharge,vertical,16,8;}}
+IsSelected JunkShieldBoss{Drawbar"DUSBAR","DUSEMPTY",Ammo1,vertical,16,8;}
+//IsSelected DangerWrapBoss{Drawbar"BARAMM33","BAREMPTY",Ammo1,vertical,16,8;
+//	InInventory DangerFly,1{DrawBar"BARFLS1","NOBAR",DangerFly,vertical,16,8;}}
+IsSelected DangerWrapBoss{Drawbar"BARAMM33","BAREMPTY",Ammo1,vertical,16,8;
+	Drawbar"BAREMPTY","07_3_BAR",BurstBombStock,vertical,reverse,8,8;
+	InInventory DangerFly,1{DrawBar"BARFLS1","NOBAR",DangerFly,vertical,16,8;}}
+IsSelected ThunderBoltBoss{Drawbar"BARAMM34","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory IBeFlyin,1{DrawBar"7D_A_BAR","NOBAR",Ammo1,vertical,16,8;}}
+IsSelected WildCoilBoss{Drawbar"BARAMM35","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected SlashClawBoss{Drawbar"BARAMM36","BAREMPTY",Ammo1,vertical,16,8;
+	Drawbar"BARAMM57","BAREMPTY",Ammo2,vertical,8,8;}
+IsSelected NoiseCrushBoss{Drawbar"BARAMM37","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory NoiseCrushFlagB,1{DrawBar"BARFLS10","BAREMPTY",Ammo1,vertical,16,8;}}
+IsSelected ScorchWheelBoss{Drawbar"BARAMM38","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory TurboWheelCount,1{DrawBar"BARFLS1","NOBAR",TurboWheelCount,vertical,16,8;}
+	Drawbar"07_8_BAR","BAREMPTY",Ammo2,vertical,8,8;
+	InInventory TurboHonkDelay,1{DrawBar"7H_A_BAR","NOBAR",TurboHonkDelay,vertical,8,8;}}
+
+//MM8
+IsSelected TornadoHoldBoss{Drawbar"BARAMM40","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory TenguIsHovering,1{DrawImage"TENJETA",290,8;}}
+IsSelected AstroCrushBoss{Drawbar"BARAMM52","BAREMPTY",Ammo1,vertical,16,8;
+	Drawbar"BARAMM41","BAREMPTY",Ammo2,vertical,8,8;}
+IsSelected FlameSwordBoss{Drawbar"BARAMM42","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory SwordLegCramp,1{DrawImage"SWRDICON",286,8;}}
+WeaponAmmo YoGeekyAmmo{Drawbar"BARAMM43","BAREMPTY",Ammo1,vertical,16,8;}
+
+IsSelected HomingSniperBoss{
+	Drawbar"08_5_BAR","8E_E_BAR",Ammo1,vertical,4,8;
+	DrawImage"HSNCM0",18,12;
+	InInventory SearchTargetID4,1{
+		InInventory SearchTargetID4CD,1{DrawImage"HSNCJ0",18,12;}
+		Else{DrawImage"HSNCK0",18,12;}}
+	DrawImage"HSNCM0",18,28;
+	InInventory SearchTargetID3,1{
+		InInventory SearchTargetID3CD,1{DrawImage"HSNCJ0",18,28;}
+		Else{DrawImage"HSNCK0",18,28;}}
+	DrawImage"HSNCM0",18,44;
+	InInventory SearchTargetID2,1{
+		InInventory SearchTargetID2CD,1{DrawImage"HSNCJ0",18,44;}
+		Else{DrawImage"HSNCK0",18,44;}}
+	DrawImage"HSNCM0",18,60;
+	InInventory SearchTargetID1,1{
+		InInventory SearchTargetID1CD,1{DrawImage"HSNCJ0",18,60;}
+		Else{DrawImage"HSNCK0",18,60;}}
+	}
+IsSelected IceWaveBoss{DrawBar"BARAMM45","BAREMPTY",Ammo1,vertical,16,8;
+	DrawBar"8F_A_BAR","NOBAR",IceWaveHoldFlag,vertical,16,8;}
+IsSelected FlashBombBoss{Drawbar"BARAMM46","BAREMPTY",Ammo1,vertical,16,8;
+	Drawbar"08_7_BAR","BAREMPTY",Ammo2,vertical,8,8;
+	InInventory CuteBombFlag,1{DrawBar"8G_A_BAR","NOBAR",CuteBombFlag,vertical,8,8;}}
+IsSelected WaterBalloonBoss{DrawBar"8H_A_BAR","8H_Z_BAR",Ammo1,vertical,16,8;
+	DrawBar"8H_B_BAR","8H_Z_BAR",Ammo2,vertical,8,8;}
+IsSelected OriginalDuoBoss,OriginalDuoMeteorBoss{DrawBar"08_O_BAR","BAREMPTY",Ammo1,vertical,16,8;}
+InInventory EvilFistC,1{Drawbar"BARAMMO5","BAREMPTY",EvilRageAmmo,vertical,8,8;
+	InInventory GigaType,8{DrawImage"ASTROI",8,64;}
+	else InInventory GigaType,7{DrawImage"ICEWAVI",8,64;}
+	else InInventory GigaType,6{DrawImage"WATERBI",8,64;}
+	else InInventory GigaType,5{DrawImage"HSNIPERI",8,64;}
+	else InInventory GigaType,4{DrawImage"TCLAWI",8,64;}
+	else InInventory GigaType,3{DrawImage"TORNAHI",8,64;}
+	else InInventory GigaType,2{DrawImage"FLSHBOMI",8,64;}
+	else InInventory GigaType,1{DrawImage"FSWORDI",8,64;}
+	}
+
+//MM9
+IsSelected ConcreteShotBoss{Drawbar"BARAMM65","BAREMPTY",ConcreteChargeFlag,vertical,16,8;}
+IsSelected TornadoBlowBoss{Drawbar"BARAMM68","BAREMPTY",Ammo1,vertical,16,8;
+	Drawbar"BARAMM65","BAREMPTY",Ammo2,vertical,8,8;
+	InInventory TornadoHoverActive,1{DrawImage"TORNICON",290,8;}}
+WeaponAmmo SplashingAboutAmmo{DrawBar"BARAMM61","BAREMPTY",Ammo1,vertical,16,8;
+	DrawBar"09_3_BAR","BAREMPTY",Ammo2,vertical,8,8;
+	InInventory IsTreadingWater,1{DrawBar"9C_S_BAR","NOBAR",SplashDabbleAmmo,vertical,16,8;}
+	else InInventory not SplashDabbleAmmo,280{DrawBar"9C_R_BAR","NOBAR",SplashDabbleAmmo,vertical,16,8;}}
+IsSelected PlugBallBoss{DrawBar"BARAMM60","BAREMPTY",Ammo1,vertical,16,8;}
+WeaponAmmo OutragousGemsAmmo{
+	InInventory JewelSlot1,5{DrawImage"JEWJF",8,8;}
+	else InInventory JewelSlot1,4{DrawImage"JEWJE",8,8;}
+	else InInventory JewelSlot1,3{DrawImage"JEWJD",8,8;}
+	else InInventory JewelSlot1,2{DrawImage"JEWJC",8,8;}
+	else InInventory JewelSlot1,1{DrawImage"JEWJB",8,8;}
+	else {DrawImage"JEWJA",8,8;}
+	IsSelected JewelSatelliteBoss1{DrawImage"JEWJG",8,8;}
+
+	InInventory JewelSlot2,5{DrawImage"JEWJF",8,22;}
+	else InInventory JewelSlot2,4{DrawImage"JEWJE",8,22;}
+	else InInventory JewelSlot2,3{DrawImage"JEWJD",8,22;}
+	else InInventory JewelSlot2,2{DrawImage"JEWJC",8,22;}
+	else InInventory JewelSlot2,1{DrawImage"JEWJB",8,22;}
+	else {DrawImage"JEWJA",8,22;}
+	IsSelected JewelSatelliteBoss2{DrawImage"JEWJG",8,22;}
+
+	InInventory JewelSlot3,5{DrawImage"JEWJF",8,36;}
+	else InInventory JewelSlot3,4{DrawImage"JEWJE",8,36;}
+	else InInventory JewelSlot3,3{DrawImage"JEWJD",8,36;}
+	else InInventory JewelSlot3,2{DrawImage"JEWJC",8,36;}
+	else InInventory JewelSlot3,1{DrawImage"JEWJB",8,36;}
+	else {DrawImage"JEWJA",8,36;}
+	IsSelected JewelSatelliteBoss3{DrawImage"JEWJG",8,36;}
+
+	InInventory JewelSlot4,5{DrawImage"JEWJF",8,50;}
+	else InInventory JewelSlot4,4{DrawImage"JEWJE",8,50;}
+	else InInventory JewelSlot4,3{DrawImage"JEWJD",8,50;}
+	else InInventory JewelSlot4,2{DrawImage"JEWJC",8,50;}
+	else InInventory JewelSlot4,1{DrawImage"JEWJB",8,50;}
+	else {DrawImage"JEWJA",8,50;}
+	IsSelected JewelSatelliteBoss4{DrawImage"JEWJG",8,50;}
+}
+IsSelected MagmaBazookaBoss{Drawbar"BARAMM64","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected HornetChaserBoss{DrawBar"BARAMM67","BAREMPTY",Ammo1,vertical,16,8;
+	DrawBar"09_6_BAR","BAREMPTY",Ammo2,vertical,8,8;
+	InInventory HornetIsHovering,1{DrawImage"HORNJETA",290,8;}}
+IsSelected BlackHoleBombBoss,RainbowGalaxyBoss{Drawbar"GALBAR","BAREMPTY",Ammo1,vertical,16,8;
+	//InInventory BlackHoleFlag,1{DrawImage"HORNJETA",290,8;}
+	DrawImage "C_09H0X",20,0;}
+IsSelected RevolverBusterBoss{DrawBar"BARAMM10","BAREMPTY",FakemanDashCounter,vertical,16,8;
+	InInventory IAmTheLawAmmo,6{DrawImage"FSTOK6",0,28;}
+	else InInventory IAmTheLawAmmo,5{DrawImage"FSTOK5",0,28;}
+	else InInventory IAmTheLawAmmo,4{DrawImage"FSTOK4",0,28;}
+	else InInventory IAmTheLawAmmo,3{DrawImage"FSTOK3",0,28;}
+	else InInventory IAmTheLawAmmo,2{DrawImage"FSTOK2",0,28;}
+	else InInventory IAmTheLawAmmo,1{DrawImage"FSTOK1",0,28;}
+	else {DrawImage"FSTOK0",0,28;}
+	DrawImage"FAKELOOT",2,73;
+	DrawNumber 5,CMBHPFONT,Untranslated,PirateTreasureStack,alignment(left),12,74;
+}
+
+//MM10
+IsSelected TripleBladeBoss,TripleBladeBoss2{Drawbar"BAMMO100","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected WaterShieldBoss{Drawbar"BAMMO101","BAREMPTY",Ammo2,vertical,16,8;
+	DrawImage"HWATSHP0",22,73;
+	DrawImage"HWATSHP0",17,76;
+	DrawImage"HWATSHP0",14,81;
+	DrawImage"HWATSHP0",17,86;
+	DrawImage"HWATSHP0",22,89;
+	DrawImage"HWATSHP0",27,86;
+	DrawImage"HWATSHP0",30,81;
+	DrawImage"HWATSHP0",27,76;
+	InInventory PumpmanShieldFlag,1{
+		InInventory PumpNextRadius,1{DrawImage"WATARWH2",21,80;}
+		else{DrawImage"WATARWH1",21,80;}
+	}
+	InInventory PumpBubbleHP1,30{DrawImage"HWATSHP3",22,73;}
+	else InInventory PumpBubbleHP1,15{DrawImage"HWATSHP1",22,73;}
+	else InInventory PumpBubbleHP1,1{DrawImage"HWATSHP1",22,73;}
+	InInventory PumpBubbleHP2,30{DrawImage"HWATSHP3",17,76;}
+	else InInventory PumpBubbleHP2,15{DrawImage"HWATSHP1",17,76;}
+	else InInventory PumpBubbleHP2,1{DrawImage"HWATSHP1",17,76;}
+	InInventory PumpBubbleHP3,30{DrawImage"HWATSHP3",14,81;}
+	else InInventory PumpBubbleHP3,15{DrawImage"HWATSHP1",14,81;}
+	else InInventory PumpBubbleHP3,1{DrawImage"HWATSHP1",14,81;}
+	InInventory PumpBubbleHP4,30{DrawImage"HWATSHP3",17,86;}
+	else InInventory PumpBubbleHP4,15{DrawImage"HWATSHP1",17,86;}
+	else InInventory PumpBubbleHP4,1{DrawImage"HWATSHP1",17,86;}
+	InInventory PumpBubbleHP5,30{DrawImage"HWATSHP3",22,89;}
+	else InInventory PumpBubbleHP5,15{DrawImage"HWATSHP2",22,89;}
+	else InInventory PumpBubbleHP5,1{DrawImage"HWATSHP1",22,89;}
+	InInventory PumpBubbleHP6,30{DrawImage"HWATSHP3",27,86;}
+	else InInventory PumpBubbleHP6,15{DrawImage"HWATSHP2",27,86;}
+	else InInventory PumpBubbleHP6,1{DrawImage"HWATSHP1",27,86;}
+	InInventory PumpBubbleHP7,30{DrawImage"HWATSHP3",30,81;}
+	else InInventory PumpBubbleHP7,15{DrawImage"HWATSHP2",30,81;}
+	else InInventory PumpBubbleHP7,1{DrawImage"HWATSHP1",30,81;}
+	InInventory PumpBubbleHP8,30{DrawImage"HWATSHP3",27,76;}
+	else InInventory PumpBubbleHP8,15{DrawImage"HWATSHP2",27,76;}
+	else InInventory PumpBubbleHP8,1{DrawImage"HWATSHP1",27,76;}
+	}
+IsSelected CommandoBombBoss,CommandoMineBoss{DrawBar"10_3_BAR","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected ChillSpikeBoss{Drawbar"BAMMO103","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory ChillSlideAmmo,168{Drawbar"BARAMM31","BAREMPTY",Ammo2,vertical,8,8;}
+		else{Drawbar"WT_2_BAR","BAREMPTY",Ammo2,vertical,8,8;}
+	InInventory ChillShield,1{DrawBar"BARHEALT","BAREMPTY",ChillHealthFlag,vertical,24,8;
+		DrawNumber 5,"8BDMAFONT",Untranslated,ChillHealthFlag,alignment(left),31,31;
+		InInventory not ChillHealthFlag,10{DrawImage "STYSCBM_",36,31;}
+		DrawBar"10D_H_BR","10D_I_BR",ChillShield,vertical,24,49;
+		DrawNumber 5,"8BDMAFONT",Teal,ChillShield,alignment(left),31,38;}
+	else{DrawImage "C_10D0Y",20,0;}
+		InInventory Chill_ItemCoolD,1{DrawBar"10D_S_BR","NOBAR",Chill_ItemCoolD,vertical,16,8;}
+		InInventory Chill_ItemCharge,1{DrawBar"8G_A_BAR","NOBAR",Chill_ItemCharge,vertical,16,8;}
+	DrawBar"10D_R_BR","NOBAR",ChillShieldCooldown,vertical,24,8;}
+
+IsSelected WheelCutterBoss{Drawbar"BAMMO106","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory NitroBikeWallBoostAttack,8{DrawBar"BARFLS1","NOBAR",Ammo1,vertical,16,8;}}
+
+//MMB
+IsSelected LightningBoltBoss{Drawbar"BARAMM53","BAREMPTY",Ammo1,vertical,16,8;
+	DrawBar"DYNABAR","BAREMPTY",Ammo2,vertical,8,8;
+	InInventory not DynamoStaminaFlag,250{DrawBar"BA_R_BAR","NOBAR",DynamoStaminaFlag,vertical,16,8;}}
+IsSelected IceWallBoss{Drawbar"BARAMM54","BAREMPTY",Ammo1,vertical,16,8;
+	Drawbar"COLDBAR","BAREMPTY",Ammo2,vertical,8,8;}
+IsSelected SpreadDrillBoss{DrawBar"BARAMM55","BAREMPTY",Ammo1,vertical,16,8;
+	Drawbar"0B_C_BAR","BAREMPTY",Ammo2,vertical,8,8;}
+IsSelected RemoteMineBoss{Drawbar"0B_D_BAR","BAREMPTY",Ammo1,vertical,16,8;
+	Drawbar"BARAMMO1","BAREMPTY",Ammo2,vertical,8,8;
+	//DrawString SMALLFONT,WhiteOutLine,"BOOTY:",2,74,0,alignment(left);
+	DrawImage"PIRABOTY",2,74;
+	DrawNumber 5,CMBHPFONT,Untranslated,PirateTreasureStack,alignment(left),12,74;//48
+}
+IsSelected WaveBurnerBoss{Drawbar"BARAMM57","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory BurnBabyBurnAmmo,84{Drawbar"BARAMX52","BAREMPTY",Ammo2,vertical,8,8;}
+	else {Drawbar"BARAMM52","BAREMPTY",Ammo2,vertical,8,8;}}
+WeaponAmmo SnortSnortAmmo{Drawbar"BARAMM58","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected KingAxeBoss,KingShieldBoss{Drawbar"0B_K_BAR","BAREMPTY",Ammo1,vertical,16,8;
+	Drawbar"BARAMM41","BAREMPTY",TheKingShieldFlag,vertical,8,8;
+	InInventory TheKingStamina,1{Drawbar"BK_A_BAR","NOBAR",TheKingStamina,vertical,8,8;}}
+
+//MMWT
+IsSelected MonkeyKingBoss{Drawbar"WT_A_BAR","BAREMPTY",ammo1,vertical,16,8;}
+IsSelected SandySandBoss{Drawbar"WT_B_BAR","BAREMPTY",ammo1,vertical,16,8;
+	Drawbar"WT_2_BAR","BAREMPTY",ammo2,vertical,8,8;
+	InInventory MWSShieldCharge,1{DrawBar"BARFLS1","NOBAR",MWSShieldCharge,vertical,8,8;}}
+IsSelected PigsyBoss{DrawBar"WT_C_BAR","BAREMPTY",HyperStormHeat,vertical,16,8;
+DrawBar"WT_3_BAR","NOBAR",HyperStormCold,vertical,16,8;}
+IsSelected PiggyBoss{DrawBar"WT_C_BAR","BAREMPTY",HyperStormHeat,vertical,16,8;
+DrawBar"WT_3_BAR","NOBAR",HyperStormCold,vertical,16,8;}
+
+//MMK
+IsSelected MirrorBusterBoss{Drawbar"BARAMM49","BAREMPTY",Ammo1,vertical,16,8;
+	InInventory MirrorBusterFlag,1{DrawBar"BARFLS1","NOBAR",MirrorBusterFlag,vertical,16,8;}}
+IsSelected ScrewCrusherBoss,BounceCrusherBoss{Drawbar"BARAMM50","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected BalladeCrackerBoss{Drawbar"BAREMPTY","0K_3_BAR",BalladeMineFlag,vertical,reverse,16,8;
+	InInventory BalladeFocusFlag,1{DrawBar"KC_A_BAR","NOBAR",BalladeFocusFlag,vertical,16,8;}}
+IsSelected SakugarneBoss,QuintBusterBoss{Drawbar"BARAMM48","BAREMPTY",Ammo1,vertical,16,8;
+	DrawBar"0K_4_BAR","BAREMPTY",Ammo2,vertical,8,8;}
+IsSelected RaThorWrathBoss{DrawBar"0K_E_BAR","BAREMPTY",Ammo1,vertical,16,8;
+	DrawBar"0K_5_BAR","BAREMPTY",Ammo2,vertical,8,8;
+	InInventory RaThorSpawnGraphic,1{DrawImage"THORSINS",91,60;}
+	DrawImage"SOUCOUNT",2,73;
+	DrawNumber 5,CMBHPFONT,Untranslated,ThorSoulAmmo,alignment(left),12,74;
+	InInventory RaThorHoldFlag,1{DrawBar"BARFLS1","NOBAR",RaThorHoldFlag,vertical,16,8;}}
+
+//MMV
+IsSelected GrabBusterBoss{Drawbar"BARAMM19","BAREMPTY",Ammo1,vertical,16,8;
+	Drawbar"0V_1_BAR","BAREMPTY",Ammo2,vertical,8,8;
+	DrawImage"MERCLOOT",2,73;
+	DrawNumber 5,CMBHPFONT,Untranslated,PirateTreasureStack,alignment(left),12,74;}
+IsSelected BubbleBombBoss,BubbleBomberBoss{Drawbar"BAMMO_V2","BAREMPTY",Ammo1,vertical,16,8;
+	Drawbar"BARAMMO4","BAREMPTY",Ammo2,vertical,8,8;}
+IsSelected PhotonVulcanBoss,PhotonMissileBoss{DrawBar"0V_D_BAR","BAREMPTY",Ammo1,vertical,16,8;
+	Drawbar"0V_3_BAR","BAREMPTY",Ammo2,vertical,8,8;
+	InInventory MarsIsATank,1{DrawBar"VD_S_BAR","NOBAR",MarsTankFuel_F,vertical,16,8;}
+	else InInventory not MarsTankFuel_F,500{DrawBar"VD_R_BAR","NOBAR",MarsTankFuel_F,vertical,16,8;}}
+IsSelected ElectricShockBoss{Drawbar"0V_E_BAR","BAREMPTY",Ammo1,vertical,16,8;
+	DrawBar"BARFLS1","NOBAR",JupiterCharge,vertical,16,8;}
+IsSelected DeepDiggerBoss{Drawbar"0V_6_BAR","BAREMPTY",Ammo1,vertical,16,8;
+	Drawbar"0V_G_BAR","0V_G2BAR",Ammo2,vertical,8,8;
+	Drawbar"VG_A_BAR","NOBAR",UranusAnger,vertical,8,8;
+	InInventory UranusCarrying,1{DrawImage"URANGORE",3,73;}}
+IsSelected BreakDashBoss{Drawbar"0V_7_BAR","BAREMPTY",Ammo1,vertical,16,8;
+	Drawbar"0V_H_BAR","0V_H2BAR",Ammo2,vertical,8,8;
+	InInventory BreakingIntoADashAmmo,784{Drawbar"VH_S_BAR","NOBAR",Ammo2,vertical,8,8;}}
+IsSelected SaltWaterBoss{Drawbar"0V_8_BAR","BAREMPTY",Ammo1,vertical,16,8;
+	Drawbar"0V_I_BAR","BAREMPTY",Ammo2,vertical,8,8;}
+
+//Inventory
+
+InInventory DiveBossLockon{DrawImage"DIVLOCN",150,8;}
+InInventory PowerDiveSonarLockon{DrawImage"DIVLOCN",150,8;}
+InInventory ChargeManLink,1{DrawImage"CHRGM_R3",235,2;}
+InInventory ChargeWildRideFlag,1{DrawImage"CHRGM_R4",235,2;}
+InInventory HomingLockedVision,1{DrawImage"HomVisA",0,0;}
+InInventory PowerSplashSinewyEtude,1||PowerSplashSinewyEtudeX{DrawImage"SPLWBUF1",302,79;}
+InInventory PowerSplashMightyMarch,1||PowerSplashMightyMarchX{DrawImage"SPLWBUF2",302,98;}
+InInventory PowerSplashSwiftSong,1||PowerSplashSwiftSongX{DrawImage"SPLWBUF3",300,116;}
+InInventory PlugmanRageFlag,1{DrawImage"PLUGBUFF",249,3;}
+InInventory DynamoTagged{DrawImage"DYNATAG",174,2;}
+InInventory VenusBlastJumpFlag,1{DrawImage"VENJUMP1",301,64;}
+
+//InInventory FloodMyHudTest_F,1{DrawImage"TESTHUDX",0,30;}
+
+InInventory MegamanUpgradeFlag,1{DrawImage"MEGAUPGD",24,72;}
+InInventory RockmanUpgradeFlag,1{DrawImage"ROCKUPGD",24,72;}
+InInventory ProtomanUpgradeFlag,1{DrawImage"PROTUPGD",24,72;}
+InInventory BassUpgradeFlag,1{DrawImage"BASSUPGD",24,72;}
+InInventory DuoUpgradeFlag,1{DrawImage"DUOUPGD",24,72;}
+InInventory DocUpgradeFlag,1{DrawImage"DOCUPGD",24,72;}
+
+//InInventory TrioExodiaFlag,1{DrawImage"ERO9T0",302,16;}
+InInventory TrioExodiaFlag,1{DrawImage"EXODIA_7",291,16;}
+	else{InInventory TrioExodiaFlag1,1{DrawImage"EXODIA_1",291,16;}
+		InInventory TrioExodiaFlag2,1{DrawImage"EXODIA_2",291,16;}
+		InInventory TrioExodiaFlag3,1{DrawImage"EXODIA_3",291,16;}
+		InInventory TrioExodiaFlag4,1{DrawImage"EXODIA_4",291,16;}
+		InInventory TrioExodiaFlag5,1{DrawImage"EXODIA_5",291,16;}
+		InInventory TrioExodiaFlag6,1{DrawImage"EXODIA_6",291,16;}
+}
+InInventory RaThorSinistarFlag,1{DrawImage"SINTHOR0",298,42;}
+	else{InInventory RaThorSinistarFlag1,1{DrawImage"SINTHOR1",296,40;}
+		InInventory RaThorSinistarFlag2,1{DrawImage"SINTHOR2",296,40;}
+		InInventory RaThorSinistarFlag3,1{DrawImage"SINTHOR3",296,40;}
+		InInventory RaThorSinistarFlag4,1{DrawImage"SINTHOR4",296,40;}
+		InInventory RaThorSinistarFlag5,1{DrawImage"SINTHOR5",296,40;}
+		InInventory RaThorSinistarFlag6,1{DrawImage"SINTHOR6",296,40;}
+}
+
+//Classes end
+
+}
+}
+
+mugshot "Normal"{{ST00} -1;}
+mugshot "Pain"{{ST00} -1;}
+mugshot "Ouch"{{ST00} -1;}
+mugshot "Rampage"{{ST00} -1;}
+mugshot "Grin"{{ST00} -1;}
+mugshot "Death"{{ST00} -1;}
+mugshot "XDeath"{{ST00} -1;}
+mugshot "God"{{ST00} -1;}
+mugshot "GodAnimated"{{ST00} -1;}

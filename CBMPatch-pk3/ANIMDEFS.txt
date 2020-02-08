@@ -1,0 +1,4 @@
+//Airman
+texture AIRICON0
+	pic AIRICON1 tics 5
+	pic AIRICON2 tics 5

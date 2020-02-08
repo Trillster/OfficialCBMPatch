@@ -1,0 +1,27 @@
+#library "ETANK"
+#include "zcommon.acs"
+
+Script "CBM_ETankHeal" (int HealAmount, int ScaledHealth)
+{
+int Ratio;
+int MaxHealth = GetActorProperty(0,APROP_SPAWNHEALTH);
+if(MaxHealth==0){MaxHealth=100;}
+
+if(ScaledHealth==0 || GetCVAR("YD_NoHealingScale")){Ratio = 1;}
+else{Ratio = MaxHealth/100;}
+int TrueAmount = (HealAmount * Ratio);
+
+if(ACS_ExecuteWithResult(975,0)!=2 && ACS_ExecuteWithResult(975,2)!=2)
+{
+HealThing(TrueAmount,MaxHealth); 
+terminate;
+}
+
+while(TrueAmount > 0 && GetActorProperty(0,APROP_Health)<MaxHealth && GetActorProperty(0,APROP_Health)>0 && PlayerInGame(PlayerNumber()))
+    {
+	PlaySound(0,"item/mm4heal",CHAN_ITEM,0.5);
+	HealThing(1,MaxHealth);
+	TrueAmount -= 1;
+	Delay(5);
+    }
+}

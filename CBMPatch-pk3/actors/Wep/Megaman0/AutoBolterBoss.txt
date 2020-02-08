@@ -1,0 +1,1141 @@
+actor AutoBolterBoss : BaseMM8BDMWep_CBM
+{
+tag "$TAGC_0G"
+dropitem "AutoWepDroppedX"
+Weapon.AmmoUse 0
+Weapon.AmmoGive 0
+Obituary "$OB_AUTOFIREWORK"
+Inventory.Pickupmessage "You got the Auto Arm... wait where did you-"
+weapon.ammotype "AutoIsRightAmmo"
+weapon.ammotype2 "ScrewYouBuySomeAmmo"
+inventory.icon "AutoIco1"
+States
+{
+Spawn:
+C_00 G 1
+loop
+Ready:
+0G_H A 0 ACS_ExecuteAlways(998,0,DYE_AUTO)
+0G_H A 0 A_GunFlash("Flash.Ammo")
+Ready7:
+0G_H A 1 A_WeaponReady
+wait
+
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+0G_H A 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+0G_H A 1 A_Raise
+Loop
+
+Fire:
+0G_H A 0 A_GiveInventory("VivifyDelay5",1)
+0G_H A 0 A_Refire(1)
+0G_H A 0 A_PlaySoundEx("weapon/AutoFirework","Weapon")
+0G_H A 0 A_GiveInventory("AutoMain0_CI",1)
+0G_H B 2 Offset(4,28)
+0G_H C 2 Offset(8,24)
+0G_H B 2 Offset(4,28)
+0G_H A 10 A_WeaponReady(14)
+0G_H D 10 A_PlaySound("weapon/AutoReload1",4,1.0)
+0G_H D 0 A_PlaySound("weapon/AutoReload2",1,0.85)
+0G_H D 2 Offset(-6,44)
+0G_H D 2 Offset(-6,44)
+0G_H D 6 A_WeaponReady(14)
+0G_H A 8 A_PlaySound("weapon/AutoReload3",1,0.85)
+goto Ready7
+
+Altfire:
+0G_H A 0 A_GiveInventory("AutoThumbFlag",1)
+0G_H A 0 A_Refire(1)
+0G_H A 2 Offset(-20,72)
+0G_H A 2 Offset(-40,112)
+0G_H A 0 A_Refire(1)
+0G_H T 2 Offset(30,102)A_PlaySoundEx("weapon/RockThumbsUp","Weapon")
+0G_H T 0 A_Refire(1)
+0G_H T 2 Offset(15,67)
+0G_H T 0 A_Refire(1)
+0G_H T 2 Offset(1,31)
+goto AltfireH
+AltfireH:
+0G_H T 1 Offset(1,31)A_RailWait
+0G_H T 0 A_Refire("AltfireH")
+goto AltfireEnd
+AltfireEnd:
+0G_H T 2 Offset(15,67)
+0G_H T 2 Offset(30,102)A_TakeInventory("AutoThumbFlag",9)
+0G_H A 2 Offset(-40,112)
+0G_H A 2 Offset(-20,72)
+goto Ready7
+/*
+Altfire2:
+0G_H D 2 Offset(14,47)A_GiveInventory("AutoScrewFire_P",1)
+0G_H C 2 Offset(7,41)
+0G_H B 2 Offset(3,36)
+0G_H A 2 A_WeaponReady(14)
+goto Ready7
+*/
+Flash.Ammo:
+TNT1 A 1 A_JumpIfInventory("IsDead",1,"NoFlash")
+TNT1 A 0 A_GiveInventory("AutoAmmoRegenDelay_P",1)
+loop
+}
+}
+
+actor AutoShopperBoss : AutoBolterBoss
+{
+tag "$TAGC_0G2"
+Obituary "$OB_AUTOSHOPPER"
+inventory.icon "AutoIco2"
+States
+{
+Ready:
+0G_H E 0 ACS_ExecuteAlways(998,0,DYE_AUTO)
+0G_H E 0 A_GiveInventory("AutoHudCvar_P",1)
+0G_H E 0 A_GunFlash("Flash.Idle")
+ReadyAuto:
+0G_H E 0 A_JumpIfInventory("AutoAltHudFlag",1,"Ready0a")
+goto Ready0
+
+Ready0:
+//0G_G A 0 A_JumpIfInventory("AutoItemTypeFlag",8,"Ready8")
+0G_G A 0 A_JumpIfInventory("AutoItemTypeFlag",7,"Ready8")
+0G_G A 0 A_JumpIfInventory("AutoItemTypeFlag",6,"Ready7")
+0G_G A 0 A_JumpIfInventory("AutoItemTypeFlag",5,"Ready5")
+0G_G A 0 A_JumpIfInventory("AutoItemTypeFlag",4,"Ready4")
+0G_G A 0 A_JumpIfInventory("AutoItemTypeFlag",3,"Ready3")
+0G_G A 0 A_JumpIfInventory("AutoItemTypeFlag",2,"Ready2")
+0G_G A 0 A_JumpIfInventory("AutoItemTypeFlag",1,"Ready1")
+Ready1:
+0G_G A 0 A_JumpIfInventory("ScrewYouBuySomeAmmo",130,2)
+0G_G A 1 A_WeaponReady(4)
+loop
+0G_G A 1 A_WeaponReady
+wait
+Ready2:
+0G_G B 0 A_JumpIfInventory("AutoIsRightAmmo",42,2)
+0G_G B 1 A_WeaponReady(4)
+loop
+0G_G B 1 A_WeaponReady
+wait
+Ready3:
+0G_G C 0 A_JumpIfInventory("ScrewYouBuySomeAmmo",30,2)
+0G_G C 1 A_WeaponReady(4)
+loop
+0G_G C 1 A_WeaponReady
+wait
+Ready4:
+0G_G D 0 A_JumpIfInventory("ScrewYouBuySomeAmmo",50,2)
+0G_G D 1 A_WeaponReady(4)
+loop
+0G_G D 1 A_WeaponReady
+wait
+Ready5:
+0G_G E 0 A_JumpIfInventory("ScrewYouBuySomeAmmo",70,2)
+0G_G E 1 A_WeaponReady(4)
+loop
+0G_G E 1 A_WeaponReady
+wait
+Ready6:
+0G_G F 0 A_JumpIfInventory("ScrewYouBuySomeAmmo",90,2)
+0G_G F 1 A_WeaponReady(4)
+loop
+0G_G F 1 A_WeaponReady
+wait
+Ready7:
+0G_G G 0 A_JumpIfInventory("AutoIsRightAmmo",42,2)
+0G_G G 1 A_WeaponReady(4)
+loop
+0G_G G 1 A_WeaponReady
+wait
+Ready8:
+0G_G H 0 A_JumpIfInventory("ScrewYouBuySomeAmmo",100,2)
+0G_G H 1 A_WeaponReady(4)
+loop
+0G_G H 1 A_WeaponReady
+wait
+
+Ready0a:
+//0G_G A 0 A_JumpIfInventory("AutoItemTypeFlag",8,"Ready8a")
+0G_G A 0 A_JumpIfInventory("AutoItemTypeFlag",7,"Ready8a")
+0G_G A 0 A_JumpIfInventory("AutoItemTypeFlag",6,"Ready7a")
+0G_G A 0 A_JumpIfInventory("AutoItemTypeFlag",5,"Ready5a")
+0G_G A 0 A_JumpIfInventory("AutoItemTypeFlag",4,"Ready4a")
+0G_G A 0 A_JumpIfInventory("AutoItemTypeFlag",3,"Ready3a")
+0G_G A 0 A_JumpIfInventory("AutoItemTypeFlag",2,"Ready2a")
+0G_G A 0 A_JumpIfInventory("AutoItemTypeFlag",1,"Ready1a")
+Ready1a:
+0G_F A 0 A_JumpIfInventory("ScrewYouBuySomeAmmo",130,2)
+0G_F A 1 A_WeaponReady(4)
+loop
+0G_F A 1 A_WeaponReady
+wait
+Ready2a:
+0G_F B 0 A_JumpIfInventory("AutoIsRightAmmo",42,2)
+0G_F B 1 A_WeaponReady(4)
+loop
+0G_F B 1 A_WeaponReady
+wait
+Ready3a:
+0G_F C 0 A_JumpIfInventory("ScrewYouBuySomeAmmo",30,2)
+0G_F C 1 A_WeaponReady(4)
+loop
+0G_F C 1 A_WeaponReady
+wait
+Ready4a:
+0G_F D 0 A_JumpIfInventory("ScrewYouBuySomeAmmo",50,2)
+0G_F D 1 A_WeaponReady(4)
+loop
+0G_F D 1 A_WeaponReady
+wait
+Ready5a:
+0G_F E 0 A_JumpIfInventory("ScrewYouBuySomeAmmo",70,2)
+0G_F E 1 A_WeaponReady(4)
+loop
+0G_F E 1 A_WeaponReady
+wait
+Ready6a:
+0G_F F 0 A_JumpIfInventory("ScrewYouBuySomeAmmo",90,2)
+0G_F F 1 A_WeaponReady(4)
+loop
+0G_F F 1 A_WeaponReady
+wait
+Ready7a:
+0G_F G 0 A_JumpIfInventory("AutoIsRightAmmo",42,2)
+0G_F G 1 A_WeaponReady(4)
+loop
+0G_F G 1 A_WeaponReady
+wait
+Ready8a:
+0G_F H 0 A_JumpIfInventory("ScrewYouBuySomeAmmo",100,2)
+0G_F H 1 A_WeaponReady(4)
+loop
+0G_F H 1 A_WeaponReady
+wait
+
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+0G_H E 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+0G_H E 1 A_Raise
+Loop
+
+Flash.Idle:
+0G_H E 0 A_JumpIfInventory("AutoIsCreating",1,"Flash.Create")
+0G_H E 1 A_JumpIfInventory("IsDead",1,"NoFlash")
+0G_H E 0 A_GiveInventory("AutoAmmoRegenDelay_P",1)
+loop
+
+Flash.Create:
+TNT1 A 1 A_JumpIfInventory("IsDead",1,"NoFlash")
+TNT1 A 0 A_GiveInventory("AutoCreationFlag_RC",1)
+TNT1 A 0 A_GiveInventory("AutoAmmoRegenDelay_P",1)
+TNT1 A 0 A_JumpIfInventory("AutoIsCreating",1,"Flash.Create")
+goto Flash.Idle
+
+Flash.Tada:
+0G_G VVVWWWXXX 1 A_JumpIfInventory("IsDead",1,"NoFlash")
+goto Flash.TadaWait
+Flash.TadaWait:
+TNT1 A 0 A_JumpIfInventory("IsDead",1,"NoFlash")
+TNT1 A 1 A_GiveInventory("AutoAmmoRegenDelay_P",1)
+TNT1 A 0 A_JumpIfInventory("AutoIsCreating",1,"Flash.TadaWait")
+goto Flash.Idle
+
+
+Fire:
+//0G_H Q 0 A_JumpIfInventory("AutoItemTypeFlag",8,"FireCheck8")
+0G_H Q 0 A_JumpIfInventory("AutoItemTypeFlag",7,"FireCheck8")
+0G_H Q 0 A_JumpIfInventory("AutoItemTypeFlag",6,"FireCheck7")
+0G_H Q 0 A_JumpIfInventory("AutoItemTypeFlag",5,"FireCheck5")
+0G_H Q 0 A_JumpIfInventory("AutoItemTypeFlag",4,"FireCheck4")
+0G_H Q 0 A_JumpIfInventory("AutoItemTypeFlag",3,"FireCheck3")
+0G_H Q 0 A_JumpIfInventory("AutoItemTypeFlag",2,"FireCheck2")
+0G_H Q 0 A_JumpIfInventory("AutoItemTypeFlag",1,"FireCheck1")
+0G_H Q 0
+goto Ready0
+FireCheck1:
+0G_H Q 0 A_JumpIfInventory("ScrewYouBuySomeAmmo",130,"FireL")
+goto Ready0
+FireCheck2:
+0G_H Q 0 A_JumpIfInventory("AutoIsRightAmmo",42,"FireL")
+goto Ready0
+FireCheck3:
+0G_H Q 0 A_JumpIfInventory("ScrewYouBuySomeAmmo",30,"FireL")
+goto Ready0
+FireCheck4:
+0G_H Q 0 A_JumpIfInventory("ScrewYouBuySomeAmmo",50,"FireL")
+goto Ready0
+FireCheck5:
+0G_H Q 0 A_JumpIfInventory("ScrewYouBuySomeAmmo",70,"FireL")
+goto Ready0
+FireCheck6:
+0G_H Q 0 A_JumpIfInventory("ScrewYouBuySomeAmmo",90,"FireL")
+goto Ready0
+FireCheck7:
+0G_H Q 0 A_JumpIfInventory("AutoIsRightAmmo",42,"FireL")
+goto Ready0
+FireCheck8:
+0G_H Q 0 A_JumpIfInventory("ScrewYouBuySomeAmmo",100,"FireL")
+goto Ready0
+
+FireL:
+0G_H Q 0 A_GiveInventory("AutoIsCreating",1)
+0G_H Q 0 A_TakeInventory("AutoCreateSndDelay",99)
+0G_H Q 0 A_Refire(1)
+FireL0:
+0G_H O 1 A_GiveInventory("AutoCreateSnd_P",1)
+0G_H Q 0 A_Refire(1)
+goto FireEnd
+0G_G O 0 A_Jump(256,"FireL1","FireL2","FireL3","FireL4")
+FireL1:
+0G_H P 0 A_JumpIfInventory("IsDead",1,"NoFlash")
+0G_H P 1 A_GiveInventory("AutoCreateSnd_P",1)
+0G_H P 0 A_Refire("FireL0")
+goto FireEnd
+FireL2:
+0G_H Q 0 A_JumpIfInventory("IsDead",1,"NoFlash")
+0G_H Q 1 A_GiveInventory("AutoCreateSnd_P",1)
+0G_H Q 0 A_Refire("FireL0")
+goto FireEnd
+FireL3:
+0G_H R 0 A_JumpIfInventory("IsDead",1,"NoFlash")
+0G_H R 1 A_GiveInventory("AutoCreateSnd_P",1)
+0G_H R 0 A_Refire("FireL0")
+goto FireEnd
+FireL4:
+0G_H S 0 A_JumpIfInventory("IsDead",1,"NoFlash")
+0G_H S 1 A_GiveInventory("AutoCreateSnd_P",1)
+0G_H S 0 A_Refire("FireL0")
+goto FireEnd
+
+FireEnd:
+0G_H E 0 A_JumpIfInventory("AutoCreationFlag",56,"FireCreate")
+0G_H E 0 A_StopSound(1)
+0G_H E 0 A_JumpIfInventory("AutoAltHudFlag",1,"FireEnda")
+0G_G O 2 A_TakeInventory("AutoIsCreating",9)
+0G_G P 2 A_TakeInventory("AutoCreationFlag",99)
+goto Ready0
+FireEnda:
+0G_F O 2 A_TakeInventory("AutoIsCreating",9)
+0G_F P 2 A_TakeInventory("AutoCreationFlag",99)
+goto Ready0a
+
+FireCreate:
+0G_I O 0 A_GunFlash("Flash.Tada")
+0G_I O 0 A_StopSound(1)
+0G_I O 0 A_PlaySoundEx("weapon/AutoTada","SoundSlot6")
+//0G_I O 0 A_JumpIfInventory("AutoItemTypeFlag",8,"FireCreate8")
+0G_I O 0 A_JumpIfInventory("AutoItemTypeFlag",7,"FireCreate8")
+0G_I O 0 A_JumpIfInventory("AutoItemTypeFlag",6,"FireCreate7")
+0G_I O 0 A_JumpIfInventory("AutoItemTypeFlag",5,"FireCreate5")
+0G_I O 0 A_JumpIfInventory("AutoItemTypeFlag",4,"FireCreate4")
+0G_I O 0 A_JumpIfInventory("AutoItemTypeFlag",3,"FireCreate3")
+0G_I O 0 A_JumpIfInventory("AutoItemTypeFlag",2,"FireCreate2")
+0G_I O 0 A_JumpIfInventory("AutoItemTypeFlag",1,"FireCreate1")
+0G_I O 0
+goto FireCreateEnd
+FireCreate1:
+0G_I A 0
+goto FireCreateEnd
+FireCreate2:
+0G_I B 0
+goto FireCreateEnd
+FireCreate3:
+0G_I C 0
+goto FireCreateEnd
+FireCreate4:
+0G_I D 0
+goto FireCreateEnd
+FireCreate5:
+0G_I E 0
+goto FireCreateEnd
+FireCreate6:
+0G_I F 0
+goto FireCreateEnd
+FireCreate7:
+0G_I G 0
+goto FireCreateEnd
+FireCreate8:
+0G_I H 0
+goto FireCreateEnd
+
+FireCreateEnd:
+0G_I "#" 0 A_GiveInventory("VivifyDelay6",1)
+0G_I "#" 2 A_GiveInventory("AutoCreatesItem_P",1)
+0G_I "#" 2 A_TakeInventory("AutoCreationFlag",99)
+0G_I "#" 16
+0G_I "#" 0 A_TakeInventory("AutoIsCreating",9)
+goto ReadyAuto
+
+Altfire:
+"####" "#" 0 A_PlaySoundEx("S3_K/Beep","Weapon")
+"####" "#" 0 //A_GiveInventory("AutoAmmoRegenDelay",3)
+"####" "#" 0 A_GiveInventory("AutoItemTypeFlag_P",1)
+"####" "#" 0 A_Jump(256,"AltK_1","AltL_1","AltM_1","AltN_1")
+AltK_1:
+"####" K 1
+"####" K 0 A_Jump(256,"AltL_2","AltM_2","AltN_2")
+goto AltK_2
+AltL_1:
+"####" L 1
+"####" L 0 A_Jump(256,"AltK_2","AltM_2","AltN_2")
+goto AltL_2
+AltM_1:
+"####" M 1
+"####" M 0 A_Jump(256,"AltK_2","AltL_2","AltN_2")
+goto AltM_2
+AltN_1:
+"####" N 1
+"####" N 0 A_Jump(256,"AltK_2","AltL_2","AltM_2")
+goto AltN_2
+
+AltK_2:
+"####" K 1
+"####" K 0 A_Jump(256,"AltL_3","AltM_3","AltN_3")
+goto AltK_3
+AltL_2:
+"####" L 1
+"####" L 0 A_Jump(256,"AltK_3","AltM_3","AltN_3")
+goto AltL_3
+AltM_2:
+"####" M 1
+"####" M 0 A_Jump(256,"AltK_3","AltL_3","AltN_3")
+goto AltM_3
+AltN_2:
+"####" N 1
+"####" N 0 A_Jump(256,"AltK_3","AltL_3","AltM_3")
+goto AltN_3
+
+AltK_3:
+"####" K 1
+"####" K 0 A_Jump(256,"AltL_4","AltM_4","AltN_4")
+goto AltK_4
+AltL_3:
+"####" L 1
+"####" L 0 A_Jump(256,"AltK_4","AltM_4","AltN_4")
+goto AltL_4
+AltM_3:
+"####" M 1
+"####" M 0 A_Jump(256,"AltK_4","AltL_4","AltN_4")
+goto AltM_4
+AltN_3:
+"####" N 1
+"####" N 0 A_Jump(256,"AltK_4","AltL_4","AltM_4")
+goto AltN_4
+
+AltK_4:
+"####" K 1
+"####" K 0 A_Jump(256,"AltL_5","AltM_5","AltN_5")
+goto AltK_5
+AltL_4:
+"####" L 1
+"####" L 0 A_Jump(256,"AltK_5","AltM_5","AltN_5")
+goto AltL_5
+AltM_4:
+"####" M 1
+"####" M 0 A_Jump(256,"AltK_5","AltL_5","AltN_5")
+goto AltM_5
+AltN_4:
+"####" N 1
+"####" N 0 A_Jump(256,"AltK_5","AltL_5","AltM_5")
+goto AltN_5
+
+AltK_5:
+"####" K 1
+"####" K 0 A_Jump(256,"AltL_6","AltM_6","AltN_6")
+goto AltK_6
+AltL_5:
+"####" L 1
+"####" L 0 A_Jump(256,"AltK_6","AltM_6","AltN_6")
+goto AltL_6
+AltM_5:
+"####" M 1
+"####" M 0 A_Jump(256,"AltK_6","AltL_6","AltN_6")
+goto AltM_6
+AltN_5:
+"####" N 1
+"####" N 0 A_Jump(256,"AltK_6","AltL_6","AltM_6")
+goto AltN_6
+
+AltK_6:
+"####" K 1
+goto ReadyAuto
+AltL_6:
+"####" L 1
+goto ReadyAuto
+AltM_6:
+"####" M 1
+goto ReadyAuto
+AltN_6:
+"####" N 1
+goto ReadyAuto
+
+
+}
+}
+
+actor AutoMetBolterBoss : AutoBolterBoss
+{
+weapon.preferredskin "Auto-Met"
++WEAPON.CHEATNOTWEAPON
+}
+actor AutoMetShopperBoss : AutoShopperBoss
+{
+weapon.preferredskin "Auto-Met"
++WEAPON.CHEATNOTWEAPON
+States
+{
+Select:
+0G_H E 0 A_JumpIfInventory("AutoEquippedHisHelmet",1,"SelectX")
+0G_H E 0 A_GiveInventory("AutoEquippedHisHelmet",1)
+0G_H E 0 A_GiveInventory("AutoItemTypeFlag",1)
+0G_H E 0 A_TakeInventory("AutoBolterBoss",1)
+0G_H E 0 A_TakeInventory("AutoShopperBoss",1)
+goto SelectX
+SelectX:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+0G_H E 1 A_Lower
+Loop
+}
+}
+
+actor AutoIsRightAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 84
++INVENTORY.IGNORESKILL
+}
+actor ScrewYouBuySomeAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 200
++INVENTORY.IGNORESKILL
+}
+
+actor AutoAmmoRegenDelay : Inventory
+{
+inventory.amount 1
+inventory.maxamount 105
+}
+actor PowerAutoAmmoRegen : Powerup
+{
+Powerup.Duration 8
+}
+
+actor AutoFlag : OnceC{}
+actor AutoThumbFlag : OnceC{}
+
+actor AutoEyebrowFlag : Inventory
+{
+inventory.amount 1
+inventory.maxamount 6
+}
+
+actor AutoEquippedHisHelmet : OnceC{}
+
+actor AutoAltHudFlag : OnceC{}
+
+actor AutoFireworkStacker : Inventory
+{
+inventory.amount 1
+inventory.maxamount 50
+}
+
+actor AutoItemTypeFlag : Inventory
+{
+inventory.amount 1
+inventory.maxamount 7
+}
+
+actor AutoIsCreating : OnceC{}
+actor AutoCreationFlag : Inventory
+{
+inventory.amount 1
+inventory.maxamount 56
+}
+
+actor AutoCreateSndDelay : Powerup
+{
+Powerup.Duration 74
+}
+
+actor AutoHudCvar_P : CustomInventory
+{
+States
+{
+Pickup:
+TNT1 A 0 A_JumpIf(CallACS("cbm_AutoAltHud"),"Pickup1")
+goto Pickup0
+Pickup0:
+TNT1 A 0 A_TakeInventory("AutoAltHudFlag",99)
+stop
+Pickup1:
+TNT1 A 0 A_GiveInventory("AutoAltHudFlag",1)
+stop
+}
+}
+
+actor AutoCreationFlag_RC : CustomInventory
+{
+States
+{
+Pickup:
+TNT1 A 0 A_JumpIfInventory("PowerRage_ST",1,"PickupR")
+TNT1 A 0 A_GiveInventory("AutoCreationFlag",1)
+stop
+PickupR:
+TNT1 A 0 A_GiveInventory("AutoCreationFlag",2)
+stop
+}
+}
+
+actor AutoCreateSnd_P : CustomInventory
+{
+States
+{
+Pickup:
+TNT1 A 0 A_JumpIfInventory("AutoCreateSndDelay",1,"No")
+TNT1 A 0 A_PlaySoundEx("weapon/AutoCreate","Weapon")
+TNT1 A 0 A_GiveInventory("AutoCreateSndDelay",1)
+stop
+No:
+TNT1 A 0
+stop
+}
+}
+
+actor AutoAmmoRegenDelay_P : CustomInventory
+{
+States
+{
+Pickup:
+TNT1 A 0 A_JumpIfInventory("AutoAmmoRegenDelay",100,"Give")
+TNT1 A 0 A_JumpIfInventory("PowerRage_ST",1,"PickupR")
+TNT1 A 0 A_GiveInventory("AutoAmmoRegenDelay",1)
+stop
+PickupR:
+TNT1 A 0 A_GiveInventory("AutoAmmoRegenDelay",2)
+stop
+Give:
+TNT1 A 0 A_GiveInventory("ScrewYouBuySomeAmmo",10)
+TNT1 A 0 A_GiveInventory("PowerAutoAmmoRegen",1)
+TNT1 A 0 A_TakeInventory("AutoAmmoRegenDelay",105)
+stop
+}
+}
+
+
+actor AutoItemTypeFlag_P : CustomInventory
+{
+States
+{
+Pickup:
+TNT1 A 0 A_JumpIfInventory("AutoMetBolterBoss",1,"Pickup2")
+TNT1 A 0 A_JumpIfInventory("AutoItemTypeFlag",7-(ACS_ExecuteWithResult(975,1)==0),"Reset")
+TNT1 A 0 A_GiveInventory("AutoItemTypeFlag",1)
+stop
+Pickup2:
+TNT1 A 0 A_JumpIfInventory("AutoItemTypeFlag",2,2)
+TNT1 A 0 A_GiveInventory("AutoItemTypeFlag",2)
+stop
+TNT1 A 0
+goto Pickup+1
+
+Reset://CountInv would be useful here
+TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(975,1)==0,"ResetDM")
+TNT1 A 0 A_JumpIfInventory("AutoFireworkStacker",3,2)
+TNT1 A 0 A_TakeInventory("AutoItemTypeFlag",6)
+stop
+TNT1 A 0 A_JumpIfInventory("AutoMetBolterBoss",1,2)
+TNT1 A 0 A_TakeInventory("AutoItemTypeFlag",5)
+stop
+TNT1 A 0 A_TakeInventory("AutoItemTypeFlag",4)
+stop
+
+ResetDM:
+TNT1 A 0 A_JumpIfInventory("AutoFireworkStacker",3,2)
+TNT1 A 0 A_TakeInventory("AutoItemTypeFlag",5)
+stop
+TNT1 A 0 A_JumpIfInventory("AutoMetBolterBoss",1,2)
+TNT1 A 0 A_TakeInventory("AutoItemTypeFlag",4)
+stop
+TNT1 A 0 A_TakeInventory("AutoItemTypeFlag",3)
+stop
+}
+}
+
+actor AutoCreatesItem_P : CustomInventory
+{
+States
+{
+Pickup:
+TNT1 A 0 A_TakeInventory("AutoCreationFlag",99)
+//TNT1 A 0 A_JumpIfInventory("AutoItemTypeFlag",8,"Item8")
+TNT1 A 0 A_JumpIfInventory("AutoItemTypeFlag",7,"Item8")
+TNT1 A 0 A_JumpIfInventory("AutoItemTypeFlag",6,"Item7")
+TNT1 A 0 A_JumpIfInventory("AutoItemTypeFlag",5,"Item5")
+TNT1 A 0 A_JumpIfInventory("AutoItemTypeFlag",4,"Item4")
+TNT1 A 0 A_JumpIfInventory("AutoItemTypeFlag",3,"Item3")
+TNT1 A 0 A_JumpIfInventory("AutoItemTypeFlag",2,"Item2")
+TNT1 A 0 A_JumpIfInventory("AutoItemTypeFlag",1,"Item1")
+
+Item1://Upgrade Firework
+TNT1 A 0 A_TakeInventory("ScrewYouBuySomeAmmo",130)
+TNT1 A 0 A_GiveInventory("AutoFireworkStacker",1)
+TNT1 A 0 A_JumpIfInventory("AutoFireworkStacker",3,"Item1_1")
+stop
+Item1_1:
+TNT1 A 0 A_JumpIfInventory("AutoEquippedHisHelmet",1,"Item1_2")
+TNT1 A 0 A_GiveInventory("AutoItemTypeFlag",1)
+stop
+Item1_2:
+TNT1 A 0 A_GiveInventory("AutoItemTypeFlag",2)
+stop
+
+Item2://Def Buff
+TNT1 A 0 A_TakeInventory("AutoIsRightAmmo",42)
+TNT1 A 0 ACS_NamedExecuteAlways("CBM_AdjustMaxHealth",0,155,1)
+TNT1 A 0 A_GiveInventory("AutoMetBolterBoss",1)
+TNT1 A 0 A_GiveInventory("AutoMetShopperBoss",1)
+TNT1 A 0 A_SpawnItemEx("AutoDefUpSwap_H")
+stop
+
+Item3:
+TNT1 A 0 A_TakeInventory("ScrewYouBuySomeAmmo",30)
+TNT1 A 0 A_JumpIfInventory("DocCarry",20,"Item3_20")
+TNT1 A 0 A_JumpIfInventory("DocCarry",19,"Item3_19")
+TNT1 A 0 A_JumpIfInventory("DocCarry",18,"Item3_18")
+TNT1 A 0 A_GiveInventory("DocCarry",3)
+TNT1 AAA 0 A_DropInventory("DocCarry")
+stop
+Item3_18:
+TNT1 A 0 A_GiveInventory("DocCarry",3)
+TNT1 AAA 0 A_DropInventory("DocCarry")
+TNT1 A 0 A_GiveInventory("DocCarry",1)
+stop
+Item3_19:
+TNT1 A 0 A_GiveInventory("DocCarry",3)
+TNT1 AAA 0 A_DropInventory("DocCarry")
+TNT1 A 0 A_GiveInventory("DocCarry",2)
+stop
+Item3_20:
+TNT1 A 0 A_GiveInventory("DocCarry",3)
+TNT1 AAA 0 A_DropInventory("DocCarry")
+TNT1 A 0 A_GiveInventory("DocCarry",3)
+stop
+
+Item4:
+TNT1 A 0 A_TakeInventory("ScrewYouBuySomeAmmo",50)
+TNT1 A 0 A_JumpIfInventory("Item2C",2,"Item4_2")
+TNT1 A 0 A_JumpIfInventory("Item2C",1,"Item4_1")
+TNT1 A 0 A_GiveInventory("Item2C",2)
+TNT1 AA 0 A_DropInventory("Item2C")
+stop
+Item4_1:
+TNT1 A 0 A_GiveInventory("Item2C",2)
+TNT1 AA 0 A_DropInventory("Item2C")
+TNT1 A 0 A_GiveInventory("Item2C",1)
+stop
+Item4_2:
+TNT1 A 0 A_GiveInventory("Item2C",2)
+TNT1 AA 0 A_DropInventory("Item2C")
+TNT1 A 0 A_GiveInventory("Item2C",2)
+stop
+
+Item5:
+TNT1 A 0 A_TakeInventory("ScrewYouBuySomeAmmo",70)
+TNT1 A 0 A_JumpIfInventory("WireAdaptorC",2,"Item5_2")
+TNT1 A 0 A_JumpIfInventory("WireAdaptorC",1,"Item5_1")
+TNT1 A 0 A_GiveInventory("WireAdaptorC",2)
+TNT1 AA 0 A_DropInventory("WireAdaptorC")
+stop
+Item5_1:
+TNT1 A 0 A_GiveInventory("WireAdaptorC",2)
+TNT1 AA 0 A_DropInventory("WireAdaptorC")
+TNT1 A 0 A_GiveInventory("WireAdaptorC",1)
+stop
+Item5_2:
+TNT1 A 0 A_GiveInventory("WireAdaptorC",2)
+TNT1 AA 0 A_DropInventory("WireAdaptorC")
+TNT1 A 0 A_GiveInventory("WireAdaptorC",2)
+stop
+
+Item6://Damn you Exit Unit
+TNT1 A 0 A_TakeInventory("ScrewYouBuySomeAmmo",90)
+TNT1 A 0 A_JumpIfInventory("ExitUnit",1,"Item6_1")
+TNT1 A 0 A_GiveInventory("ExitUnit",1)
+TNT1 A 0 A_DropInventory("ExitUnit")
+stop
+Item6_1:
+TNT1 A 0 A_DropInventory("ExitUnit")
+TNT1 A 0 A_GiveInventory("ExitUnit",1)
+stop
+
+Item7:
+TNT1 A 0 A_TakeInventory("AutoIsRightAmmo",42)
+TNT1 A 0 A_JumpIfInventory("ETankLite",1,"Item7_1")
+TNT1 A 0 A_GiveInventory("ETankLite",1)
+TNT1 A 0 A_DropInventory("ETankLite")
+stop
+Item7_1:
+TNT1 A 0 A_DropInventory("ETankLite")
+TNT1 A 0 A_GiveInventory("ETankLite",1)
+stop
+
+Item8:
+TNT1 A 0 A_TakeInventory("ScrewYouBuySomeAmmo",100)
+TNT1 A 0 A_JumpIfInventory("EddieSummonC",1,"Item8_1")
+TNT1 A 0 A_GiveInventory("EddieSummonC",1)
+TNT1 A 0 A_DropInventory("EddieSummonC")
+stop
+Item8_1:
+TNT1 A 0 A_DropInventory("EddieSummonC")
+TNT1 A 0 A_GiveInventory("EddieSummonC",1)
+stop
+
+}
+}
+
+actor AutoDefUpSwap_H : BasicHelper
+{
+States
+{
+Spawn:
+TNT1 A 1
+TNT1 A 1 A_GiveToTarget("AutoDefUpSwap_P",1)
+stop
+}
+}
+actor AutoDefUpSwap_P : CustomInventory
+{
+States
+{
+Pickup:
+TNT1 A 0 A_SelectWeapon("AutoMetShopperBoss")
+stop
+}
+}
+
+
+actor AutoScrewFire_P : CustomInventory
+{
+States
+{
+Pickup:
+TNT1 A 0 A_JumpIfInventory("CutterFlag",5,"Pick_Big")
+goto Pick_Small
+Pick_Small:
+TNT1 A 0 A_PlaySoundEx("classes/bladecling","Weapon")
+TNT1 A 0 A_GiveInventory("AutoMain1_CI",1)
+TNT1 A 0 A_GiveInventory("CutterFlag",1)
+stop
+Pick_Big:
+TNT1 A 0 A_PlaySoundEx("weapon/commandobomb","Weapon")
+TNT1 A 0 A_GiveInventory("AutoMain2_CI",1)
+TNT1 A 0 A_TakeInventory("CutterFlag",9)
+stop
+}
+}
+
+actor AutoScrewShot
+{
+Translation "192:192=208:208","198:198=128:128"
+PROJECTILE
+damagetype "AutoFirework"
+Obituary "$OB_AUTOSHOPPER"
+Damage (10)
+radius 5
+height 5
+Speed 27
+scale 2.5
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 1
+SCOR E 1
+wait
+Death:
+TNT1 A 2
+stop
+}
+}
+actor AutoScrewShotB : AutoScrewShot{Translation"192:192=205:205","198:198=74:74"}
+actor AutoScrewShotR : AutoScrewShot{Translation"192:192=171:171","198:198=41:41"}
+actor AutoScrewShotO : AutoScrewShot{Translation"192:192=104:104","198:198=128:128"}
+actor AutoScrewShotP : AutoScrewShot{Translation"192:192=229:229","198:198=232:232"}
+
+actor AutoScrewShot2 : AutoScrewShot
+{
+Damage (13)
+radius 14
+height 14
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 1
+SCOR F 1
+wait
+}
+}
+actor AutoScrewShot2B : AutoScrewShot2{Translation"192:192=205:205","198:198=74:74"}
+actor AutoScrewShot2R : AutoScrewShot2{Translation"192:192=171:171","198:198=41:41"}
+actor AutoScrewShot2O : AutoScrewShot2{Translation"192:192=104:104","198:198=128:128"}
+actor AutoScrewShot2P : AutoScrewShot2{Translation"192:192=229:229","198:198=232:232"}
+
+actor AutoFireworkShot
+{
+Translation "202:202=227:227","199:199=3:3"
+PROJECTILE
+damagetype "AutoFirework"
+Obituary "$OB_AUTOFIREWORK"
+Damage (5)
+radius 12
+height 12
+Speed 38
+scale 2.5
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 1
+Spawn2:
+0G_P AB 4
+loop
+Death:
+TNT1 A 0 A_Jump(256,1,2,3,4)
+TNT1 A 4 A_SpawnItemEx("AutoFireworkBoomStart1",0,0,5)
+stop
+TNT1 A 4 A_SpawnItemEx("AutoFireworkBoomStart2",0,0,5)
+stop
+TNT1 A 4 A_SpawnItemEx("AutoFireworkBoomStart3",0,0,5)
+stop
+TNT1 A 4 A_SpawnItemEx("AutoFireworkBoomStart4",0,0,5)
+stop
+}
+}
+actor AutoFireworkShotB : AutoFireworkShot
+{
+Translation "202:202=205:205", "199:199=74:74"
+States
+{
+Death:
+TNT1 A 4 A_SpawnItemEx("AutoFireworkBoomTeamStart",0,0,5,0,0,0,0,1)
+stop
+}
+}
+actor AutoFireworkShotR : AutoFireworkShotB{Translation"202:202=171:171","199:199=41:41"}
+actor AutoFireworkShotO : AutoFireworkShotB{Translation"202:202=104:104","199:199=128:128"}
+actor AutoFireworkShotP : AutoFireworkShotB{Translation"202:202=229:229","199:199=232:232"}
+
+
+actor AutoFireworkBoom_H : BasicHelper
+{
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 8 A_SetPitch(pitch+1)
+TNT1 A 1 A_JumpIfInTargetInventory("AutoFireworkStacker",pitch,"Spawn2")
+stop
+Spawn2:
+TNT1 A 0 A_Jump(256,1,2,3,4)
+TNT1 A 0 A_SpawnItemEx("AutoFireworkBoom1",(pitch>0)*random(-60,60),(pitch>0)*random(-60,60),(pitch>0)*random(-12,12))
+goto Spawn
+TNT1 A 0 A_SpawnItemEx("AutoFireworkBoom2",(pitch>0)*random(-60,60),(pitch>0)*random(-60,60),(pitch>0)*random(-12,12))
+goto Spawn
+TNT1 A 0 A_SpawnItemEx("AutoFireworkBoom3",(pitch>0)*random(-60,60),(pitch>0)*random(-60,60),(pitch>0)*random(-12,12))
+goto Spawn
+TNT1 A 0 A_SpawnItemEx("AutoFireworkBoom4",(pitch>0)*random(-60,60),(pitch>0)*random(-60,60),(pitch>0)*random(-12,12))
+goto Spawn
+}
+}
+
+actor AutoFireworkBoomStart1 : BasicExplosion
+{
+Translation"202:202=215:215","199:199=218:218"//214
+damagetype "AutoFirework"
+Obituary "$OB_AUTOFIREWORK2"
+Scale 2.0
+States
+{
+Spawn:
+0G_P C 0
+0G_P C 0 A_SpawnItemEx("AutoFireworkBoom_H")
+0G_P C 0 A_PlaySoundEx("weapon/napalm","Auto")
+0G_P C 0 A_Explode(15,96,0,0,16)
+0G_P CDEFGHIJ 2//4
+stop
+}
+}
+actor AutoFireworkBoomStart2 : AutoFireworkBoomStart1
+{
+Translation"202:202=34:34","199:199=237:237"//32
+}
+actor AutoFireworkBoomStart3 : AutoFireworkBoomStart1
+{
+Translation"202:202=193:193","199:199=204:204"//196
+}
+actor AutoFireworkBoomStart4 : AutoFireworkBoomStart1
+{
+Translation"202:202=108:108","199:199=110:110"//99
+}
+
+actor AutoFireworkBoom : BasicExplosion
+{
+damagetype "AutoFirework"
+Obituary "$OB_AUTOFIREWORK2"
+Scale 2.0
+States
+{
+Spawn:
+0G_P C 0
+0G_P C 0 A_PlaySoundEx("weapon/napalm","Auto")
+0G_P C 0 A_Explode(12,96,0,0,16)
+0G_P C 0
+0G_P CDEFGHIJ 2
+stop
+}
+}
+actor AutoFireworkBoom1 : AutoFireworkBoom{Translation"202:202=215:215","199:199=218:218"}
+actor AutoFireworkBoom2 : AutoFireworkBoom{Translation"202:202=34:34","199:199=237:237"}
+actor AutoFireworkBoom3 : AutoFireworkBoom{Translation"202:202=193:193","199:199=204:204"}
+actor AutoFireworkBoom4 : AutoFireworkBoom{Translation"202:202=108:108","199:199=110:110"}
+
+actor AutoFireworkBoomTeam_H : AutoFireworkBoom_H
+{
+States
+{
+Spawn2:
+TNT1 A 0 A_SpawnItemEx("AutoFireworkBoom",(pitch>0)*random(-60,60),(pitch>0)*random(-60,60),(pitch>0)*random(-12,12),0,0,0,0,1)
+goto Spawn
+}
+}
+actor AutoFireworkBoomTeamStart : AutoFireworkBoomStart1
+{
+States
+{
+Spawn:
+0G_P C 0
+0G_P C 0 A_SpawnItemEx("AutoFireworkBoomTeam_H",0,0,0,0,0,0,0,1)
+goto Super::Spawn+2
+}
+}
+
+actor AutoFireworkFX : BasicClientSide
+{
+scale 2.0
+States
+{
+Spawn:
+0G_P C 0
+0G_P CDEFGHIJ 2//4
+stop
+}
+}
+
+actor AutoWepDroppedX : BasicHelper
+{
+Translation "192:192=107:107","198:198=128:128"
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 A_SpawnItemEx("Auto_ScrewBoltBigPickup",0,0,0,random(1,3),0,random(10,15),random(0,359),1)
+TNT1 A 1 A_SpawnItemEx("CopyClassUpgradeDropped",0,0,0,momx,momy,momz,0,8)
+stop
+}
+}
+
+actor Auto_ScrewBoltBigPickup : ScrewBoltBigPickup
+{
+inventory.pickupmessage "Picked up Auto's Big Screw!"
+ReactionTime 45
+Scale 1.5
+States
+{
+Spawn:
+X_0G S 0
+X_0G S 0 A_Jump(256,"Spawn1","Spawn2")
+Spawn1:
+X_0G B 0 A_Jump(256,1,2,3,4,5,6,7,8)
+X_0G "TUVWXYZ[" 3
+X_0G B 0 A_CountDown
+goto Spawn1+1
+Spawn2:
+X_0G "[" 0 A_Jump(256,1,2,3,4,5,6,7,8)
+X_0G "[ZYXWVUT" 3
+X_0G "[" 0 A_CountDown
+goto Spawn2+1
+}
+}
+
+actor AutoMain0_CI : TeamColor_CI
+{
+states
+{
+FireX:
+TNT1 A 0 A_FireCustomMissile("AutoFireworkShot",0,0,-8,0)
+goto Done
+FireB:
+TNT1 A 0 A_FireCustomMissile("AutoFireworkShotB",0,0,-8,0)
+goto Done
+FireR:
+TNT1 A 0 A_FireCustomMissile("AutoFireworkShotR",0,0,-8,0)
+goto Done
+FireO:
+TNT1 A 0 A_FireCustomMissile("AutoFireworkShotO",0,0,-8,0)
+goto Done
+FireP:
+TNT1 A 0 A_FireCustomMissile("AutoFireworkShotP",0,0,-8,0)
+goto Done
+}
+}
+actor AutoMain1_CI : TeamColor_CI
+{
+states
+{
+FireX:
+TNT1 A 0 A_FireCustomMissile("AutoScrewShot",0,0,8,0)
+goto Done
+FireB:
+TNT1 A 0 A_FireCustomMissile("AutoScrewShotB",0,0,8,0)
+goto Done
+FireR:
+TNT1 A 0 A_FireCustomMissile("AutoScrewShotR",0,0,8,0)
+goto Done
+FireO:
+TNT1 A 0 A_FireCustomMissile("AutoScrewShotO",0,0,8,0)
+goto Done
+FireP:
+TNT1 A 0 A_FireCustomMissile("AutoScrewShotP",0,0,8,0)
+goto Done
+}
+}
+actor AutoMain2_CI : TeamColor_CI
+{
+states
+{
+FireX:
+TNT1 A 0 A_FireCustomMissile("AutoScrewShot2",0,0,8,0)
+goto Done
+FireB:
+TNT1 A 0 A_FireCustomMissile("AutoScrewShot2B",0,0,8,0)
+goto Done
+FireR:
+TNT1 A 0 A_FireCustomMissile("AutoScrewShot2R",0,0,8,0)
+goto Done
+FireO:
+TNT1 A 0 A_FireCustomMissile("AutoScrewShot2O",0,0,8,0)
+goto Done
+FireP:
+TNT1 A 0 A_FireCustomMissile("AutoScrewShot2P",0,0,8,0)
+goto Done
+}
+}

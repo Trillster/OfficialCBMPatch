@@ -1,0 +1,562 @@
+actor SparkShockBoss : BaseMM8BDMWep_CBM
+{
+tag "$TAGC_3G"
+dropitem "SparkShockWepCDropped"
+Weapon.AmmoUse2 28
+Weapon.AmmoGive 28
+Obituary "$OB_SPARKSHOCK"
+Inventory.Pickupmessage "Power up! Mighty Spark Shock!"
+weapon.ammotype2 "MightyGodAmmo"
+States
+{
+Spawn:
+C_03 G 1
+loop
+Ready:
+SPAA C 0 ACS_ExecuteAlways(998,0,DYE_SPARKMAN)
+SPAA C 0 A_GunFlash
+SPAA EDC 3
+Ready1:
+SPAA B 1 A_WeaponReady
+wait
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+SPAA B 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+SPAA B 1 A_Raise
+Loop
+Fire:
+SPAA A 0 A_JumpIfInventory("IsBot",1,"BotFire")
+SPAA A 0 A_JumpIfInventory("PowerRage_ST",1,"FireR")
+SPAA A 1 Offset(0,12)A_SpawnItemEx("BigShockFX1",0,0,80,0,0,0,0,9)
+TNT1 A 0 A_WeaponReady(14)
+TNT1 A 1 A_SpawnItemEx("BigShockFX1",0,0,80,0,0,0,0,9)
+TNT1 A 1 A_SpawnItemEx("BigShockFX1",0,0,80,0,0,0,0,9)
+TNT1 A 1 A_SpawnItemEx("BigShockFX1",0,0,80,0,0,0,0,9)
+SPAA F 1 A_SpawnItemEx("BigShockFX2",0,0,80,0,0,0,0,9)
+SPAA F 1 A_SpawnItemEx("BigShockFX2",0,0,80,0,0,0,0,9)
+SPAA F 1 A_SpawnItemEx("BigShockFX2",0,0,80,0,0,0,0,9)
+SPAA G 1 A_SpawnItemEx("BigShockFX2",0,0,80,0,0,0,0,9)
+SPAA G 1 A_SpawnItemEx("BigShockFX1",0,0,80,0,0,0,0,9)
+SPAA G 1 A_SpawnItemEx("BigShockFX1",0,0,80,0,0,0,0,9)
+SPAA G 0 A_JumpIfInventory("IsBot",1,"BotFire3")
+goto FireH
+FireR:
+SPAA A 1 Offset(0,12)A_SpawnItemEx("BigShockFX1",0,0,80,0,0,0,0,9)
+TNT1 A 0 A_WeaponReady(14)
+TNT1 A 1 A_SpawnItemEx("BigShockFX1",0,0,80,0,0,0,0,9)
+SPAA F 1 A_SpawnItemEx("BigShockFX2",0,0,80,0,0,0,0,9)
+SPAA G 1 A_SpawnItemEx("BigShockFX2",0,0,80,0,0,0,0,9)
+SPAA G 1 A_SpawnItemEx("BigShockFX1",0,0,80,0,0,0,0,9)
+SPAA G 0 A_JumpIfInventory("IsBot",1,"BotFire3")
+goto FireH
+
+FireH:
+SPAA G 0 A_JumpIfInventory("SparkmanHoldFlag",28,"HoldEnd")
+SPAA G 0 A_GiveInventory("SparkmanHoldFlag",2)
+SPAA G 0 A_SpawnItemEx("BigShockFX1",0,0,80,0,0,0,0,9)
+SPAA G 0 A_JumpIfInventory("SparkmanHoldFlag",7,"FireH2")
+SPAA G 1
+SPAA G 0 A_ReFire("FireH.a")
+goto HoldEnd
+FireH2:
+SPAA G 1 A_WeaponReady(WRF_NOPRIMARY|WRF_NOSWITCH)
+SPAA G 0 A_ReFire("FireH.a")
+goto HoldEnd
+FireH.a:
+SPAA G 0 A_SpawnItemEx("BigShockFX1",0,0,80,0,0,0,0,9)
+SPAA G 0 A_JumpIfInventory("SparkmanHoldFlag",7,"FireH2.a")
+SPAA G 1
+SPAA G 0 A_ReFire("FireH.b")
+goto HoldEnd
+FireH2.a:
+SPAA G 1 A_WeaponReady(WRF_NOPRIMARY|WRF_NOSWITCH)
+SPAA G 0 A_ReFire("FireH.b")
+goto HoldEnd
+FireH.b:
+SPAA G 0 A_SpawnItemEx("BigShockFX2",0,0,80,0,0,0,0,9)
+SPAA G 0 A_JumpIfInventory("SparkmanHoldFlag",7,"FireH2.b")
+SPAA G 1
+SPAA G 0 A_ReFire("FireH.c")
+goto HoldEnd
+FireH2.b:
+SPAA G 1 A_WeaponReady(WRF_NOPRIMARY|WRF_NOSWITCH)
+SPAA G 0 A_ReFire("FireH.c")
+goto HoldEnd
+FireH.c:
+SPAA G 0 A_SpawnItemEx("BigShockFX2",0,0,80,0,0,0,0,9)
+SPAA G 0 A_JumpIfInventory("SparkmanHoldFlag",7,"FireH2.c")
+SPAA G 1
+SPAA G 0 A_ReFire("FireH.d")
+goto HoldEnd
+FireH2.c:
+SPAA G 1 A_WeaponReady(WRF_NOPRIMARY|WRF_NOSWITCH)
+SPAA G 0 A_ReFire("FireH.d")
+goto HoldEnd
+FireH.d:
+SPAA G 0 A_SpawnItemEx("BigShockFX2",0,0,80,0,0,0,0,9)
+SPAA G 0 A_JumpIfInventory("SparkmanHoldFlag",7,"FireH2.d")
+SPAA G 1
+SPAA G 0 A_ReFire("FireH.e")
+goto HoldEnd
+FireH2.d:
+SPAA G 1 A_WeaponReady(WRF_NOPRIMARY|WRF_NOSWITCH)
+SPAA G 0 A_ReFire("FireH.e")
+goto HoldEnd
+FireH.e:
+SPAA G 0 A_SpawnItemEx("BigShockFX2",0,0,80,0,0,0,0,9)
+SPAA G 0 A_JumpIfInventory("SparkmanHoldFlag",7,"FireH2.e")
+SPAA G 1
+SPAA G 0 A_ReFire("FireH")
+goto HoldEnd
+FireH2.e:
+SPAA G 1 A_WeaponReady(WRF_NOPRIMARY|WRF_NOSWITCH)
+SPAA G 0 A_ReFire("FireH")
+goto HoldEnd
+HoldEnd:
+SPAA H 0 A_PlaySoundEx("weapon/sparkshock","Weapon")
+SPAA H 0 A_GiveInventory("SparkmanMain_CI",1)
+SPAA H 0 A_TakeInventory("SparkmanHoldFlag",99)
+SPAA HGF 3
+TNT1 A 19 A_ClearRefire
+SPAA A 3 Offset(0,12)
+SPAA B 3 Offset(0,22)
+SPAA B 3 A_WeaponReady(14)
+Goto Ready1
+Altfire:
+SPAA B 0 A_JumpIfInventory("SparkmanHoldFlag",7,"StunRing")
+SPAA B 0 A_JumpIfNoAmmo("NoAmmo")
+SPAA A 1 Offset(0,52)
+SPAA A 0 A_WeaponReady(14)
+SPAA I 0 A_PlaySoundEx("classes/shocklob","Weapon")
+SPAA I 2 offset(4,38)A_GiveInventory("SparkmanAlt2_CI",1)
+SPAA J 2 offset(12,16)
+SPAA K 2 offset(20,33)
+SPAA L 8 offset(20,24)
+SPAA L 2 offset(22,36)
+SPAA L 2 offset(24,56)
+SPAA L 2 offset(30,76)
+TNT1 A 4 A_WeaponReady(14)
+SPAA A 3 Offset(0,52)
+SPAA B 3 A_WeaponReady(14)
+Goto Ready1
+StunRing:
+SPAA H 0 A_TakeInventory("SparkmanHoldFlag",99)
+SPAA H 0 A_ClearRefire
+SPAA C 0 A_GiveInventory("VivifyDelay8",1)
+SPAA C 0 A_Refire(1)
+SPAA C 0 A_PlaySoundEx("weapon/sparkalt","Weapon")
+SPAA C 0 A_GiveInventory("SparkmanAlt_CI",1)
+SPAA C 0 A_GiveInventory("SparkmanAltSpreadCheck",1)
+SPAA C 2 Offset(0,22)
+SPAA D 2 Offset(0,12)
+SPAA E 2 Offset(0,2)
+SPAA D 2 Offset(0,12)
+SPAA C 2 Offset(0,22)
+SPAA B 2 Offset(0,34)
+SPAA A 2 Offset(0,46)
+SPAA A 6 Offset(0,50)
+SPAA A 2 Offset(0,41)
+SPAA B 2 A_WeaponReady(14)
+Goto Ready1
+
+BotFire:
+TNT1 A 0 A_JumpIfCloser(750,"BotFire2")
+goto AltFire
+BotFire2:
+TNT1 A 0 A_Jump(128,"AltFire")
+goto Fire+1
+BotFire3:
+SPAA H 1 A_SpawnItemEx("BigShockFX1",0,0,80,0,0,0,0,9)
+SPAA H 0 A_Jump(32,"HoldEnd")
+SPAA H 0 A_ReFire(1)
+goto HoldEnd
+SPAA H 1 A_SpawnItemEx("BigShockFX2",0,0,80,0,0,0,0,9)
+SPAA H 0 A_ReFire("BotFire3")
+goto HoldEnd
+
+NoAmmo:
+SPAA B 1
+goto Ready1
+
+Flash:
+TNT1 AAA 1 A_JumpIfInventory("IsDead",1,"NoFlash")
+TNT1 A 0 A_GiveInventory("SparkAmmoRageCheck",1)
+TNT1 A 0 A_JumpIfInventory("MightyGodAmmo",0,"StopFlash")
+TNT1 AAA 1 A_JumpIfInventory("IsDead",1,"NoFlash")
+TNT1 A 0 A_GiveInventory("MightyGodAmmo",1)
+TNT1 A 0 A_JumpIfInventory("MightyGodAmmo",0,"StopFlash")
+goto Flash
+StopFlash:
+TNT1 A 1 A_JumpIfInventory("IsDead",1,"NoFlash")
+TNT1 A 0 A_JumpIfInventory("MightyGodAmmo",0,"StopFlash")
+TNT1 A 1 A_Jump(256,"Flash")
+wait
+NoFlash:
+TNT1 A 0
+stop
+}
+}
+
+actor MightyGodAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 28
++INVENTORY.IGNORESKILL
+}
+
+actor SparkAmmoRageCheck : CustomInventory
+{
+States
+{
+Pickup:
+TNT1 A 0
+TNT1 A 0 A_JumpIfInventory("PowerRage_ST",1,"PickupR")
+Goto PickupNo
+PickupR:
+TNT1 A 0 A_GiveInventory("MightyGodAmmo",1)
+goto PickupNo
+PickupNo:
+TNT1 A 0
+stop
+}
+}
+
+actor SparkmanHoldFlag : Inventory
+{
+inventory.amount 1
+inventory.maxamount 28
+}
+
+actor BigShock
+{
+Translation "198:198=225:225"
+PROJECTILE
+damagetype "SparkShock"
+Obituary "$OB_SPARKSHOCK"
+damage (25)
+Radius 18
+Height 18
+Speed 35
+Scale 2.5
+States
+{
+Spawn:
+SPMS AB 4
+loop
+XDeath:
+TNT1 A 0
+stop
+Death:
+SPMS K 0 //A_SpawnItemEx("BigShockBurst")
+SPMS KLM 2
+TNT1 A 0
+stop
+}
+}
+
+actor BigShockB : BigShock{translation "198:198=74:74"}
+actor BigShockR : BigShock{translation "198:198=41:41"}
+actor BigShockO : BigShock{translation "198:198=128:128"}
+actor BigShockP : BigShock{translation "198:198=232:232"}
+
+actor BigShockBurst : BasicExplosion
+{
+damagetype "SparkShockW"
+Obituary "$OB_SPARKSHOCK"
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 1 A_Explode(15,88,0,0,18)
+stop
+}
+}
+
+actor SparkmanAltSpreadCheck : CustomInventory
+{
+States
+{
+Pickup:
+TNT1 A 0
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,45,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,-45,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,135/2,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,-135/2,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,90,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,-90,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,225/2,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,-225/2,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,135,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,-135,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,315/2,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,-315/2,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,180,1)
+TNT1 A 0 A_JumpIfInventory("PowerSpread_ST",1,"PickupS")
+stop
+PickupS:
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,58,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,-32,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,161/2,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,-109/2,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,103,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,-77,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,251/2,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,-199/2,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,148,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,-122,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,341/2,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,-289/2,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,193,1)
+
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,32,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,-58,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,109/2,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,-161/2,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,77,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,-103,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,199/2,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,-251/2,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,122,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,-148,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,289/2,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,-341/2,1)
+TNT1 A 0 A_SpawnItemEx("SmallShock",0,0,32,28,0,0,167,1)
+stop
+}
+}
+
+actor SmallShock
+{
+Translation "198:198=225:225"
+PROJECTILE
+damagetype "SparkShock"
+Obituary "$OB_SPARKSHOCK"
+damage (6)
+Radius 6
+Height 6
+speed 32
+scale 2.5
+States
+{
+Spawn:
+SPMS CD 4
+loop
+}
+}
+
+actor SmallShockB : SmallShock{translation "198:198=74:74"}
+actor SmallShockR : SmallShock{translation "198:198=41:41"}
+actor SmallShockO : SmallShock{translation "198:198=128:128"}
+actor SmallShockP : SmallShock{translation "198:198=232:232"}
+
+actor BigShockFX1
+{
+Scale 2.5
+-SOLID
++NOGRAVITY
++CLIENTSIDEONLY
++DONTBLAST
++NOINTERACTION
++NOTIMEFREEZE
+States
+{
+Spawn:
+SPMS A 0
+SPMS A 1
+stop
+}
+}
+
+actor BigShockFX2 : BigShockFX1
+{
+States
+{
+Spawn:
+SPMS B 0
+SPMS B 1
+stop
+}
+}
+
+actor SparkShockLob
+{
+Translation "198:198=225:225"
+PROJECTILE
+-NOGRAVITY
++RIPPER
++SKYEXPLODE
++BOUNCEONWALLS
++BOUNCEONCEILINGS
++CANBOUNCEWATER
+damagetype "SparkShockP"
+Obituary "$OB_SPARKSHOCK"
+Radius 14
+Height 14
+Damage (3)
+speed 24
+scale 2.5
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 ThrustThingZ(0,40,0,1)
+SPMS HHHHIIII 1 A_SpawnItemEX("SparkLobFX",random(0,28),0,random(-28,28),0,0,0,random(90,270),SXF_TRANSFERTRANSLATION)
+goto Spawn+2
+Death:
+TNT1 A 0 A_PlaySoundEX("misc/wilystart","Voice", 1)
+TNT1 A 0 A_ChangeFlag("THRUACTORS",1)
+TNT1 A 0 A_ChangeFlag("NOGRAVITY",1)
+DeathLoop:
+TNT1 AAAAAAAA 0 A_SpawnItemEX("SparkLobFX2",random(0,96),0,0,0,0,random(1,4),random(0,359),SXF_TRANSFERTRANSLATION)
+TNT1 A 0 A_SpawnItemEX("SparkLobFX2",96,0,0,0,0,random(1,2),0,SXF_TRANSFERTRANSLATION)
+TNT1 A 0 A_SpawnItemEX("SparkLobFX2",96,0,0,0,0,random(1,2),45/2,SXF_TRANSFERTRANSLATION)
+TNT1 A 0 A_SpawnItemEX("SparkLobFX2",96,0,0,0,0,random(1,2),45,SXF_TRANSFERTRANSLATION)
+TNT1 A 0 A_SpawnItemEX("SparkLobFX2",96,0,0,0,0,random(1,2),135/2,SXF_TRANSFERTRANSLATION)
+TNT1 A 0 A_SpawnItemEX("SparkLobFX2",96,0,0,0,0,random(1,2),90,SXF_TRANSFERTRANSLATION)
+TNT1 A 0 A_SpawnItemEX("SparkLobFX2",96,0,0,0,0,random(1,2),225/2,SXF_TRANSFERTRANSLATION)
+TNT1 A 0 A_SpawnItemEX("SparkLobFX2",96,0,0,0,0,random(1,2),135,SXF_TRANSFERTRANSLATION)
+TNT1 A 0 A_SpawnItemEX("SparkLobFX2",96,0,0,0,0,random(1,2),315/2,SXF_TRANSFERTRANSLATION)
+TNT1 A 0 A_SpawnItemEX("SparkLobFX2",96,0,0,0,0,random(1,2),180,SXF_TRANSFERTRANSLATION)
+TNT1 A 0 A_SpawnItemEX("SparkLobFX2",96,0,0,0,0,random(1,2),405/2,SXF_TRANSFERTRANSLATION)
+TNT1 A 0 A_SpawnItemEX("SparkLobFX2",96,0,0,0,0,random(1,2),225,SXF_TRANSFERTRANSLATION)
+TNT1 A 0 A_SpawnItemEX("SparkLobFX2",96,0,0,0,0,random(1,2),495/2,SXF_TRANSFERTRANSLATION)
+TNT1 A 0 A_SpawnItemEX("SparkLobFX2",96,0,0,0,0,random(1,2),270,SXF_TRANSFERTRANSLATION)
+TNT1 A 0 A_SpawnItemEX("SparkLobFX2",96,0,0,0,0,random(1,2),585/2,SXF_TRANSFERTRANSLATION)
+TNT1 A 0 A_SpawnItemEX("SparkLobFX2",96,0,0,0,0,random(1,2),315,SXF_TRANSFERTRANSLATION)
+TNT1 A 0 A_SpawnItemEX("SparkLobFX2",96,0,0,0,0,random(1,2),675/2,SXF_TRANSFERTRANSLATION)
+TNT1 AAAAA 1 A_Explode(3,96,0,0,96)
+TNT1 A 0 A_GiveInventory("CutterFlag",1)
+TNT1 A 0 A_JumpIfInventory("CutterFlag",7,"End")
+goto DeathLoop
+End:
+TNT1 A 0 A_StopSound("Voice")
+stop
+XDeath:
+TNT1 A 0
+stop
+}
+}
+
+actor SparkShockPProtect : PowerProtection
+{
+Powerup.Duration 10
+damagefactor "SparkShockP", 0.0
+}
+
+actor SparkShockLobB : SparkShockLob{translation "198:198=74:74"}
+actor SparkShockLobR : SparkShockLob{translation "198:198=41:41"}
+actor SparkShockLobO : SparkShockLob{translation "198:198=128:128"}
+actor SparkShockLobP : SparkShockLob{translation "198:198=232:232"}
+
+actor SparkLobFX : BasicClientSide
+{
+Scale 2.25
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 A_Jump(256,"Spawn1","Spawn2")
+Spawn1:
+SPMS IIJJ 1 A_FadeOut(0.05)
+loop
+Spawn2:
+SPMS JJII 1 A_FadeOut(0.05)
+loop
+}
+}
+
+actor SparkLobFX2 : BasicClientSide
+{
+Scale 2.25
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 A_Jump(256,"Spawn1","Spawn2")
+Spawn1:
+SPMS IIJJ 1 A_FadeOut(0.08)
+loop
+Spawn2:
+SPMS JJII 1 A_FadeOut(0.08)
+loop
+}
+}
+
+actor SparkmanMain_CI : TeamColor_CI
+{
+states
+{
+FireX:
+TNT1 A 0 A_FireCustomMissile("BigShock",0,0,0,0)
+goto Done
+FireB:
+TNT1 A 0 A_FireCustomMissile("BigShockB",0,0,0,0)
+goto Done
+FireR:
+TNT1 A 0 A_FireCustomMissile("BigShockR",0,0,0,0)
+goto Done
+FireO:
+TNT1 A 0 A_FireCustomMissile("BigShockO",0,0,0,0)
+goto Done
+FireP:
+TNT1 A 0 A_FireCustomMissile("BigShockP",0,0,0,0)
+goto Done
+}
+}
+
+actor SparkmanAlt_CI : TeamColor_CI
+{
+states
+{
+FireX:
+TNT1 A 0 A_FireCustomMissile("SmallShock",45/2,0,0,0)
+TNT1 A 0 A_FireCustomMissile("SmallShock",-45/2,0,0,0)
+TNT1 A 0 A_FireCustomMissile("SmallShock",0,0,0,0)
+goto Done
+FireB:
+TNT1 A 0 A_FireCustomMissile("SmallShockB",45/2,0,0,0)
+TNT1 A 0 A_FireCustomMissile("SmallShockB",-45/2,0,0,0)
+TNT1 A 0 A_FireCustomMissile("SmallShockB",0,0,0,0)
+goto Done
+FireR:
+TNT1 A 0 A_FireCustomMissile("SmallShockR",45/2,0,0,0)
+TNT1 A 0 A_FireCustomMissile("SmallShockR",-45/2,0,0,0)
+TNT1 A 0 A_FireCustomMissile("SmallShockR",0,0,0,0)
+goto Done
+FireO:
+TNT1 A 0 A_FireCustomMissile("SmallShockO",45/2,0,0,0)
+TNT1 A 0 A_FireCustomMissile("SmallShockO",-45/2,0,0,0)
+TNT1 A 0 A_FireCustomMissile("SmallShockO",0,0,0,0)
+goto Done
+FireP:
+TNT1 A 0 A_FireCustomMissile("SmallShockP",45/2,0,0,0)
+TNT1 A 0 A_FireCustomMissile("SmallShockP",-45/2,0,0,0)
+TNT1 A 0 A_FireCustomMissile("SmallShockP",0,0,0,0)
+goto Done
+}
+}
+
+actor SparkmanAlt2_CI : TeamColor_CI
+{
+states
+{
+FireX:
+TNT1 A 0 A_FireCustomMissile("SparkShockLob",0,1,8,0)
+goto Done
+FireB:
+TNT1 A 0 A_FireCustomMissile("SparkShockLobB",0,1,8,0)
+goto Done
+FireR:
+TNT1 A 0 A_FireCustomMissile("SparkShockLobR",0,1,8,0)
+goto Done
+FireO:
+TNT1 A 0 A_FireCustomMissile("SparkShockLobO",0,1,8,0)
+goto Done
+FireP:
+TNT1 A 0 A_FireCustomMissile("SparkShockLobP",0,1,8,0)
+goto Done
+}
+}

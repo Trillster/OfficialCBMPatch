@@ -1,1 +1,3 @@
+item/mm4heal MM4HEAL
+classes/shocklob SHOCKLOB
 classes/junkshieldloop JNKSHLDL

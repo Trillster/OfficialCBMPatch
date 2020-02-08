@@ -2,7 +2,13 @@ actor ClassBase : ClassBase1
 {
 states
 {
-
+   
+Pain.AirShooterWall:
+"----" H 0 A_GiveInventory("AirShooterWallProtect",1)
+Goto Pain    
+Pain.SparkShockP:
+"----" H 0 A_GiveInventory("SparkShockPProtect",1)
+Goto Pain.SparkShock
 Pain.JunkmanCube:
 "----" H 0 A_GiveInventory("JunkmanCubeProtect",1)
 Goto Pain+2
