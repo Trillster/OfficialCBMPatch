@@ -156,6 +156,20 @@ stop
 }
 }
 
+actor IsBuckshotFlag : OnceC{}
+actor BuckshotCheckPickup : CustomInventory
+{
+States
+{
+Pickup:
+TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(975)==2,"Yes")
+stop
+Yes:
+TNT1 A 0 A_GiveInventory("IsBuckshotFlag",1)
+stop
+}
+}
+
 actor ZangiefAngle : Inventory
 {
 inventory.amount 1

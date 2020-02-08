@@ -1,0 +1,51 @@
+actor Quickman : ProtoClassBase
+{
+Player.ScoreIcon "C_02D0X"
+player.displayname "Quickman"
+player.soundclass "quickmanc"
+
+player.startitem "QuickBoomerangBoss"
+player.startitem "QuickerOatsAmmo", 50
+player.startitem "CanWallJump"
+player.startitem "CanWallJumpStack", 4
+
+player.jumpz 11
+player.forwardmove 1.2, 1.2
+player.sidemove 1.2, 1.2
+
+player.startitem "TimestopperWeakness2", 1
+
+player.startitem "TimeSlowWeakness", 1
+player.startitem "TimeStopperWeakness", 1
+player.startitem "FlashStopperWeakness", 1
+player.startitem "CentaurFlashWeakness", 1
+States
+{
+Spawn:
+QUIM A 0
+QUIM B 1
+QUIM A 1
+Goto Spawn+2
+See:
+QUIM B 0 A_JumpIfInventory("QuickManTrail",1,"See2")
+QUIM BCDE 5
+Goto Spawn
+See2:
+QUIM BCDE 3
+Goto Spawn
+
+Missile:
+QUIM F 5
+QUIM G 4
+goto Spawn
+ClassPain:
+QUIM H 0
+goto PainContinue
+DeathFix:
+QUIM H 0
+goto DeathContinue
+ClassDeath:
+QUIM H 1
+goto MegaDeathEnd
+}
+}
