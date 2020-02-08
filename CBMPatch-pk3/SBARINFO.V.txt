@@ -405,7 +405,7 @@ IsSelected WildBearBoss{DrawImage "C_00X0X",20,0;}
 
 
 //MM1
-//IsSelected RollingCutterBoss{Drawbar"BARAMMO1","BAREMPTY",Ammo1,vertical,16,8;}
+IsSelected RollingCutterBoss{Drawbar"BARAMMO1","BAREMPTY",Ammo1,vertical,16,8;}
 IsSelected IceSlasherBoss{Drawbar"BARAMMO3","BAREMPTY",Ammo1,vertical,16,8;}
 IsSelected HyperBombBoss{Drawbar"BARAMMO4","BAREMPTY",Ammo1,vertical,16,8;}
 IsSelected FireStormBoss{Drawbar"BARAMMO5","BAREMPTY",Ammo1,vertical,16,8;}
