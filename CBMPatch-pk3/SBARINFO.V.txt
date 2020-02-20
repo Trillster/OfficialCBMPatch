@@ -568,7 +568,7 @@ IsSelected ScorchWheelBoss{Drawbar"BARAMM38","BAREMPTY",Ammo1,vertical,16,8;
 
 //MM8
 IsSelected TornadoHoldBoss{Drawbar"BARAMM40","BAREMPTY",Ammo1,vertical,16,8;
-	InInventory TenguIsHovering,1{DrawImage"TENJETA",290,8;}}
+	InInventory TenguFlagH,1{DrawImage"TENJETA",290,8;}}
 IsSelected AstroCrushBoss{Drawbar"BARAMM52","BAREMPTY",Ammo1,vertical,16,8;
 	Drawbar"BARAMM41","BAREMPTY",Ammo2,vertical,8,8;}
 IsSelected FlameSwordBoss{Drawbar"BARAMM42","BAREMPTY",Ammo1,vertical,16,8;
