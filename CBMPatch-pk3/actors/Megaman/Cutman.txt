@@ -7,7 +7,7 @@ player.soundclass "cutmanc"
 player.startitem "RollingCutterBoss"
 player.startitem "KFCAmmo", 28
 player.startitem "CanWallJump"
-player.startitem "CanWallJumpStack", 9
+player.startitem "CanWallJumpStack", 8
 player.startitem "CutterReturned"
 
 player.jumpz 12.5
