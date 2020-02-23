@@ -41,9 +41,9 @@ URAH A 1
 Goto Ready0
 
 Fire:
+URAH A 0 A_JumpIfInventory("UranusAnger",28,"GroundSlam")
 URAH A 0 A_JumpIfInventory("SpawningMisfire",1,"SpawnProtect")
 URAH A 0 A_JumpIfInventory("SuperArmTemp",1,"Throw")
-URAH A 0 A_JumpIfInventory("UranusAnger",28,"GroundSlam")
 goto FireBlockPick
 FireBlockPick:
 URAH G 0 A_WeaponReady(14)
