@@ -1,0 +1,248 @@
+================
+Official CBM Patch for Version 9 - E Hotfix
+================
+
+==General
+-E Tanks and variants now gradually heal in LMS modes
+--Buckshot modifier included.
+
+==Auto
+-Met Helmet cost 100 screws -> 50% heal ammo
+-Exit Unit removed from shop
+-Fixed screw regen increasing when rapidly swapping weapons
+
+==DrLight
+-Shoryuken damage 4/5->13
+--Deals 2 damage afterwards
+-Hadoken Super Shot movespeed multiplier 0.4->0.6
+
+==Cutman
+-Mainfire can be held to extend cutter length
+--Extending limited by ammo
+-Walljumps 9->8
+
+==Gutsman
+-Gutsrock HP 75->85
+
+==Iceman
+-IceSlasher damage 10->15
+--No longer rips
+-IceSlasher speed 22->36
+-IceSlasher now hitstuns
+-Delay between mainfires 10->16 tics
+-Cloud altfire removed
+-Statue altfire behavior changed
+--No longer requires full ammo to use
+--Laser speed 50->200
+--Distance is the same
+--Statues no longer break during forming
+--Statue form time 12->20 tics
+--Statue lifetime 200->70 tics
+--Special statue lifetime 700->140 tics
+--Statue explosion leaves lingering fog
+
+==Oilman
+-Mainfire reverted to v9ch
+-Mid-charge blob damage 15->12
+-Full-charge blob damage 15->10
+-Slide high damage 12->8
+
+==Airman
+-Altfire spread straightened/compressed
+--Radius 6->8, height 7->10
+--Spawn damage 5->9, travelling unchanged
+--Reduced damage from multi-hits
+-New item, toggle Air Turbine
+--Air control is increased
+--Jump height is increased
+--Drains altfire ammo
+
+==Quickman
+-Walljumps 6->4
+
+==Flashman
+-Added FX for stopped enemies
+
+==Geminiman
+-Allies no longer damage clone
+
+==Snakeman
+-Removed hitstun for snakes that have started crawling
+
+==Sparkman
+-Hud redone by Pegg and Lamp
+-Mainfire direct hit damage 35->25
+--Mainfire explosion removed
+--Pressing altfire with 25% hold ammo does current altfire
+--Fires 8->16 shots
+--Shot damage 12->6
+-New altfire
+--Fires a lob shot that lingers
+
+==Shadowman
+-Walljumps 3->6
+
+==DocRobot
+-Stat changes more accurately reflect class copied
+--Base stats lowered 105%/110%->100%/100%
+
+==Brightman
+-Walljumps removed
+
+==Diveman
+-Tackle end delay 12->21
+
+==Skullman
+-Max ammo 56->112
+--Any ammo mentions are after 2x ammo
+-Ammo regen 4->3
+-Ammo regen during rage 4->5
+-Ammo regen when firing 6->4
+
+==Stoneman
+-Add a buckshot check for pebble timer
+--Makes it equivalent to the LMS timers
+
+==Flameman
+-Mainfire impact spawns 4 pillar offshoots
+--Mainfire ammo use 0->4
+--Mainfire damage 17->15
+-Altfire pillars spawn changed
+--No longer spawns a set directly in front
+-Pillar waves now have a visual
+
+==Plantman
+-Plant Barrier 7/4 -> 10/6 damage
+--Plant Barrier drain removed
+-Plant Buster drain 1->2 HP
+-New item
+--Throws a deployed healing field
+--Heals 25 HP over ~6 seconds (220 tics)
+
+==Freezeman
+-Mainfire impact spawns 3 spike offshoots
+--Wall impact 6->8 bits
+--Mainfire ceiling spikes no longer split
+--Mainfire damage 19->13
+--Mainfire ammo use 2->4
+-Spike priming delay 8->10 tics
+
+==Junkman
+-Junk Cube health 200->350
+--Pushed Junk Cube not invulnerable, transfers HP
+-Junk Cube damage 4/24->4/14
+--Pushed Junk Cube damage 21->14
+--4 tic 100% protection added
+-Pushed Junk Cube speed 26->8
+-Pushed Junk Cube animation changed
+-Junk Punch damage 30->15
+-Junk Punch shot damage 20->15
+-Junk Shield damage 7/6/5->5/4/3
+-Passive Junk Shield noise added
+
+==Burstman
+-Bubble stock changes
+--Item can now loop back to 1
+--Mainfire doesn't remove bubble stocks
+--Bubble deactivate no longer drops bombs
+
+==Slashman
+-Walljumps 5->6
+
+==Tenguman
+-Hover reverted to item toggle
+
+==Aquaman
+-Water Balloon cost 1->2
+-Water Balloon speed 15/25/35/45/55->15/25/32/39/46
+-Water Cannon now stops on walls and ceilings
+-Water Cannon stationary time 100->112
+-Water Cannon stationary time now starts when becoming stationary
+-Water Tower now blocks shots
+
+==Dynamoman
+-Dynamo Disk radius/hitbox 14/10->12/8
+
+==Groundman
+-Now uses Mars Tank Thrust method
+--Tank backwards movement 100%->25%
+
+==Burnerman
+-Beartraps show top pixel and are 23% visible when primed
+
+==Splashwoman
+-Power song removed
+
+==Jewelman
+-Rage check for Altfire
+--Slowed down for easier switching
+-Ruby explosion damage 5/5/5/5->2/4/6/8
+--Sapphire mine explosion damage remains 5
+-Sapphire mine direct damage with ruby explosion 5->0
+-Sapphire mine duration 40/80/120/170->20/50/80/110
+-Topaz scaling 1.0+(gems\*0.3)->1.0+(gems\*0.83)
+
+==Hornetman
+-Flight reverted to item
+-M2 checks for hornets being out
+
+==Galaxyman
+-Fixed incorrect state names
+
+==Blademan
+-Cling buffer before action 4->8 tics
+--Cling buffer after wall dash 2->8 tics
+-Altfire ammo use 5->8
+--Wall altfire ammo use unchanged
+
+==Pumpman
+-Bubble health 45->36
+-Allies no longer damage bubbles
+
+==Commandoman
+-Stomp refire delay 30->43
+--End delay 15->23
+-Firing during leap now puts leap on a delay
+
+==Chillman
+-Walljump count 6->3
+-Item mainfire pattern adjusted
+-Altfire max ammo 336->126
+--Ammo requirement 50%->75%
+--Guard down penalty gone
+-Armor regen time needed 5->7 seconds
+--Regen lost without armor 60->all
+--HP lost on shield break 5->0
+
+==Mercury
+-Blob splash damage 20->18
+--Weak splash damage 10->9
+-Blob dropped from tackle is now goes through actors for 8 tics
+
+==Venus
+-Acid Bubble animation tweaked
+
+==Mars
+-Vulcan ending delay 2->10 tics
+-Vulcan has no falloff
+--Projectile lifetime infinite->5 tics
+-Tank backwards movement 100%->25%
+-Vulcan sound changed
+
+==Jupiter
+-Mainfire lifetime 32->16
+-Altfire liftoff knockback 25->20
+-Uncharged mainfire volume reduced
+
+==Uranus
+-Crushed Deep Digger is now a 16 damage 160/120 explosion
+-Fixed deep digger spawning extra bits
+-Fixed Cattle Charge exploit?
+
+==Pluto
+-Walljumps 6->4
+
+==BBAMegaman
+-BFG90XX tracer range 1000->600
+-Heavy Cannon 36->24 explosion damage
+-Energy Lancer 6->8 damage

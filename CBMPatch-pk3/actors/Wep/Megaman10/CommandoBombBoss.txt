@@ -83,6 +83,7 @@ CMDH B 3
 CMDH C 0 A_PlaySoundEX("weapon/commandobomb","Weapon")
 CMDH C 0 A_GiveInventory("CommandoMain_CI")
 CMDH CCCCBA 3
+CMDH A 0 A_JumpIfInventory("CommandoLeapFlag2",1,"Ready1Wait")
 goto Ready1
 FireLeap:
 CMDH A 0 A_GiveInventory("CommandoLeapFlag2",1)
@@ -224,17 +225,22 @@ CMDH D 0 A_GunFlash
 Goto Ready1
 
 Ready1Wait:
-CMDH D 0 A_JumpIfInventory("FullMetalJacketAmmo",6,"Ready2Wait")
+CMDH D 0 A_JumpIfInventory("FullMetalJacketAmmo",4,"Ready2Wait")
 CMDH D 5 A_WeaponReady(12)
 CMDH D 0 A_GiveInventory("FullMetalJacketAmmo",1)
-CMDH D 0 A_JumpIfInventory("FullMetalJacketAmmo",6,8)
+CMDH D 0 A_JumpIfInventory("FullMetalJacketAmmo",4,10)
 CMDH D 5 A_WeaponReady(12)
 CMDH D 0 A_GiveInventory("FullMetalJacketAmmo",1)
-CMDH D 0 A_JumpIfInventory("FullMetalJacketAmmo",6,7)
+CMDH D 0 A_JumpIfInventory("FullMetalJacketAmmo",4,9)
+CMDH D 5 A_WeaponReady(12)
+CMDH D 0 A_GiveInventory("FullMetalJacketAmmo",1)
+CMDH D 0 A_JumpIfInventory("FullMetalJacketAmmo",4,8)
 CMDH D 5 A_WeaponReady(12)
 CMDH D 0 A_GiveInventory("FullMetalJacketAmmo",1)
 goto Ready1
 Ready2Wait:
+CMDH D 5 A_WeaponReady(8)
+CMDH D 0 A_GiveInventory("FullMetalJacketAmmo",1)
 CMDH D 5 A_WeaponReady(8)
 CMDH D 0 A_GiveInventory("FullMetalJacketAmmo",1)
 CMDH D 5 A_WeaponReady(8)
@@ -282,6 +288,7 @@ CMDH E 3
 CMDH F 0 A_PlaySoundEX("weapon/dustbit","Weapon")
 CMDH F 0 A_GiveInventory("CommandoMain2_CI")
 CMDH FFFFED 3
+CMDH D 0 A_JumpIfInventory("CommandoLeapFlag2",1,"Ready1Wait")
 goto Ready1
 FireLeap:
 CMDH D 0 A_GiveInventory("CommandoLeapFlag2",1)

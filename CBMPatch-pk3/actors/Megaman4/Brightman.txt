@@ -1,0 +1,52 @@
+actor Brightman : LightClassBase
+{
+Player.ScoreIcon "C_04A0X"
+player.displayname "Brightman"
+player.soundclass "brightmanc"
+
+player.startitem "FlashStopperBoss"
+player.startitem "WattIsMyAmmo", 14
+player.startitem "BrightIdeasAmmo", 7
+player.startitem "FlashStopperUseItem"
+
+player.jumpz 12
+player.forwardmove 0.84, 0.84
+player.sidemove 0.82, 0.82
+
+player.startitem "RainFlushWeakness2", 1
+
+player.startitem "BubbleLeadWeakness", 1
+player.startitem "HardKnuckleWeakness", 1
+player.startitem "RainFlushWeakness", 1
+player.startitem "WaterWaveWeakness", 1
+player.startitem "WaterBalloonWeakness", 1
+player.startitem "WaterShieldWeakness", 1
+player.startitem "SaltWaterWeakness", 1
+States
+{
+Spawn:
+BRIG A 0
+BRIG B 1
+BRIG A 1
+wait
+See:
+BRIG BCDE 5
+Goto Spawn
+Melee:
+BRIG JJIIJJIIJJIIJJII 1 //A_JumpIfInventory("VivifyDelay6",1,"Spawn")
+goto Spawn+1
+Missile:
+BRIG F 5
+BRIG G 4
+goto Spawn
+ClassPain:
+BRIG H 0
+goto PainContinue
+DeathFix:
+BRIG H 0
+goto DeathContinue
+ClassDeath:
+BRIG H 1
+goto MegaDeathEnd
+}
+}
