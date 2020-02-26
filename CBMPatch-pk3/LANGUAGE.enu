@@ -1,0 +1,7 @@
+[enu default]
+
+OB_GRAVITYWELL_D = "%o was suppressed by %k's Gravity Well.";
+OB_GRAVITYWELL_U = "%o was hurled into orbit by %k's Gravity Well.";
+OB_DARK3SNIPE = "%o was caught in the sights of %k's Dark Sniper.";
+OB_DARK3SNIPEX = "%o was assassinated by %k's Dark Sniper.";
+OB_DARK3RINGX = "%o froze in the sights of %k's Dark Ring.";

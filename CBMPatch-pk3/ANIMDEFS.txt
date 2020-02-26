@@ -2,3 +2,23 @@
 texture AIRICON0
 	pic AIRICON1 tics 5
 	pic AIRICON2 tics 5
+
+//Darkman3
+texture 5B_B_BAR
+pic 5B_C_BAR tics 4
+pic 5B_D_BAR tics 4
+pic 5B_E_BAR tics 4
+pic 5B_F_BAR tics 4
+pic 5B_G_BAR tics 4
+pic 5B_H_BAR tics 4
+pic 5B_I_BAR tics 4
+pic NOBAR tics 4
+texture 5B_B_VAR
+pic 5B_C_VAR tics 4
+pic 5B_D_VAR tics 4
+pic 5B_E_VAR tics 4
+pic 5B_F_VAR tics 4
+pic 5B_G_VAR tics 4
+pic 5B_H_VAR tics 4
+pic 5B_I_VAR tics 4
+pic VNOBAR tics 4
