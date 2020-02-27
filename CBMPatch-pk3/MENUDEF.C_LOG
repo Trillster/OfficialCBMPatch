@@ -76,6 +76,7 @@ Option "", "CBM_Null_Menu", "CL_Geminiman1"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Snakeman"
 Option "", "CBM_Null_Menu", "CL_Snakeman1"
+Option "", "CBM_Null_Menu", "CL_Snakeman1a"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Sparkman"
 Option "", "CBM_Null_Menu", "CL_Sparkman1"
@@ -607,12 +608,12 @@ OptionValue CL_Groundman2
 {0,"--Tank backwards movement 100%->25%"}
 
 OptionValue CL_Burnerman1
-{0,"-Beartraps show top pixel and are 23%"}
+{0,"-Bear traps show top pixel and are 23%"}
 OptionValue CL_Burnerman1a
 {0,"visible when primed"}
 
 OptionValue CL_Tornadoman1
-{0,"-Tornadow Blow team boost now checks"}
+{0,"-Tornado Blow team boost now checks"}
 OptionValue CL_Tornadoman1a
 {0,"for jump"}
 
@@ -716,7 +717,7 @@ OptionValue CL_Mars5
 {0,"-Vulcan sound changed"}
 
 OptionValue CL_Jupiter1
-{0,"-Mainfire lifetime 32->16"}
+{0,"-Mainfire lifetime 32->16 tics"}
 OptionValue CL_Jupiter2
 {0,"-Uncharged mainfire volume reduced"}
 OptionValue CL_Jupiter3
