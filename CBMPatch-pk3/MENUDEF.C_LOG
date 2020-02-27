@@ -6,7 +6,7 @@ OptionValue CL_Null
 	
 OptionMenu "CBM_ChangelogMenu"
 {
-	Title "Official CBM Patch v1 Changelog"
+	Title "Official CBM Patch v9f Changelog"
 	StaticText"$MNU_CHELP_EQUALLINE"
 	StaticText ""
 
