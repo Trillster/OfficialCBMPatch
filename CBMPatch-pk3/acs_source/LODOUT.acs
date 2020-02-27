@@ -1,0 +1,988 @@
+#include "zcommon.acs"
+#library "lmsWepC"
+
+#DEFINE WEAPON_CATEGORIES 5
+#DEFINE RANGE_MAX 22
+#DEFINE RAPID_MAX 15
+#DEFINE CLOSE_MAX 32
+#DEFINE POWER_MAX 19
+#DEFINE GUARD_MAX 20
+
+str WepCategories[WEAPON_CATEGORIES]={
+"lo_range",
+"lo_rapid",
+"lo_close",
+"lo_power",
+"lo_guard"
+};
+
+int WepCategoryMaxes[WEAPON_CATEGORIES]={
+RANGE_MAX,
+RAPID_MAX,
+CLOSE_MAX,
+POWER_MAX,
+GUARD_MAX
+};
+
+#DEFINE ARRAY_COLLUMNS 3
+
+//2nd colum is for icon sprites in case i make an hud or something
+str RangeWep[RANGE_MAX][ARRAY_COLLUMNS]={
+{"FireStormWepC","","Fire"},
+{"ThunderBeamWepC","","Elec"},
+{"MagnetMissileWepC","","Magnet"},
+{"GeminiLaserWepC","","Gemini"},
+{"SearchSnakeWepC","","Snake"},
+{"SparkShockWepC","","Spark"},
+{"DustCrusherWepC","","Dust"},
+{"SkullSniperWepC","","Skull7"},
+{"GyroAttackWepC","","Gyro"},
+{"BlizzardAttackWepC","","Blizzard"},
+{"SilverTomahawkWepC","","Tomahawk"},
+{"FreezeCrackerWepC","","Freeze"},
+{"ThunderBoltWepC","","Cloud"},
+{"NoiseCrushWepC","","Shade"},
+{"MegaBallWepC","","Rock"},
+{"HomingSniperWepC","","Search"},
+{"IceWaveWepC","","Frost"},
+{"CopyVisionWepC","","AstroB"},
+{"DynamoTendrilWepC","","Dynamo7"},
+{"LaserTridentWepC","","Splash"},
+{"FakeRepeaterWepC","","Fake"},
+//{"ReboundStrikerWepC","","Strike"},
+//{"SparkChaserWep","","Terra"},
+{"GrabBusterWepC","","Mercury"}
+};
+str RapidWep[RAPID_MAX][ARRAY_COLLUMNS]={
+{"WaveBusterWepC","","Wily"},
+{"IceSlasherWepC","","Ice"},
+{"MetalBladeWepC","","Metal"},
+{"QuickBoomerangWepC","","Quick"},
+{"NeedleCannonWepC","","Needle"},
+{"TopTwistWepC","","Top7"},
+{"WaterWaveWepC","","Wave"},
+{"PlantTrapperWepC","","Plant7"},
+{"YamatoSpearWepC","","Yamato"},
+{"WaterBalloonWepC","","Aqua"},
+{"WaveBurnerWepC","","Burner"},
+{"PlugBallWepC","","Plug"},
+{"RainbowGalaxyWepC","","Galaxy7"},
+{"ScrewCrusherWepC","","Punk"},
+{"BusterRodGWepC","","BusterRodG"}
+};
+str CloseWep[CLOSE_MAX][ARRAY_COLLUMNS]={
+{"RollSweepWepC","","Roll"},
+{"RisingFistWepC","","DrLight"},
+{"RollingCutterWepC","","Cut"},
+{"OilSliderWepC","","Oil"},
+{"AirShooterWepC","","Air"},
+{"BubbleLeadWepC","","Bubble"},
+{"ShadowBladeWepC","","Shadow"},
+{"RingBoomerangWepC","","Ring"},
+{"PowerStoneWepC","","Stone"},
+{"ChargeKickWepC","","Charge"},
+{"FlameBlastWepC","","Flame"},
+{"KnightCrushWepC","","Knight"},
+{"WindStormWepC","","Wind"},
+{"WildCoilWepC","","Spring"},
+{"SlashClawWepC","","Slash"},
+{"TornadoHoldWepC","","Tengu"},
+{"FlameSwordWepC","","Sword"},
+{"ThunderClawWepC","","Clown"},
+{"TenguBladeWepC","","TenguB"},
+{"MagicCardWepC","","Magic"},
+{"ConcreteShotWepC","","Concrete"},
+{"HornetChaserWepC","","Hornet"},
+{"MagmaBazookaWepC","","Magma"},
+{"TripleBladeWepC","","Blade"},
+{"ChillSpikeWepC","","Chill"},
+//{"ThunderWoolWepC","","Sheep"},
+{"WheelCutterWepC","","Nitro"},
+{"BubbleBombWepC","","Venus"},
+{"ElectricShockWepC","","Jupiter"},
+{"BreakDashWepC","","Pluto"},
+{"SaltWaterWepC","","Neptune"},
+{"SakuGarneWepC","","Quint"},
+{"HyperStormHWepC","","HyperStormH"}
+};
+str PowerWep[POWER_MAX][ARRAY_COLLUMNS]={
+{"SuperArmWepC","","Guts"},
+{"HyperBombWepC","","Bomb"},
+{"CrashBombWepC","","Crash"},
+{"AtomicFireWepC","","Heat"},
+{"HardKnuckleWepC","","Hard"},
+{"DrillBombWepC","","Drill"},
+{"PharaohShotWepC","","Pharaoh"},
+{"GravitySphereWepC","","Gravity7"},
+{"NapalmBombWepC","","Napalm"},
+{"CrystalEyeWepC","","Crystal"},
+{"CentaurArrowWepC","","Centaur7"},
+{"DangerWrapWepC","","Burst"},
+{"FlashBombWepC","","Grenade"},
+{"SpreadDrillWepC","","Ground"},
+{"RemoteMineWepC","","Pirate"},
+{"CommandoBombWepC","","Commando"},
+{"PhotonMissileWepC","","Mars"},
+{"DeepDiggerWepC","","Uranus"},
+{"BalladeCrackerWepC","","Ballade"}
+};
+str GuardWep[GUARD_MAX][ARRAY_COLLUMNS]={
+{"TimeSlowWepC","","Time"},
+{"TimeBenderWepC","","Flash7"},
+{"BoobeamBarrierWepC","","Alien"},
+{"LeafShieldWepC","","Wood"},
+{"DocScannerWepC","","Doc"},
+{"FlashBulbWepC","","Bright7"},
+{"RainFlushWepC","","Toad"},
+{"DiveSonarWepC","","Dive7"},
+{"SkullbarrierWepC","","Skull"},
+{"StarCrashWepC","","Star"},
+{"DarkShieldWepC","","Dark7"},
+{"CentaurFlashWepC","","Centaur"},
+{"JunkShieldWepC","","Junk"},
+{"ScorchWheelWepC","","Turbo"},
+{"IceWallWepC","","Cold"},
+{"TornadoBlowWepC","","Tornado"},
+{"JewelSatelliteWepC","","Jewel"},
+{"WaterShieldWepC","","Pump"},
+//{"BlackHoleWepC","","Saturn"},
+{"MirrorBusterWepC","","Enker"},
+{"MegaWaterSWepC","","MegaWaterS"}
+};
+
+
+function str getFromWepArray(int whichArray, int i, int j) {
+	switch(whichArray) {
+		case 4:
+			return GuardWep[i][j];
+			break;
+		case 3:
+			return PowerWep[i][j];
+			break;
+		case 2:
+			return CloseWep[i][j];
+			break;
+		case 1:
+			return RapidWep[i][j];
+			break;
+		case 0:
+			return RangeWep[i][j];
+			break;
+	}
+	return "";
+}
+
+script "CBM_LoadoutSetup" (void)
+{
+	int uvar;
+	int max;
+	int pnum = PlayerNumber();
+	int bot = PlayerIsBot(pnum);
+	for(int i = 0; i<WEAPON_CATEGORIES; i++){
+		max = WepCategoryMaxes[i];
+		if(bot){//Bot gets random weapons
+			uvar = random(0,max-1);
+		}
+		else{
+			uvar = GetUserCvar(pnum,WepCategories[i]);
+			if(uvar<0||uvar>=max){
+				uvar = random(0,max-1);
+			}
+		}
+		GiveInventory(getFromWepArray(i,uvar,0),1);
+	}
+}
+
+script "CBM_LoadoutLMSCheck" (void)
+{
+	SetResultValue((GetCvar("lastmanstanding")==1||GetCvar("teamlms")==1)&&GetCvar("instagib")==0);
+}
+
+
+
+
+
+#DEFINE I_TOTAL_CLASSES 120
+
+str MainBossList[I_TOTAL_CLASSES][5]={
+//Name, speed, jump, multi-wep, extra
+
+{"Megaman","0.8/0.78","10","77",""},
+{"Protoman","0.83/0.81","10","77",""},
+{"Bass","0.75/0.73","10","77","Can Double Jump"},
+{"Duo","0.73/0.71","10","77",""},
+{"Maestro","0.8/0.78","10","77","Does normal damage with copy weapons"},
+{"Rock","0.825/0.805","11","9",""},
+{"Roll","0.825/0.805","11","2","Can pickup screws"},
+{"Auto","0.825/0.805","11","2","Can pickup screws"},
+{"DrLight","0.825/0.805","12","1",""},
+{"DrWily","0.8/0.78","10","1",""},
+{"SniperJoe","0.8/0.78","10","2",""},
+
+{"Cutman","1.0/0.98","12.5","1","Can Wall Jump"},
+{"Gutsman","0.56/0.54","10","1","Suffers no hitstun when not holding a rock"},
+{"Iceman","0.8/0.78","10","1",""},
+{"Bombman","0.65/0.63","13","1",""},
+{"Fireman","0.8/0.78","10","1",""},
+{"Elecman","0.9/0.88","10","1",""},
+{"Timeman","0.8/0.78","10","1",""},
+{"Oilman","0.8/0.78","10","1",""},
+
+{"Metalman","0.8/0.78","11","1","Can hold jump+fire to slow fall"},
+{"Airman","0.86/0.84","10","1",""},
+{"Bubbleman","0.8/0.78","10","1","Double jump to swim in water"},
+{"Quickman","1.2/1.2","11","1","Can Wall Jump"},
+{"Crashman","0.86/0.84","13","1",""},
+{"Flashman","0.8/0.78","10","1",""},
+{"Heatman","0.72/0.70","10","2",""},
+{"Woodman","0.67/0.65","10","1","Gains ammo when damaged"},
+{"Alien","0.8/0.78","10","1","Can float above floors"},
+
+{"Needleman","0.75/0.73","10","2",""},
+{"Magnetman","0.8/0.78","12","1",""},
+{"Geminiman","0.8/0.78","10","1",""},
+{"Hardman","0.5/0.48","10","1","Suffers half hitstun"},
+{"Topman","1.1/1.08","10","1",""},
+{"Snakeman","1.0/0.98","10","1",""},
+{"Sparkman","0.8/0.78","10","1",""},
+{"Shadowman","0.8/0.78","15","1","Can Wall Jump"},
+{"DocRobot","0.8/0.78","10","77","Stats change with weapon use\n       Passively regenerates ammo"},
+
+{"Brightman","0.85/0.82","12","1",""},
+{"Toadman","0.8/0.78","15","1",""},
+{"Drillman","0.75/0.73","10","1",""},
+{"Pharaohman","0.8/0.78","10","1",""},
+{"Ringman","0.8/0.78","13","1",""},
+{"Dustman","0.7/0.68","10","2","Can pickup scrap metal"},
+{"Diveman","0.8/0.78","10","2",""},
+{"Skullman","0.80/0.78","12","1",""},
+
+{"Gravityman","0.8/0.78","15","1",""},
+{"Waveman","0.8/0.8","10","2",""},
+{"Stoneman","0.8/0.78","10","1","Suffers half hitstun\n       Can revive on death"},
+{"Gyroman","0.87/0.85","10","1",""},
+{"Starman","0.75/0.72","12","1","Slighty reduced gravity"},
+{"Chargeman","0.8/0.4","10","1",""},
+{"Napalmman","0.89/0.5","10","1",""},
+{"Crystalman","0.7/0.68","13","1",""},
+{"Darkman1","0.65/0.4","0","1","Gains slight speed with less health\n       Jumping uses ammo to boost upwards"},
+{"Darkman2","0.81/0.808","10","1","Gains speed with less health"},
+{"Darkman3","0.75/0.73","12","1",""},
+{"Darkman4","0.7/0.68","10","1","Gains slight speed with less health"},
+
+{"Blizzardman","0.9/0.78","10","2",""},
+{"Centaurman","1.0/0.6","10","1",""},
+{"Flameman","0.8/0.78","12","1",""},
+{"Knightman","0.65/0.57","12","1",""},
+{"Plantman","0.8/0.78","10","1","Passively regenerates health (except T/LMS)\n       Can pickup screws"},
+{"Tomahawkman","0.89/0.87","10","1",""},
+{"Windman","0.7/0.68","10","1",""},
+{"Yamatoman","0.666/0.666","13","1",""},
+
+{"Freezeman","0.8/0.78","10","1",""},
+{"Junkman","0.6/0.58","14","1","Can pickup scrap metal"},
+{"Burstman","0.8/0.78","10","1","Drops stocked bombs on death"},
+{"Cloudman","0.6/0.58","10","1","Reduced gravity"},
+{"Springman","0.76/0.74","20","1",""},
+{"Slashman","0.82/0.8","10","1","Can Wall Jump"},
+{"Shademan","0.8/0.78","10","1",""},
+{"Turboman","0.8/0.78","10","1",""},
+
+{"Tenguman","0.76/0.74","10","1",""},
+{"Astroman","0.75/0.73","10","1","Can float above floors"},
+{"Swordman","0.75/0.73","10","1",""},
+{"Clownman","0.93/0.91","12","2",""},
+{"Searchman","0.7/0.68","10","1",""},
+{"Frostman","0.5/0.48","10","1","Suffers half hitstun"},
+{"Grenademan","0.74/0.72","10","1","Gains rage ammo doing/taking damage\n       Gains speed with more rage"},
+{"Aquaman","0.8/0.78","10","1",""},
+{"OriginalDuo","0.76/0.74","10","1",""},
+{"EvilRobot","0.73/0.71","10","77",""},
+
+{"Dynamoman","0.85/0.83","10","1","Can pickup screws"},
+{"Coldman","0.62/0.60","10","1",""},
+{"Groundman","0.64/0.62","10","1",""},
+{"Pirateman","0.65/0.63","10","1","Can steal most pickups"},
+{"Burnerman","0.8/0.78","10","1",""},
+{"Magicman","0.8/0.78","10","2",""},
+{"King","0.73/0.71","10","2",""},
+
+{"Concreteman","0.6/0.58","10","1",""},
+{"Tornadoman","0.76/0.74","12","1",""},
+{"Splashwoman","0.8/0.78","10","2","Double jump to swim in water\n       Can pickup screws"},
+{"Plugman","0.75/0.73","10","1",""},
+{"Jewelman","0.75/0.73","10","4",""},
+{"Hornetman","0.8/0.78","13","1",""},
+{"Magmaman","0.7/0.68","14","1","Loses ammo when hurt"},
+{"Galaxyman","0.8/0.78","10","1",""},
+{"Fakeman","0.9/0.88","10","1","Can confiscate most pickups"},
+
+{"Blademan","0.8/0.78","13","2",""},
+{"Pumpman","0.78/0.76","13","1",""},
+{"Commandoman","0.6/0.58","10","2",""},
+{"Chillman","0.69/0.67","12","1","Can Wall Jump\n       Has a passive shield"},
+//{"Sheepman","0.8/0.78","10","1",""},
+//{"Strikeman","0.8/0.78","10","1",""},
+{"Nitroman","0.8/0.78","10","1",""},
+//{"Solarman","0.8/0.78","10","1",""},
+
+//{"Terra","0.8/0.78","10","1",""},
+{"Mercury","0.88/0.87","10","1","Can steal most pickups"},
+{"Venus","0.78/0.9","10","2",""},
+{"Mars","0.6/0.58","10","2",""},
+{"Jupiter","0.8/0.78","10","1",""},
+//{"Saturn","0.8/0.78","10","1",""},
+{"Uranus","0.5/0.48","10","1",""},
+{"Pluto","0.8/0.78","11","1","Can Wall Jump\n       Suffers half hitstun\n       Gain speed through constant movement"},
+{"Neptune","0.7/0.68","10","1",""},
+//{"Sunstar","0.8/0.78","10","1",""},
+
+{"BusterRodG","1.0/0.98","13","1","Can Wall Jump"},
+{"MegaWaterS","0.8/0.78","10","1",""},
+{"HyperStormH","0.50/0.48","10","2","Suffers half hitstun"},
+
+{"Enker","1.0/0.9","10","1","Generates ammo when hurt"},
+{"Punk","0.75/0.7","10","2",""},
+{"Ballade","0.9/0.8","13","1",""},
+{"Quint","0.8/0.78","10","2",""},
+{"RaThor","0.89/0.86","12.5","1","Can Double Jump\n       Can pickup souls from frags"},
+{"BBA Mega Man","0.8/0.78","10","7","Gain meter on direct hits"}
+};
+
+
+str MainWepList[I_TOTAL_CLASSES][3]={
+//Mainfire, AltFire, Item
+
+//MegamanC
+{"Fires basic shots. Can be charged to fire a stronger shot.",
+"On any copy weapon, you can perform a basic dash.",
+""},
+//Protoman
+{"Fires basic shots. Can be charged to fire a stronger shot.",
+"On any copy weapon, you can perform a long dash.",
+""},
+//Bass
+{"Fires rapid shots.",
+"On any copy weapon, you can perform a hopping dash.",
+""},
+//Duo
+{"Basic shot is a short range punch, can be charged to fire a stronger shot with range.",
+"On any copy weapon, you can perform a tackle dash.",
+""},
+//Maestro
+{"Fires basic shots.",
+"Certain weapons have different attacks, such as AtomicFire.",
+""},
+//RockClass
+{"Pickup weapons to get different balls! While holding mainfire, altfire can be pressed to kick the current ball from your hands. If mainfire is fully charged, the ball is an empowered kick.\nDropped balls can be ran into to auto kick, jumped onto to boost upwards, or ran into with altfire active for an empowered kick. Balls dropped in the air while looking down automatically make you jump off them, at a weaker boost than on the floor.",
+"Fires a basic kick. Dropping a ball and kicking right away slightly boosts you forward. As a note about empowered kicked balls, most of the balls either gain extra bounces, more speed, or more damage.\nBasic Megaball has the most bounces.\nCut Ball has no gravity.\nGuts ball splits on surfaces.\nIce ball causes ice slow on hit.\nBomb ball explodes on contact.\nFire ball is fast and ignites oiled foes.\nElec ball rips through enemies.\nTime ball moves very slowly and causes time slow on hit\nOil ball drops oil bits and coats foes in oil.",
+""},
+//RollClass
+{"Weapon 1 fires a short range melee (Roll Swing) that is able to block and blast away most projectiles. The first swing just does damage, the second swing knocks enemies randomly around.\nWeapon 2 fires a puddle of water. This water stuns when its on the ground. The damage is also increased when it is flung by Roll Swing.",
+"Weapon 1 and 2 both perform a dash. This dash is at a set speed and upward boost. Dashing resets Weapon 1's Roll Swing back to the first swing.",
+"Summons a Roll Gift that can be picked up for health.\nAmmo for this is gained via hitting enemies with your second swing or picking up bolts dropped by enemies."},
+//AutoClass
+{"Weapon 1 fires fireworks that explode. Upgrading the fireworks makes them explode more.\nWeapon 2 creates your currently selected item. Each requires different amounts of ammo. The Met Helmet and E-Tank Lite require bolts from enemies.",
+"Weapon 1 does a cool pose and nothing else.\nWeapon 2 swaps what upgrade/item you will create next.",
+""},
+//DrLight
+{"Fires a hadoken which grants super meter on hit.\nWith enough super, main and then quickly altfire fires shakunetsu which can burn over time.",
+"Dashes forward doing a Tatsumaki Senpukyaku. This gives some super meter on hit.\nDuring tatsumaki, pressing mainfire does a shoryuken uppercut.\nWith enough super, altfire and then quickly mainfire performs Shinku Tatsumaki Senpukyaku. This dodges most projectiles and pulls in enemies.",
+"With maxed out super, item use empowers your next mainfire/altfire.\nMainfire charges up a Shinku Hadoken, which sucks enemies up while traveling.\nAltfire does Shin Shoryuken, a powerful one, two, three uppercut."},
+//DrWily
+{"WilySuit weapon fires stronger shots based on ammo.\nCapsule 1 weapon fires a stream of fires that burns enemies.\nCapsule 2 weapon fires a spread of ice that freezes enemies hit.\nFoot Wily weapon fires wavy shots.",
+"WilySuit weapon fires wavy shots.\nBoth Capsule 1 and 2 fires a ripping electric shot that splits on the ground.\nFoot Wily weapon swings your trusty frying pan.",
+"When in Suit form, you generate capsule ammo. Once you have full ammo, item use with transform you into capsule form.\nCapsule form ends when you run out of capsule ammo or if you press item to cancel it.\nExiting capsule form leaves you in Foot form. Once at full ammo, item use will return you to suit form."},
+//SniperJoe
+{"Weapon 1 fires a basic shot and has a shield. Enemies killed by your basic shot grant ammo.\nWeapon 2 requires ammo and fires a barrage of shots.\nTruck weapon boosts you forward as long as you hold mainfire.\nApache weapon fires a barrage of shots.",
+"Weapon 1 throws a grenade, this can be charged to cook the grenade. If fully cooked, blast forward in your aimed direction. Enemies killed by your basic grenade instantly grant ammo.\nWeapon 2 uses a lump of ammo to instantly fire a grenade.\nTruck weapon boosts you backward as long as you hold altfire.\nApache weapon drops bombs under you.",
+"Enemies killed by you or die after being recently damaged by you drop a scoreball on death. These scoreballs grant instant ammo for your item.\nItem use when not at full ammo refills the ammo for Weapon 2. At full ammo, a crate is spawned wherever you point. Running into the crate brings up the choice of either Truck or Apache weapon.\nYou are invulnerable (except to pits) when in truck form, but cannot move normally.\nYou are able hover a great distance off the ground when in Apache form."},
+
+//Cutman
+{"Throws your Rolling Cutter. Hold to extend the Cutter distance at the cost of ammo. You cannot do any attacks until you catch your cutter.",
+"Uses your cutter to form a quick melee slice.",
+""},
+//Gutsman
+{"Summons a rock when standing on the ground. With a rock, throws the rock that splits upon hitting a surface.",
+"Without a rock, performs a strong punch. With a rock, places the rock down allowing it to be used as a platform. Placed rocks can be punched to send bits forward.",
+""},
+//Iceman
+{"Fires Ice Slashers.",
+"Fires an icy beam that slows enemies and summons an ice statue a short distance away. Statues explode upon taking damage from Iceman or other statues, leaving a damaging fog that slows enemies on hit.",
+""},
+//Bombman
+{"Pulls out a bomb with a fuse. The ammo bar shows the time until detonation. With a bomb in hand, mainfire throws the bomb hard, causing it to blow up on contact with surfaces.\nA thrown bomb that blows up from the fuse does more damage than a force thrown bomb and a bomb dropped via fuse.",
+"With a bomb in hand, the bomb is lobbed where it bounces off objects. ",
+""},
+//Fireman
+{"Fires a shot that leaves a flame bit on collision. While firing a ring of fire spins around the user, which does constant damage.",
+"Fires a slow moving wave of fire.",
+""},
+//Elecman
+{"Fires a spread of ripping shots.",
+"After a short delay quickly travel forward, clipping up or down walls.",
+""},
+//Timeman
+{"Weapon 1 fires a split of shots.\nWeapon 2 alternates between firing a slow ripping shot to firing a fast ripping shot.",
+"Weapon 1 and 2 both fire Time Slow, a large explosion that slows enemies hit by it. For a short time when Time Slow is used, you are able to avoid damage from most projectiles, as well as gaining a tiny boost of speed.",
+""},
+//Oilman
+{"Fires a blob of oil. This attack can be charged to fire more oil at a great distance. Running into an oil blob instantly turns the oil into a sled to travel across the ground.\nRunning into an oil blob begins riding the oil around doing contact damage to enemies. When riding the oil, pressing mainfire hops off the oil boosting you upwards a bit.",
+"Fires a larger blob of oil that does less damage. When riding oil, these blobs extend the duration of your Oil Slider.\nWhile riding oil, using altfire fires small oil blobs to help extend the duration of your Oil Slider but deals less damage.",
+"Snaps your fingers when at full ammo. This creates a spark that can ignite flammable objects. This can be used when riding oil slider."},
+
+//Metalman
+{"Fires a ripping shot that can slide across floors and drop from the ceiling.",
+"Fires a chain saw of shots that allows the user to climb up walls. Pressing jump during a climb thrusts you in the opposite direction.",
+""},
+//Airman
+{"Fires a spread of shots that travel upwards.",
+"Fires a random volley of shots that sit for a while before quickly traveling in the direction aimed at a great speed.",
+"Toggles your wind turbines, increasing your jump height and air control while draining ammo."},
+//Bubbleman
+{"Fires a basic shot.",
+"Fires a bouncing bubble that always bounces the same height off floors. This bubble cannot bounce off walls, but can bounce off ceilings.",
+"Summons a large bubble that the user can swim in. The large bubble can move if spawned while moving."},
+//Quickman
+{"Rapidly fires Quick Boomerangs. During boost mode, fires a spread of Boomerangs.",
+"Activates boost mode when at full ammo! You move quicker and can jump higher during boost mode. Altfire uses mainfire when you don't have enough ammo.",
+""},
+//Crashman
+{"Fires a normal clash bomb. You can bombjump off detonated Clash Bombs.",
+"Fires a crash mine that blows up on contact or sticks to floors/walls/ceilings. You can only have four crash mines on the field.",
+"Detonates all bombs on field, including the normal clash bomb. Crash mines that are detonated also have additional hitstun."},
+//Flashman
+{"Constantly fires a stream of bullets in a wave pattern.",
+"Fires a short range flash of damage, completely freezing all enemies hit. Frozen enemies cannot do anything until it wears off or they are damaged.",
+""},
+//Heatman
+{"Weapon 1 without enough ammo, fires a basic shot. With enough ammo, holding mainfire performs a heat tackle in the direction aimed. Tapping mainfire throws an atomicfire based on how much ammo you have.\nWeapon 2 fires a volley of heat pillars.",
+"Weapon 1 and 2 both recharge your ammo while slowing you down a tad.",
+""},
+//Woodman
+{"Toss a volley of seeds that stun enemies who step on them. While leaf shield is active, mainfire fires off a leaf rain.",
+"Leaps forward, body slamming enemies who are nearby. This attack can also be used while jumping to get around.",
+"Activates leaf shield or tosses active shield. On max ammo use, become invulnerable for 2 seconds. Otherwise shield makes you take 25% less damage."},
+//Alien
+{"Fires a basic shot.",
+"Fires a trap that sticks to floors, walls, and ceilings. When you use mainfire, all traps will fire at the spot you aimed at.",
+"Enables/disables hovering off floors, which allows for platforming in certain scenarios."},
+
+//Needleman
+{"Weapon 1 revs up your weapon and begins rapidly firing needles. While revved up you move at a slower pace.\nWeapon 2 stabs at enemies with your needle head.",
+"Weapon 1 maintains your revved up weapon, allowing you to be ready to attack right away.\nWeapon 2 is the same as mainfire.",
+""},
+//Magnetman
+{"Fires a magnet that will home at nearby targets when mainfire is let go. As the magnet travels, its homing power and damage will increase. Magnets that don't find a target will continue forward, but gain no further damage.",
+"Begins charging for a magnetic shockwave. Enemies hit by this are pushed away from you. The longer this is the charged, the more damage and push it does.",
+""},
+//Geminiman
+{"Fires a basic shot.",
+"Fires a bouncing laser. If your clone is active, altfire controls whether the clone is following or sitting still.",
+"Summons a Gemini clone. This clone automatically shoots at enemies its able to see. Your ammo bar shows the clones remaining health. Using item again will destroy the clone for half your ammo."},
+//Hardman
+{"Fires off a hard knuckle that returns after colliding with something. The knuckles are only able to damage enemies once. You can only fire two hard knuckles.",
+"Boosts yourself into the air, and then begin doing crushing damage once you are falling. Upon landing, do a shockwave that stuns enemies standing on the same floor level. This attack gets bigger and stronger the longer you fall.",
+""},
+//Topman
+{"Begins charging a spin. The more charge, the further you travel and the longer you do damage. The total delay after spinning is the same no matter the charge. Charging at least 75% will result in the spin avoiding most damage.",
+"Throws a spread of basic projectiles.",
+""},
+//Snakeman
+{"Fires a search snake, which is able to crawl along floors and walls.",
+"Commands all snakes to exactly where you point. Snakes can be commanded once.",
+"Enables/disables wall clinging. While enabled, you are able to crawl along walls and ceilings."},
+//Sparkman
+{"Fires a large spark shock that stuns enemies. This can be held for easier timing. While charging, altfire to fire a ring of spark shocks around yourself.",
+"Lobs a ball of static that lingers on the ground, stunning enemies.",
+""},
+//Shadowman
+{"Throw a short range ripping shadow blade.",
+"Turn yourself invisible when at full ammo. Attacking while invisible will break the invisibility immediately. Altfire while invisible will do a short last dash increasing you movement speed.",
+"Tosses caltrops that stick to floors."},
+//DocRobot
+{"Fires a basic shot.",
+"Does a short range scan to copy weapons. This can work on foes and allies.\nScanning classes with multiple weapons can give either. Rarer weapons have lower chances, such as TimeStopper being 1%. Classes without weapons default to a Carry item or a burst of ammo.",
+""},
+
+//Brightman
+{"Fires basic shots with a bit of random spread.\nThese shots don't travel that far.",
+"Throws a lightbulb that explodes. Enemies hit by this are blinded for a short duration. Blinding a foe after Flash Stopper extends the blind.",
+"Fires off an explosion of light, stunning enemies in place. Enemies can still slightly move and use their weapons. They regain movement after a short duration or upon being hit."},
+//Toadman
+{"Begins channeling to spawn rain flush, a large damaging explosion around the user. After the initial burst of rain, continuing to hold mainfire will extend it.",
+"Leaps forward a great distance while also being able to jump off enemies heads.",
+""},
+//Drillman
+{"Fires explosive shots.",
+"Leap into the air to begin digging once you hit the ground. You dig in a straight line depending on which movement keys you held. While digging you are invulnerable but are unable to pickup items. Upon exiting digging, you do nearby damage to enemies and restore all your mainfire ammo.",
+""},
+//Pharaohman
+{"Begins charging Pharaoh Shot, once fully charged, the shot thrown shot is able to explode. If altfire is pressed with a charged shot, Pharaoh wave shots are fired off instead.",
+"Performs pharaoh hovering to travel across maps. You also do light damage to enemies nearby.",
+""},
+//Ringman
+{"Fires a bouncing ring from your left hand. This ring increases in damage once you see the sparkle. If the ring slows down too much or you press mainfire again, the ring will return to you.",
+"The same as mainfire but instead throws from your right hand.",
+""},
+//Dustman
+{"Weapon 1 fires a Dust Crusher shot from your head. This shot splits on surfaces and leaves scrap metal if it doesn't hit an actor.\nWeapon 2 fires dust bits from your buster.",
+"Weapon 1 and 2 both pull enemies towards you while also giving you some ammo. This suction is also able to grab scrap metal on the ground from a distance.",
+""},
+//Diveman
+{"Weapon 1 and 2 both fire a barrage of Dive missiles at your enemies. Damaging an enemy will lock on to them.",
+"Weapon 1 fires a spread of dive mines that are able to block shots. There is no limit to the amount of mines, but enemies take reduced damage from being hit by too many mines at once.\nWeapon 2 performs the Dive tackle, which turns yourself into a literal dive missile. Letting go of altfire or colliding with something ends the dive tackle.",
+"Clears your current lock on target."},
+//Skullman
+{"Fires an incredibly fast shot. This shot loses power as it travels.",
+"Activates Skull Barrier to block one hit. If the barrier was activated just before you get hit by an enemy, you will blast away projectiles, players and enter Rage mode. During rage mode your mainfire ammo gets restored and you fire shots at a faster and stronger rate of fire. Killing enemies during rage mode refreshes the duration.",
+""},
+
+//Gravityman
+{"Fires a basic shot.",
+"Does a basic Gravity Hold that knocks opponents downward. When flipped, the Gravity Hold knocks opponents upwards instead.\nCharge to fire a Gravity Well at the floor or ceiling that flings after a delay. Its fling direction depends on if its on the floor or ceiling.\nThe closer you are to where you fired the well, the faster it flings.",
+"Flips yourself upside down, allowing you to walk along ceilings."},
+//Waveman
+{"Weapon 1 and 2 both Fire pinpoint water waves that spawn after a short while. The closer you are to the intital spawn, the faster they spawn. Waves can climb small stairs. Waves spawned on walls/ceilings will travel backwards.",
+"Weapon 1 Fires a basic hook. If altfire is held during the travel of the shot, you will be pulled to where the hook landed.\nWeapon 2 fires basic hooks constantly.",
+""},
+//Stoneman
+{"Fires two powerstones to rotate around yourself. If you are leaping with altfire, you can cancel the altfire with mainfire.",
+"Begins charging your leap. The longer its charged, the higher you leap. During the leap upwards you do headbutting damage, while falling you deal crushing damage. Upon landing, you stun nearby enemies on the ground and summon a stone hand to home at enemies.",
+""},
+//Gyroman
+{"Fires a Gyro that slides along the ground/ceiling if it hits it.",
+"Enables/disables flight, holding altfire extends the duration of the flight.",
+""},
+//Starman
+{"Turns on Star Crash, making you take less damage and deal constant damage around yourself. If you run out of ammo, the shield is not thrown.",
+"Summons a floating Star Crash to spawn a bunch of star bits after a short delay.",
+""},
+//Chargeman
+{"Charges forward doing direct and explosive damage.",
+"Summons coal around yourself and fires a single explosive coal shot forward. For a short time, you are invulnerable to damage.",
+""},
+//Napalmman
+{"Rapidly fires bouncing napalm bombs.",
+"Prevents movement to fire explode missiles.",
+""},
+//Crystalman
+{"Charges a Crystal shot. More charge results in more shots when split with mainfire. The split shots aims where you aim.",
+"Fires a small crystal that can only bounce a limited amount of times.",
+""},
+//Darkman1
+{"Fires basic shots. The less health you have, the faster these shots are fired.",
+"Fires slightly weaker shots than mainfire that have gravity and explode. The same health mechanic applies as mainfire.",
+""},
+//Darkman2
+{"Fires a volley of shots with gravity that stun enemies on hit. If Dark Shield is active, mainfire throws the shield straight forward and backwards.",
+"Summons Dark Shield, which does damage on hit, along with blocking projectiles. When the shield is fired, it spins around the field.",
+""},
+//Darkman3
+{"Fires a burst of weak shots. While scoped, fires a faster, precise shot. Shots become stronger as focus builds.\nAt max focus, the shot increases in damage as it travels and has slight knockback.",
+"Fires a ring with limited range that stuns enemies. At max focus, the ring becomes faster and has increased range.",
+"Toggles your scope, slowing your movement and zooming your view. You gain focus while scoped. The less health you have, the faster you gain focus."},
+//Darkman4
+{"Fires a shot that gains damage with distance. When the shield is up, fires a basic shot at a slower rate of fire. The less health the user has the faster the rate of fire is for the shield shot.",
+"Summons Dark Shield, which does damage on hit, along with blocking projectiles. When the shield is fired, it spins around the field.",
+""},
+
+//Blizzardman
+{"Weapon 1 fires a spread of projectiles that home for a short duration.\nWeapon 2 fires two shots at a rapid pace that sit for a while before traveling.",
+"Weapon 1 and 2 both begin blizzard bowl, an attack where the user charges forward bashing a single enemy. This attack bounces the user away upon contact.",
+""},
+//Centaurman
+{"Fires a shot that splits into bits that travel a short distance.",
+"Performs Centaur Flash, which blasts away most projectiles along with stunning nearby enemies.",
+"Turns the user invisible after a short duration and quickly 'teleports' forward. Mainfire can be used during this."},
+//Flameman
+{"Fires a Flame Blast that snakes across the floor and leaves a trail of flames. leaves a single pillar on walls.",
+"Uses all your ammo to fire a random spread of Flame Blasts along the ground.",
+""},
+//Knightman
+{"Puts down your shield to fire a Knight Crusher. You cannot do anything until the crusher returns.",
+"Uses your shield to bash enemies, which stuns and pushes them away from you. During the bash you also blast away most projectiles near you.",
+""},
+//Plantman
+{"Fires a constant stream of shots that are affected by gravity. Shots that hit enemies heal you.",
+"Deploys Plant Barrier, which does constant damage during use.",
+"Throws a deployable healing field with enough screws."},
+//Tomahawkman
+{"Fires two Silver Tomahawks arcing in different directions. After the sparkle appears on this shots, they do increased damage.",
+"Fires a volley of ripping feathers that split apart.",
+""},
+//Windman
+{"Fires a spread of gyros that zigzag through the air.",
+"Fires two floor crawling wind storms that drag enemies to the user.",
+"Enables flight when at full ammo. Disables flight when flying. If flight is cancelled when looking downwards, a stomping attack is performed."},
+//Yamatoman
+{"Fires a volley of ripping spears forward. These drop to the ground on contact and can be picked up to restore some ammo.",
+"Spins your spear to do constant nearby damage. During the spin your jump height and speed are lowered a little. The spin also pulls in nearby spears.",
+""},
+
+//Freezeman
+{"Fires a shot that splits into bits on walls or spawns icicles when fired onto the floor/ceiling.",
+"Begins charging for a duration, which results in firing a shot that spreads in floor/ceiling icicles. Hitting altfire during the charge cancels it.\nThe initial waves from the shot freeze enemies on hit. Ceiling icicles split into bits on death.",
+""},
+//Junkman
+{"Creates a junk cube that does large damage and is able to block shots. This block can be pushed with altfire and the block is able to slide up short stairs/slopes.",
+"Punches forward, using a bit of ammo to also fire off a junk shot.",
+"Uses some of your ammo to give grant you junk shield. This shield gives you armor, along with constantly damaging nearby enemies. If item is used when you already have junk shield, it refreshes the shield along with firing a stunning shot."},
+//Burstman
+{"Fires a slowly lifting shot that explodes on direct hits. Bombs bounce around if they hit a surface. More bombs make bubbles heavier",
+"Fires a pinpoint attack to spawn a bubble on the ground. Enemies hit by this are ensnared by the bubble for the duration or until damaged.\nRunning into your own bubble begins lifting you into the air for a duration.",
+"Stocks up to 2 extra bombs for mainfire. Pops bubble when riding your altfire bubble."},
+//Cloudman
+{"Fires a thunder bolt that splits on contact. This attack only splits when ammo is used. Otherwise not having enough ammo delays the shot and the shot does not split.",
+"When not flying and on the ground, recharges your ammo. When flying, drops a lightning bolt that splits on the ground.",
+"Enables/disables flight. This is limited by your ammo."},
+//Springman
+{"Fires a spring with gravity that splits into more springs that can bounce for a while.",
+"Halts the user in the air and fires a punch forward that explodes on contact.",
+""},
+//Slashman
+{"Performs a slash that travels forward. This attack is stronger and goes further after using altfire more.",
+"Dashes in the direction aimed, dropping slowing goop below and ahead of the user. Dashes on the ground and near walls reset your velocity.",
+""},
+//Shademan
+{"Fires a bouncing noise crush which can be caught to charge yourself. When charged fire a stronger shot that does not bounce.",
+"Boosts yourself into the air to fly at a low gravity. Further altfires will continue to boost you into the air. Pressing mainfire during this flight swoops downward to grab enemies or allies.\nGrabbed targets are slowly lifted into the air while be drained health. This can be cancelled early with altfire, if too much damage is taken, or if an ally attempt to jump.",
+""},
+//Turboman
+{"Holding this attack stalls scorch wheel while speeding up yourself during the duration. Letting go fires a scorch wheel to travel across the ground constantly doing damage.\nA fully charged scorch wheel disables your speed boost, but causes the thrown scorch wheel to leave a trail of fire.",
+"Can be charged to dash for a longer duration. During the dash, hitting mainfire honks your horn to fling away enemies.",
+""},
+
+//Tenguman
+{"Holding this attack performs a dash forward, ending with a melee attack that slams people to the ground. Tapping mainfire does the attack without dashing. This melee attack also fires a Kamaitachi slides on floors and rips through everything.",
+"Fires a tornado hold which lifts yourself and enemies into the air. While on the ground, aim directly downwards to fire a stationary tornado hold.",
+"Enables/disables hovering with your jet pack."},
+//Astroman
+{"Fires basic shots. At full ammo, an Astro clone is summoned to fire constantly in a set direction. Firing shots redirects the clone to shoot where you point.",
+"Halts yourself and performs Astro Crush, causing meteors to fall around you.",
+"Enables/disables hovering off floors, which allows for platforming in certain scenarios."},
+//Swordman
+{"Does a basic sword slash. Attacking on the ground also spawns extra flame bits for damage. Attacking in the air swings the sword the other way.",
+"Detatches your upper body to go attack enemies. This attack travels in the direction you're facing. Pressing mainfire during this switches your camera to upper body attack for better aiming. Note that your legs are still vulnerable to attacks.",
+""},
+//Clownman
+{"Weapon 1 fires a basic Thunder Claw. During this attack, an aura call Thunder Carnival surrounds the player doing damage. Thunder Claw can grab onto pegs, resulting in a swing that also increases Thunder Carnival's damage.\nWeapon 2 is similar to Weapon 1's attack except it a Clownman peg is left the end, which is immediately hooked onto.",
+"Weapon 1 and 2 both fire a pinpoint claw hand that causes great hitstun to enemies hit. During use of this, Thunder Carnival is disabled.",
+""},
+//Searchman
+{"Begins searching for targets and locking onto enemies hit with the cursor. Up to four enemies can be locked onto, including the same enemy four times.\nReleasing mainfire fires homing shots at locked on enemies. Otherwise basic homing sniper shots are fired.",
+"Fires a bouncing projectile.",
+"Summons three bushes ahead of you which you can hide within. Up to six bushes total can be on the field."},
+//Frostman
+{"Begins charging Ice Wave, which fires automatically when reaching full charge. This attack freezes people on hit.",
+"Performs a basic strong punch. If altfire is pressed during mainfire charging, a non-freezing Ice Wave is fired.",
+""},
+//Grenademan
+{"Fires a Flash Bomb. This shot is faster the more rage you have.",
+"Fires a volley of grenades that blow up after a short duration. The more rage you have the more grenades you fire in a bundle.",
+"Passive: When in rage mode, you will explode on death!"},
+//Aquaman
+{"Fires projectiles with gravity that do small explosion damage. Your blue ammo determines how far the shots travel. When pressure is maxed, fires the homing water cannon.",
+"Recharges your blue ammo when held. Otherwise builds up pressure when blue ammo is full. When pressure is maxed, fires the pinpoint Water Tower that blocks shots.",
+""},
+//OriginalDuo
+{"Fires short range explosive fists. Mainfire during meteor thrusts you forward with an explosion following.",
+"Weapon 1 can be charged to do a giga tackle to knock foes away. Uncharged does a short range punch.\nWeapon 2 begins your meteor attack when at full ammo. You are invulnerable during this attack and it is cancelled via attacking, running out of ammo, or hitting an enemy.\nAltfire during the meteor breaks from the meteor to charge towards the ground to do a shockwave of damage that spreads more/does more damage the longer you fall.",
+""},
+//Trio
+{"Fires a basic shot. This can be charged to fire a stronger shot.",
+"Enters rage mode when at full ammo. This restores half the ammo for all your weapons, makes you take 50% more damage, and gives you a spread rune for the duration.\nUsing altfire during rage mode with your original weapon fires a hitscan like laser that lowers the damage an enemy does by 25%.\nAltfire with different weapons fires Giga attacks based on the icon under your rage ammo.",
+""},
+
+//Dynamoman
+{"Begins spinning dynamo scanners around you. Any scanners that hit an enemy marks them. Enemies can be marked up to four times.\nUpon releasing mainfire, release all charged ammo as lightning around you. This also fires lightning at all marked enemies that cannot be dodged unless they are able to hide behind something that block a floorhugging projectile.",
+"Fires a Dynamo Tendril that rotates after a short period spawning constant damaging lightning to its sides.\nWhile holding mainfire, altfire can be pressed to use your charged ammo to fire Dynamo Orbs that home slightly at enemies.",
+"Stops you in place to begin restoring ammo. In teamgames, this also heals nearby teammates. Picking up screws refills this ammo."},
+//Coldman
+{"Summons an Ice Wall in front of you.  This can be spawned up walls.\nIce Walls can be ridden after they've been pushed. Walls also lose projectile blocking once pushed.",
+"Bashes enemies with your shoulder. This attack also pushes nearby Ice Walls.\nCracked Ice Walls are pushed even faster than normal ones.",
+"Fires a fast shot called Cold Field. On direct hit it knocks down foes. This then spawns on the floor to freeze enemies it hits."},
+//Groundman
+{"Fire a large SpreadDrill that splits upon hitting the floor/ceiling.\nWhile in tank mode, mainfire digs into the ground. Mainfire while digging sends you to the ceiling.\nWhile in the ceiling, mainfire can be held to summon a giga drill. This drill drops a Spread Drill when it goes back into the ceiling.",
+"Enter tank mode when at max ammo which does ramming damage. While digging, altfire can be pressed to exit digging.",
+"Splits all Spread Drills in flight."},
+//Pirateman
+{"Fire a mine they travels to where you turn.",
+"Without max ammo, fire a stream of water that pushes placed mines. This can also push opponent mines!\nIf you have max ammo and a bubble ready, you perform a ramming attack forward that pops on walls/ceilings.",
+"Summon a protective bubble that reduces damage."},
+//Burnerman
+{"Fire extremely rapid short range flames.",
+"Dash forward while on the ground. If you're holding jump when pressing altfire, you begin the air dash. Once your ammo runs out or you let go of altfire, you dash forward swiftly which causes an explosion upon landing on the floor.",
+"Throw a spread of traps that can snare enemies once in the ground."},
+//Magicman
+{"Weapon 1 fires a Magic Card that steals health upon hit.\nWeapon 2 throws a magic ball that you 'ride' upon. You are invulnerable during this. Magic birds spawn from where you threw the ball.",
+"Weapon 1 throws fake Magic Cards that don't damage players but cause hitstun. You can use mainfire while holding altfire to trick enemies.\nWeapon 2 throws a magic ball like mainfire, except you teleport back to where you threw the ball and magic birds appear where the ball landed.",
+""},
+//King
+{"Weapon 1 slashes your axe. If you're holding jump before slashing, you'll do a vertical slash that has more reach but less damage.\nWeapon 2 mainfire moves your shield in front of you along with increasing its block range, but slowing you down. While held, a meter charges, which causes all successful blocked hits to fire back a short range bouncing projectile.",
+"Weapon 1 spins your axe doing light damage while thrusting forward.\nWeapon 2 prepares to fire a large projectile that is able to stun enemies.",
+"'You should feel honored to be destroyed by the King!'"},
+
+//Concreteman
+{"Fires a spread of concrete shots. You can still fire shots while holding a block.",
+"Upon letting go of altfire, if you hold jump, you leap into the air to perform a ground pound. Otherwise perform a dash if you're moving.\nIf altfire is held while near a Concrete Block, you will pick it up. This block can be thrown with altfire, or charged up to be thrown harder.",
+""},
+//Tornadoman
+{"Fires slowing tornados at your enemies that can be used later. You can only have four tornados on the field.",
+"Lift yourself into the air and activate any whirlwinds you have placed. Allies can also use your lift if nearby!",
+"Activate your tornado form which grants speed and aerial superiority. Landing on enemies in this form can do some decent damage."},
+//Splashwoman
+{"All weapons fire a laser of tridents.",
+"Sings to empower yourself based on your current weapon (hand). If held, you're able to empower allies!\nGreen heals over time, yellow speeds you up.",
+""},
+//Plugman
+{"Fires a basic PlugBall that is affected by gravity. When attached to a player, mainfire begins electrical currents.",
+"Launches your plug arm which can attach to enemies and allies. For enemies, the plug zaps health, lowers Plugman's speed, and recharges your ammo. For allies, you use ammo to overcharge them to shoot faster!",
+""},
+//Jewelman
+{"Creates a Jewel Satellite of your current gems. While the shield is up, homing projectiles can't target you.",
+"Polishes your selected gem into a different type. Cyan diamonds increase damage, green emeralds add bounce, red rubies cause explosions, blue sapphires add trail bits, yellow topaz increase speed, and purple amethyst adds gravity.",
+"Resets all your gems to diamonds."},
+//Hornetman
+{"Fires a spread of hornets. Holding mainfire keeps them in place until letting go which makes the shots travel in the direction you're aiming.\nIf commandable hornets are out, altfire commands the hornets to home at the nearest enemy to them.",
+"Tosses a hornet hive that splits on surfaces. The honey bits can slow enemies.",
+"Enables/disables hovering."},
+//Magmaman
+{"Fires two shots, one straight, one to the right. This attack can be used anytime its not on cooldown.",
+"The same as mainfire, but the shots go to the left.",
+"Begins recharging your ammo. Ammo allows for stronger shots to be fired. This can be cancelled at anytime."},
+//Galaxyman
+{"Fires a Black Hole Bomb, pressing mainfire again detonates the bomb.",
+"Begin hovering forward, doing slight ramming damage. While hovering, you are able to detonate Black Hole Bombs with mainfire.",
+"Spawns a portal that can be teleported back to with altfire."},
+//Fakeman
+{"Fires fast bullets. Rapid firing causes random spread. Can swing a stunning baton when out of ammo.",
+"Reloads ammo",
+"Dash backwards a set distance. During the dash, all bullets are fired accurately."},
+
+//Blademan
+{"Fires triple blades. While wall clinging fires 5 blades. After dashing from a wall, you do a melee swing instead.\nWeapon 2 fires blades veritcally instead of horizontally.",
+"Dash forward and cling to any walls. You can dash from wall to wall as long as you have ammo. Looking down and jump makes you let go of a wall without dashing.",
+""},
+//Pumpman
+{"Tosses your handle. If Water Shield is active, it will follow the handle.",
+"Creates a Water Shield. Each bit can block a certain amount of direct damage before popping.\nWhen Water Shield is active, further altfire uses increase/decrease the range of the shield.",
+"Upon use, causes Water Shield to split apart."},
+//Commandoman
+{"Weapon 1 fires a slow missile that can be redirected once. When redirected, the missile moves faster. On contact with a surface, the missile explodes into waves.\nWeapon 2 launches a mine into the air, which can stick to surfaces. Explodes after a while, or if detonated manually.",
+"Leap into the air and land with an explosive shockwave. You can cancel leap with mainfire or hold altfire to fall faster during the leap.",
+"Redirects missiles to where the user is facing, as well as detonates all currently active mines."},
+//Chillman
+{"Fires Chill blobs that slow foes on hit and create spikes on surfaces. Wall jumping near wall spikes does a super jump instead. If item is active, perform a super attack of firing five Chill blobs in a spread formation.",
+"Toggles skating on or off. You move faster on the ground and leave ice trails. These trails push foes in the same direction you travelled and also speed up allies.",
+"Can only be used when your shield is active. Upon use, charge up for a second to form a chill blast that freezes foes in place."},
+////Sheepman{"","",""},
+////Strikeman{"","",""},
+//Nitroman
+{"Throw saw blades that speed up and cross the terrain.",
+"Hold to change forms and speed away. You can scale and leap off of walls in this form.\nAttack increases in power while in the air after riding off of a wall.",
+""},
+////Solarman{"","",""},
+
+////Terra{"","",""},
+//Mercury
+{"Fires Grab buster, three projectiles that spread out. Hitting enemies gives you ammo for blob form.\nIn blob form, fires bouncing mercury blobs that deal damage on bounce.",
+"Snatches projectiles out of the air infront of you to regain blob form ammo.\nIn blob form, leaps forward slamming into anyone in the way.",
+"Toggles Blob form, requires transform ammo that is gained over time. Blob form increases your speed and enables wall/ceiling climbing. Blobs are spawned when leaping/firing and will attempt to return to you on form change for ammo."},
+//Venus
+{"Weapon 1 rapidly fires short range bubbles that can stick to the floor. Floor bubbles do a bit more damage.\nWeapon 2 fires a decent range explosive bubble.",
+"Creates an acid bubble that sticks to surfaces. Foes hit by it are coated in acid, which makes them take more damage from BubbleBomb attacks.\nThe bubble can also be grabbed by the user or allies. This allows the use of an explosive double jump.",
+""},
+//Mars
+{"Weapon 1 rapid fires shots that travel a limited distance. Continued firing causes the shots to spread out more.\nWeapon 2 can fire explosive missiles.that you can rocket jump off. While the weapon is active, you can thrust forward/back as long as you have fuel.",
+"Fire a barrage of missiles forward. This can used anytime, even when shooting or frozen!",
+""},
+//Jupiter
+{"Fires basic shots with limited range. Can be charged to fire a quad shot. In hover mode, fires a devastating laser beam that rips through enemies.",
+"Starts hover mode and boosts you into the air, knocking back nearby enemies. Holding altfire extends the boost. Pressing altfire again disables hover mode.",
+""},
+////Saturn{"","",""},
+//Uranus
+{"Picks up and throws a rock. This rock can knock down flying enemies. More rage ammo allows for faster pickup/tossing.\nIf stampeding, performs a ground slam to knock enemies into the air.",
+"Charges rage ammo. Must be charged for at least a second before a stampede can begin. During stampeding, foes can be pushed into the wall for damage. Longer stampedes results in more damage on impact.\nIf carrying a rock, shatters the rock quickly.",
+""},
+//Pluto
+{"Shoot sonic waves. If the attack is held, more shots are fired. At high speeds, this attack comes out faster.",
+"A powerful dashing attack that launches you forward. At high speeds, the dash is faster. Trying to use this attack at low ammo will use your claws for a quick melee attack instead.",
+""},
+//Neptune
+{"Tosses a gravity affected Salt Water that splits on impact. If empowered with salt, this shot splits even more.",
+"Begins hopping forward to jump off foes. This attack can jump off water surfaces when holding jump, including water pits! If altfire is held, a super stomp quake is done instead.",
+"Empowers yourself with salt, causing all attacks to do more damage or spread out more. Be warned that you take more damage during this boost."},
+////Sunstar{"","",""},
+
+//BusterRodG
+{"Fires a short range rod that cannot change position and goes through walls.",
+"Spin your rod to block projectiles and do close range damage.",
+"Summons two clones that mimic your attacks in the exact same spots."},
+//MegaWaterS
+{"Fires three harpoons in a row.",
+"Fires a pinpoint shot causing a tidal spout to appear. This spout spawns faster the closer its fired to you. Enemies damage by the spout are flung into the air and you can jump into your own spouts to be boosted into the air.\nIf you have the water barrier active, altfire changes to fire a stream of harmless water to push away enemies at a great force.",
+"Summons a water barrier which gives you a set amount of armor. While the barrier exists, it slowly builds pressure. At anytime you can use item again to pop the barrier to deal damage and fling enemies away based on how much pressure was built. After the barrier reaches full pressure, it will begin to drain ammo. If this ammo runs out or the barrier takes too much damage, it will pop dealing no damage."},
+//HyperStormH
+{"Weapon 1 pulls enemies towards you, takes cold ammo, gives hot ammo, and does constant nearby damage that heals you one hp per hit. If you have cold ammo while pulling, the suction also slows enemies down. Sucking at max hot ammo results in a weaker pull.\nWeapon 2 pushes enemies away, takes hot ammo, gives cold ammo, and fires buster shots. Having hot ammo results in a stronger push and firing stronger shots. Blowing at max cold ammo leads to a weaker push.",
+"If the user has hot ammo, altfire boosts the user into the air while doing nearby explosion damage. Jumping before doing this boost will greatly increase the boost upwards.\nOtherwise having cold ammo results in the user doing a dash forward doing constant damage along the way. This attack gets stronger the longer you run, and hitting enemies gives more cold ammo.",
+""},
+
+//Enker
+{"Fires basic shots, stronger shots if you have enough ammo.",
+"Puts you in a defensive stance where you gain extra ammo the more you absorb.\nAfter absorbing, the stance can be canceled with mainfire or altfire.\nAltfire cancel performs a swipe attack.",
+""},
+//Punk
+{"Weapon 1 fires straight shots./nWeapon 2 fires rapid bouncing shots.",
+"With both weapons, puts you in an invulnerable state for a while that can be cancelled with another altfire.\nIf the attack isn't cancelled, thrust forward doing rapid damage.  You stop thrusting upon damaging an enemy.",
+""},
+//Ballade
+{"Fires an explosive shot. The more 'focus' you have, the faster the shot travels!",
+"Hop forward and upward a tad, leaving a mine behind you. You can only have up to three mines on the field.",
+""},
+//Quint
+{"Weapon 1 fires basic shots with slight spread.\nWeapon 2 rides your Sakugarne, which does damage from direct hits and explodes on landing. Mainfire thrusts forward and does a shockwave on landing.",
+"Weapon 1 does a midair dash.\nWeapon 2 uses all your ammo to perform a spinning attack that causes a large amount of rocks to fly everywhere.",
+"Extra note: Holding jump while riding Sakugarne causes you to jump higher."},
+//RaThor
+{"Shoots a variety of projectiles based upon your soul counter. More souls means more powerful shots.",
+"A lunge forward that grabs foes, press mainfire or altfire after a grab to throw people or slam them down respectively.",
+"Costs one soul, using this will make your next mainfire shot a slow, giant shot that absorbs most projectiles."},
+
+
+//BBA
+{"Fires current weapon. Each weapon has its own ammo clip.",
+"Punches.",
+"Purchases a weapon based on meter. Purchasing a blank square refills ammo for all weapons"}
+};
+
+
+script "CBM_ClassHelp_NET" (void) NET CLIENTSIDE
+{
+//Log(s:GetActorClass(0));
+int CBM = PlayerClass(PlayerNumber());
+//Log(i:CBM);
+if(CBM >= I_TOTAL_CLASSES){
+	Log(s:"Invalid Class!\nPlease update the ACS for this class.");
+	terminate;
+}
+
+int Weapon = StringToInt(MainBossList[CBM][3],StrLen(MainBossList[CBM][3]));
+Log(s:"\cd====================\n");
+
+Log(s:"Class name: ",s:MainBossList[CBM][0]);
+
+Log(s:"Health: ",i:GetActorProperty(0, APROP_SPAWNHEALTH));
+
+Log(s:"Speed: ",s:MainBossList[CBM][1]);
+
+Log(s:"Jump: ",s:MainBossList[CBM][2]);
+//Log(s:"Jump: ",f:GetActorProperty(0,APROP_JumpZ));
+
+if(Weapon==77){Log(s:"This class can pickup weapons.");}
+else if(Weapon>=2){Log(s:"This class has ",i:Weapon,s:" weapons.");}
+else{Log(s:"This class has one weapon.");}
+
+if(StrCmp(MainBossList[CBM][4],"") != 0){Log(s:"Extra: ",s:MainBossList[CBM][4]);}
+
+Log(s:"");
+
+if(StrCmp(MainWepList[CBM][0],"") != 0){Log(s:"Mainfire:\n",s:MainWepList[CBM][0]);}
+if(StrCmp(MainWepList[CBM][1],"") != 0){Log(s:"\nAltfire:\n",s:MainWepList[CBM][1]);}
+if(StrCmp(MainWepList[CBM][2],"") != 0){Log(s:"\nItem use:\n",s:MainWepList[CBM][2]);}
+
+//Log(i:PlayerClass(0));
+Log(s:"\n\cd====================");
+}
+
+function int StringToInt(str String, int length) {
+	int result = 0;
+	
+	for (int i=0; i<length; i++) {
+		result *= 10;
+		result += (GetChar(String,i)-'0');
+	}
+	return result;
+}
+
+/*
+script "cbm_SetCH_MenuNum" (void) NET CLIENTSIDE
+{
+	SetUserCVar(PlayerNumber(),"CBM_CH_Menu",PlayerClass(PlayerNumber())+1);
+}
+*/
+
+script "cbm_SetCH_MenuNum" (void) NET CLIENTSIDE
+{
+	int TheClass = PlayerClass(PlayerNumber());
+	//Log(s:"The Class number is ",i:TheClass);
+
+	if(TheClass >= 111){
+		TheClass += 6;//MMWT++
+	}
+	else if(TheClass == 110){
+		TheClass = 115;//Neptune
+	}
+	else if(TheClass == 109){
+		TheClass = 114;//Pluto
+	}
+	else if(TheClass == 108){
+		TheClass = 113;//Uranus
+	}
+	else if(TheClass == 107){
+		TheClass = 111;//Jupiter
+	}
+	else if(TheClass == 106){
+		TheClass = 110;//Mars
+	}
+	else if(TheClass == 105){
+		TheClass = 109;//Venus
+	}
+	else if(TheClass == 104){
+		TheClass = 108;//Mercury
+	}
+	else if(TheClass == 103){
+		TheClass = 105;//Nitro
+	}
+	//Log(s:"The NEW number is ",i:TheClass);
+	SetUserCVar(PlayerNumber(),"CBM_CH_Menu",TheClass);
+}
+
+script "cbm_AutoAltHud" (void)
+{
+	SetResultValue(GetUserCVar(PlayerNumber(),"CBM_AutoAltHud"));
+}
+script "cbm_OldGalaxyHud" (void)
+{
+	SetResultValue(GetUserCVar(PlayerNumber(),"CBM_OldGalaxyHud"));
+}
+
+script "cbm_FetchServerCVar" (int Swap)
+{
+	int CBM_Result = -7;
+	Switch(Swap){
+		Case 1:
+			CBM_Result = GetCVar("YD_NoWeakness");
+			break;
+		Case 2:
+			CBM_Result = GetCVar("YD_NoCTFMorph");
+			break;
+		Case 3:
+			CBM_Result = GetCVar("YD_LMSLoadouts");
+			break;
+		Case 4:
+			CBM_Result = GetCVar("YD_NoPitProtect");
+			break;
+		Case 5:
+			CBM_Result = GetCVar("YD_NoHealingScale");
+			break;
+		Case 6:
+			CBM_Result = GetCVar("YD_DisableChargeCarry");
+			break;
+		Default:
+			Log(s:"Invalid Switch Choice for cbm_FetchServerCVar");
+			break;
+	}
+	SetResultValue(CBM_Result);
+}

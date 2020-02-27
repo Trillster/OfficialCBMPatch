@@ -269,7 +269,7 @@ Pickup:
 TNT1 A 0 A_JumpIfInventory("RollFlag",1,"Roll")
 TNT1 A 0 A_JumpIfInventory("AutoFlag",1,"Auto")
 TNT1 A 0 A_JumpIfInventory("LightningBoltBoss",1,"Dynamo")
-TNT1 A 0 A_JumpIfInventory("LaserTridentBoss",1,"Splash")
+TNT1 A 0 A_JumpIfInventory("LaserTridentBoss2",1,"Splash")
 TNT1 A 0 A_JumpIfInventory("PlantBarrierBoss",1,"Plant")
 TNT1 A 0 A_JumpIfInventory("CanSnatch_F",1,"TheSnatch")
 TNT1 A 0

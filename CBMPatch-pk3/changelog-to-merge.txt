@@ -1,9 +1,0 @@
-==Gravityman
--All flings now have semi-hitstun
--Added a charge attack to altfire
---Summons a Gravity Well at a pinpoint location that flings after a delay
----Fling direction depends on if it's placed on a wall or ceiling
----Delay determined by distance from player
-
-==Darkman3
--Reworked

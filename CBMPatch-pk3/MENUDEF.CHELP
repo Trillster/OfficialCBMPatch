@@ -1,0 +1,1197 @@
+
+OptionMenu "CBM_ClassHelpMenu"
+{
+	//MouseWindow 0, 220
+	Title "Classes Information"
+	//Position 97
+	StaticText"$MNU_CHELP_EQUALLINE"
+	StaticText ""
+
+	Option "$MCH1", "CBM_CH_Menu", "CBM_ClassName"
+	StaticText ""
+	Option "$MCH2", "CBM_CH_Menu", "CBM_ClassHealth"
+	Option "$MCH3", "CBM_CH_Menu", "CBM_ClassSpeed"
+	Option "$MCH4", "CBM_CH_Menu", "CBM_ClassJump"
+	StaticText ""
+	Option "$MCH5", "CBM_CH_Menu", "CBM_ClassMainfire"
+	StaticText ""
+	StaticText ""
+	StaticText ""
+	StaticText ""
+	Option "$MCH6", "CBM_CH_Menu", "CBM_ClassAltfire"
+	StaticText ""
+	StaticText ""
+	StaticText ""
+	StaticText ""
+	Option "$MCH7", "CBM_CH_Menu", "CBM_ClassItem"
+	StaticText ""
+	StaticText ""
+	StaticText ""
+	StaticText ""
+	Option "$MCH8", "CBM_CH_Menu", "CBM_ClassExtra"
+	StaticText ""
+	StaticText ""
+	StaticText ""
+
+	StaticText ""
+	StaticText"$MNU_CHELP_EQUALLINE"
+
+	StaticText ""
+	Command "$MCH9", "menu_CH_NumHelp"
+	StaticText "$MNU_CHELP_CURRCLASS",2
+	
+	//NumberField "Class #","CBM_CH_Menu",0,124,1
+}
+
+OptionValue CBM_ClassName
+{
+0, "Megaman"
+1, "Protoman"
+2, "Bass"
+3, "Duo"
+4, "Maestro"
+5, "Rock"
+6, "Roll"
+7, "Auto"
+8, "Dr. Light"
+9, "Dr. Wily"
+10, "Sniper Joe"
+
+11, "Cutman"
+12, "Gutsman"
+13, "Iceman"
+14, "Bombman"
+15, "Fireman"
+16, "Elecman"
+17, "Timeman"
+18, "Oilman"
+
+19, "Metalman"
+20, "Airman"
+21, "Bubbleman"
+22, "Quickman"
+23, "Crashman"
+24, "Flashman"
+25, "Heatman"
+26, "Woodman"
+27, "Alien"
+
+28, "Needleman"
+29, "Magnetman"
+30, "Geminiman"
+31, "Hardman"
+32, "Topman"
+33, "Snakeman"
+34, "Sparkman"
+35, "Shadowman"
+36, "DocRobot"
+
+37, "Brightman"
+38, "Toadman"
+39, "Drillman"
+40, "Pharaohman"
+41, "Ringman"
+42, "Dustman"
+43, "Diveman"
+44, "Skullman"
+
+45, "Gravityman"
+46, "Waveman"
+47, "Stoneman"
+48, "Gyroman"
+49, "Starman"
+50, "Chargeman"
+51, "Napalmman"
+52, "Crystalman"
+53, "Darkman1"
+54, "Darkman2"
+55, "Darkman3"
+56, "Darkman4"
+
+57, "Blizzardman"
+58, "Centaurman"
+59, "Flameman"
+60, "Knightman"
+61, "Plantman"
+62, "Tomahawkman"
+63, "Windman"
+64, "Yamatoman"
+
+65, "Freezeman"
+66, "Junkman"
+67, "Burstman"
+68, "Cloudman"
+69, "Springman"
+70, "Slashman"
+71, "Shademan"
+72, "Turboman"
+
+73, "Tenguman"
+74, "Astroman"
+75, "Swordman"
+76, "Clownman"
+77, "Searchman"
+78, "Frostman"
+79, "Grenademan"
+80, "Aquaman"
+81, "OriginalDuo"
+82, "Evil Robot"
+
+83, "Dynamoman"
+84, "Coldman"
+85, "Groundman"
+86, "Pirateman"
+87, "Burnerman"
+88, "Magicman"
+89, "King"
+
+90, "Concreteman"
+91, "Tornadoman"
+92, "Splashwoman"
+93, "Plugman"
+94, "Jewelman"
+95, "Hornetman"
+96, "Magmaman"
+97, "Galaxyman"
+98, "Fakeman"
+
+99, "Blademan"
+100, "Pumpman"
+101, "Commandoman"
+102, "Chillman"
+//103, "Sheepman"
+//104, "Strikeman"
+105, "Nitroman"
+//106, "Solarman"
+
+//107, "Terra"
+108, "Mercury"
+109, "Venus"
+110, "Mars"
+111, "Jupiter"
+//112, "Saturn"
+113, "Uranus"
+114, "Pluto"
+115, "Neptune"
+//116, "Sunstar"
+
+117, "BusterRod G"
+118, "MegaWater S"
+119, "HyperStorm H"
+
+120, "Enker"
+121, "Punk"
+122, "Ballade"
+123, "Quint"
+124, "RaThor"
+125, "BBA Mega Man"
+}
+
+OptionValue CBM_ClassHealth
+{
+0, "90"//Megaman
+1, "85"//Proto
+2, "90"//Bass
+3, "115"//Duo
+4, "75"//Maestro
+5, "90"//Rock
+6, "90"//Roll
+7, "115"//Auto
+8, "90"//DrLight
+9, "85"//DrWily
+10, "100"//SniperJoe
+
+11, "85"//Cut
+12, "185"//Guts
+13, "100"//Ice
+14, "135"//Bomb
+15, "85"//Fire
+16, "75"//Elec
+17, "100"//Time
+18, "90"//Oil
+
+19, "65"//Metal
+20, "100"//Air
+21, "100"//Bubble
+22, "75"//Quick
+23, "100"//Crash
+24, "100"//Flash
+25, "100"//Heat
+26, "125"//Wood
+27, "100"//Alien
+
+28, "155"//Needle
+29, "100"//Magnet
+30, "100"//Gemini
+31, "200"//Hard
+32, "85"//Top
+33, "85"//Snake
+34, "100"//Spark
+35, "65"//Shadow
+36, "100"//DocRobot
+
+37, "85"//Bright
+38, "155"//Toad
+39, "85"//Drill
+40, "100"//Pharaoh
+41, "85"//Ring
+42, "125"//Dust
+43, "100"//Dive
+44, "85"//Skull
+
+45, "100"//Gravity
+46, "100"//Wave
+47, "155"//Stone
+48, "85"//Gyro
+49, "115"//Star
+50, "125"//Charge
+51, "100"//Napalm
+52, "125"//Crystal
+53, "155"//Darkman1
+54, "115"//Darkman2
+55, "85"//Darkman3
+56, "125"//Darkman4
+
+57, "100"//Blizzard
+58, "85"//Centaur
+59, "100"//Flame
+60, "115"//Knight
+61, "85"//Plant
+62, "100"//Tomahawk
+63, "125"//Wind
+64, "125"//Yamato
+
+65, "100"//Freeze
+66, "125"//Junk
+67, "100"//Burst
+68, "125"//Cloud
+69, "100"//Spring
+70, "85"//Slash
+71, "100"//Shade
+72, "100"//Turbo
+
+73, "100"//Tengu
+74, "85"//Astro
+75, "125"//Sword
+76, "85"//Clown
+77, "85"//Search
+78, "200"//Frost
+79, "100"//Grenade
+80, "100"//Aqua
+81, "135"//OriginalDuo
+82, "115"//EvilRobot
+
+83, "85"//Dynamo
+84, "135"//Cold
+85, "115"//Ground
+86, "125"//Pirate
+87, "65"//Burner
+88, "90"//Magic
+89, "115"//King"
+
+90, "155"//Concrete
+91, "85"//Tornado
+92, "90"//Splash
+93, "100"//Plug
+94, "100"//Jewel
+95, "90"//Hornet
+96, "125"//Magma
+97, "85"//Galaxy
+98, "100"//Fake
+
+99, "85"//Blade
+100, "100"//Pump
+101, "155"//Commando
+102, "65"//Chill
+//103, "100"//Sheep
+//104, "100"//Strike
+105, "85"//Nitro
+//106, "100"//Solar
+
+//107, "100"//Terra
+108, "85"//Mercury
+109, "100"//Venus
+110, "135"//Mars
+111, "90"//Jupiter
+//112, "100"//Saturn
+113, "185"//Uranus
+114, "75"//Pluto
+115, "125"//Neptune
+//116, "100"//Sunstar
+
+117, "85"//BusterRod G
+118, "100"//MegaWater S
+119, "200"//HyperStorm H
+
+120, "125"//Enker
+121, "100"//Punk
+122, "85"//Ballade
+123, "100"//Quint
+124, "115"//RaThor
+125, "100"//BBA
+}
+
+OptionValue CBM_ClassJump
+{
+0, "10"//Megaman
+1, "10"//Proto
+2, "10"//Bass
+3, "10"//Duo
+4, "10"//Maestro
+5, "11"//Rock
+6, "11"//Roll
+7, "11"//Auto
+8, "12"//DrLight
+9, "10"//DrWily
+10, "10"//SniperJoe
+
+11, "12.5"//Cut
+12, "10"//Guts
+13, "10"//Ice
+14, "13"//Bomb
+15, "10"//Fire
+16, "10"//Elec
+17, "10"//Time
+18, "10"//Oil
+
+19, "11"//Metal
+20, "10"//Air
+21, "10"//Bubble
+22, "11"//Quick
+23, "13"//Crash
+24, "10"//Flash
+25, "10"//Heat
+26, "10"//Wood
+27, "10"//Alien
+
+28, "10"//Needle
+29, "12"//Magnet
+30, "10"//Gemini
+31, "10"//Hard
+32, "10"//Top
+33, "10"//Snake
+34, "10"//Spark
+35, "15"//Shadow
+36, "10"//DocRobot
+
+37, "12"//Bright
+38, "15"//Toad
+39, "10"//Drill
+40, "10"//Pharaoh
+41, "13"//Ring
+42, "10"//Dust
+43, "10"//Dive
+44, "12"//Skull
+
+45, "15"//Gravity
+46, "10"//Wave
+47, "10"//Stone
+48, "10"//Gyro
+49, "12"//Star
+50, "10"//Charge
+51, "10"//Napalm
+52, "13"//Crystal
+53, "0"//Darkman1
+54, "10"//Darkman2
+55, "12"//Darkman3
+56, "10"//Darkman4
+
+57, "10"//Blizzard
+58, "10"//Centaur
+59, "12"//Flame
+60, "12"//Knight
+61, "10"//Plant
+62, "10"//Tomahawk
+63, "10"//Wind
+64, "13"//Yamato
+
+65, "10"//Freeze
+66, "14"//Junk
+67, "10"//Burst
+68, "10"//Cloud
+69, "20"//Spring
+70, "10"//Slash
+71, "10"//Shade
+72, "10"//Turbo
+
+73, "10"//Tengu
+74, "10"//Astro
+75, "10"//Sword
+76, "12"//Clown
+77, "10"//Search
+78, "10"//Frost
+79, "10"//Grenade
+80, "10"//Aqua
+81, "10"//OriginalDuo
+82, "10"//EvilRobot
+
+83, "10"//Dynamo
+84, "10"//Cold
+85, "10"//Ground
+86, "10"//Pirate
+87, "10"//Burner
+88, "10"//Magic
+89, "10"//King"
+
+90, "10"//Concrete
+91, "12"//Tornado
+92, "10"//Splash
+93, "10"//Plug
+94, "10"//Jewel
+95, "13"//Hornet
+96, "14"//Magma
+97, "10"//Galaxy
+98, "10"//Fake
+
+99, "13"//Blade
+100, "13"//Pump
+101, "10"//Commando
+102, "12"//Chill
+//103, "10"//Sheep
+//104, "10"//Strike
+105, "10"//Nitro
+//106, "10"//Solar
+
+//107, "10"//Terra
+108, "10"//Mercury
+109, "10"//Venus
+110, "10"//Mars
+111, "10"//Jupiter
+//112, "10"//Saturn
+113, "10"//Uranus
+114, "11"//Pluto
+115, "10"//Neptune
+//116, "10"//Sunstar
+
+117, "13"//BusterRod G
+118, "10"//MegaWater S
+119, "10"//HyperStorm H
+
+120, "10"//Enker
+121, "10"//Punk
+122, "13"//Ballade
+123, "10"//Quint
+124, "12"//RaThor
+125, "10"//BBA
+}
+
+OptionValue CBM_ClassSpeed
+{
+0, "0.8/0.78"//Megaman
+1, "0.83/0.81"//Proto
+2, "0.75/0.73"//Bass
+3, "0.73/0.71"//Duo
+4, "0.8/0.78"//Maestro
+5, "0.825/0.805"//Rock
+6, "0.825/0.805"//Roll
+7, "0.825/0.805"//Auto
+8, "0.825/0.805"//DrLight
+9, "0.8/0.78"//DrWily
+10, "0.8/0.78"//SniperJoe
+
+11, "1.0/0.98"//Cut
+12, "0.56/0.54"//Guts
+13, "0.8/0.78"//Ice
+14, "0.65/0.63"//Bomb
+15, "0.8/0.78"//Fire
+16, "0.9/0.88"//Elec
+17, "0.8/0.78"//Time
+18, "0.8/0.78"//Oil
+
+19, "0.8/0.78"//Metal
+20, "0.86/0.84"//Air
+21, "0.8/0.78"//Bubble
+22, "1.2/1.2"//Quick
+23, "0.86/0.84"//Crash
+24, "0.8/0.78"//Flash
+25, "0.72/0.7"//Heat
+26, "0.67/0.65"//Wood
+27, "0.8/0.78"//Alien
+
+28, "0.75/0.73"//Needle
+29, "0.8/0.78"//Magnet
+30, "0.8/0.78"//Gemini
+31, "0.5/0.48"//Hard
+32, "1.1/1.08"//Top
+33, "1.0/0.98"//Snake
+34, "0.8/0.78"//Spark
+35, "0.8/0.78"//Shadow
+36, "0.8/0.78"//DocRobot
+
+37, "0.84/0.82"//Bright
+38, "0.8/0.78"//Toad
+39, "0.75/0.73"//Drill
+40, "0.8/0.78"//Pharaoh
+41, "0.8/0.78"//Ring
+42, "0.7/0.68"//Dust
+43, "0.8/0.78"//Dive
+44, "0.8/0.78"//Skull
+
+45, "0.8/0.78"//Gravity
+46, "0.8/0.78"//Wave
+47, "0.8/0.78"//Stone
+48, "0.87/0.85"//Gyro
+49, "0.75/0.72"//Star
+50, "0.8/0.4"//Charge
+51, "0.89/0.5"//Napalm
+52, "0.7/0.68"//Crystal
+53, "0.65/0.4"//Darkman1
+54, "0.81/0.808"//Darkman2
+55, "0.75/0.73"//Darkman3
+56, "0.7/0.68"//Darkman4
+
+57, "0.9/0.78"//Blizzard
+58, "1.0/0.6"//Centaur
+59, "0.8/0.78"//Flame
+60, "0.65/0.57"//Knight
+61, "0.8/0.78"//Plant
+62, "0.89/0.87"//Tomahawk
+63, "0.7/0.68"//Wind
+64, "0.666/0.666"//Yamato
+
+65, "0.8/0.78"//Freeze
+66, "0.6/0.58"//Junk
+67, "0.8/0.78"//Burst
+68, "0.6/0.58"//Cloud
+69, "0.76/0.74"//Spring
+70, "0.82/0.8"//Slash
+71, "0.8/0.78"//Shade
+72, "0.8/0.78"//Turbo
+
+73, "0.76/0.74"//Tengu
+74, "0.75/0.73"//Astro
+75, "0.75/0.73"//Sword
+76, "0.93/0.91"//Clown
+77, "0.7/0.68"//Search
+78, "0.5/0.48"//Frost
+79, "0.74/0.72"//Grenade
+80, "0.8/0.78"//Aqua
+81, "0.76/0.74"//OriginalDuo
+82, "0.73/0.71"//EvilRobot
+
+83, "0.85/0.83"//Dynamo
+84, "0.62/0.6"//Cold
+85, "0.64/0.62"//Ground
+86, "0.65/0.63"//Pirate
+87, "0.8/0.78"//Burner
+88, "0.8/0.78"//Magic
+89, "0.73/0.71"//King"
+
+90, "0.6/0.58"//Concrete
+91, "0.76/0.74"//Tornado
+92, "0.8/0.78"//Splash
+93, "0.75/0.73"//Plug
+94, "0.75/0.73"//Jewel
+95, "0.8/0.78"//Hornet
+96, "0.7/0.68"//Magma
+97, "0.8/0.78"//Galaxy
+98, "0.9/0.88"//Fake
+
+99, "0.8/0.78"//Blade
+100, "0.78/0.76"//Pump
+101, "0.6/0.58"//Commando
+102, "0.69/0.67"//Chill
+//103, "0.8/0.78"//Sheep
+//104, "0.8/0.78"//Strike
+105, "0.8/0.78"//Nitro
+//106, "0.8/0.78"//Solar
+
+//107, "0.8/0.78"//Terra
+108, "0.88/0.87"//Mercury
+109, "0.78/0.9"//Venus
+110, "0.6/0.58"//Mars
+111, "0.8/0.78"//Jupiter
+//112, "0.8/0.78"//Saturn
+113, "0.50/0.48"//Uranus
+114, "0.8/0.78"//Pluto
+115, "0.7/0.68"//Neptune
+//116, "0.8/0.78"//Sunstar
+
+117, "1.0/0.98"//BusterRod G
+118, "0.8/0.78"//MegaWater S
+119, "0.5/0.48"//HyperStorm H
+
+120, "1.0/0.9"//Enker
+121, "0.75/0.7"//Punk
+122, "0.9/0.8"//Ballade
+123, "0.8/0.78"//Quint
+124, "0.89/0.86"//RaThor
+125, "0.8/0.78"//BBA
+}
+
+OptionValue CBM_ClassMainfire
+{
+0, "\cdBase buster can be charged"//Megaman
+1, "\cdBase buster can be charged"//Proto
+2, "\cuNo Tips"//Bass
+3, "\cdBase weapon can be charged"//Duo
+4, "\cuNo Tips"//Maestro
+5, "\cdMainfire + altfire can kick balls\nCan jump off balls, even midair\nDifferent balls have different stats"//Rock
+6, "\cdSwing can block/deflect most missiles\nSecond swing can fling enemies\n\ciDumps a bucket of water that can stun"//Roll
+7, "\cdFires explosive fireworks\nUpgrades makes fireworks explode more\n\ciCreates selected upgrade/item"//Auto
+8, "\cdBasic shot gives ammo\nCombo altfire to empower\nEmpower causes burning"//DrLight
+9, "\cdHigher ammo means stronger shots\n\cbFire shot can burn for a while\nIce shot freezes but prevents damage"//DrWily
+10, "\cdBasic buster has a shield\n\cbTruck: Charge ahead for rapid damage\n\ciApache: Rapid fire shots"//SniperJoe
+
+11, "\cdMust wait for cutter to return\nHold to extend cutter distance"//Cut
+12, "\cdTossed rocks split into bits"//Guts
+13, "\cdShots explode statues for damage"//Ice
+14, "\cdBombs are on a fuse\nThrown bombs explode on surfaces"//Bomb
+15, "\cdFire storm leaves bits on surfaces"//Fire
+16, "\cdThunderBeam is also fired to the sides"//Elec
+17, "\cdTime arrows are split\n\ciArrows swap between fast and slow"//Time
+18, "\cdCan be charged for more oil\nOil Blobs can be ridden"//Oil
+
+19, "\cdBlades can hit ceilings/floors"//Metal
+20, "\cdAir shooter slides on floors"//Air
+21, "\cuNo Tips"//Bubble
+22, "\cuNo Tips"//Quick
+23, "\cdLaunch clash bombs with no limit"//Crash
+24, "\cuNo Tips"//Flash
+25, "\cdThrows atomicfires based on charge\nIf held, tackles forward\n\ciThrows atomic pillars"//Heat
+26, "\cdToss seeds that stun upon stepping\nDuring shield mode, fire leaf rains"//Wood
+27, "\cdCauses all active traps to fire"//Alien
+
+28, "\cdWinds up to fire rapid needles\nWith no ammo, needles have no force\n\ciA short range stab"//Needle
+29, "\cdOnce fire is let go, the magnet homes\nThe longer held, the more power"//Magnet
+30, "\cuNo Tips"//Gemini
+31, "\cdKnuckles return upon contact\nEach knuckle can only damage once"//Hard
+32, "\cdWinds up a spin\nMore charge, more distance/duration\n75% charge allows dodging of missiles"//Top
+33, "\cdSnakes can climb most surfaces"//Snake
+34, "\cdAfter a wind up, the shot can be held\nPress altfire during charge to fire sparks"//Spark
+35, "\cuNo Tips"//Shadow
+36, "\cdStats change with weapon use"//DocRobot
+
+37, "\cdShots have slight spread\nShots do not last long"//Bright
+38, "\cdRain can be extended through holding\nDuring rain, slide on the ground"//Toad
+39, "\cdDrill bombs cannot be self detonated"//Drill
+40, "\cdAltfire at full charge fires waves"//Pharaoh
+41, "\cdDamage increases on sparkle"//Ring
+42, "\cdLarge shot leaves junk bit on miss"//Dust
+43, "\cdHit enemy with missile to lock on\nFires a homing missile every eight shots\n"//Dive
+44, "\cdShot gets weaker with distance\nRage shots do not get weaker"//Skull
+
+45, "\cuNo Tips"//Gravity
+46, "\cdWaves spawn where user points\nMore distance adds more delay\nWaves can climb small stairs"//Wave
+47, "\cdPowerStone can be slightly aimed\nCan cancel altfire while midair"//Stone
+48, "\cdGyro slides across floors/ceilings"//Gyro
+49, "\cdDuring shield, take 75% damage"//Star
+50, "\cdRams nearby foes\nAiming improves damage"//Charge
+51, "\cuNo Tips"//Napalm
+52, "\cdCan be charged\nMore charge adds more bits when split\nSplits in the direction you're facing"//Crystal
+53, "\cdShots get faster at lower health"//Darkman1
+54, "\cdShield toss travels forward/back"//Darkman2
+55, "\cdFires a powerful shot when scoped"//Darkman3
+56, "\cdNo shield shots get stronger\nCan fire shots with shield up"//Darkman4
+
+57, "\cdBits home for a short time"//Blizzard
+58, "\cdShot splits on surfaces"//Centaur
+59, "\cdLeaves a trail of flames on floors"//Flame
+60, "\cdNo shield when the crusher is out"//Knight
+61, "\cdShots are affected by gravity\nShots restore health in t/lms"//Plant
+62, "\cdFires a pair of tomahawks\nDamage goes up after a short distance\nTomahawks slide on floors/ceilings"//Tomahawk
+63, "\cdGyro damage reduced on multi-hits"//Wind
+64, "\cdSpears drop on hit to pickup\nCollecting spears refills ammo"//Yamato
+
+65, "\cdSplits on walls\nLeaves icicles on floors/ceilings"//Freeze
+66, "\cdJunk Cube can be pushed with altfire\nPushed cube can go up small stairs"//Junk
+67, "\cdBombs drop upon hitting surfaces\nMore bombs make the bubble heavier"//Burst
+68, "\cdShot splits on contact\nNo ammo shots can't split"//Cloud
+69, "\cdSprings bounce once before splitting"//Spring
+70, "\cdSwipes a distance forward\nGains power and speed from dashes"//Slash
+71, "\cdShot can be empowered from ricochet\nDuring flight, swoop to grab a player"//Shade
+72, "\cdSpeed boost is lost on full charge\nCharged wheel leaves flame trail\nWhile driving, mainfire honks the horn"//Turbo
+
+73, "\cdTap to attack without dashing\nMelee swipe slams foes to the ground\nWind shot can slide across floors"//Tengu
+74, "\cdClones redirect on firing"//Astro
+75, "\cdGround swing spawns bonus bits\nAir swing is a bit stronger\nDuring altfire, mainfire swaps camera"//Sword
+76, "\cdShock aura appears during mainfire\nAura is stronger during swinging\n\ciWeapon 2 spawns a peg to swing on"//Clown
+77, "\cdCan lock onto four targets\nMissiles get stronger during travel"//Search
+78, "\cdIce waves freeze enemies\nCan be held for trickery"//Frost
+79, "\cdHigher rage fires quicker shots"//Grenade
+80, "\cdHigher ammo increases shot range\nMax pressure fires water cannon"//Aqua
+81, "\cdFires rapid short range shots\n\ciDuring Meteor, redirects and explodes"//OriginalDuo
+82, "\cdBase weapon can be charged"//EvilRobot
+
+83, "\cdScans around user to tag enemies\nEnemies can be hit four times\nAltfire while holding fires homing orbs"//Dynamo
+84, "\cdIce Wall is a solid platform\nUser/teammates can ride the wall"//Cold
+85, "\cdFires drill that splits on surfaces\nDuring ground dig, digs to ceiling\nIn ceiling, summon Giga Drill"//Ground
+86, "\cdMines travel where user faces\nMax of three mines before detonating"//Pirate
+87, "\cuNo Tips"//Burner
+88, "\cdThrows a card to steal health\n\ciBall toss the user to an area"//Magic
+89, "\cdGround Slash is short range\nHolding jump does an air slash\n\ciHolds shield to block shots"//King"
+
+90, "\cdFires spread of concrete"//Concrete
+91, "\cdTornados stick to surfaces\nOnly four tornados max\nShots and wall shots slow on hit"//Tornado
+92, "\cdFires a laser of tridents"//Splash
+93, "\cdFires a PlugBall with gravity"//Plug
+94, "\cvCyan > Damage \cc/\ \cdGreen > Bounce\n\cgRed > Explosive  \cc/\ \chBlue > Trails\n\ckYellow > Speed  \cc/\ \ctPurple > Gravity"//Jewel
+95, "\cdHornets go where user aims"//Hornet
+96, "\cdShot fired straight and to the right"//Magma
+97, "\cdFires and detonates BlackHoleBomb\nThe Bomb can be blown during altfire\n\ciFires basic shots"//Galaxy
+98, "\cdRapid firing causes random spread\nSwings baton when out of ammo"//Fake
+
+99, "\cdFire blades horizontally\n\ciFire blades vertically"//Blademan
+100, "\cdDuring toss, Water Shield follows it\nMust wait for handle to return"//Pump
+101, "\cdMissiles drop bits on walls\n\ciMine can stick to most surfaces"//Commando
+102, "\cdChill blobs briefly slow foes on hit\nDuring item use, does super attack"//Chill
+//103, "\cdMainfire"//Sheep
+//104, "\cdMainfire"//Strike
+105, "\cdWheelCutter can climb small stairs"//Nitro
+//106, "\cdMainfire"//Solar
+
+//107, "\cdMainfire"//Terra
+108, "\cdFire Grab buster, regain ammo on hit\nBlob form: Fires bouncing blob"//Mercury
+109, "\cdRapidly fires short range bubbles\nCan stick to floors for more damage\n\ciExplosive shot with good range"//Venus
+110, "\cdShots have limited range\n\ciCan Rocket Jump with missiles\nLimited fuel while the weapon is active"//Mars
+111, "\cdElectric shot that can be charged\nWhile hovering: Fire a deadly beam"//Jupiter
+//112, "\cdMainfire"//Saturn
+113, "\cdPick up and throw a Rock\nMore rage allows faster pickup/toss\nRocks knock down flying foes"//Uranus
+114, "\cdCan be held to fire up to three shots\nFire faster at high speeds"//Pluto
+115, "\cdShot always splits\nSalty shot splits even more"//Neptune
+//116, "\cdMainfire"//Sunstar
+
+117, "\cdRod attack hits through walls"//BusterRod G
+118, "\cuNo Tips"//MegaWater S
+119, "\cdSuction does damage that heals\n\ciBlowing cools down, sucking heats up"//HyperStorm H
+
+120, "\cdLarge shots require 20% ammo\nCan cancel pose after being hurt"//Enker
+121, "\cdThrows a straight shot\n\ciRapidly throws bouncing shots"//Punk
+122, "\cdShot speed is based on charge"//Ballade
+123, "\cdWhen on Pogo, thrust forward and slam\nLanding on enemies bounces off them\n\ciFires a basic shot"//Quint
+124, "\cdAttack changes based on souls\nWhile grabbing, tosses foes forward"//RaThor
+125, "\cdFires selected weapon\nEach weapon uses different ammo"//BBA
+}
+
+OptionValue CBM_ClassAltfire
+{
+0, "\cdSlides across the ground\nDash power reduced on low slide ammo"//Megaman
+1, "\cdGreatly slides across the ground\nDash power reduced on low slide ammo"//Proto
+2, "\cdA hopping dash across the ground\nDash power reduced on low slide ammo"//Bass
+3, "\cdA tackle dash that knocks foes aside\nDash power reduced on low slide ammo"//Duo
+4, "\cuNo Tips"//Maestro
+5, "\cdKicks a ball if ran into\nKicked balls are slighty stronger"//Rock
+6, "\cdA dash that resets all momentum\nCan attack right away after a dash"//Roll
+7, "\cdDoes a cool pose\n\ciSwaps current upgrade/item to create"//Auto
+8, "\cdDash forward with spin kick\nMain during kick does uppercut\nCombo mainfire to suck in foes"//DrLight
+9, "\cdSuit: Fire a wavy shot\n\cbCapsule: Drops an electric shot\n\ciFoot: Whack with a frying pan"//DrWily
+10, "\cdCan jump with fully cooked grenade\n\cbTruck: Backs the vehicle up\n\ciApache: Drop an exploding bomb"//SniperJoe
+
+11, "\cdA quick cutting slice"//Cut
+12, "\cdPuts down rock if holding one\nPlaced rocks can be punched into bits"//Guts
+13, "\cdFires an icy beam that forms an ice statue\nStatues explode into slowing fog"//Ice
+14, "\cdLobs bombs that bounce around\nFuse explosions do more damage"//Bomb
+15, "\cdSummons a slow deadly fire wall"//Fire
+16, "\cdDashes forward in a flash\nThis can clip up/down walls"//Elec
+17, "\cdDuring time slow, dodge all attacks"//Time
+18, "\cdSpills oil that refills slide ammo"//Oil
+
+19, "\cdBuzzes a blade to help climb surfaces\nJump to thrust backwards"//Metal
+20, "\cdCreate a large wall of air\nThis cannot slide on floors"//Air
+21, "\cdBubbles can't bounce on walls"//Bubble
+22, "\cdActivates speed burst\nWall jumping and speed increased"//Quick
+23, "\cdFires mines that attach to surfaces\nOnly four mines max"//Crash
+24, "\cdFreezes foes in place\nEnemies can move after being hit"//Flash
+25, "\cdRecharges the users ammo"//Heat
+26, "\cdLeaps forward, damaging on contact\nThis can be used to leap up ledges"//Wood
+27, "\cdToss a Boobeam trap\nIts shots can slide across floors"//Alien
+
+28, "\cdCan be held to maintain revving"//Needle
+29, "\cdCharge up to fling away enemies"//Magnet
+30, "\cdWithout clone, fire a laser\nWith clone, repositions clone"//Gemini
+31, "\cdBoosts upward to begin quake press\nLonger falling increases range/power"//Hard
+32, "\cuNo Tips"//Top
+33, "\cdCommands all snakes to a point\nSnakes can be commanded once"//Snake
+34, "\cdLingers on floors"//Spark
+35, "\cdTurn invisible after delay\nWhile stealthed, homing ignores user\nAltfire dashes out of stealth"//Shadow
+36, "\cdShort range scan to copy weapons\nWorks on foes and allies"//DocRobot
+
+37, "\cdThrows a bulb to blind foes\nBlind is stronger after Flash Stopper"//Bright
+38, "\cdLeaps forward, ignoring hitstun\nCan leapfrog off enemies"//Toad
+39, "\cdDigs quickly through the ground\nAmmo is restored faster during dig"//Drill
+40, "\cdHovers forward"//Pharaoh
+41, "\cdRings can be thrown/called at anytime"//Ring
+42, "\cdSucks foes torwards user\nJunk bits can be grabbed with suction"//Dust
+43, "\cdTosses a spread of mines\n\ciDashes forward to ram enemies"//Dive
+44, "\cdActivates SkullBarrier to block\nGain rage on a timed block\nOtherwise block one hit"//Skull
+
+45, "\cdGravity hold that knocks foes down\nWhen flipped, knocks foes upward\nCharge to fire a gravity well"//Gravity
+46, "\cuNo Tips"//Wave
+47, "\cdCan be charged to leap higher\nSummons stone hand on landing\nShockwave stuns if screen shakes"//Stone
+48, "\cdToggles flight\nHolding altfire extends initial flight"//Gyro
+49, "\cdDelayed projectile to manipulate foes"//Star
+50, "\cdDoes light damage to nearby enemies\nPuffs a coal shot for unreachable foes\nDuring red 'HUD' user is invulnerable"//Charge
+51, "\cuNo Tips"//Napalm
+52, "\cdBit shot with limited bounces"//Crystal
+53, "\cdLike mainfire shots, but with gravity"//Darkman1
+54, "\cdSummons Dark Shield\nShield is able to block missiles\nTossing spins it around user"//Darkman2
+55, "\cdRing that stuns on hit\nIncreased speed and range at max focus"//Darkman3
+56, "\cdSummons Dark Shield\nShield is able to block missiles\nTossing spins it around user"//Darkman4
+
+57, "\cdBowls forward at high speeds\nRecoil on successful damage or walls"//Blizzard
+58, "\cdFlash stuns at closer ranges"//Centaur
+59, "\cdFlame spread bounces off walls"//Flame
+60, "\cdShield bash deflects some missiles\nUser is immune to damage during bash"//Knight
+61, "\cdShield deals contact damage"//Plant
+62, "\cuNo Tips"//Tomahawk
+63, "\cdWindStorm pulls foes toward the user"//Wind
+64, "\cdRapid melee damage\nUser is slower during melee\nPulls in nearby spears"//Yamato
+
+65, "\cdCharge shot that spreads on surfaces\nThe waves also freeze foes in place\nCeiling icicles split on ground\nCharge can be cancelled via altfire"//Freeze
+66, "\cdPunch that flings some junk"//Junk
+67, "\cdPinpoint attack that can trap foes\nCan also ride the bubbles for hovering"//Burst
+68, "\cdWhen on ground, recharges half ammo\nWhile flying, drop lightning spread"//Cloud
+69, "\cdTapping does quick punch with movement\nHolding does a stronger punch"//Spring
+70, "\cdDashes forward leaving goop\nWall/Ground dashes reset velocity"//Slash
+71, "\cdFlies upward to prepare for swooping\nGrabbed enemies are drained of health\nAltfire during a grab ends it"//Shade
+72, "\cdCan be charged to extend duration\nDoes ram damage and leaves fire trail"//Turbo
+
+73, "\cdTornados lift foes into the air\nCan also ride Tornados for height"//Tengu
+74, "\cdAstroCrush falls straight down"//Astro
+75, "\cdMove faster as upper body flies forward\nTravels where the user faces\nSlows down over time"//Sword
+76, "\cdPinpoint hand that stuns enemies\nDisables shock aura during use"//Clown
+77, "\cuNo Tips"//Search
+78, "\cdChanges ice wave shot during charging"//Frost
+79, "\cdLobs grenades that stop on surfaces\nMore rage fires more grenades"//Grenade
+80, "\cdRefills ammo and can build pressure\nFull pressure fires water tower\n Water tower blocks shots"//Aqua
+81, "\cdCan be charged to do a Giga Tackle\n\ciBegins meteor attack at full ammo\nDuring Meteor, slams the ground"//OriginalDuo
+82, "\cdRefills all weapons and begins rage\nRage gives Spread but take more damage\nDifferent rage attacks on each weapon"//EvilRobot
+
+83, "\cdTendril shot does more on outer part"//Dynamo
+84, "\cdPushes nearby ice walls\nCracked walls are pushed harder\nWalls lose blocking once pushed"//Cold
+85, "\cdTurn into a drill tank\nDigging can be cancelled anytime"//Ground
+86, "\cdUnleash a stream of water\nThis can push mines, even foe's mines"//Pirate
+87, "\cdDash along the ground refilling ammo\nHolding jump does burner dive"//Burner
+88, "\cdToss fake cards for hitstun/no damage\n\ciBall toss, but teleports user back"//Magic
+89, "\cdSpins axe to thrust forward\n\ciWinds up X shots to stun enemies"//King"
+
+90, "\cdLetting go with jump does a stomp\nOtherwise movement does a dash\nCan grab blocks and charge throw them"//Concrete
+91, "\cdActivates all placed tornados\nConstant upward thrust during altfire\nThis thrust can assist allies"//Tornado
+92, "\cdBuffs user based on weapon\nCharged sing buffs allies\n\cqHealing \cc/\ \ckSpeed boost"//Splash
+93, "\cdFires plug that connects to players\nEnemy: Damage and refill ammo\nAlly: Use ammo to haste ally attacks"//Plug
+94, "\cdChanges selected Gem\nDuring shield, homing ignores user"//Jewel
+95, "\cdCommands hornets to home once\nOtherwise, tosses hornet hive\nThe honey bits slow foes"//Hornet
+96, "\cdShot fired straight and to the left"//Magma
+97, "\cdHover forwards doing ram damage"//Galaxy
+98, "\cdReloads all bullets used"//Fake
+
+99, "\cdDash to cling onto walls\nExtra blades fired from walls\nMain slashes when wall dashing"//Blade
+100, "\cdCreates shield that can block shots\nDuring shield, can control shield size"//Pump
+101, "\cdDoes a basic leap and slam explosion\nCan cancel leap with mainfire"//Commando
+102, "\cdToggles skating on/off\nMove faster and leave ice trails\nTrails push foes/haste allies"//Chill
+//103, "\cdAltfire"//Sheep
+//104, "\cdAltfire"//Strike
+105, "\cdWhile biking, user can climb walls\nAfter climbing, empowers mainfire shots"//Nitro
+//106, "\cdAltfire"//Solar
+
+//107, "\cdAltfire"//Terra
+108, "\cdSnatchs missiles to regain ammo\nBlob form: Pounce onto enemies"//Mercury
+109, "\cdOn hit, foes take more bubble damage\nCan grab for an explosive double jump\nAllies can also use the bubble"//Venus
+110, "\cdFires a barrage of missiles forward\nCan be used at anytime"//Mars
+111, "\cdLaunch into the air and then hover\nLaunch knocks foes back"//Jupiter
+//112, "\cdAltfire"//Saturn
+113, "\cdWorks up rage to charge foes\nMore rage = Longer charge\nMainfire Slams ground during Stampede\nWith rock in hand, crushes it"//Uranus
+114, "\cdDash in any direction, faster at high speed\nCan do rapid swipes after a dash\nAlso swipes if not enough ammo"//Pluto
+115, "\cdLeaps forward to jump at foes\nCan be held to do a super stomp\nBasic hop jumps off water safely"//Neptune
+//116, "\cdAltfire"//Sunstar
+
+117, "\cdSpins rod to damage and block missiles"//BusterRod G
+118, "\cdPinpoint geyser spout that lifts\nDuring shield, water spray pushes foes"//MegaWater S
+119, "\cdUses remaining ammo to either\nHot: Boost upwards for mobility\nCold: Dash that gets stronger over time"//HyperStorm H
+
+120, "\cdDo a defensive pose to lower damage\nArmor lost converts into ammo\nAltfire pose cancel does a swipe"//Enker
+121, "\cdCompact self to avoid damage\nThrust forward doing constant damage"//Punk
+122, "\cdHop forward dropping a mine\nOnly three mines max"//Ballade
+123, "\cdWhen on Pogo, do a strong attack\n\ciDash forward that works in midair"//Quint
+124, "\cdLunges forward to grab enemies\nWhile grabbing, slams foes to the floor"//RaThor
+125, "\cdPunch."//BBA
+}
+
+OptionValue CBM_ClassItem
+{
+0, "\cuNo Item"//Megaman
+1, "\cuNo Item"//Proto
+2, "\cuNo Item"//Bass
+3, "\cuNo Item"//Duo
+4, "\cuNo Item"//Maestro
+5, "\cuNo Item"//Rock
+6, "\cdSummons health"//Roll
+7, "\cuNo Item"//Auto
+8, "\cdCan be used with maxed super\nMainfire fires suction shot\nAltfire does powerful uppercut"//DrLight
+9, "\cdChange between capsule, foot, and suit\n\ciFoot form takes more damage"//DrWily
+10, "\cdSummons a crate to give Apache/Truck\nWhen at full ammo\nOtherwise refills machine gun ammo"//SniperJoe
+
+11, "\cuNo Item"//Cut
+12, "\cuNo Item"//Guts
+13, "\cuNo Item"//Ice
+14, "\cuNo Item"//Bomb
+15, "\cuNo Item"//Fire
+16, "\cuNo Item"//Elec
+17, "\cuNo Item"//Time
+18, "\cdSnaps fingers when at full ammo\nThis can light flammable objects\nCan be used while sliding"//Oil
+
+19, "\cuNo Item"//Metal
+20, "\cdToggle to increase jump and air speed"//Air
+21, "\cdSummons a bubble of water for swimming"//Bubble
+22, "\cuNo Item"//Quick
+23, "\cdDetonates all mines\nCan bombjump off detonated Clash Bombs"//Crash
+24, "\cuNo Item"//Flash
+25, "\cuNo Item"//Heat
+26, "\cdEnables/Tosses Leaf Shield\nInvulnerable on max ammo use\nOtherwise, shield blocks 25% damage"//Wood
+27, "\cdTurns passive flight on/off"//Alien
+
+28, "\cuNo Item"//Needle
+29, "\cuNo Item"//Magnet
+30, "\cdSummons a Gemini clone\nThe clone fires at enemies constantly"//Gemini
+31, "\cuNo Item"//Hard
+32, "\cuNo Item"//Top
+33, "\cdTurns wall climbing on/off\nCan also climb on ceilings"//Snake
+34, "\cuNo Item"//Spark
+35, "\cdTosses Caltrops that stick to floors"//Shadow
+36, "\cuNo Item"//DocRobot
+
+37, "\cdPerforms Flash Stopper at full ammo\nThis freezes foes, but they can attack\nFreeze ends early on pain"//Bright
+38, "\cuNo Item"//Toad
+39, "\cuNo Item"//Drill
+40, "\cuNo Item"//Pharaoh
+41, "\cuNo Item"//Ring
+42, "\cuNo Item"//Dust
+43, "\cdRemoves current locked-on target"//Dive
+44, "\cuNo Item"//Skull
+
+45, "\cdFlips user's gravity"//Gravity
+46, "\cdFires a long range wire adaptor\nWire can be cancelled with item use"//Wave
+47, "\cuNo Item"//Stone
+48, "\cuNo Item"//Gyro
+49, "\cuNo Item"//Star
+50, "\cuNo Item"//Charge
+51, "\cuNo Item"//Napalm
+52, "\cuNo Item"//Crystal
+53, "\cuNo Item"//Darkman1
+54, "\cuNo Item"//Darkman2
+55, "\cdToggles your scope and builds focus\nBuilds focus faster with less health"//Darkman3
+56, "\cuNo Item"//Darkman4
+
+57, "\cuNo Item"//Blizzard
+58, "\cdWarps a short distance forward"//Centaur
+59, "\cuNo Item"//Flame
+60, "\cuNo Item"//Knight
+61, "\cdSummons a healing field"//Plant
+62, "\cuNo Item"//Tomahawk
+63, "\cdTurns flight on/off\nNeeds full ammo to activate"//Wind
+64, "\cuNo Item"//Yamato
+
+65, "\cuNo Item"//Freeze
+66, "\cdCreates a junk shield\nShield reduces damage and hurts foes\nRefreshing shield tosses junk"//Junk
+67, "\cdStocks up to 2 extra bombs\nPops bubble during bubble ride"//Burst
+68, "\cdTurns flight on/off"//Cloud
+69, "\cuNo Item"//Spring
+70, "\cuNo Item"//Slash
+71, "\cuNo Item"//Shade
+72, "\cuNo Item"//Turbo
+
+73, "\cdTurns hovering on/off"//Tengu
+74, "\cdTurns passive flight on/off"//Astro
+75, "\cuNo Item"//Sword
+76, "\cuNo Item"//Clown
+77, "\cdSummons three bushes in a line\nUser can hide within the bushes"//Search
+78, "\cuNo Item"//Frost
+79, "\cuNo Item"//Grenade
+80, "\cuNo Item"//Aqua
+81, "\cuNo Item"//OriginalDuo
+82, "\cuNo Item"//EvilRobot
+
+83, "\cdBegins recharging the user's health\nThis needs Screws for ammo\nCan also heal allies in team games"//Dynamo
+84, "\cdFires Cold Field at full ammo\nThis freezes foes in place for a while\nDirect hits knock down foes"//Cold
+85, "\cdSplits all SpreadDrills in flight"//Ground
+86, "\cdCreates a bubble shield/pops it\nThis shield can reduce some damage\nJump + Altfire does a bubble ram"//Pirate
+87, "\cdTosses bear traps to snare enemies"//Burner
+88, "\cuNo Item"//Magic
+89, "\cuNo Item"//King"
+
+90, "\cuNo Item"//Concrete
+91, "\cdTurns hovering on/off\nHolding jump while falling hovers\nSpeed is increased during this"//Tornado
+92, "\cuNo Item"//Splash
+93, "\cuNo Item"//Plug
+94, "\cdResets all gems to \cvcyan Diamonds"//Jewel
+95, "\cdTurns hovering on/off"//Hornet
+96, "\cdRecharges ammo but halts movement\nCan be cancelled by firing"//Magma
+97, "\cdSummons a Galaxy portal\nCan teleport back to portal via altfire"//Galaxy
+98, "\cdQuickly jumps backward\nDuring leap, all bullets are accurate"//Fake
+
+99, "\cuNo Item"//Blade
+100, "\cdTriggers shield to spread out"//Pump
+101, "\cdRedirects all missiles in flight\nAlso detonates all placed mines"//Commando
+102, "\cdCan only be used when shield is active\nCharges up a chill blast to freeze foes"//Chill
+//103, "\cuNo Item"//Sheep
+//104, "\cuNo Item"//Strike
+105, "\cuNo Item"//Nitro
+//106, "\cuNo Item"//Solar
+
+//107, "\cuNo Item"//Terra
+108, "\cdToggles Blobform\nGives increased movement speed\nCan climb walls/ceilings"//Mercury
+109, "\cuNo Item"//Venus
+110, "\cuNo Item"//Mars
+111, "\cuNo Item"//Jupiter
+//112, "\cuNo Item"//Saturn
+113, "\cuNo Item"//Uranus
+114, "\cuNo Item"//Pluto
+115, "\cdTurns up the salt, empowering attacks\nHowever, take more damage during this"//Neptune
+//116, "\cuNo Item"//Sunstar
+
+117, "\cdSummons two clones at full ammo\nThese clones mimic all attacks"//BusterRod G
+118, "\cdCreates Water Shield at full ammo\nThe shield builds pressure while active\nItem pops the shield to fling foes"//MegaWater S
+119, "\cuNo Item"//HyperStorm H
+
+120, "\cuNo Item"//Enker
+121, "\cuNo Item"//Punk
+122, "\cuNo Item"//Ballade
+123, "\cuNo Item"//Quint
+124, "\cdUses a soul to prime mainfire big shot\nThis shot can block most projectiles"//RaThor
+125, "\cdOrders weapon based on meter\nBlank space refills all weapons"//BBA
+}
+
+OptionValue CBM_ClassExtra
+{
+0, "\chAll Purpose Upgrade: \c[Sapphire]Super Recover\nAmmo pickups give 20% more"//Megaman
+1, "\chAll Purpose Upgrade: \c[Sapphire]Proto Strike\nCharge buster then hit altfire"//Proto
+2, "\cdCan Double Jump\n\chAll Purpose Upgrade: \c[Sapphire]Air Dash"//Bass
+3, "\chAll Purpose Upgrade: \c[Sapphire]Power Shield\nSuffers half hitstun upgrade"//Duo
+4, "\chAll Purpose Upgrade: \c[Sapphire]Energy Saver\nWeapons get more max ammo"//Maestro
+5, "\cdCan grab weapons for balls\nSee '\c[Fire]classhelp\cd' for ball info"//Rock
+6, "\cdCan pickup screws"//Roll
+7, "\cdCan pickup screws"//Auto
+8, "\cuNone"//DrLight
+9, "\cuNone"//DrWily
+10, "\cdKills/Assists spawn scoreballs"//SniperJoe
+
+11, "\cdCan Wall Jump"//Cut
+12, "\cdSuffers little hitstun when rockless"//Guts
+13, "\cuNone"//Ice
+14, "\cuNone"//Bomb
+15, "\cuNone"//Fire
+16, "\cuNone"//Elec
+17, "\cuNone"//Time
+18, "\cuNone"//Oil
+
+19, "\cdCan hold jump+fire to slow fall"//Metal
+20, "\cuNone"//Air
+21, "\cdDouble jump to swim in water"//Bubble
+22, "\cdCan Wall Jump"//Quick
+23, "\cuNone"//Crash
+24, "\cuNone"//Flash
+25, "\cuNone"//Heat
+26, "\cdGains ammo when damaged"//Wood
+27, "\cdCan float above floors"//Alien
+
+28, "\cuNone"//Needle
+29, "\cuNone"//Magnet
+30, "\cuNone"//Gemini
+31, "\cdSuffers half hitstun"//Hard
+32, "\cuNone"//Top
+33, "\cuNone"//Snake
+34, "\cuNone"//Spark
+35, "\cdCan Wall Jump"//Shadow
+36, "\cdCannot pickup ammo\nPassively regenerates ammo\n\chAll Purpose Upgrade: \c[Sapphire]Energy Saver"//DocRobot
+
+37, "\cuNone"//Bright
+38, "\cuNone"//Toad
+39, "\cuNone"//Drill
+40, "\cuNone"//Pharaoh
+41, "\cuNone"//Ring
+42, "\cdCan pickup scrap metal"//Dust
+43, "\cuNone"//Dive
+44, "\cuNone"//Skull
+
+45, "\cuNone"//Gravity
+46, "\cuNone"//Wave
+47, "\cdCan revive on death"//Stone
+48, "\cuNone"//Gyro
+49, "\cdSlighty reduced gravity"//Star
+50, "\cuNone"//Charge
+51, "\cuNone"//Napalm
+52, "\cuNone"//Crystal
+53, "\cdGains slight speed with less health\nCan't jump but can clip small ledges\nJumping uses ammo to boost upwards"//Darkman1
+54, "\cdGains speed with less health"//Darkman2
+55, "\cuNone"//Darkman3
+56, "\cdGains slight speed with less health"//Darkman4
+
+57, "\cuNone"//Blizzard
+58, "\cuNone"//Centaur
+59, "\cuNone"//Flame
+60, "\cuNone"//Knight
+61, "\cdPassively regenerates health (except in T/LMS)\nCan pickup screws"//Plant
+62, "\cuNone"//Tomahawk
+63, "\cuNone"//Wind
+64, "\cuNone"//Yamato
+
+65, "\cuNone"//Freeze
+66, "\cdCan pickup scrap metal"//Junk
+67, "\cdDrops stocked bombs on death"//Burst
+68, "\cdHas reduced gravity"//Cloud
+69, "\cuNone"//Spring
+70, "\cdCan Wall Jump"//Slash
+71, "\cuNone"//Shade
+72, "\cuNone"//Turbo
+
+73, "\cuNone"//Tengu
+74, "\cdCan float above floors"//Astro
+75, "\cuNone"//Sword
+76, "\cuNone"//Clown
+77, "\cuNone"//Search
+78, "\cdSuffers half hitstun"//Frost
+79, "\cdGains rage by doing/taking damage\nGains speed with more rage\nExplodes on death during rage"//Grenade
+80, "\cuNone"//Aqua
+81, "\cuNone"//OriginalDuo
+82, "\cdCannot pickup ammo\n\chAll Purpose Upgrade: \c[Sapphire]Energy Saver\nWeapons get more max ammo"//EvilRobot
+
+83, "\cdCan pickup screws"//Dynamo
+84, "\cuNone"//Cold
+85, "\cuNone"//Ground
+86, "\cdCan steal most pickups"//Pirate
+87, "\cuNone"//Burner
+88, "\cuNone"//Magic
+89, "\cuNone"//King"
+
+90, "\cuNone"//Concrete
+91, "\cuNone"//Tornado
+92, "\cdDouble jump to swim in water\nCan pickup screws"//Splash
+93, "\cuNone"//Plug
+94, "\cuNone"//Jewel
+95, "\cuNone"//Hornet
+96, "\cdLoses ammo when hurt"//Magma
+97, "\cuNone"//Galaxy
+98, "\cdCan confiscate most pickups"//Fake
+
+99, "\cdLook down and jump to let go of walls"//Blade
+100, "\cuNone"//Pump
+101, "\cuNone"//Commando
+102, "\cdCan Wall Jump, big jumps off wall spikes\nPassively creates a 25 health shield\nRegenerates when not damaged"//Chill
+//103, "\cuNone"//Sheep
+//104, "\cuNone"//Strike
+105, "\cuNone"//Nitro
+//106, "\cuNone"//Solar
+
+//107, "\cuNone"//Terra
+108, "\cdBlobs can be reclaimed for ammo\nCan steal most pickups"//Mercury
+109, "\cuNone"//Venus
+110, "\cuNone"//Mars
+111, "\cuNone"//Jupiter
+//112, "\cuNone"//Saturn
+113, "\cuNone"//Uranus
+114, "\cdGain speed through constant movement\nCan Wall Jump\nSuffers half hitstun"//Pluto
+115, "\cuNone"//Neptune
+//116, "\cuNone"//Sunstar
+
+117, "\cdCan Wall Jump\n"//BusterRod G
+118, "\cuNone"//MegaWater S
+119, "\cdSuffers half hitstun"//HyperStorm H
+
+120, "\cdGenerates ammo when hurt"//Enker
+121, "\cuNone"//Punk
+122, "\cuNone"//Ballade
+123, "\cdJumping affects Sakugarne's jump"//Quint
+124, "\cdCan Double Jump\nKill foes to reap their soul"//RaThor
+125, "\cdGain meter by damaging foes"//BBA
+}
+

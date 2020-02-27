@@ -278,7 +278,7 @@ actor SearchSnakeStartBP : SearchSnakeStartB{Translation "192:192=229:229","198:
 
 actor SearchSnakeCommandedStartB : SearchSnakeStartB
 {
-DamageType "ClassPainLess"
+DamageType "SearchSnake2"
 states
 {
 Spawn:
@@ -299,7 +299,7 @@ stop
 actor SearchSnakeB : SearchSnake
 {
 damage (SNAKE_DMG)
-DamageType "ClassPainLess"
+DamageType "SearchSnake2"
 States
 {
 Spawn:
@@ -360,7 +360,7 @@ stop
 actor UpSnake0B : UpSnake0
 {
 Damage (SNAKE_DMG)
-DamageType "ClassPainLess"
+DamageType "SearchSnake2"
 States
 {
 Spawn:
@@ -409,7 +409,7 @@ stop
 actor UpSnake1B : UpSnake1
 {
 Damage (SNAKE_DMG)
-DamageType "ClassPainLess"
+DamageType "SearchSnake2"
 States
 {
 Spawn:
@@ -469,7 +469,7 @@ stop
 
 actor UpSnake2CommandedB : UpSnake1CommandedB
 {
-DamageType "ClassPainLess"
+DamageType "SearchSnake2"
 States
 {
 Continue:
@@ -554,7 +554,7 @@ actor DownSnakeB : DownSnake
 {
 translation "192:192=4:4","198:198=104:104"
 Damage (SNAKE_DMG)
-DamageType "ClassPainLess"
+DamageType "SearchSnake2"
 States
 {
 Spawn:

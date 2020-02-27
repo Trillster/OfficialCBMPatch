@@ -233,7 +233,7 @@ actor Darkman3SMG
 {
 Translation "202:202=216:216"
 PROJECTILE
-damagetype "DarkSMG"
+damagetype "ClassPainLess"
 Obituary "$OB_DARK3SMG"
 Damage (6)
 radius 8
@@ -326,7 +326,7 @@ actor Darkman3Shot4P : Darkman3Shot4{translation "202:202=229:229"}
 actor Darkman3ShotX : Darkman3Shot1
 {
 Obituary "$OB_DARK3SNIPEX"
-damagetype "DarkSniperX"
+damagetype "DarkSniper"
 var int user_P;
 Damage (25+user_P/2)
 speed 180

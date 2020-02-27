@@ -4,7 +4,7 @@ Official CBM Patch for Version 9 - E Hotfix
 
 ==General
 -E Tanks and variants now gradually heal in LMS modes
---Buckshot modifier included.
+--Buckshot modifier included
 
 ==Auto
 -Met Helmet cost 100 screws -> 50% heal ammo
@@ -34,7 +34,7 @@ Official CBM Patch for Version 9 - E Hotfix
 -Statue altfire behavior changed
 --No longer requires full ammo to use
 --Laser speed 50->200
---Distance is the same
+---Distance is the same
 --Statues no longer break during forming
 --Statue form time 12->20 tics
 --Statue lifetime 200->70 tics
@@ -74,8 +74,8 @@ Official CBM Patch for Version 9 - E Hotfix
 -Mainfire direct hit damage 35->25
 --Mainfire explosion removed
 --Pressing altfire with 25% hold ammo does current altfire
---Fires 8->16 shots
---Shot damage 12->6
+---Fires 8->16 shots
+---Shot damage 12->6
 -New altfire
 --Fires a lob shot that lingers
 
@@ -99,9 +99,19 @@ Official CBM Patch for Version 9 - E Hotfix
 -Ammo regen during rage 4->5
 -Ammo regen when firing 6->4
 
+==Gravityman
+-All flings now have semi-hitstun
+-Added a charge attack to altfire
+--Summons a Gravity Well at a pinpoint location that flings after a delay
+---Fling direction depends on if it's placed on a wall or ceiling
+---Delay determined by distance from player
+
 ==Stoneman
 -Add a buckshot check for pebble timer
 --Makes it equivalent to the LMS timers
+
+==Darkman3
+-Reworked
 
 ==Flameman
 -Mainfire impact spawns 4 pillar offshoots
@@ -112,9 +122,9 @@ Official CBM Patch for Version 9 - E Hotfix
 -Pillar waves now have a visual
 
 ==Plantman
+-Plant Buster drain 1->2 HP
 -Plant Barrier 7/4 -> 10/6 damage
 --Plant Barrier drain removed
--Plant Buster drain 1->2 HP
 -New item
 --Throws a deployed healing field
 --Heals 25 HP over ~6 seconds (220 tics)
@@ -161,7 +171,7 @@ Official CBM Patch for Version 9 - E Hotfix
 -Water Tower now blocks shots
 
 ==Dynamoman
--Dynamo Disk radius/hitbox 14/10->12/8
+-Dynamo Disk radius/height 14/10->12/8
 
 ==Groundman
 -Now uses Mars Tank Thrust method
@@ -169,6 +179,9 @@ Official CBM Patch for Version 9 - E Hotfix
 
 ==Burnerman
 -Beartraps show top pixel and are 23% visible when primed
+
+==Tornadoman
+-Tornadow Blow team boost now checks for jump
 
 ==Splashwoman
 -Power song removed
@@ -184,10 +197,10 @@ Official CBM Patch for Version 9 - E Hotfix
 
 ==Hornetman
 -Flight reverted to item
--M2 checks for hornets being out
+-Altfire will always fire hornet hive if no commandable hornets are out
 
 ==Galaxyman
--Fixed incorrect state names
+-Fixed state names
 
 ==Blademan
 -Cling buffer before action 4->8 tics
@@ -205,7 +218,7 @@ Official CBM Patch for Version 9 - E Hotfix
 -Firing during leap now puts leap on a delay
 
 ==Chillman
--Walljump count 6->3
+-Walljumps 6->3
 -Item mainfire pattern adjusted
 -Altfire max ammo 336->126
 --Ammo requirement 50%->75%
@@ -217,7 +230,7 @@ Official CBM Patch for Version 9 - E Hotfix
 ==Mercury
 -Blob splash damage 20->18
 --Weak splash damage 10->9
--Blob dropped from tackle is now goes through actors for 8 tics
+-Blob dropped from tackle now goes through actors for 8 tics
 
 ==Venus
 -Acid Bubble animation tweaked
@@ -231,8 +244,8 @@ Official CBM Patch for Version 9 - E Hotfix
 
 ==Jupiter
 -Mainfire lifetime 32->16
--Altfire liftoff knockback 25->20
 -Uncharged mainfire volume reduced
+-Altfire liftoff knockback 25->20
 
 ==Uranus
 -Crushed Deep Digger is now a 16 damage 160/120 explosion
@@ -244,5 +257,5 @@ Official CBM Patch for Version 9 - E Hotfix
 
 ==BBAMegaman
 -BFG90XX tracer range 1000->600
--Heavy Cannon 36->24 explosion damage
--Energy Lancer 6->8 damage
+-Heavy Cannon explosion damage 36->24
+-Energy Lancer damage 6->8
