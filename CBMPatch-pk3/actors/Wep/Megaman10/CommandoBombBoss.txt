@@ -450,7 +450,7 @@ Obituary "$OB_COMMANDOBOMB"
 Damage (10)
 Radius 10
 Height 10
-Speed 20
+Speed 30
 Scale 2.5
 States
 {

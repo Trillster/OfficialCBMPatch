@@ -13,6 +13,8 @@ player.startitem "CanWallJumpStack", 4
 player.startitem "SemiStunArmor"
 
 player.jumpz 11
+player.forwardmove 0.9, 0.9
+player.sidemove 0.88, 0.88
 
 //Doesn't like Cold temps
 player.startitem "GrabBusterWeakness2", 1

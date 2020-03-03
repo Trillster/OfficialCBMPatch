@@ -1,4 +1,4 @@
-const int PUMP_BUBBLEHP = 36;
+const int PUMP_BUBBLEHP = 30;
 const int PUMP_MAXRADIUS = 258;
 
 actor WaterShieldBoss : BaseMM8BDMWep_CBM
@@ -716,8 +716,8 @@ PUM4 B 0 A_ChangeFlag("NOINTERACTION",1)
 PUM4 B 2
 stop
 SpriteCheck:
-PUM4 "#" 0 A_JumpIf(health>=9024,"FullHP")
-PUM4 "#" 0 A_JumpIf(health>=9012,"MediumHP")
+PUM4 "#" 0 A_JumpIf(health>=9000+PUMP_BUBBLEHP*2/3,"FullHP")
+PUM4 "#" 0 A_JumpIf(health>=9000+PUMP_BUBBLEHP/3,"MediumHP")
 PUM4 "#" 0 A_JumpIf(health<=9000,"FakeDeath")
 //PUM4 "#" 0 A_JumpIf(health>=1,"LowHP")
 LowHP:

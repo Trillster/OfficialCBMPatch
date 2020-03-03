@@ -2,7 +2,7 @@ actor FlameBlastBoss : BaseMM8BDMWep_CBM
 {
 tag "$TAGC_6C"
 dropitem "FlameBlastWepCDropped"
-Weapon.AmmoUse 2
+Weapon.AmmoUse 8
 Weapon.AmmoUse2 0
 Weapon.AmmoGive 56
 Obituary "$OB_FLAMEBLAST"
@@ -18,7 +18,7 @@ Ready:
 FLAB A 0 ACS_ExecuteAlways(998,0,DYE_FLAMEMAN)
 goto Ready1
 Ready1:
-FLAB A 0 A_JumpIfInventory("YogaInfernoAmmo",2,"Ready2")
+FLAB A 0 A_JumpIfInventory("YogaInfernoAmmo",8,"Ready2")
 FLAB A 4 A_WeaponReady(12)
 FLAB A 0 A_GiveInventory("YogaInfernoAmmo",1)
 goto Ready1

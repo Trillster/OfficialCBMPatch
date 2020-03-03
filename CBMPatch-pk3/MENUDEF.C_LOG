@@ -51,8 +51,6 @@ Option "", "CBM_Null_Menu", "CL_Iceman10"
 Option "", "CBM_Null_Menu", "CL_Iceman11"
 Option "", "CBM_Null_Menu", "CL_Iceman12"
 Option "", "CBM_Null_Menu", "CL_Iceman13"
-Option "", "CBM_Null_Menu", "CL_Iceman14"
-Option "", "CBM_Null_Menu", "CL_Iceman15"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Airman"
 Option "", "CBM_Null_Menu", "CL_Airman1"
@@ -240,7 +238,8 @@ Option "", "CBM_Null_Menu", "CL_Commandoman"
 Option "", "CBM_Null_Menu", "CL_Commandoman1"
 Option "", "CBM_Null_Menu", "CL_Commandoman2"
 Option "", "CBM_Null_Menu", "CL_Commandoman3"
-Option "", "CBM_Null_Menu", "CL_Commandoman3a"
+Option "", "CBM_Null_Menu", "CL_Commandoman4"
+Option "", "CBM_Null_Menu", "CL_Commandoman4a"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Chillman"
 Option "", "CBM_Null_Menu", "CL_Chillman1"
@@ -281,6 +280,8 @@ Option "", "CBM_Null_Menu", "CL_Uranus3"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Pluto"
 Option "", "CBM_Null_Menu", "CL_Pluto1"
+Option "", "CBM_Null_Menu", "CL_Pluto2"
+Option "", "CBM_Null_Menu", "CL_Pluto3"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_BBAMegaman"
 Option "", "CBM_Null_Menu", "CL_BBAMegaman1"
@@ -346,34 +347,30 @@ OptionValue CL_Gutsman1
 {0,"-Gutsrock HP 75->85"}
 
 OptionValue CL_Iceman1
-{0,"-IceSlasher damage 10->15"}
+{0,"-IceSlasher damage 10->8"}
 OptionValue CL_Iceman2
-{0,"--No longer rips"}
-OptionValue CL_Iceman3
 {0,"-IceSlasher speed 22->36"}
-OptionValue CL_Iceman4
-{0,"-IceSlasher now hitstuns"}
-OptionValue CL_Iceman5
+OptionValue CL_Iceman3
 {0,"-Delay between mainfires 10->16 tics"}
-OptionValue CL_Iceman6
+OptionValue CL_Iceman4
 {0,"-Cloud altfire removed"}
-OptionValue CL_Iceman7
+OptionValue CL_Iceman5
 {0,"-Statue altfire behavior changed"}
-OptionValue CL_Iceman8
+OptionValue CL_Iceman6
 {0,"--No longer requires full ammo to use"}
-OptionValue CL_Iceman9
+OptionValue CL_Iceman7
 {0,"--Laser speed 50->200"}
-OptionValue CL_Iceman10
+OptionValue CL_Iceman8
 {0,"---Distance is the same"}
-OptionValue CL_Iceman11
+OptionValue CL_Iceman9
 {0,"--Statues no longer break during forming"}
-OptionValue CL_Iceman12
+OptionValue CL_Iceman10
 {0,"--Statue form time 12->20 tics"}
-OptionValue CL_Iceman13
+OptionValue CL_Iceman11
 {0,"--Statue lifetime 200->70 tics"}
-OptionValue CL_Iceman14
+OptionValue CL_Iceman12
 {0,"--Special statue lifetime 700->140 tics"}
-OptionValue CL_Iceman15
+OptionValue CL_Iceman13
 {0,"--Statue explosion leaves lingering fog"}
 
 OptionValue CL_Oilman1
@@ -496,7 +493,7 @@ OptionValue CL_Flameman1
 OptionValue CL_Flameman1a
 {0,"pillar offshoots"}
 OptionValue CL_Flameman2
-{0,"--Mainfire ammo use 0->4"}
+{0,"--Mainfire ammo use 0->8"}
 OptionValue CL_Flameman3
 {0,"--Mainfire damage 17->15"}
 OptionValue CL_Flameman4
@@ -663,17 +660,19 @@ OptionValue CL_Blademan4
 {0,"--Wall altfire ammo use unchanged"}
 
 OptionValue CL_Pumpman1
-{0,"-Bubble health 45->36"}
+{0,"-Bubble health 45->30"}
 OptionValue CL_Pumpman2
 {0,"-Allies no longer damage bubbles"}
 
 OptionValue CL_Commandoman1
-{0,"-Stomp refire delay 30->43"}
+{0,"-Mine speed 20->30"}
 OptionValue CL_Commandoman2
-{0,"--End delay 15->23"}
+{0,"-Stomp refire delay 30->43"}
 OptionValue CL_Commandoman3
+{0,"--End delay 15->23"}
+OptionValue CL_Commandoman4
 {0,"-Firing during leap now puts leap"}
-OptionValue CL_Commandoman3a
+OptionValue CL_Commandoman4a
 {0,"on a delay"}
 
 OptionValue CL_Chillman1
@@ -724,16 +723,20 @@ OptionValue CL_Jupiter3
 {0,"-Altfire liftoff knockback 25->20"}
 
 OptionValue CL_Uranus1
-{0,"-Crushed Deep Digger is now a 16 damage"}
+{0,"-Crushed Deep Digger is now a shotgun"}
 OptionValue CL_Uranus1a
-{0,"160/120 explosion"}
+{0,"of 4 faster deep digger bits"}
 OptionValue CL_Uranus2
 {0,"-Fixed deep digger spawning extra bits"}
 OptionValue CL_Uranus3
 {0,"-Fixed Cattle Charge exploit?"}
 
 OptionValue CL_Pluto1
+{0,"-Speed 0.8/0.78->0.9/0.88"}
+OptionValue CL_Pluto2
 {0,"-Walljumps 6->4"}
+OptionValue CL_Pluto3
+{0,"-Max dash speed bonus 103%->74%"}
 
 OptionValue CL_BBAMegaman1
 {0,"-BFG90XX tracer range 1000->600"}

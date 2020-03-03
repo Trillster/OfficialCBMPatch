@@ -80,8 +80,8 @@ Translation "198:198=197:197"
 PROJECTILE
 damagetype "IcemanSlasher"
 Obituary "$OB_ICESLASHER"
-//+RIPPER
-damage (15)
++RIPPER
+damage (8)
 Radius 5
 Height 5
 speed 36

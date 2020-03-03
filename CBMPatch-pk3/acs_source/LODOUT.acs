@@ -333,7 +333,7 @@ str MainBossList[I_TOTAL_CLASSES][5]={
 {"Jupiter","0.8/0.78","10","1",""},
 //{"Saturn","0.8/0.78","10","1",""},
 {"Uranus","0.5/0.48","10","1",""},
-{"Pluto","0.8/0.78","11","1","Can Wall Jump\n       Suffers half hitstun\n       Gain speed through constant movement"},
+{"Pluto","0.9/0.88","11","1","Can Wall Jump\n       Suffers half hitstun\n       Gain speed through constant movement"},
 {"Neptune","0.7/0.68","10","1",""},
 //{"Sunstar","0.8/0.78","10","1",""},
 
@@ -407,7 +407,7 @@ str MainWepList[I_TOTAL_CLASSES][3]={
 "Without a rock, performs a strong punch. With a rock, places the rock down allowing it to be used as a platform. Placed rocks can be punched to send bits forward.",
 ""},
 //Iceman
-{"Fires Ice Slashers.",
+{"Fires Ice Slashers that rip.",
 "Fires an icy beam that slows enemies and summons an ice statue a short distance away. Statues explode upon taking damage from Iceman or other statues, leaving a damaging fog that slows enemies on hit.",
 ""},
 //Bombman

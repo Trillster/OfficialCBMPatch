@@ -25,10 +25,8 @@ Official CBM Patch for Version 9 - E Hotfix
 -Gutsrock HP 75->85
 
 ==Iceman
--IceSlasher damage 10->15
---No longer rips
+-IceSlasher damage 10->8
 -IceSlasher speed 22->36
--IceSlasher now hitstuns
 -Delay between mainfires 10->16 tics
 -Cloud altfire removed
 -Statue altfire behavior changed
@@ -115,7 +113,7 @@ Official CBM Patch for Version 9 - E Hotfix
 
 ==Flameman
 -Mainfire impact spawns 4 pillar offshoots
---Mainfire ammo use 0->4
+--Mainfire ammo use 0->8
 --Mainfire damage 17->15
 -Altfire pillars spawn changed
 --No longer spawns a set directly in front
@@ -209,10 +207,11 @@ Official CBM Patch for Version 9 - E Hotfix
 --Wall altfire ammo use unchanged
 
 ==Pumpman
--Bubble health 45->36
+-Bubble health 45->30
 -Allies no longer damage bubbles
 
 ==Commandoman
+-Mine speed 20->30
 -Stomp refire delay 30->43
 --End delay 15->23
 -Firing during leap now puts leap on a delay
@@ -248,12 +247,14 @@ Official CBM Patch for Version 9 - E Hotfix
 -Altfire liftoff knockback 25->20
 
 ==Uranus
--Crushed Deep Digger is now a 16 damage 160/120 explosion
+-Crushed Deep Digger is now a shotgun of 4 faster deep digger bits
 -Fixed deep digger spawning extra bits
 -Fixed Cattle Charge exploit?
 
 ==Pluto
+-Speed 0.8/0.78->0.9/0.88
 -Walljumps 6->4
+-Max dash speed bonus 103%->74%
 
 ==BBAMegaman
 -BFG90XX tracer range 1000->600

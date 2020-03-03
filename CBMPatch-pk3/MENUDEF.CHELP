@@ -603,7 +603,7 @@ OptionValue CBM_ClassSpeed
 111, "0.8/0.78"//Jupiter
 //112, "0.8/0.78"//Saturn
 113, "0.50/0.48"//Uranus
-114, "0.8/0.78"//Pluto
+114, "0.9/0.88"//Pluto
 115, "0.7/0.68"//Neptune
 //116, "0.8/0.78"//Sunstar
 
@@ -837,7 +837,7 @@ OptionValue CBM_ClassAltfire
 63, "\cdWindStorm pulls foes toward the user"//Wind
 64, "\cdRapid melee damage\nUser is slower during melee\nPulls in nearby spears"//Yamato
 
-65, "\cdCharge shot that spreads on surfaces\nThe waves also freeze foes in place\nCeiling icicles split on ground\nCharge can be cancelled via altfire"//Freeze
+65, "\cdCharge shot that spreads on surfaces\nThe waves also freeze foes in place\nCharge can be cancelled via altfire"//Freeze
 66, "\cdPunch that flings some junk"//Junk
 67, "\cdPinpoint attack that can trap foes\nCan also ride the bubbles for hovering"//Burst
 68, "\cdWhen on ground, recharges half ammo\nWhile flying, drop lightning spread"//Cloud
@@ -890,7 +890,7 @@ OptionValue CBM_ClassAltfire
 110, "\cdFires a barrage of missiles forward\nCan be used at anytime"//Mars
 111, "\cdLaunch into the air and then hover\nLaunch knocks foes back"//Jupiter
 //112, "\cdAltfire"//Saturn
-113, "\cdWorks up rage to charge foes\nMore rage = Longer charge\nMainfire Slams ground during Stampede\nWith rock in hand, crushes it"//Uranus
+113, "\cdWorks up rage to charge foes\nMore rage = Longer charge\nMainfire Slams ground during Stampede"//Uranus
 114, "\cdDash in any direction, faster at high speed\nCan do rapid swipes after a dash\nAlso swipes if not enough ammo"//Pluto
 115, "\cdLeaps forward to jump at foes\nCan be held to do a super stomp\nBasic hop jumps off water safely"//Neptune
 //116, "\cdAltfire"//Sunstar
