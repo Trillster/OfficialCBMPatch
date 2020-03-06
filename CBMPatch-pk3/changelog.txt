@@ -1,5 +1,5 @@
 ================
-Official CBM Patch for Version 9 - E Hotfix
+Version 9 F Devpatch
 ================
 
 ==General
@@ -47,7 +47,7 @@ Official CBM Patch for Version 9 - E Hotfix
 ==Airman
 -Air Shooter damage 15->12
 -Altfire spread straightened/compressed
---Radius 6->8, height 7->10
+--Radius/height 6/7->8/10
 --Spawn damage 5->9, travelling unchanged
 --Reduced damage from multi-hits
 -New item, toggle Air Turbine
@@ -72,7 +72,7 @@ Official CBM Patch for Version 9 - E Hotfix
 -Mainfire direct hit damage 35->25
 --Mainfire explosion removed
 --Pressing altfire with 25% hold ammo does current altfire
----Fires 8->16 shots
+---Number of shots 8->16
 ---Shot damage 12->6
 -New altfire
 --Fires a lob shot that lingers
@@ -82,7 +82,7 @@ Official CBM Patch for Version 9 - E Hotfix
 
 ==DocRobot
 -Stat changes more accurately reflect class copied
---Base stats lowered 105%/110%->100%/100%
+-Base stats lowered 105%/110%->100%/100%
 
 ==Brightman
 -Walljumps removed
@@ -114,9 +114,9 @@ Official CBM Patch for Version 9 - E Hotfix
 -Reworked
 
 ==Flameman
+-Mainfire ammo use 0->6
+-Mainfire damage 17->15
 -Mainfire impact spawns 4 pillar offshoots
---Mainfire ammo use 0->6
---Mainfire damage 17->15
 -Altfire pillars spawn changed
 --No longer spawns a set directly in front
 -Pillar waves now have a visual
@@ -130,11 +130,11 @@ Official CBM Patch for Version 9 - E Hotfix
 --Heals 25 HP over ~6 seconds (220 tics)
 
 ==Freezeman
+-Mainfire ammo use 2->4
+-Mainfire damage 19->13
 -Mainfire impact spawns 3 spike offshoots
---Wall impact 6->8 bits
---Mainfire ceiling spikes no longer split
---Mainfire damage 19->13
---Mainfire ammo use 2->4
+-Wall impact 6->8 bits
+-Mainfire ceiling spikes no longer split
 -Spike priming delay 8->10 tics
 
 ==Junkman
@@ -211,10 +211,10 @@ Official CBM Patch for Version 9 - E Hotfix
 -Fixed state names
 
 ==Blademan
--Cling buffer before action 4->8 tics
---Cling buffer after wall dash 2->8 tics
 -Altfire ammo use 5->8
 --Wall altfire ammo use unchanged
+-Cling buffer before action 4->8 tics
+--Cling buffer after wall dash 2->8 tics
 
 ==Pumpman
 -Bubble health 45->30
@@ -246,10 +246,10 @@ Official CBM Patch for Version 9 - E Hotfix
 
 ==Mars
 -Vulcan ending delay 2->10 tics
--Vulcan has no falloff
---Projectile lifetime infinite->5 tics
--Tank backwards movement 100%->25%
+-Vulcan falloff removed
+-Vulkan lifetime infinite->5 tics
 -Vulcan sound changed
+-Tank backwards movement 100%->25%
 
 ==Jupiter
 -Mainfire lifetime 32->16
@@ -267,6 +267,6 @@ Official CBM Patch for Version 9 - E Hotfix
 -Max dash speed bonus 103%->74%
 
 ==BBAMegaman
--BFG90XX tracer range 1000->600
 -Heavy Cannon explosion damage 36->24
 -Energy Lancer damage 6->8
+-BFG90XX tracer range 1000->600

@@ -6,7 +6,7 @@ OptionValue CL_Null
 	
 OptionMenu "CBM_ChangelogMenu"
 {
-	Title "Official CBM Patch v9f Changelog"
+	Title "Version 9 F Devpatch Changelog"
 	StaticText"$MNU_CHELP_EQUALLINE"
 	StaticText ""
 
@@ -30,8 +30,8 @@ Option "", "CBM_Null_Menu", "CL_DrLight3a"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Cutman"
 Option "", "CBM_Null_Menu", "CL_Cutman1"
-Option "", "CBM_Null_Menu", "CL_Cutman1a"
 Option "", "CBM_Null_Menu", "CL_Cutman2"
+Option "", "CBM_Null_Menu", "CL_Cutman2a"
 Option "", "CBM_Null_Menu", "CL_Cutman3"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Gutsman"
@@ -136,9 +136,9 @@ Option "", "CBM_Null_Menu", "CL_Darkman31"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Flameman"
 Option "", "CBM_Null_Menu", "CL_Flameman1"
-Option "", "CBM_Null_Menu", "CL_Flameman1a"
 Option "", "CBM_Null_Menu", "CL_Flameman2"
 Option "", "CBM_Null_Menu", "CL_Flameman3"
+Option "", "CBM_Null_Menu", "CL_Flameman3a"
 Option "", "CBM_Null_Menu", "CL_Flameman4"
 Option "", "CBM_Null_Menu", "CL_Flameman5"
 Option "", "CBM_Null_Menu", "CL_Flameman5a"
@@ -154,12 +154,12 @@ Option "", "CBM_Null_Menu", "CL_Plantman6"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Freezeman"
 Option "", "CBM_Null_Menu", "CL_Freezeman1"
-Option "", "CBM_Null_Menu", "CL_Freezeman1a"
 Option "", "CBM_Null_Menu", "CL_Freezeman2"
 Option "", "CBM_Null_Menu", "CL_Freezeman3"
 Option "", "CBM_Null_Menu", "CL_Freezeman3a"
 Option "", "CBM_Null_Menu", "CL_Freezeman4"
 Option "", "CBM_Null_Menu", "CL_Freezeman5"
+Option "", "CBM_Null_Menu", "CL_Freezeman5a"
 Option "", "CBM_Null_Menu", "CL_Freezeman6"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Junkman"
@@ -358,13 +358,13 @@ OptionValue CL_DrLight3a
 {0,"multiplier 0.4->0.6"}
 
 OptionValue CL_Cutman1
-{0,"-Mainfire can be held to"}
-OptionValue CL_Cutman1a
-{0,"extend cutter length"}
-OptionValue CL_Cutman2
-{0,"--Extending limited by ammo"}
-OptionValue CL_Cutman3
 {0,"-Walljumps 9->8"}
+OptionValue CL_Cutman2
+{0,"-Mainfire can be held to"}
+OptionValue CL_Cutman2a
+{0,"extend cutter length"}
+OptionValue CL_Cutman3
+{0,"--Extending limited by ammo"}
 
 OptionValue CL_Gutsman1
 {0,"-Gutsrock HP 75->85"}
@@ -408,7 +408,7 @@ OptionValue CL_Airman1
 OptionValue CL_Airman2
 {0,"-Altfire spread straightened/compressed"}
 OptionValue CL_Airman3
-{0,"--Radius 6->8, height 7->10"}
+{0,"--Radius/height 6/7->8/10"}
 OptionValue CL_Airman4
 {0,"--Spawn damage 5->9,"}
 OptionValue CL_Airman4a
@@ -449,7 +449,7 @@ OptionValue CL_Sparkman4
 OptionValue CL_Sparkman4a
 {0,"does current altfire"}
 OptionValue CL_Sparkman5
-{0,"---Fires 8->16 shots"}
+{0,"---Number of shots 8->16"}
 OptionValue CL_Sparkman6
 {0,"---Shot damage 12->6"}
 OptionValue CL_Sparkman7
@@ -465,7 +465,7 @@ OptionValue CL_DocRobot1
 OptionValue CL_DocRobot1a
 {0,"class copied"}
 OptionValue CL_DocRobot2
-{0,"--Base stats lowered"}
+{0,"-Base stats lowered"}
 OptionValue CL_DocRobot2a
 {0,"105%/110%->100%/100%"}
 
@@ -516,13 +516,13 @@ OptionValue CL_Darkman31
 {0,"-Reworked"}
 
 OptionValue CL_Flameman1
-{0,"-Mainfire impact spawns 4"}
-OptionValue CL_Flameman1a
-{0,"pillar offshoots"}
+{0,"-Mainfire ammo use 0->6"}
 OptionValue CL_Flameman2
-{0,"--Mainfire ammo use 0->6"}
+{0,"-Mainfire damage 17->15"}
 OptionValue CL_Flameman3
-{0,"--Mainfire damage 17->15"}
+{0,"-Mainfire impact spawns 4"}
+OptionValue CL_Flameman3a
+{0,"pillar offshoots"}
 OptionValue CL_Flameman4
 {0,"-Altfire pillars spawn changed"}
 OptionValue CL_Flameman5
@@ -546,19 +546,19 @@ OptionValue CL_Plantman6
 {0,"--Heals 25 HP over ~6 seconds (220 tics)"}
 
 OptionValue CL_Freezeman1
-{0,"-Mainfire impact spawns 3"}
-OptionValue CL_Freezeman1a
-{0,"spike offshoots"}
+{0,"-Mainfire ammo use 2->4"}
 OptionValue CL_Freezeman2
-{0,"--Wall impact 6->8 bits"}
+{0,"-Mainfire damage 19->13"}
 OptionValue CL_Freezeman3
-{0,"--Mainfire ceiling spikes"}
+{0,"-Mainfire impact spawns 3"}
 OptionValue CL_Freezeman3a
-{0,"no longer split"}
+{0,"spike offshoots"}
 OptionValue CL_Freezeman4
-{0,"--Mainfire damage 19->13"}
+{0,"--Wall impact 6->8 bits"}
 OptionValue CL_Freezeman5
-{0,"--Mainfire ammo use 2->4"}
+{0,"--Mainfire ceiling spikes"}
+OptionValue CL_Freezeman5a
+{0,"no longer split"}
 OptionValue CL_Freezeman6
 {0,"-Spike priming delay 8->10 tics"}
 
@@ -691,13 +691,13 @@ OptionValue CL_Galaxyman1
 {0,"-Fixed state names"}
 
 OptionValue CL_Blademan1
-{0,"-Cling buffer before action 4->8 tics"}
-OptionValue CL_Blademan2
-{0,"--Cling buffer after wall dash 2->8 tics"}
-OptionValue CL_Blademan3
 {0,"-Altfire ammo use 5->8"}
-OptionValue CL_Blademan4
+OptionValue CL_Blademan2
 {0,"--Wall altfire ammo use unchanged"}
+OptionValue CL_Blademan3
+{0,"-Cling buffer before action 4->8 tics"}
+OptionValue CL_Blademan4
+{0,"--Cling buffer after wall dash 2->8 tics"}
 
 OptionValue CL_Pumpman1
 {0,"-Bubble health 45->30"}
@@ -747,13 +747,13 @@ OptionValue CL_Venus1
 OptionValue CL_Mars1
 {0,"-Vulcan ending delay 2->10 tics"}
 OptionValue CL_Mars2
-{0,"-Vulcan has no falloff"}
+{0,"-Vulcan falloff removed"}
 OptionValue CL_Mars3
-{0,"--Projectile lifetime infinite->5 tics"}
+{0,"-Vulkan lifetime infinite->5 tics"}
 OptionValue CL_Mars4
-{0,"-Tank backwards movement 100%->25%"}
-OptionValue CL_Mars5
 {0,"-Vulcan sound changed"}
+OptionValue CL_Mars5
+{0,"-Tank backwards movement 100%->25%"}
 
 OptionValue CL_Jupiter1
 {0,"-Mainfire lifetime 32->16 tics"}
@@ -779,11 +779,11 @@ OptionValue CL_Pluto3
 {0,"-Max dash speed bonus 103%->74%"}
 
 OptionValue CL_BBAMegaman1
-{0,"-BFG90XX tracer range 1000->600"}
-OptionValue CL_BBAMegaman2
 {0,"-Heavy Cannon explosion damage 36->24"}
-OptionValue CL_BBAMegaman3
+OptionValue CL_BBAMegaman2
 {0,"-Energy Lancer damage 6->8"}
+OptionValue CL_BBAMegaman3
+{0,"-BFG90XX tracer range 1000->600"}
 
 OptionValue CL_Test
 {0,"========================================"}
