@@ -694,7 +694,7 @@ OptionValue CBM_ClassMainfire
 64, "\cdSpears drop on hit to pickup\nCollecting spears refills ammo"//Yamato
 
 65, "\cdSplits on walls\nLeaves icicles on floors/ceilings"//Freeze
-66, "\cdJunk Cube can be pushed with altfire\nPushed cube can go up small stairs"//Junk
+66, "\cdJunk Cube can be pushed with altfire\nPushed cube can go up small stairs\nGain more ammo while near Cubes"//Junk
 67, "\cdBombs drop upon hitting surfaces\nMore bombs make the bubble heavier"//Burst
 68, "\cdShot splits on contact\nNo ammo shots can't split"//Cloud
 69, "\cdSprings bounce once before splitting"//Spring

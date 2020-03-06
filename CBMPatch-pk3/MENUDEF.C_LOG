@@ -52,16 +52,22 @@ Option "", "CBM_Null_Menu", "CL_Iceman11"
 Option "", "CBM_Null_Menu", "CL_Iceman12"
 Option "", "CBM_Null_Menu", "CL_Iceman13"
 StaticText""
+Option "", "CBM_Null_Menu", "CL_Oilman"
+Option "", "CBM_Null_Menu", "CL_Oilman1"
+Option "", "CBM_Null_Menu", "CL_Oilman2"
+Option "", "CBM_Null_Menu", "CL_Oilman3"
+StaticText""
 Option "", "CBM_Null_Menu", "CL_Airman"
 Option "", "CBM_Null_Menu", "CL_Airman1"
 Option "", "CBM_Null_Menu", "CL_Airman2"
 Option "", "CBM_Null_Menu", "CL_Airman3"
-Option "", "CBM_Null_Menu", "CL_Airman3a"
-Option "", "CBM_Null_Menu", "CL_Airman4"
+Option "", "CBM_Null_Menu", "CL_Airman3"
+Option "", "CBM_Null_Menu", "CL_Airman4a"
 Option "", "CBM_Null_Menu", "CL_Airman5"
 Option "", "CBM_Null_Menu", "CL_Airman6"
 Option "", "CBM_Null_Menu", "CL_Airman7"
 Option "", "CBM_Null_Menu", "CL_Airman8"
+Option "", "CBM_Null_Menu", "CL_Airman9"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Quickman"
 Option "", "CBM_Null_Menu", "CL_Quickman1"
@@ -95,6 +101,14 @@ Option "", "CBM_Null_Menu", "CL_DocRobot1"
 Option "", "CBM_Null_Menu", "CL_DocRobot1a"
 Option "", "CBM_Null_Menu", "CL_DocRobot2"
 Option "", "CBM_Null_Menu", "CL_DocRobot2a"
+StaticText""
+Option "", "CBM_Null_Menu", "CL_Brightman"
+Option "", "CBM_Null_Menu", "CL_Brightman1"
+Option "", "CBM_Null_Menu", "CL_Brightman2"
+Option "", "CBM_Null_Menu", "CL_Brightman3"
+StaticText""
+Option "", "CBM_Null_Menu", "CL_Diveman"
+Option "", "CBM_Null_Menu", "CL_Diveman1"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Skullman"
 Option "", "CBM_Null_Menu", "CL_Skullman1"
@@ -159,8 +173,12 @@ Option "", "CBM_Null_Menu", "CL_Junkman6"
 Option "", "CBM_Null_Menu", "CL_Junkman7"
 Option "", "CBM_Null_Menu", "CL_Junkman8"
 Option "", "CBM_Null_Menu", "CL_Junkman9"
+Option "", "CBM_Null_Menu", "CL_Junkman9a"
 Option "", "CBM_Null_Menu", "CL_Junkman10"
 Option "", "CBM_Null_Menu", "CL_Junkman11"
+Option "", "CBM_Null_Menu", "CL_Junkman12"
+Option "", "CBM_Null_Menu", "CL_Junkman13"
+Option "", "CBM_Null_Menu", "CL_Junkman14"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Burstman"
 Option "", "CBM_Null_Menu", "CL_Burstman1"
@@ -172,6 +190,14 @@ StaticText""
 Option "", "CBM_Null_Menu", "CL_Slashman"
 Option "", "CBM_Null_Menu", "CL_Slashman1"
 StaticText""
+Option "", "CBM_Null_Menu", "CL_Shademan"
+Option "", "CBM_Null_Menu", "CL_Shademan1"
+Option "", "CBM_Null_Menu", "CL_Shademan2"
+Option "", "CBM_Null_Menu", "CL_Shademan3"
+Option "", "CBM_Null_Menu", "CL_Shademan4"
+Option "", "CBM_Null_Menu", "CL_Shademan5"
+Option "", "CBM_Null_Menu", "CL_Shademan5a"
+StaticText""
 Option "", "CBM_Null_Menu", "CL_Tenguman"
 Option "", "CBM_Null_Menu", "CL_Tenguman1"
 StaticText""
@@ -180,10 +206,6 @@ Option "", "CBM_Null_Menu", "CL_Aquaman1"
 Option "", "CBM_Null_Menu", "CL_Aquaman2"
 Option "", "CBM_Null_Menu", "CL_Aquaman2a"
 Option "", "CBM_Null_Menu", "CL_Aquaman3"
-Option "", "CBM_Null_Menu", "CL_Aquaman3a"
-Option "", "CBM_Null_Menu", "CL_Aquaman4"
-Option "", "CBM_Null_Menu", "CL_Aquaman5"
-Option "", "CBM_Null_Menu", "CL_Aquaman5a"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Dynamoman"
 Option "", "CBM_Null_Menu", "CL_Dynamoman1"
@@ -202,6 +224,7 @@ Option "", "CBM_Null_Menu", "CL_Tornadoman1a"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Splashwoman"
 Option "", "CBM_Null_Menu", "CL_Splashwoman1"
+Option "", "CBM_Null_Menu", "CL_Splashwoman2"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Jewelman"
 Option "", "CBM_Null_Menu", "CL_Jewelman1"
@@ -376,29 +399,29 @@ OptionValue CL_Iceman13
 OptionValue CL_Oilman1
 {0,"-Mainfire reverted to v9ch"}
 OptionValue CL_Oilman2
-{0,"-Mid-charge blob damage 15->12"}
+{0,"-Blobs fired during charge 1/3/5->1/2/3"}
 OptionValue CL_Oilman3
-{0,"-Full-charge blob damage 15->10"}
-OptionValue CL_Oilman4
 {0,"-Slide high damage 12->8"}
 
 OptionValue CL_Airman1
-{0,"-Altfire spread straightened/compressed"}
+{0,"-Air Shooter damage 15->12"}
 OptionValue CL_Airman2
-{0,"--Radius 6->8, height 7->10"}
+{0,"-Altfire spread straightened/compressed"}
 OptionValue CL_Airman3
-{0,"--Spawn damage 5->9,"}
-OptionValue CL_Airman3a
-{0,"travelling unchanged"}
+{0,"--Radius 6->8, height 7->10"}
 OptionValue CL_Airman4
-{0,"--Reduced damage from multi-hits"}
+{0,"--Spawn damage 5->9,"}
+OptionValue CL_Airman4a
+{0,"travelling unchanged"}
 OptionValue CL_Airman5
-{0,"-New item, toggle Air Turbine"}
+{0,"--Reduced damage from multi-hits"}
 OptionValue CL_Airman6
-{0,"--Air control is increased"}
+{0,"-New item, toggle Air Turbine"}
 OptionValue CL_Airman7
-{0,"--Jump height is increased"}
+{0,"--Air control is increased"}
 OptionValue CL_Airman8
+{0,"--Jump height is increased"}
+OptionValue CL_Airman9
 {0,"--Drains altfire ammo"}
 
 OptionValue CL_Quickman1
@@ -448,6 +471,10 @@ OptionValue CL_DocRobot2a
 
 OptionValue CL_Brightman1
 {0,"-Walljumps removed"}
+OptionValue CL_Brightman2
+{0,"-Added shatter FX for bulbs"}
+OptionValue CL_Brightman3
+{0,"-Added an indicator above blinded players"}
 
 OptionValue CL_Diveman1
 {0,"-Tackle end delay 12->21"}
@@ -493,7 +520,7 @@ OptionValue CL_Flameman1
 OptionValue CL_Flameman1a
 {0,"pillar offshoots"}
 OptionValue CL_Flameman2
-{0,"--Mainfire ammo use 0->8"}
+{0,"--Mainfire ammo use 0->6"}
 OptionValue CL_Flameman3
 {0,"--Mainfire damage 17->15"}
 OptionValue CL_Flameman4
@@ -550,14 +577,22 @@ OptionValue CL_Junkman5
 OptionValue CL_Junkman6
 {0,"-Pushed Junk Cube speed 26->8"}
 OptionValue CL_Junkman7
-{0,"-Pushed Junk Cube animation changed"}
+{0,"-Junk Cube can be pushed multiple times"}
 OptionValue CL_Junkman8
-{0,"-Junk Punch damage 30->15"}
+{0,"--Pushes beyond the first have 26 speed"}
 OptionValue CL_Junkman9
-{0,"-Junk Punch shot damage 20->15"}
+{0,"-Increased ammo regen while near"}
+OptionValue CL_Junkman9a
+{0,"Junk Cubes"}
 OptionValue CL_Junkman10
-{0,"-Junk Shield damage 7/6/5->5/4/3"}
+{0,"-Pushed Junk Cube animation changed"}
 OptionValue CL_Junkman11
+{0,"-Junk Punch damage 30->15"}
+OptionValue CL_Junkman12
+{0,"-Junk Punch shot damage 20->15"}
+OptionValue CL_Junkman13
+{0,"-Junk Shield damage 7/6/5->5/4/3"}
+OptionValue CL_Junkman14
 {0,"-Passive Junk Shield noise added"}
 
 OptionValue CL_Burstman1
@@ -574,6 +609,19 @@ OptionValue CL_Burstman4a
 OptionValue CL_Slashman1
 {0,"-Walljumps 5->6"}
 
+OptionValue CL_Shademan1
+{0,"-Ammo needed to start flight 1->4"}
+OptionValue CL_Shademan2
+{0,"--Improved ready state"}
+OptionValue CL_Shademan3
+{0,"-Ammo needed to reflight 4->1"}
+OptionValue CL_Shademan4
+{0,"--Ammo use on reflight still 4"}
+OptionValue CL_Shademan5
+{0,"-Added a hud indicator for when you"}
+OptionValue CL_Shademan5a
+{0," cannot use swoop"}
+
 OptionValue CL_Tenguman1
 {0,"-Hover reverted to item toggle"}
 
@@ -584,16 +632,6 @@ OptionValue CL_Aquaman2
 OptionValue CL_Aquaman2a
 {0,"15/25/35/45/55->15/25/32/39/46"}
 OptionValue CL_Aquaman3
-{0,"-Water Cannon now stops on walls"}
-OptionValue CL_Aquaman3a
-{0,"and ceilings"}
-OptionValue CL_Aquaman4
-{0,"-Water Cannon stationary time 100->112"}
-OptionValue CL_Aquaman5
-{0,"-Water Cannon stationary time now starts"}
-OptionValue CL_Aquaman5a
-{0,"when becoming stationary"}
-OptionValue CL_Aquaman6
 {0,"-Water Tower now blocks shots"}
 
 OptionValue CL_Dynamoman1
@@ -616,6 +654,8 @@ OptionValue CL_Tornadoman1a
 
 OptionValue CL_Splashwoman1
 {0,"-Power song removed"}
+OptionValue CL_Splashwoman2
+{0,"--Speed song now slot 1"}
 
 OptionValue CL_Jewelman1
 {0,"-Rage check for Altfire"}
@@ -665,7 +705,7 @@ OptionValue CL_Pumpman2
 {0,"-Allies no longer damage bubbles"}
 
 OptionValue CL_Commandoman1
-{0,"-Mine speed 20->30"}
+{0,"-Mine speed 20->35"}
 OptionValue CL_Commandoman2
 {0,"-Stomp refire delay 30->43"}
 OptionValue CL_Commandoman3

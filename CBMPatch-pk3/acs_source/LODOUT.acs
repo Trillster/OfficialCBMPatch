@@ -625,7 +625,7 @@ str MainWepList[I_TOTAL_CLASSES][3]={
 "Begins charging for a duration, which results in firing a shot that spreads in floor/ceiling icicles. Hitting altfire during the charge cancels it.\nThe initial waves from the shot freeze enemies on hit. Ceiling icicles split into bits on death.",
 ""},
 //Junkman
-{"Creates a junk cube that does large damage and is able to block shots. This block can be pushed with altfire and the block is able to slide up short stairs/slopes.",
+{"Creates a junk cube that does large damage and is able to block shots. This block can be pushed with altfire and the block is able to slide up short stairs/slopes.\nCan be punched multiple times. Standing near cubes gives you increased ammo regeneration.",
 "Punches forward, using a bit of ammo to also fire off a junk shot.",
 "Uses some of your ammo to give grant you junk shield. This shield gives you armor, along with constantly damaging nearby enemies. If item is used when you already have junk shield, it refreshes the shield along with firing a stunning shot."},
 //Burstman

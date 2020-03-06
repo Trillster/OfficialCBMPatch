@@ -303,22 +303,7 @@ goto SpawnX
 }
 }
 
-actor FlashmanSparkleFX_Aura2 : BasicHelper
-{
-States
-{
-Spawn:
-TNT1 A 0
-TNT1 A 3
-Spawn2:
-TNT1 A 0 A_SpawnItemEx("FlashmanSparkleFX_Aura3",random(16,32),0,Random(10,52),0,0,0,random(0,359))
-TNT1 A 4
-TNT1 A 3 A_JumpIfInTargetInventory("TimeStoppedTFFlag",1,"Spawn2")
-stop
-}
-}
-
-actor FlashmanSparkleFX_Aura3 : FlashmanSparkleFX_Base
+actor FlashmanSparkleFX_Aura2 : FlashmanSparkleFX_Base
 {
 RenderStyle "Stencil"
 StencilColor White

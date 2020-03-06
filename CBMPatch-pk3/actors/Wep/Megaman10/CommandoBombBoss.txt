@@ -450,7 +450,7 @@ Obituary "$OB_COMMANDOBOMB"
 Damage (10)
 Radius 10
 Height 10
-Speed 30
+Speed 20
 Scale 2.5
 States
 {
@@ -727,7 +727,7 @@ Obituary "$OB_COMMANDOMINEX"
 Damage(10)
 Radius 20
 Height 10
-Speed 20
+Speed 35
 scale 2.5
 States
 {

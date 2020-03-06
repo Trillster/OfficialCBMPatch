@@ -457,8 +457,8 @@ IsSelected SearchSnakeBoss{Drawbar"VARAMMO4","VAREMPTY",Ammo1,horizontal,58,184;
 	InInventory not SnakeClamberAmmo,250{DrawBar"3F_R_VAR","VNOBAR",SnakeClamberAmmo,horizontal,58,184;}}
 IsSelected SparkShockBoss
 {
-InInventory SparkmanHoldFlag,7{Drawbar"03_T_VAR","VAREMPTY",SparkmanHoldFlag,horizontal,58,184;}
-else{Drawbar"03_S_VAR","VAREMPTY",SparkmanHoldFlag,horizontal,58,184;}
+InInventory SparkmanHoldFlag,7{Drawbar"VAREMPTY","03_T_VAR",SparkmanHoldFlag,horizontal,reverse,58,184;}
+else{Drawbar"VAREMPTY","03_S_VAR",SparkmanHoldFlag,horizontal,reverse,58,184;}
 Drawbar"VARAMM12","VAREMPTY",MightyGodAmmo,horizontal,58,176;
 }
 IsSelected ShadowBladeBoss{Drawbar"VARAMMO7","VAREMPTY",Ammo1,horizontal,58,184;
@@ -559,7 +559,8 @@ IsSelected ThunderBoltBoss{Drawbar"VARAMM34","VAREMPTY",Ammo1,horizontal,58,184;
 IsSelected WildCoilBoss{Drawbar"VARAMM35","VAREMPTY",Ammo1,horizontal,58,184;}
 IsSelected SlashClawBoss{Drawbar"VARAMM36","VAREMPTY",Ammo1,horizontal,58,184;
 	Drawbar"VARAMM57","VAREMPTY",Ammo2,horizontal,58,176;}
-IsSelected NoiseCrushBoss{Drawbar"VARAMM37","VAREMPTY",Ammo1,horizontal,58,184;
+IsSelected NoiseCrushBoss{InInventory MakeSomeNoiseAmmo,10{Drawbar"VARAMM37","VAREMPTY",Ammo1,horizontal,58,184;}
+	else Drawbar"VARAMM51","VAREMPTY",Ammo1,horizontal,58,184;
 	InInventory NoiseCrushFlagB,1{DrawBar"VARFLS10","VAREMPTY",Ammo1,horizontal,58,184;}}
 IsSelected ScorchWheelBoss{Drawbar"VARAMM38","VAREMPTY",Ammo1,horizontal,58,184;
 	InInventory TurboWheelCount,1{DrawBar"VARFLS1","VNOBAR",TurboWheelCount,horizontal,58,184;}

@@ -242,7 +242,7 @@ PROJECTILE
 damagetype "AirShooter"
 Obituary "$OB_AIRSHOOTER"
 +NOEXPLODEFLOOR
-damage (15)//20
+damage (12)//20
 Radius 6
 Height 7
 speed 28//22

@@ -380,8 +380,31 @@ JUCT B 0 A_SetUserVar("user_P",user_P+1)
 JUCT D 0 A_ChangeFlag("FLOORHUGGER",1)
 goto Spawn2G
 Spawn2:
-JUCT EEEEFFFFGGGG 1 A_JumpIf(z-floorz==0,"Spawn2GStart")
-JUCT D 0 DamageThing(7)
+JUCT E 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT E 1 A_JumpIf(z-floorz==0,"Spawn2GStart")
+JUCT E 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT E 1 A_JumpIf(z-floorz==0,"Spawn2GStart")
+JUCT E 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT E 1 A_JumpIf(z-floorz==0,"Spawn2GStart")
+JUCT E 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT E 1 A_JumpIf(z-floorz==0,"Spawn2GStart")
+JUCT F 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT F 1 A_JumpIf(z-floorz==0,"Spawn2GStart")
+JUCT F 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT F 1 A_JumpIf(z-floorz==0,"Spawn2GStart")
+JUCT F 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT F 1 A_JumpIf(z-floorz==0,"Spawn2GStart")
+JUCT F 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT F 1 A_JumpIf(z-floorz==0,"Spawn2GStart")
+JUCT G 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT G 1 A_JumpIf(z-floorz==0,"Spawn2GStart")
+JUCT G 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT G 1 A_JumpIf(z-floorz==0,"Spawn2GStart")
+JUCT G 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT G 1 A_JumpIf(z-floorz==0,"Spawn2GStart")
+JUCT G 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT G 1 A_JumpIf(z-floorz==0,"Spawn2GStart")
+JUCT G 0 DamageThing(7)
 loop
 Spawn2GStart:
 JUCT D 0 A_SetUserVar("user_P",user_P+1)
@@ -390,12 +413,59 @@ JUCT D 0 //A_ChangeFlag("FLOORHUGGER",1)
 //JUCT D 0 A_ChangeFlag("MISSILE",1)
 Spawn2G:
 JUCT E 0 A_JumpIf(ACS_NamedExecuteWithResult("core_targetexists")==0,"Death")
-JUCT EEEEFFFFGGGG 1 A_JumpIfInTargetInventory("JunkmanPunchFlag",1,"Launch")
-JUCT D 0 DamageThing(7)
-goto Spawn2G
+JUCT E 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT E 1 A_JumpIfInTargetInventory("JunkmanPunchFlag",1,"Launch")
+JUCT E 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT E 1 A_JumpIfInTargetInventory("JunkmanPunchFlag",1,"Launch")
+JUCT E 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT E 1 A_JumpIfInTargetInventory("JunkmanPunchFlag",1,"Launch")
+JUCT E 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT E 1 A_JumpIfInTargetInventory("JunkmanPunchFlag",1,"Launch")
+JUCT F 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT F 1 A_JumpIfInTargetInventory("JunkmanPunchFlag",1,"Launch")
+JUCT F 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT F 1 A_JumpIfInTargetInventory("JunkmanPunchFlag",1,"Launch")
+JUCT F 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT F 1 A_JumpIfInTargetInventory("JunkmanPunchFlag",1,"Launch")
+JUCT F 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT F 1 A_JumpIfInTargetInventory("JunkmanPunchFlag",1,"Launch")
+JUCT G 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT G 1 A_JumpIfInTargetInventory("JunkmanPunchFlag",1,"Launch")
+JUCT G 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT G 1 A_JumpIfInTargetInventory("JunkmanPunchFlag",1,"Launch")
+JUCT G 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT G 1 A_JumpIfInTargetInventory("JunkmanPunchFlag",1,"Launch")
+JUCT G 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT G 1 A_JumpIfInTargetInventory("JunkmanPunchFlag",1,"Launch")
+JUCT G 0 DamageThing(7)
+loop
 Launch:
-JUCT EEEEFFFFGGGG 1 A_JumpIfCloser(100,"Launch2")
-JUCT D 0 DamageThing(7)
+//JUCT EEEEFFFFGGGG 1 A_JumpIfCloser(100,"Launch2")
+JUCT E 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT E 1 A_JumpIfCloser(100,"Launch2")
+JUCT E 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT E 1 A_JumpIfCloser(100,"Launch2")
+JUCT E 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT E 1 A_JumpIfCloser(100,"Launch2")
+JUCT E 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT E 1 A_JumpIfCloser(100,"Launch2")
+JUCT F 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT F 1 A_JumpIfCloser(100,"Launch2")
+JUCT F 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT F 1 A_JumpIfCloser(100,"Launch2")
+JUCT F 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT F 1 A_JumpIfCloser(100,"Launch2")
+JUCT F 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT F 1 A_JumpIfCloser(100,"Launch2")
+JUCT G 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT G 1 A_JumpIfCloser(100,"Launch2")
+JUCT G 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT G 1 A_JumpIfCloser(100,"Launch2")
+JUCT G 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT G 1 A_JumpIfCloser(100,"Launch2")
+JUCT G 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+JUCT G 1 A_JumpIfCloser(100,"Launch2")
+JUCT G 0 DamageThing(7)
 goto Spawn2G
 XDeath:
 Death:
@@ -426,13 +496,77 @@ Spawn:
 JUCT D 0
 JUCT D 0 DamageThing((health+1)-pitch)
 JUCT E 0 A_PlaySoundEx("weapon/ClownBall","Weapon")
-JUCT EEE 1 ThrustThingZ(0,0,0,1)
+JUCT EEE 1 A_GiveInventory("JunkCube_P",1)
 JUCT F 0 A_PlaySoundEx("weapon/ClownBall","Weapon")
-JUCT FFF 1 ThrustThingZ(0,0,0,1)
+JUCT FFF 1 A_GiveInventory("JunkCube_P",1)
 JUCT G 0 A_PlaySoundEx("weapon/ClownBall","Weapon")
-JUCT GGG 1 ThrustThingZ(0,0,0,1)
+JUCT GGG 1 A_GiveInventory("JunkCube_P",1)
+JUCT E 0 A_PlaySoundEx("weapon/ClownBall","Weapon")
+JUCT EEE 1 A_GiveInventory("JunkCube_P",1)
+Goto Spawn2+7
+Spawn2:
+JUCT E 0 A_PlaySoundEx("weapon/ClownBall","Weapon")
+JUCT E 0 A_GiveInventory("JunkCube_P",1)
+JUCT E 1 A_JumpIfInTargetInventory("JunkmanPunchFlag",1,"Launch")
+JUCT E 0 A_GiveInventory("JunkCube_P",1)
+JUCT E 1 A_JumpIfInTargetInventory("JunkmanPunchFlag",1,"Launch")
+JUCT E 0 A_GiveInventory("JunkCube_P",1)
+JUCT E 1 A_JumpIfInTargetInventory("JunkmanPunchFlag",1,"Launch")
+JUCT F 0 A_PlaySoundEx("weapon/ClownBall","Weapon")
+JUCT F 0 A_GiveInventory("JunkCube_P",1)
+JUCT F 1 A_JumpIfInTargetInventory("JunkmanPunchFlag",1,"Launch")
+JUCT F 0 A_GiveInventory("JunkCube_P",1)
+JUCT F 1 A_JumpIfInTargetInventory("JunkmanPunchFlag",1,"Launch")
+JUCT F 0 A_GiveInventory("JunkCube_P",1)
+JUCT F 1 A_JumpIfInTargetInventory("JunkmanPunchFlag",1,"Launch")
+JUCT G 0 A_PlaySoundEx("weapon/ClownBall","Weapon")
+JUCT G 0 A_GiveInventory("JunkCube_P",1)
+JUCT G 1 A_JumpIfInTargetInventory("JunkmanPunchFlag",1,"Launch")
+JUCT G 0 A_GiveInventory("JunkCube_P",1)
+JUCT G 1 A_JumpIfInTargetInventory("JunkmanPunchFlag",1,"Launch")
+JUCT G 0 A_GiveInventory("JunkCube_P",1)
+JUCT G 1 A_JumpIfInTargetInventory("JunkmanPunchFlag",1,"Launch")
 JUCT D 0 DamageThing(7)
-goto Spawn+2
+loop
+
+Launch:
+JUCT E 0 A_GiveInventory("JunkCube_P",1)
+JUCT E 1 A_JumpIfCloser(100,"Launch2")
+JUCT E 0 A_GiveInventory("JunkCube_P",1)
+JUCT E 1 A_JumpIfCloser(100,"Launch2")
+JUCT E 0 A_GiveInventory("JunkCube_P",1)
+JUCT E 1 A_JumpIfCloser(100,"Launch2")
+JUCT F 0 A_GiveInventory("JunkCube_P",1)
+JUCT F 1 A_JumpIfCloser(100,"Launch2")
+JUCT F 0 A_GiveInventory("JunkCube_P",1)
+JUCT F 1 A_JumpIfCloser(100,"Launch2")
+JUCT F 0 A_GiveInventory("JunkCube_P",1)
+JUCT F 1 A_JumpIfCloser(100,"Launch2")
+JUCT G 0 A_GiveInventory("JunkCube_P",1)
+JUCT G 1 A_JumpIfCloser(100,"Launch2")
+JUCT G 0 A_GiveInventory("JunkCube_P",1)
+JUCT G 1 A_JumpIfCloser(100,"Launch2")
+JUCT G 0 A_GiveInventory("JunkCube_P",1)
+JUCT G 1 A_JumpIfCloser(100,"Launch2")
+JUCT G 0 DamageThing(7)
+Goto Spawn2
+Launch2:
+JUCT D 0 A_SetPitch(health)
+JUCT D 0 A_GiveToTarget("JunkBlockWasPushed_F",1)
+JUCT D 1 ACS_ExecuteAlways(259,0,2)
+JUCT D 0 A_SpawnItemEx("JunkmanCubePushed",0,0,0,26,0,0,0,SXF_TRANSFERTRANSLATION|SXF_TRANSFERPITCH)
+stop
+}
+}
+
+actor JunkCube_P : CustomInventory
+{
+States
+{
+Pickup:
+TNT1 A 0 ThrustThingZ(0,0,0,1)
+TNT1 A 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
+stop
 }
 }
 
@@ -440,6 +574,11 @@ actor JunkmanCubeProtect : PowerProtection
 {
 Powerup.Duration 4
 damagefactor "JunkmanCube", 0.0
+}
+
+actor JunkCubeAmmoDelay : Powerup
+{
+powerup.duration 1
 }
 
 actor JunkBits1 : ScrapMetalBase

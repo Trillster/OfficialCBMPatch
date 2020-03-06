@@ -5,16 +5,16 @@ player.displayname "Splashwoman"
 player.soundclass "splashwomanc"
 
 //player.startitem "LaserTridentBoss"
-player.startitem "LaserTridentBoss2"
 player.startitem "LaserTridentBoss3"
+player.startitem "LaserTridentBoss2"
 player.startitem "SplashingAboutAmmo",21
 player.startitem "CrabHealingAmmo",28
 player.startitem "SplashDabbleAmmo", 280
 player.startitem "CanTreadWater"
 
 //player.weaponslot 1, "LaserTridentBoss"
-player.weaponslot 1, "LaserTridentBoss2"
-player.weaponslot 2, "LaserTridentBoss3"
+player.weaponslot 1, "LaserTridentBoss3"
+player.weaponslot 2, "LaserTridentBoss2"
 
 player.startitem "HornetChaserWeakness2", 1
 
