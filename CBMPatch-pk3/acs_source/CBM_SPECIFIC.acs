@@ -539,7 +539,7 @@ script "cbm_JunkCubeGive" (void)
 {
 int JunkTID = ACS_ExecuteWithResult(257, 0);
 
-if(xyzDistance(0,JunkTID)<=100 && !GetActorProperty(JunkTID,"JunkCubeAmmoDelay") && GetActorProperty(JunkTID,APROP_Health)>0 && CheckActorInventory(JunkTID, "JunkShieldBoss"))
+if(xyzDistance(0,JunkTID)<=196 && !GetActorProperty(JunkTID,"JunkCubeAmmoDelay") && GetActorProperty(JunkTID,APROP_Health)>0 && CheckActorInventory(JunkTID, "JunkShieldBoss"))
   {
   GiveActorInventory(JunkTID,"TrunkAmmo",1);
   GiveActorInventory(JunkTID,"JunkCubeAmmoDelay",1);
