@@ -1,39 +1,14 @@
 
 OptionMenu "CBM_ChangelogMenuOld"
 {
-	Title "Version 9 E H Changelog"
+	Title "Version 9 F Devpatch Changelog"
 	StaticText"$MNU_CHELP_EQUALLINE"
 	StaticText ""
 
-Option "", "CBM_Null_Menu", "CL_O_HotfixNote"
-StaticText""
-Option "", "CBM_Null_Menu", "CL_O_ACS"
-Option "", "CBM_Null_Menu", "CL_O_ACS1"
-Option "", "CBM_Null_Menu", "CL_O_ACS2"
-Option "", "CBM_Null_Menu", "CL_O_ACS2a"
-Option "", "CBM_Null_Menu", "CL_O_ACS3"
-Option "", "CBM_Null_Menu", "CL_O_ACS4"
-StaticText""
-Option "", "CBM_Null_Menu", "CL_O_CopyWeapons"
-Option "", "CBM_Null_Menu", "CL_O_CopyWeapons1"
-StaticText""
-Option "", "CBM_Null_Menu", "CL_O_General"
+Option "", "CBM_Null_Menu", "CL_General"
 Option "", "CBM_Null_Menu", "CL_O_General1"
+Option "", "CBM_Null_Menu", "CL_O_General1a"
 Option "", "CBM_Null_Menu", "CL_O_General2"
-Option "", "CBM_Null_Menu", "CL_O_General3"
-Option "", "CBM_Null_Menu", "CL_O_General4"
-Option "", "CBM_Null_Menu", "CL_O_General5"
-Option "", "CBM_Null_Menu", "CL_O_General6"
-Option "", "CBM_Null_Menu", "CL_O_General7"
-Option "", "CBM_Null_Menu", "CL_O_General8"
-Option "", "CBM_Null_Menu", "CL_O_General8a"
-StaticText""
-Option "", "CBM_Null_Menu", "CL_Rock"
-Option "", "CBM_Null_Menu", "CL_O_Rock1"
-Option "", "CBM_Null_Menu", "CL_O_Rock2"
-Option "", "CBM_Null_Menu", "CL_O_Rock2a"
-Option "", "CBM_Null_Menu", "CL_O_Rock3"
-Option "", "CBM_Null_Menu", "CL_O_Rock4"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Auto"
 Option "", "CBM_Null_Menu", "CL_O_Auto1"
@@ -41,12 +16,21 @@ Option "", "CBM_Null_Menu", "CL_O_Auto2"
 Option "", "CBM_Null_Menu", "CL_O_Auto3"
 Option "", "CBM_Null_Menu", "CL_O_Auto4"
 Option "", "CBM_Null_Menu", "CL_O_Auto4a"
-Option "", "CBM_Null_Menu", "CL_O_Auto5"
+StaticText""
+Option "", "CBM_Null_Menu", "CL_DrLight"
+Option "", "CBM_Null_Menu", "CL_O_DrLight1"
+Option "", "CBM_Null_Menu", "CL_O_DrLight2"
+Option "", "CBM_Null_Menu", "CL_O_DrLight3"
+Option "", "CBM_Null_Menu", "CL_O_DrLight3a"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Cutman"
 Option "", "CBM_Null_Menu", "CL_O_Cutman1"
 Option "", "CBM_Null_Menu", "CL_O_Cutman2"
+Option "", "CBM_Null_Menu", "CL_O_Cutman2a"
 Option "", "CBM_Null_Menu", "CL_O_Cutman3"
+StaticText""
+Option "", "CBM_Null_Menu", "CL_Gutsman"
+Option "", "CBM_Null_Menu", "CL_O_Gutsman1"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Iceman"
 Option "", "CBM_Null_Menu", "CL_O_Iceman1"
@@ -57,513 +41,727 @@ Option "", "CBM_Null_Menu", "CL_O_Iceman5"
 Option "", "CBM_Null_Menu", "CL_O_Iceman6"
 Option "", "CBM_Null_Menu", "CL_O_Iceman7"
 Option "", "CBM_Null_Menu", "CL_O_Iceman8"
+Option "", "CBM_Null_Menu", "CL_O_Iceman9"
+Option "", "CBM_Null_Menu", "CL_O_Iceman10"
+Option "", "CBM_Null_Menu", "CL_O_Iceman11"
+Option "", "CBM_Null_Menu", "CL_O_Iceman12"
+Option "", "CBM_Null_Menu", "CL_O_Iceman13"
 StaticText""
-Option "", "CBM_Null_Menu", "CL_Bombman"
-Option "", "CBM_Null_Menu", "CL_O_Bombman1"
-Option "", "CBM_Null_Menu", "CL_O_Bombman2"
-Option "", "CBM_Null_Menu", "CL_O_Bombman3"
-Option "", "CBM_Null_Menu", "CL_O_Bombman4"
-Option "", "CBM_Null_Menu", "CL_O_Bombman5"
+Option "", "CBM_Null_Menu", "CL_Oilman"
+Option "", "CBM_Null_Menu", "CL_O_Oilman1"
+Option "", "CBM_Null_Menu", "CL_O_Oilman2"
+Option "", "CBM_Null_Menu", "CL_O_Oilman3"
 StaticText""
-Option "", "CBM_Null_Menu", "CL_Fireman"
-Option "", "CBM_Null_Menu", "CL_O_Fireman1"
-Option "", "CBM_Null_Menu", "CL_O_Fireman2"
+Option "", "CBM_Null_Menu", "CL_Airman"
+Option "", "CBM_Null_Menu", "CL_O_Airman1"
+Option "", "CBM_Null_Menu", "CL_O_Airman2"
+Option "", "CBM_Null_Menu", "CL_O_Airman3"
+Option "", "CBM_Null_Menu", "CL_O_Airman3"
+Option "", "CBM_Null_Menu", "CL_O_Airman4a"
+Option "", "CBM_Null_Menu", "CL_O_Airman5"
+Option "", "CBM_Null_Menu", "CL_O_Airman6"
+Option "", "CBM_Null_Menu", "CL_O_Airman7"
+Option "", "CBM_Null_Menu", "CL_O_Airman8"
+Option "", "CBM_Null_Menu", "CL_O_Airman9"
 StaticText""
-Option "", "CBM_Null_Menu", "CL_Metalman"
-Option "", "CBM_Null_Menu", "CL_O_Metalman1"
+Option "", "CBM_Null_Menu", "CL_Quickman"
+Option "", "CBM_Null_Menu", "CL_O_Quickman1"
 StaticText""
-Option "", "CBM_Null_Menu", "CL_Bubbleman"
-Option "", "CBM_Null_Menu", "CL_O_Bubbleman1"
-Option "", "CBM_Null_Menu", "CL_O_Bubbleman2"
-Option "", "CBM_Null_Menu", "CL_O_Bubbleman3"
-Option "", "CBM_Null_Menu", "CL_O_Bubbleman4"
-Option "", "CBM_Null_Menu", "CL_O_Bubbleman5"
+Option "", "CBM_Null_Menu", "CL_Flashman"
+Option "", "CBM_Null_Menu", "CL_O_Flashman1"
 StaticText""
-Option "", "CBM_Null_Menu", "CL_Heatman"
-Option "", "CBM_Null_Menu", "CL_O_Heatman1"
-Option "", "CBM_Null_Menu", "CL_O_Heatman2"
-Option "", "CBM_Null_Menu", "CL_O_Heatman3"
-Option "", "CBM_Null_Menu", "CL_O_Heatman4"
-Option "", "CBM_Null_Menu", "CL_O_Heatman5"
-Option "", "CBM_Null_Menu", "CL_O_Heatman6"
-Option "", "CBM_Null_Menu", "CL_O_Heatman7"
-StaticText""
-Option "", "CBM_Null_Menu", "CL_Magnetman"
-Option "", "CBM_Null_Menu", "CL_O_Magnetman1"
-Option "", "CBM_Null_Menu", "CL_O_Magnetman2"
-StaticText""
-Option "", "CBM_Null_Menu", "CL_Hardman"
-Option "", "CBM_Null_Menu", "CL_O_Hardman1"
-Option "", "CBM_Null_Menu", "CL_O_Hardman2"
-Option "", "CBM_Null_Menu", "CL_O_Hardman3"
-StaticText""
-Option "", "CBM_Null_Menu", "CL_Shadowman"
-Option "", "CBM_Null_Menu", "CL_O_Shadowman1"
-Option "", "CBM_Null_Menu", "CL_O_Shadowman2"
-Option "", "CBM_Null_Menu", "CL_O_Shadowman3"
-Option "", "CBM_Null_Menu", "CL_O_Shadowman4"
-Option "", "CBM_Null_Menu", "CL_O_Shadowman5"
-Option "", "CBM_Null_Menu", "CL_O_Shadowman6"
-Option "", "CBM_Null_Menu", "CL_O_Shadowman7"
+Option "", "CBM_Null_Menu", "CL_Geminiman"
+Option "", "CBM_Null_Menu", "CL_O_Geminiman1"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Snakeman"
 Option "", "CBM_Null_Menu", "CL_O_Snakeman1"
+Option "", "CBM_Null_Menu", "CL_O_Snakeman1a"
 StaticText""
-Option "", "CBM_Null_Menu", "CL_Ringman"
-Option "", "CBM_Null_Menu", "CL_O_Ringman1"
+Option "", "CBM_Null_Menu", "CL_Sparkman"
+Option "", "CBM_Null_Menu", "CL_O_Sparkman1"
+Option "", "CBM_Null_Menu", "CL_O_Sparkman2"
+Option "", "CBM_Null_Menu", "CL_O_Sparkman3"
+Option "", "CBM_Null_Menu", "CL_O_Sparkman4"
+Option "", "CBM_Null_Menu", "CL_O_Sparkman4a"
+Option "", "CBM_Null_Menu", "CL_O_Sparkman5"
+Option "", "CBM_Null_Menu", "CL_O_Sparkman6"
+Option "", "CBM_Null_Menu", "CL_O_Sparkman7"
+Option "", "CBM_Null_Menu", "CL_O_Sparkman8"
+StaticText""
+Option "", "CBM_Null_Menu", "CL_Shadowman"
+Option "", "CBM_Null_Menu", "CL_O_Shadowman1"
+StaticText""
+Option "", "CBM_Null_Menu", "CL_DocRobot"
+Option "", "CBM_Null_Menu", "CL_O_DocRobot1"
+Option "", "CBM_Null_Menu", "CL_O_DocRobot1a"
+Option "", "CBM_Null_Menu", "CL_O_DocRobot2"
+Option "", "CBM_Null_Menu", "CL_O_DocRobot2a"
+StaticText""
+Option "", "CBM_Null_Menu", "CL_Brightman"
+Option "", "CBM_Null_Menu", "CL_O_Brightman1"
+Option "", "CBM_Null_Menu", "CL_O_Brightman2"
+Option "", "CBM_Null_Menu", "CL_O_Brightman3"
+StaticText""
+Option "", "CBM_Null_Menu", "CL_Diveman"
+Option "", "CBM_Null_Menu", "CL_O_Diveman1"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Skullman"
 Option "", "CBM_Null_Menu", "CL_O_Skullman1"
 Option "", "CBM_Null_Menu", "CL_O_Skullman2"
 Option "", "CBM_Null_Menu", "CL_O_Skullman3"
 Option "", "CBM_Null_Menu", "CL_O_Skullman4"
-Option "", "CBM_Null_Menu", "CL_O_Skullman4a"
+Option "", "CBM_Null_Menu", "CL_O_Skullman5"
 StaticText""
-Option "", "CBM_Null_Menu", "CL_Chargeman"
-Option "", "CBM_Null_Menu", "CL_O_Chargeman1"
+Option "", "CBM_Null_Menu", "CL_Gravityman"
+Option "", "CBM_Null_Menu", "CL_O_Gravityman1"
+Option "", "CBM_Null_Menu", "CL_O_Gravityman2"
+Option "", "CBM_Null_Menu", "CL_O_Gravityman3"
+Option "", "CBM_Null_Menu", "CL_O_Gravityman3a"
+Option "", "CBM_Null_Menu", "CL_O_Gravityman4"
+Option "", "CBM_Null_Menu", "CL_O_Gravityman4a"
+Option "", "CBM_Null_Menu", "CL_O_Gravityman5"
+Option "", "CBM_Null_Menu", "CL_O_Gravityman5a"
 StaticText""
-Option "", "CBM_Null_Menu", "CL_Darkman2"
-Option "", "CBM_Null_Menu", "CL_O_Darkman21"
-Option "", "CBM_Null_Menu", "CL_O_Darkman22"
+Option "", "CBM_Null_Menu", "CL_Stoneman"
+Option "", "CBM_Null_Menu", "CL_O_Stoneman1"
+Option "", "CBM_Null_Menu", "CL_O_Stoneman2"
 StaticText""
-Option "", "CBM_Null_Menu", "CL_Darkman4"
-Option "", "CBM_Null_Menu", "CL_O_Darkman41"
+Option "", "CBM_Null_Menu", "CL_Darkman3"
+Option "", "CBM_Null_Menu", "CL_O_Darkman31"
 StaticText""
-Option "", "CBM_Null_Menu", "CL_Centaurman"
-Option "", "CBM_Null_Menu", "CL_O_Centaurman1"
-Option "", "CBM_Null_Menu", "CL_O_Centaurman2"
+Option "", "CBM_Null_Menu", "CL_Flameman"
+Option "", "CBM_Null_Menu", "CL_O_Flameman1"
+Option "", "CBM_Null_Menu", "CL_O_Flameman2"
+Option "", "CBM_Null_Menu", "CL_O_Flameman3"
+Option "", "CBM_Null_Menu", "CL_O_Flameman3a"
+Option "", "CBM_Null_Menu", "CL_O_Flameman4"
+Option "", "CBM_Null_Menu", "CL_O_Flameman5"
+Option "", "CBM_Null_Menu", "CL_O_Flameman5a"
+Option "", "CBM_Null_Menu", "CL_O_Flameman6"
+StaticText""
+Option "", "CBM_Null_Menu", "CL_Plantman"
+Option "", "CBM_Null_Menu", "CL_O_Plantman1"
+Option "", "CBM_Null_Menu", "CL_O_Plantman2"
+Option "", "CBM_Null_Menu", "CL_O_Plantman3"
+Option "", "CBM_Null_Menu", "CL_O_Plantman4"
+Option "", "CBM_Null_Menu", "CL_O_Plantman5"
+Option "", "CBM_Null_Menu", "CL_O_Plantman6"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Freezeman"
 Option "", "CBM_Null_Menu", "CL_O_Freezeman1"
 Option "", "CBM_Null_Menu", "CL_O_Freezeman2"
 Option "", "CBM_Null_Menu", "CL_O_Freezeman3"
+Option "", "CBM_Null_Menu", "CL_O_Freezeman3a"
+Option "", "CBM_Null_Menu", "CL_O_Freezeman4"
+Option "", "CBM_Null_Menu", "CL_O_Freezeman5"
+Option "", "CBM_Null_Menu", "CL_O_Freezeman5a"
+Option "", "CBM_Null_Menu", "CL_O_Freezeman6"
+StaticText""
+Option "", "CBM_Null_Menu", "CL_Junkman"
+Option "", "CBM_Null_Menu", "CL_O_Junkman1"
+Option "", "CBM_Null_Menu", "CL_O_Junkman2"
+Option "", "CBM_Null_Menu", "CL_O_Junkman2a"
+Option "", "CBM_Null_Menu", "CL_O_Junkman3"
+Option "", "CBM_Null_Menu", "CL_O_Junkman4"
+Option "", "CBM_Null_Menu", "CL_O_Junkman5"
+Option "", "CBM_Null_Menu", "CL_O_Junkman6"
+Option "", "CBM_Null_Menu", "CL_O_Junkman7"
+Option "", "CBM_Null_Menu", "CL_O_Junkman8"
+Option "", "CBM_Null_Menu", "CL_O_Junkman9"
+Option "", "CBM_Null_Menu", "CL_O_Junkman9a"
+Option "", "CBM_Null_Menu", "CL_O_Junkman10"
+Option "", "CBM_Null_Menu", "CL_O_Junkman11"
+Option "", "CBM_Null_Menu", "CL_O_Junkman12"
+Option "", "CBM_Null_Menu", "CL_O_Junkman13"
+Option "", "CBM_Null_Menu", "CL_O_Junkman14"
+StaticText""
+Option "", "CBM_Null_Menu", "CL_Burstman"
+Option "", "CBM_Null_Menu", "CL_O_Burstman1"
+Option "", "CBM_Null_Menu", "CL_O_Burstman2"
+Option "", "CBM_Null_Menu", "CL_O_Burstman3"
+Option "", "CBM_Null_Menu", "CL_O_Burstman4"
+Option "", "CBM_Null_Menu", "CL_O_Burstman4a"
+StaticText""
+Option "", "CBM_Null_Menu", "CL_Slashman"
+Option "", "CBM_Null_Menu", "CL_O_Slashman1"
+StaticText""
+Option "", "CBM_Null_Menu", "CL_Shademan"
+Option "", "CBM_Null_Menu", "CL_O_Shademan1"
+Option "", "CBM_Null_Menu", "CL_O_Shademan2"
+Option "", "CBM_Null_Menu", "CL_O_Shademan3"
+Option "", "CBM_Null_Menu", "CL_O_Shademan4"
+Option "", "CBM_Null_Menu", "CL_O_Shademan5"
+Option "", "CBM_Null_Menu", "CL_O_Shademan5a"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Tenguman"
 Option "", "CBM_Null_Menu", "CL_O_Tenguman1"
-Option "", "CBM_Null_Menu", "CL_O_Tenguman2"
-Option "", "CBM_Null_Menu", "CL_O_Tenguman3"
-Option "", "CBM_Null_Menu", "CL_O_Tenguman4"
-Option "", "CBM_Null_Menu", "CL_O_Tenguman5"
-Option "", "CBM_Null_Menu", "CL_O_Tenguman6"
-Option "", "CBM_Null_Menu", "CL_O_Tenguman7"
-Option "", "CBM_Null_Menu", "CL_O_Tenguman8"
-Option "", "CBM_Null_Menu", "CL_O_Tenguman9"
-Option "", "CBM_Null_Menu", "CL_O_Tenguman10"
-Option "", "CBM_Null_Menu", "CL_O_Tenguman11"
-Option "", "CBM_Null_Menu", "CL_O_Tenguman12"
-Option "", "CBM_Null_Menu", "CL_O_Tenguman13"
-Option "", "CBM_Null_Menu", "CL_O_Tenguman13a"
-StaticText""
-Option "", "CBM_Null_Menu", "CL_Searchman"
-Option "", "CBM_Null_Menu", "CL_O_Searchman1"
-Option "", "CBM_Null_Menu", "CL_O_Searchman2"
-Option "", "CBM_Null_Menu", "CL_O_Searchman3"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Aquaman"
 Option "", "CBM_Null_Menu", "CL_O_Aquaman1"
 Option "", "CBM_Null_Menu", "CL_O_Aquaman2"
+Option "", "CBM_Null_Menu", "CL_O_Aquaman2a"
 Option "", "CBM_Null_Menu", "CL_O_Aquaman3"
-Option "", "CBM_Null_Menu", "CL_O_Aquaman4"
-Option "", "CBM_Null_Menu", "CL_O_Aquaman5"
-Option "", "CBM_Null_Menu", "CL_O_Aquaman6"
-Option "", "CBM_Null_Menu", "CL_O_Aquaman7"
-Option "", "CBM_Null_Menu", "CL_O_Aquaman8"
-Option "", "CBM_Null_Menu", "CL_O_Aquaman9"
-Option "", "CBM_Null_Menu", "CL_O_Aquaman10"
-Option "", "CBM_Null_Menu", "CL_O_Aquaman11"
 StaticText""
-Option "", "CBM_Null_Menu", "CL_EvilRobot"
-Option "", "CBM_Null_Menu", "CL_O_EvilRobot1"
-Option "", "CBM_Null_Menu", "CL_O_EvilRobot2"
-Option "", "CBM_Null_Menu", "CL_O_EvilRobot3"
-Option "", "CBM_Null_Menu", "CL_O_EvilRobot4"
-Option "", "CBM_Null_Menu", "CL_O_EvilRobot5"
+Option "", "CBM_Null_Menu", "CL_Dynamoman"
+Option "", "CBM_Null_Menu", "CL_O_Dynamoman1"
 StaticText""
-Option "", "CBM_Null_Menu", "CL_Concreteman"
-Option "", "CBM_Null_Menu", "CL_O_Concreteman1"
-Option "", "CBM_Null_Menu", "CL_O_Concreteman2"
-Option "", "CBM_Null_Menu", "CL_O_Concreteman3"
-Option "", "CBM_Null_Menu", "CL_O_Concreteman4"
+Option "", "CBM_Null_Menu", "CL_Groundman"
+Option "", "CBM_Null_Menu", "CL_O_Groundman1"
+Option "", "CBM_Null_Menu", "CL_O_Groundman2"
+StaticText""
+Option "", "CBM_Null_Menu", "CL_Burnerman"
+Option "", "CBM_Null_Menu", "CL_O_Burnerman1"
+Option "", "CBM_Null_Menu", "CL_O_Burnerman1a"
+StaticText""
+Option "", "CBM_Null_Menu", "CL_Tornadoman"
+Option "", "CBM_Null_Menu", "CL_O_Tornadoman1"
+Option "", "CBM_Null_Menu", "CL_O_Tornadoman1a"
+StaticText""
+Option "", "CBM_Null_Menu", "CL_Splashwoman"
+Option "", "CBM_Null_Menu", "CL_O_Splashwoman1"
+Option "", "CBM_Null_Menu", "CL_O_Splashwoman2"
+StaticText""
+Option "", "CBM_Null_Menu", "CL_Jewelman"
+Option "", "CBM_Null_Menu", "CL_O_Jewelman1"
+Option "", "CBM_Null_Menu", "CL_O_Jewelman2"
+Option "", "CBM_Null_Menu", "CL_O_Jewelman3"
+Option "", "CBM_Null_Menu", "CL_O_Jewelman4"
+Option "", "CBM_Null_Menu", "CL_O_Jewelman4a"
+Option "", "CBM_Null_Menu", "CL_O_Jewelman5"
+Option "", "CBM_Null_Menu", "CL_O_Jewelman5a"
+Option "", "CBM_Null_Menu", "CL_O_Jewelman6"
+Option "", "CBM_Null_Menu", "CL_O_Jewelman6a"
+Option "", "CBM_Null_Menu", "CL_O_Jewelman7"
+Option "", "CBM_Null_Menu", "CL_O_Jewelman7a"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Hornetman"
 Option "", "CBM_Null_Menu", "CL_O_Hornetman1"
+Option "", "CBM_Null_Menu", "CL_O_Hornetman2"
+Option "", "CBM_Null_Menu", "CL_O_Hornetman2a"
 StaticText""
-Option "", "CBM_Null_Menu", "CL_Magmaman"
-Option "", "CBM_Null_Menu", "CL_O_Magmaman1"
-Option "", "CBM_Null_Menu", "CL_O_Magmaman2"
+Option "", "CBM_Null_Menu", "CL_Galaxyman"
+Option "", "CBM_Null_Menu", "CL_O_Galaxyman1"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Blademan"
 Option "", "CBM_Null_Menu", "CL_O_Blademan1"
 Option "", "CBM_Null_Menu", "CL_O_Blademan2"
+Option "", "CBM_Null_Menu", "CL_O_Blademan3"
+Option "", "CBM_Null_Menu", "CL_O_Blademan4"
+StaticText""
+Option "", "CBM_Null_Menu", "CL_Pumpman"
+Option "", "CBM_Null_Menu", "CL_O_Pumpman1"
+Option "", "CBM_Null_Menu", "CL_O_Pumpman2"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Commandoman"
 Option "", "CBM_Null_Menu", "CL_O_Commandoman1"
 Option "", "CBM_Null_Menu", "CL_O_Commandoman2"
+Option "", "CBM_Null_Menu", "CL_O_Commandoman3"
+Option "", "CBM_Null_Menu", "CL_O_Commandoman4"
+Option "", "CBM_Null_Menu", "CL_O_Commandoman4a"
 StaticText""
-Option "", "CBM_Null_Menu", "CL_Nitroman"
-Option "", "CBM_Null_Menu", "CL_O_Nitroman1"
-Option "", "CBM_Null_Menu", "CL_O_Nitroman2"
+Option "", "CBM_Null_Menu", "CL_Chillman"
+Option "", "CBM_Null_Menu", "CL_O_Chillman1"
+Option "", "CBM_Null_Menu", "CL_O_Chillman2"
+Option "", "CBM_Null_Menu", "CL_O_Chillman3"
+Option "", "CBM_Null_Menu", "CL_O_Chillman4"
+Option "", "CBM_Null_Menu", "CL_O_Chillman5"
+Option "", "CBM_Null_Menu", "CL_O_Chillman6"
+Option "", "CBM_Null_Menu", "CL_O_Chillman7"
+Option "", "CBM_Null_Menu", "CL_O_Chillman8"
+StaticText""
+Option "", "CBM_Null_Menu", "CL_Mercury"
+Option "", "CBM_Null_Menu", "CL_O_Mercury1"
+Option "", "CBM_Null_Menu", "CL_O_Mercury2"
+Option "", "CBM_Null_Menu", "CL_O_Mercury3"
+Option "", "CBM_Null_Menu", "CL_O_Mercury3a"
+StaticText""
+Option "", "CBM_Null_Menu", "CL_Venus"
+Option "", "CBM_Null_Menu", "CL_O_Venus1"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Mars"
 Option "", "CBM_Null_Menu", "CL_O_Mars1"
 Option "", "CBM_Null_Menu", "CL_O_Mars2"
 Option "", "CBM_Null_Menu", "CL_O_Mars3"
+Option "", "CBM_Null_Menu", "CL_O_Mars4"
+Option "", "CBM_Null_Menu", "CL_O_Mars5"
 StaticText""
-Option "", "CBM_Null_Menu", "CL_Neptune"
-Option "", "CBM_Null_Menu", "CL_O_Neptune1"
-Option "", "CBM_Null_Menu", "CL_O_Neptune2"
-Option "", "CBM_Null_Menu", "CL_O_Neptune3"
+Option "", "CBM_Null_Menu", "CL_Jupiter"
+Option "", "CBM_Null_Menu", "CL_O_Jupiter1"
+Option "", "CBM_Null_Menu", "CL_O_Jupiter2"
+Option "", "CBM_Null_Menu", "CL_O_Jupiter3"
 StaticText""
-Option "", "CBM_Null_Menu", "CL_RaThor"
-Option "", "CBM_Null_Menu", "CL_O_RaThor1"
-Option "", "CBM_Null_Menu", "CL_O_RaThor2"
-Option "", "CBM_Null_Menu", "CL_O_RaThor3"
-Option "", "CBM_Null_Menu", "CL_O_RaThor4"
-Option "", "CBM_Null_Menu", "CL_O_RaThor5"
-Option "", "CBM_Null_Menu", "CL_O_RaThor6"
-Option "", "CBM_Null_Menu", "CL_O_RaThor7"
-Option "", "CBM_Null_Menu", "CL_O_RaThor8"
-Option "", "CBM_Null_Menu", "CL_O_RaThor9"
-
+Option "", "CBM_Null_Menu", "CL_Uranus"
+Option "", "CBM_Null_Menu", "CL_O_Uranus1"
+Option "", "CBM_Null_Menu", "CL_O_Uranus1a"
+Option "", "CBM_Null_Menu", "CL_O_Uranus2"
+Option "", "CBM_Null_Menu", "CL_O_Uranus3"
+StaticText""
+Option "", "CBM_Null_Menu", "CL_Pluto"
+Option "", "CBM_Null_Menu", "CL_O_Pluto1"
+Option "", "CBM_Null_Menu", "CL_O_Pluto2"
+Option "", "CBM_Null_Menu", "CL_O_Pluto3"
+StaticText""
+Option "", "CBM_Null_Menu", "CL_BBAMegaman"
+Option "", "CBM_Null_Menu", "CL_O_BBAMegaman1"
+Option "", "CBM_Null_Menu", "CL_O_BBAMegaman2"
+Option "", "CBM_Null_Menu", "CL_O_BBAMegaman3"
 
 	StaticText ""
 	StaticText"$MNU_CHELP_EQUALLINE"
 	Option "", "CBM_Null_Menu", "CL_Null"
 }
 
-OptionValue CL_O_HotfixNote
-{0," -Hotfix specific changes are \cdgreen\c--"}
-
-OptionValue CL_O_ACS
-{0,"\cq[\cd-\cq]\c[Teal]ACS"}
-OptionValue CL_O_ACS1
-{0,"-Scripts adjusted for v5d core"}
-OptionValue CL_O_ACS2
-{0,"--Removed some ACS fixes due to core"}
-OptionValue CL_O_ACS2a
-{0," applying those fixes (such as HUDNUM)"}
-OptionValue CL_O_ACS3
-{0,"-Several ACS renamed/moved around"}
-OptionValue CL_O_ACS4
-{0,"\cd-Fixed class specific scripts"}
-
-OptionValue CL_O_CopyWeapons
-{0,"\cq[\cd-\cq]\c[Teal]CopyWeapons"}
-OptionValue CL_O_CopyWeapons1
-{0,"-Maestro ProtoBuster team charge added"}
-
-OptionValue CL_O_General
-{0,"\cq[\cd-\cq]\c[Teal]General"}
 OptionValue CL_O_General1
-{0,"-Several core changes applied to files"}
+{0,"-E Tanks and variants now"}
+OptionValue CL_O_General1a
+{0,"gradually heal in LMS modes"}
 OptionValue CL_O_General2
-{0,"--Such as painstate changes"}
-OptionValue CL_O_General3
-{0,"-Pain recoil of -1 has been removed"}
-OptionValue CL_O_General4
-{0,"-Join game menu improved?"}
-OptionValue CL_O_General5
-{0,"-Several old class sprites removed"}
-OptionValue CL_O_General6
-{0,"--Various sprites cleaned up/renamed"}
-OptionValue CL_O_General7
-{0,"-Several hud sprites updated by \cjPe\ccgg"}
-OptionValue CL_O_General8
-{0,"--Quickman, Magnetman, Freezeman,"}
-OptionValue CL_O_General8a
-{0," Junkman, Turboman, amd Grenademan"}
-
-OptionValue CL_O_Rock1
-{0,"-Updated balls due to core changes"}
-OptionValue CL_O_Rock2
-{0,"--Due to above, after balls bounce off"}
-OptionValue CL_O_Rock2a
-{0," the floor, you can jump off them"}
-OptionValue CL_O_Rock3
-{0,"-Dropped balls copy momentum"}
-OptionValue CL_O_Rock4
-{0,"--After drops, kicks boost you forward"}
+{0,"--Buckshot modifier included"}
 
 OptionValue CL_O_Auto1
-{0,"-Made by \cdCelebi"}
+{0,"-Met Helmet cost"}
 OptionValue CL_O_Auto2
-{0,"\cd-Ammo regen, 10 every 105->100 tics"}
+{0,"100 screws -> 50% heal ammo"}
 OptionValue CL_O_Auto3
-{0,"\cd-Heal ammo from screws 1/4~1/2->1/6~1/3"}
+{0,"-Exit Unit removed from shop"}
 OptionValue CL_O_Auto4
-{0,"\cd--Screws grabbed at full ammo convert"}
+{0,"-Fixed screw regen increasing"}
 OptionValue CL_O_Auto4a
-{0,"\cd to creation ammo at a rate of 20/40"}
-OptionValue CL_O_Auto5
-{0,"\cd-Create 1 Carry -> 3 DocCarry"}
+{0,"when rapidly swapping weapons"}
+
+OptionValue CL_O_DrLight1
+{0,"-Shoryuken damage 4/5->13"}
+OptionValue CL_O_DrLight2
+{0,"--Deals 2 damage afterwards"}
+OptionValue CL_O_DrLight3
+{0,"-Hadoken Super Shot movespeed"}
+OptionValue CL_O_DrLight3a
+{0,"multiplier 0.4->0.6"}
 
 OptionValue CL_O_Cutman1
-{0,"-Cutter direct damage 2->0"}
+{0,"-Walljumps 9->8"}
 OptionValue CL_O_Cutman2
-{0,"--Damager duration 2->1, damage 6->14"}
+{0,"-Mainfire can be held to"}
+OptionValue CL_O_Cutman2a
+{0,"extend cutter length"}
 OptionValue CL_O_Cutman3
-{0,"--Returning damager 7->14"}
+{0,"--Extending limited by ammo"}
+
+OptionValue CL_O_Gutsman1
+{0,"-Gutsrock HP 75->85"}
 
 OptionValue CL_O_Iceman1
-{0,"-Pretty actors touched up"}
+{0,"-IceSlasher damage 10->8"}
 OptionValue CL_O_Iceman2
-{0,"-Mainfire delay before shot 6->4"}
+{0,"-IceSlasher speed 22->36"}
 OptionValue CL_O_Iceman3
-{0,"--Extra refire checks to wind down"}
+{0,"-Delay between mainfires 10->16 tics"}
 OptionValue CL_O_Iceman4
-{0,"-Altfire total delay 20->18 tics"}
+{0,"-Cloud altfire removed"}
 OptionValue CL_O_Iceman5
-{0,"-IceSlasher hitstun removed"}
+{0,"-Statue altfire behavior changed"}
 OptionValue CL_O_Iceman6
-{0,"-Icy laser damage 2->4"}
+{0,"--No longer requires full ammo to use"}
 OptionValue CL_O_Iceman7
-{0,"-Cloud icicle damage 2->4"}
+{0,"--Laser speed 50->200"}
 OptionValue CL_O_Iceman8
-{0,"-Statue explosion damage 10->15"}
+{0,"---Distance is the same"}
+OptionValue CL_O_Iceman9
+{0,"--Statues no longer break during forming"}
+OptionValue CL_O_Iceman10
+{0,"--Statue form time 12->20 tics"}
+OptionValue CL_O_Iceman11
+{0,"--Statue lifetime 200->70 tics"}
+OptionValue CL_O_Iceman12
+{0,"--Special statue lifetime 700->140 tics"}
+OptionValue CL_O_Iceman13
+{0,"--Statue explosion leaves lingering fog"}
 
-OptionValue CL_O_Bombman1
-{0,"-Health 125->135"}
-OptionValue CL_O_Bombman2
-{0,"-Fuse explosion damage in hand 40->35"}
-OptionValue CL_O_Bombman3
-{0,"--Set explosion size 16->18"}
-OptionValue CL_O_Bombman4
-{0,"-Tossed bomb fuse EXPL damage 55->45"}
-OptionValue CL_O_Bombman5
-{0,"--Set explosion size 24->28, speed 35->32"}
+OptionValue CL_O_Oilman1
+{0,"-Mainfire reverted to v9ch"}
+OptionValue CL_O_Oilman2
+{0,"-Blobs fired during charge 1/3/5->1/2/3"}
+OptionValue CL_O_Oilman3
+{0,"-Slide high damage 12->8"}
 
-OptionValue CL_O_Fireman1
-{0,"-Max ammo 42->28"}
-OptionValue CL_O_Fireman2
-{0,"-Ammo regen 2 every 10 -> 1 every 7 tics"}
+OptionValue CL_O_Airman1
+{0,"-Air Shooter damage 15->12"}
+OptionValue CL_O_Airman2
+{0,"-Altfire spread straightened/compressed"}
+OptionValue CL_O_Airman3
+{0,"--Radius/height 6/7->8/10"}
+OptionValue CL_O_Airman4
+{0,"--Spawn damage 5->9,"}
+OptionValue CL_O_Airman4a
+{0,"travelling unchanged"}
+OptionValue CL_O_Airman5
+{0,"--Reduced damage from multi-hits"}
+OptionValue CL_O_Airman6
+{0,"-New item, toggle Air Turbine"}
+OptionValue CL_O_Airman7
+{0,"--Air control is increased"}
+OptionValue CL_O_Airman8
+{0,"--Jump height is increased"}
+OptionValue CL_O_Airman9
+{0,"--Drains altfire ammo"}
 
-OptionValue CL_O_Metalman1
-{0,"-Item removed, moved to holding jump"}
+OptionValue CL_O_Quickman1
+{0,"-Walljumps 6->4"}
 
-OptionValue CL_O_Bubbleman1
-{0,"-Using item enables swimming"}
-OptionValue CL_O_Bubbleman2
-{0,"-Bubble flood gravity division 1.6->3.2"}
-OptionValue CL_O_Bubbleman3
-{0,"--Range check starts after 24->3 tics"}
-OptionValue CL_O_Bubbleman4
-{0,"---Range starts small and scales up"}
-OptionValue CL_O_Bubbleman5
-{0,"\cd-After round countdown flight fixed?"}
+OptionValue CL_O_Flashman1
+{0,"-Added FX for stopped enemies"}
 
-OptionValue CL_O_Heatman1
-{0,"-Legacy sprites/actors removed"}
-OptionValue CL_O_Heatman2
-{0,"-Hud updated?"}
-OptionValue CL_O_Heatman3
-{0,"--Shot offsets 8->0"}
-OptionValue CL_O_Heatman4
-{0,"-Now regens 1 ammo every 8 tics"}
-OptionValue CL_O_Heatman5
-{0,"--Pillar firing gives 2 ammo"}
-OptionValue CL_O_Heatman6
-{0,"-Tackle start delay 12->6"}
-OptionValue CL_O_Heatman7
-{0,"-Bonus shot on tackle end removed"}
-
-OptionValue CL_O_Magnetman1
-{0,"-Ammo regen doesn't stop during mainfire"}
-OptionValue CL_O_Magnetman2
-{0,"-Current charge FX changed due to above"}
-
-OptionValue CL_O_Hardman1
-{0,"-Mainfire delay before firing 8->6"}
-OptionValue CL_O_Hardman2
-{0,"--Firing FX adjusted to follow user"}
-OptionValue CL_O_Hardman3
-{0,"-Left fist delay matches right fist"}
-
-OptionValue CL_O_Shadowman1
-{0,"-Weapon 2 removed, moved to item"}
-OptionValue CL_O_Shadowman2
-{0,"-Item caltrop toss needs 50% ammo"}
-OptionValue CL_O_Shadowman3
-{0,"--Has its own ammobar"}
-OptionValue CL_O_Shadowman4
-{0,"\cd-Caltrop max ammo 84->140, regen doubled"}
-OptionValue CL_O_Shadowman5
-{0,"-Tossed caltrop damage 4->3"}
-OptionValue CL_O_Shadowman6
-{0,"--Placed caltrop duration 110->360"}
-OptionValue CL_O_Shadowman7
-{0,"--Allies no longer destroy the traps"}
+OptionValue CL_O_Geminiman1
+{0,"-Allies no longer damage clone"}
 
 OptionValue CL_O_Snakeman1
-{0,"-Stamina changed to Bubble/Splash method"}
+{0,"-Removed hitstun for snakes that have"}
+OptionValue CL_O_Snakeman1a
+{0,"started crawling"}
 
-OptionValue CL_O_Ringman1
-{0,"-Fixed state jump errors"}
+OptionValue CL_O_Sparkman1
+{0,"-Hud redone by Pegg and Lamp"}
+OptionValue CL_O_Sparkman2
+{0,"-Mainfire direct hit damage 35->25"}
+OptionValue CL_O_Sparkman3
+{0,"--Mainfire explosion removed"}
+OptionValue CL_O_Sparkman4
+{0,"--Pressing altfire with 25% hold ammo"}
+OptionValue CL_O_Sparkman4a
+{0,"does current altfire"}
+OptionValue CL_O_Sparkman5
+{0,"---Number of shots 8->16"}
+OptionValue CL_O_Sparkman6
+{0,"---Shot damage 12->6"}
+OptionValue CL_O_Sparkman7
+{0,"-New altfire"}
+OptionValue CL_O_Sparkman8
+{0,"--Fires a lob shot that lingers"}
+
+OptionValue CL_O_Shadowman1
+{0,"-Walljumps 3->6"}
+
+OptionValue CL_O_DocRobot1
+{0,"-Stat changes more accurately reflect"}
+OptionValue CL_O_DocRobot1a
+{0,"class copied"}
+OptionValue CL_O_DocRobot2
+{0,"-Base stats lowered"}
+OptionValue CL_O_DocRobot2a
+{0,"105%/110%->100%/100%"}
+
+OptionValue CL_O_Brightman1
+{0,"-Walljumps removed"}
+OptionValue CL_O_Brightman2
+{0,"-Added shatter FX for bulbs"}
+OptionValue CL_O_Brightman3
+{0,"-Added an indicator above blinded players"}
+
+OptionValue CL_O_Diveman1
+{0,"-Tackle end delay 12->21"}
 
 OptionValue CL_O_Skullman1
-{0,"-Weapon cleaned up?"}
+{0,"-Max ammo 56->112"}
 OptionValue CL_O_Skullman2
-{0,"-Buster radius/height 5->6"}
+{0,"--Any ammo mentions are after 2x ammo"}
 OptionValue CL_O_Skullman3
-{0,"--Rage shot damage 15->12"}
+{0,"-Ammo regen 4->3"}
 OptionValue CL_O_Skullman4
-{0,"-Successful counters now blast shots"}
-OptionValue CL_O_Skullman4a
-{0," and players away from Skullman"}
+{0,"-Ammo regen during rage 4->5"}
+OptionValue CL_O_Skullman5
+{0,"-Ammo regen when firing 6->4"}
 
-OptionValue CL_O_Chargeman1
-{0,"\cd-Walk frames fixed"}
+OptionValue CL_O_Gravityman1
+{0,"-All flings now have semi-hitstun"}
+OptionValue CL_O_Gravityman2
+{0,"-Added a charge attack to altfire"}
+OptionValue CL_O_Gravityman3
+{0,"--Summons a Gravity Well at a pinpoint"}
+OptionValue CL_O_Gravityman3a
+{0,"location that flings after a delay"}
+OptionValue CL_O_Gravityman4
+{0,"---Fling direction depends on if"}
+OptionValue CL_O_Gravityman4a
+{0,"it's placed on a wall or ceiling"}
+OptionValue CL_O_Gravityman5
+{0,"---Delay determined by distance"}
+OptionValue CL_O_Gravityman5a
+{0,"from player"}
 
-OptionValue CL_O_Darkman21
-{0,"-Shield now uses warping method"}
-OptionValue CL_O_Darkman22
-{0,"--Shield radius 6->8"}
+OptionValue CL_O_Stoneman1
+{0,"-Add a buckshot check for pebble timer"}
+OptionValue CL_O_Stoneman2
+{0,"--Makes it equivalent to the LMS timers"}
 
-OptionValue CL_O_Darkman41
-{0,"-Same shield changes as Darkman2"}
+OptionValue CL_O_Darkman31
+{0,"-Reworked"}
 
-OptionValue CL_O_Centaurman1
-{0,"-Item dash reverted back to instant"}
-OptionValue CL_O_Centaurman2
-{0,"--Dash is now aimable"}
+OptionValue CL_O_Flameman1
+{0,"-Mainfire ammo use 0->6"}
+OptionValue CL_O_Flameman2
+{0,"-Mainfire damage 17->15"}
+OptionValue CL_O_Flameman3
+{0,"-Mainfire impact spawns 4"}
+OptionValue CL_O_Flameman3a
+{0,"pillar offshoots"}
+OptionValue CL_O_Flameman4
+{0,"-Altfire pillars spawn changed"}
+OptionValue CL_O_Flameman5
+{0,"--No longer spawns a set directly"}
+OptionValue CL_O_Flameman5a
+{0,"in front"}
+OptionValue CL_O_Flameman6
+{0,"-Pillar waves now have a visual"}
+
+OptionValue CL_O_Plantman1
+{0,"-Plant Buster drain 1->2 HP"}
+OptionValue CL_O_Plantman2
+{0,"-Plant Barrier 7/4 -> 10/6 damage"}
+OptionValue CL_O_Plantman3
+{0,"--Plant Barrier drain removed"}
+OptionValue CL_O_Plantman4
+{0,"-New item"}
+OptionValue CL_O_Plantman5
+{0,"--Throws a deployed healing field"}
+OptionValue CL_O_Plantman6
+{0,"--Heals 25 HP over ~6 seconds (220 tics)"}
 
 OptionValue CL_O_Freezeman1
-{0,"-Alt charge can now be canceled"}
+{0,"-Mainfire ammo use 2->4"}
 OptionValue CL_O_Freezeman2
-{0,"--Movespeed during charge 0->33%"}
+{0,"-Mainfire damage 19->13"}
 OptionValue CL_O_Freezeman3
-{0,"--Jump power during charge 0->50%"}
+{0,"-Mainfire impact spawns 3"}
+OptionValue CL_O_Freezeman3a
+{0,"spike offshoots"}
+OptionValue CL_O_Freezeman4
+{0,"--Wall impact 6->8 bits"}
+OptionValue CL_O_Freezeman5
+{0,"--Mainfire ceiling spikes"}
+OptionValue CL_O_Freezeman5a
+{0,"no longer split"}
+OptionValue CL_O_Freezeman6
+{0,"-Spike priming delay 8->10 tics"}
+
+OptionValue CL_O_Junkman1
+{0,"-Junk Cube health 200->350"}
+OptionValue CL_O_Junkman2
+{0,"--Pushed Junk Cube not invulnerable,"}
+OptionValue CL_O_Junkman2a
+{0,"transfers HP"}
+OptionValue CL_O_Junkman3
+{0,"-Junk Cube damage 4/24->4/14"}
+OptionValue CL_O_Junkman4
+{0,"--Pushed Junk Cube damage 21->14"}
+OptionValue CL_O_Junkman5
+{0,"--4 tic 100% protection added"}
+OptionValue CL_O_Junkman6
+{0,"-Pushed Junk Cube speed 26->8"}
+OptionValue CL_O_Junkman7
+{0,"-Junk Cube can be pushed multiple times"}
+OptionValue CL_O_Junkman8
+{0,"--Pushes beyond the first have 26 speed"}
+OptionValue CL_O_Junkman9
+{0,"-Increased ammo regen while near"}
+OptionValue CL_O_Junkman9a
+{0,"Junk Cubes"}
+OptionValue CL_O_Junkman10
+{0,"-Pushed Junk Cube animation changed"}
+OptionValue CL_O_Junkman11
+{0,"-Junk Punch damage 30->15"}
+OptionValue CL_O_Junkman12
+{0,"-Junk Punch shot damage 20->15"}
+OptionValue CL_O_Junkman13
+{0,"-Junk Shield damage 7/6/5->5/4/3"}
+OptionValue CL_O_Junkman14
+{0,"-Passive Junk Shield noise added"}
+
+OptionValue CL_O_Burstman1
+{0,"-Bubble stock changes"}
+OptionValue CL_O_Burstman2
+{0,"--Item can now loop back to 1"}
+OptionValue CL_O_Burstman3
+{0,"--Mainfire doesn't remove bubble stocks"}
+OptionValue CL_O_Burstman4
+{0,"--Bubble deactivate no longer"}
+OptionValue CL_O_Burstman4a
+{0,"drops bombs"}
+
+OptionValue CL_O_Slashman1
+{0,"-Walljumps 5->6"}
+
+OptionValue CL_O_Shademan1
+{0,"-Ammo needed to start flight 1->4"}
+OptionValue CL_O_Shademan2
+{0,"--Improved ready state"}
+OptionValue CL_O_Shademan3
+{0,"-Ammo needed to reflight 4->1"}
+OptionValue CL_O_Shademan4
+{0,"--Ammo use on reflight still 4"}
+OptionValue CL_O_Shademan5
+{0,"-Added a hud indicator for when you"}
+OptionValue CL_O_Shademan5a
+{0," cannot use swoop"}
 
 OptionValue CL_O_Tenguman1
-{0,"-Item removed, hold jump to hover now"}
-OptionValue CL_O_Tenguman2
-{0,"-Dunk melee spawns shot after 4->3 tics"}
-OptionValue CL_O_Tenguman3
-{0,"-Kamaitachi no longer bounces"}
-OptionValue CL_O_Tenguman4
-{0,"--Shot now slides across floors"}
-OptionValue CL_O_Tenguman5
-{0,"--Upwards thrust when going up 4->3"}
-OptionValue CL_O_Tenguman6
-{0,"--Explosion scaling Z check removed"}
-OptionValue CL_O_Tenguman7
-{0,"---EXPL size 56->48, set size 28->24"}
-OptionValue CL_O_Tenguman8
-{0,"-Tornado hold actors cleaned up"}
-OptionValue CL_O_Tenguman9
-{0,"--THold spawns more tornados like core"}
-OptionValue CL_O_Tenguman10
-{0,"--Sliding THold delay before moving 2->1"}
-OptionValue CL_O_Tenguman11
-{0,"---Speed 5->6, can now fall off ledges"}
-OptionValue CL_O_Tenguman12
-{0,"---No longer bounces off shields"}
-OptionValue CL_O_Tenguman13
-{0,"-Tornado held foes suffer only 1 damage"}
-OptionValue CL_O_Tenguman13a
-{0," from further THold hits when rising"}
-
-OptionValue CL_O_Searchman1
-{0,"-Actors/ACS optimized?"}
-OptionValue CL_O_Searchman2
-{0,"-For now, missiles use actual homing"}
-OptionValue CL_O_Searchman3
-{0,"-Distance between bushes 100->120"}
+{0,"-Hover reverted to item toggle"}
 
 OptionValue CL_O_Aquaman1
-{0,"-No ammo fire delay 20->12"}
+{0,"-Water Balloon cost 1->2"}
 OptionValue CL_O_Aquaman2
-{0,"--No ammo shot damage 11->7"}
+{0,"-Water Balloon speed"}
+OptionValue CL_O_Aquaman2a
+{0,"15/25/35/45/55->15/25/32/39/46"}
 OptionValue CL_O_Aquaman3
-{0,"---Radius/Height 10->8"}
-OptionValue CL_O_Aquaman4
-{0,"-Water Cannon cleaned up"}
-OptionValue CL_O_Aquaman5
-{0,"--Protection added for extra hits"}
-OptionValue CL_O_Aquaman6
-{0,"---This does not reset on every hit"}
-OptionValue CL_O_Aquaman7
-{0,"--No longer misses at specific points"}
-OptionValue CL_O_Aquaman8
-{0,"--Dropped balloons are no longer random"}
-OptionValue CL_O_Aquaman9
-{0,"---Balloon damage 5->7/5/3 size based"}
-OptionValue CL_O_Aquaman10
-{0,"-Water Tower constant damage 2->3"}
-OptionValue CL_O_Aquaman11
-{0,"--Rises faster and size based drops"}
+{0,"-Water Tower now blocks shots"}
 
-OptionValue CL_O_EvilRobot1
-{0,"-Laser optimized and sprites adjusted"}
-OptionValue CL_O_EvilRobot2
-{0,"--Damage rate is now consistent"}
-OptionValue CL_O_EvilRobot3
-{0,"---Protection matches older rate 3->6"}
-OptionValue CL_O_EvilRobot4
-{0,"--Hitbox, direct hit->explosion"}
-OptionValue CL_O_EvilRobot5
-{0,"---Box size 11 -> 28 explosion size"}
+OptionValue CL_O_Dynamoman1
+{0,"-Dynamo Disk radius/height 14/10->12/8"}
 
-OptionValue CL_O_Concreteman1
-{0,"-Charge up for leap removed"}
-OptionValue CL_O_Concreteman2
-{0,"--Holding jump before a dash does a leap"}
-OptionValue CL_O_Concreteman3
-{0,"--No movement after alt does no dash"}
-OptionValue CL_O_Concreteman4
-{0,"-Leap quake stun halved, 35->18"}
+OptionValue CL_O_Groundman1
+{0,"-Now uses Mars Tank Thrust method"}
+OptionValue CL_O_Groundman2
+{0,"--Tank backwards movement 100%->25%"}
+
+OptionValue CL_O_Burnerman1
+{0,"-Bear traps show top pixel and are 23%"}
+OptionValue CL_O_Burnerman1a
+{0,"visible when primed"}
+
+OptionValue CL_O_Tornadoman1
+{0,"-Tornado Blow team boost now checks"}
+OptionValue CL_O_Tornadoman1a
+{0,"for jump"}
+
+OptionValue CL_O_Splashwoman1
+{0,"-Power song removed"}
+OptionValue CL_O_Splashwoman2
+{0,"--Speed song now slot 1"}
+
+OptionValue CL_O_Jewelman1
+{0,"-Rage check for Altfire"}
+OptionValue CL_O_Jewelman2
+{0,"--Slowed down for easier switching"}
+OptionValue CL_O_Jewelman3
+{0,"-Ruby explosion damage 5/5/5/5->2/4/6/8"}
+OptionValue CL_O_Jewelman4
+{0,"--Sapphire mine explosion damage"}
+OptionValue CL_O_Jewelman4a
+{0,"remains 5"}
+OptionValue CL_O_Jewelman5
+{0,"-Sapphire mine direct damage with"}
+OptionValue CL_O_Jewelman5a
+{0,"ruby explosion 5->0"}
+OptionValue CL_O_Jewelman6
+{0,"-Sapphire mine duration"}
+OptionValue CL_O_Jewelman6a
+{0,"40/80/120/170->20/50/80/110"}
+OptionValue CL_O_Jewelman7
+{0,"-Topaz scaling"}
+OptionValue CL_O_Jewelman7a
+{0,"1.0+(gems\*0.3)->1.0+(gems\*0.83)"}
 
 OptionValue CL_O_Hornetman1
-{0,"-Item removed, now hold jump to hover"}
+{0,"-Flight reverted to item"}
+OptionValue CL_O_Hornetman2
+{0,"-Altfire will always fire hornet hive"}
+OptionValue CL_O_Hornetman2a
+{0,"if no commandable hornets are out"}
 
-OptionValue CL_O_Magmaman1
-{0,"-Hud desync fixed?"}
-OptionValue CL_O_Magmaman2
-{0,"-Ammo needed to fire large shots 1->4"}
+OptionValue CL_O_Galaxyman1
+{0,"-Fixed state names"}
 
 OptionValue CL_O_Blademan1
-{0,"-Basic shots no longer fall"}
+{0,"-Altfire ammo use 5->8"}
 OptionValue CL_O_Blademan2
-{0,"-All attacks no longer hitstun"}
+{0,"--Wall altfire ammo use unchanged"}
+OptionValue CL_O_Blademan3
+{0,"-Cling buffer before action 4->8 tics"}
+OptionValue CL_O_Blademan4
+{0,"--Cling buffer after wall dash 2->8 tics"}
+
+OptionValue CL_O_Pumpman1
+{0,"-Bubble health 45->30"}
+OptionValue CL_O_Pumpman2
+{0,"-Allies no longer damage bubbles"}
 
 OptionValue CL_O_Commandoman1
-{0,"-Health 135->155"}
+{0,"-Mine speed 20->35"}
 OptionValue CL_O_Commandoman2
-{0,"-Alt slam land explosion damage 25->15"}
+{0,"-Stomp refire delay 30->43"}
+OptionValue CL_O_Commandoman3
+{0,"--End delay 15->23"}
+OptionValue CL_O_Commandoman4
+{0,"-Firing during leap now puts leap"}
+OptionValue CL_O_Commandoman4a
+{0,"on a delay"}
 
-OptionValue CL_O_Nitroman1
-{0,"-Can use altfire anytime"}
-OptionValue CL_O_Nitroman2
-{0,"-Wheel bouncing is now dynamic"}
+OptionValue CL_O_Chillman1
+{0,"-Walljumps 6->3"}
+OptionValue CL_O_Chillman2
+{0,"-Item mainfire pattern adjusted"}
+OptionValue CL_O_Chillman3
+{0,"-Altfire max ammo 336->126"}
+OptionValue CL_O_Chillman4
+{0,"--Ammo requirement 50%->75%"}
+OptionValue CL_O_Chillman5
+{0,"--Guard down penalty gone"}
+OptionValue CL_O_Chillman6
+{0,"-Armor regen time needed 5->7 seconds"}
+OptionValue CL_O_Chillman7
+{0,"--Regen lost without armor 60->all"}
+OptionValue CL_O_Chillman8
+{0,"--HP lost on shield break 5->0"}
+
+OptionValue CL_O_Mercury1
+{0,"-Blob splash damage 20->18"}
+OptionValue CL_O_Mercury2
+{0,"--Weak splash damage 10->9"}
+OptionValue CL_O_Mercury3
+{0,"-Blob dropped from tackle now goes"}
+OptionValue CL_O_Mercury3a
+{0,"through actors for 8 tics"}
+
+OptionValue CL_O_Venus1
+{0,"-Acid Bubble animation tweaked"}
 
 OptionValue CL_O_Mars1
-{0,"-Health 155->135"}
+{0,"-Vulcan ending delay 2->10 tics"}
 OptionValue CL_O_Mars2
-{0,"-Rocket jump fuel use, 10->33"}
+{0,"-Vulcan falloff removed"}
 OptionValue CL_O_Mars3
-{0,"-Mortar fire pattern, around->ahead"}
+{0,"-Vulkan lifetime infinite->5 tics"}
+OptionValue CL_O_Mars4
+{0,"-Vulcan sound changed"}
+OptionValue CL_O_Mars5
+{0,"-Tank backwards movement 100%->25%"}
 
-OptionValue CL_O_Neptune1
-{0,"-Leaps underwater no longer auto hop"}
-OptionValue CL_O_Neptune2
-{0,"--The hop only occurs if jump is held"}
-OptionValue CL_O_Neptune3
-{0,"-Salty leaping now thrusts constantly"}
+OptionValue CL_O_Jupiter1
+{0,"-Mainfire lifetime 32->16 tics"}
+OptionValue CL_O_Jupiter2
+{0,"-Uncharged mainfire volume reduced"}
+OptionValue CL_O_Jupiter3
+{0,"-Altfire liftoff knockback 25->20"}
 
-OptionValue CL_O_RaThor1
-{0,"-Made by \cjPe\ccgg"}
-OptionValue CL_O_RaThor2
-{0,"\cd-A few buffs before release reverted"}
-OptionValue CL_O_RaThor3
-{0,"\cd-Soul drop sprites shifted upwards"}
-OptionValue CL_O_RaThor4
-{0,"\cd-Item can now be turned off"}
-OptionValue CL_O_RaThor5
-{0,"\cd--Attack has protections on orb/waves"}
-OptionValue CL_O_RaThor6
-{0,"\cd-Grab positions adjusted to flow better"}
-OptionValue CL_O_RaThor7
-{0,"\cd-Throw method, pain based->weapon based"}
-OptionValue CL_O_RaThor8
-{0,"\cd-Grounding stun ends early if hit"}
-OptionValue CL_O_RaThor9
-{0,"\cd--Damage 11->6, rock fx added to slam"}
+OptionValue CL_O_Uranus1
+{0,"-Crushed Deep Digger is now a shotgun"}
+OptionValue CL_O_Uranus1a
+{0,"of 4 faster deep digger bits"}
+OptionValue CL_O_Uranus2
+{0,"-Fixed deep digger spawning extra bits"}
+OptionValue CL_O_Uranus3
+{0,"-Fixed Cattle Charge exploit?"}
+
+OptionValue CL_O_Pluto1
+{0,"-Speed 0.8/0.78->0.9/0.88"}
+OptionValue CL_O_Pluto2
+{0,"-Walljumps 6->4"}
+OptionValue CL_O_Pluto3
+{0,"-Max dash speed bonus 103%->74%"}
+
+OptionValue CL_O_BBAMegaman1
+{0,"-Heavy Cannon explosion damage 36->24"}
+OptionValue CL_O_BBAMegaman2
+{0,"-Energy Lancer damage 6->8"}
+OptionValue CL_O_BBAMegaman3
+{0,"-BFG90XX tracer range 1000->600"}

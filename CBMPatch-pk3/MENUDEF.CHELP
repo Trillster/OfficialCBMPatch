@@ -1166,7 +1166,7 @@ OptionValue CBM_ClassExtra
 99, "\cdLook down and jump to let go of walls"//Blade
 100, "\cuNone"//Pump
 101, "\cuNone"//Commando
-102, "\cdCan Wall Jump, big jumps off wall spikes\nPassively creates a 25 health shield\nRegenerates when not damaged"//Chill
+102, "\cdCan Wall Jump, big jumps off wall spikes\nPassively creates a health shield\nRegenerates when not damaged"//Chill
 //103, "\cuNone"//Sheep
 //104, "\cuNone"//Strike
 105, "\cuNone"//Nitro
