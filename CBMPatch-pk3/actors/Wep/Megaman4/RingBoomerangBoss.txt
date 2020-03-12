@@ -273,23 +273,20 @@ inventory.amount 1
 inventory.maxamount 10
 }
 
-actor RingBoomerangB1Protect : PowerProtection
+actor RingBoomerangBProtect : PowerProtection
 {
 Powerup.Duration 12
-DamageFactor "RingBoomerangB1", 0.225
+DamageFactor "RingBoomerangB", 0.225
 }
-actor RingBoomerangB2Protect : PowerProtection
-{
-Powerup.Duration 12
-DamageFactor "RingBoomerangB2", 0.225
-}
+actor RingBoomerangB1Protect : RingBoomerangBProtect {} //load error prevention
+actor RingBoomerangB2Protect : RingBoomerangBProtect {}
 
 actor RingBoomerangB
 {
 var int user_POWER;
 Translation "192:192=229:229"
 PROJECTILE
-damagetype "RingBoomerangB1"
+damagetype "RingBoomerangB"
 Obituary "$OB_RINGBOOMERANG"
 +RIPPER
 +HEXENBOUNCE
@@ -463,7 +460,6 @@ goto Spawn3
 
 actor RingBoomerangB2 : RingBoomerangB
 {
-damagetype "RingBoomerangB2"
 states
 {
 Spawn:
@@ -487,7 +483,6 @@ actor RingBoomerangB2P : RingBoomerangB2{translation "192:192=229:229"}
 
 actor ReturningRingB2 : ReturningRingB
 {
-damagetype "RingBoomerangB2"
 states
 {
 Spawn:

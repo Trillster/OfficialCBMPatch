@@ -856,38 +856,41 @@ actor IceBaF_SculptBaseDeath2 : BasicExplosion
 damagetype "IceSlashSlow2"
 Obituary "$OB_ICECOOLGUY"
 reactiontime 36
+var int user_height;
 States
 {
 Spawn:
 TNT1 A 2
+TNT1 A 0 A_SetUserVar("user_height",0)
 FogLoop:
 TNT1 A 0 A_Countdown
 TNT1 A 0 A_Explode(5,128,0,0,80)
-TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",frandom(0,96),0,(36-reactiontime)*3+32,0,0,frandom(-7,-5),frandom(0,359),1)
-TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(36-reactiontime)*3,0,0,0,0,1)
-TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(36-reactiontime)*3,0,0,0,90,1)
-TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(36-reactiontime)*3,0,0,0,180,1)
-TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(36-reactiontime)*3,0,0,0,270,1)
-TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(36-reactiontime)*3+32,0,0,0,45,1)
-TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(36-reactiontime)*3+32,0,0,0,135,1)
-TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(36-reactiontime)*3+32,0,0,0,225,1)
-TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(36-reactiontime)*3+32,0,0,0,315,1)
-TNT1 A 0 A_JumpIf(reactiontime>25,5)
-TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(36-reactiontime)*3-32,0,0,0,45,1)
-TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(36-reactiontime)*3-32,0,0,0,135,1)
-TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(36-reactiontime)*3-32,0,0,0,225,1)
-TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(36-reactiontime)*3-32,0,0,0,315,1)
-TNT1 A 0 A_JumpIf(reactiontime>15,5)
-TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(36-reactiontime)*3-64,0,0,0,0,1)
-TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(36-reactiontime)*3-64,0,0,0,90,1)
-TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(36-reactiontime)*3-64,0,0,0,180,1)
-TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(36-reactiontime)*3-64,0,0,0,270,1)
-TNT1 A 0 A_JumpIf(reactiontime>5,5)
-TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(36-reactiontime)*3-96,0,0,0,45,1)
-TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(36-reactiontime)*3-96,0,0,0,135,1)
-TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(36-reactiontime)*3-96,0,0,0,225,1)
-TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(36-reactiontime)*3-96,0,0,0,315,1)
+TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",frandom(0,96),0,(user_height)*3+32,0,0,frandom(-7,-5),frandom(0,359),1)
+TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(user_height)*3,0,0,0,0,1)
+TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(user_height)*3,0,0,0,90,1)
+TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(user_height)*3,0,0,0,180,1)
+TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(user_height)*3,0,0,0,270,1)
+TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(user_height)*3+32,0,0,0,45,1)
+TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(user_height)*3+32,0,0,0,135,1)
+TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(user_height)*3+32,0,0,0,225,1)
+TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(user_height)*3+32,0,0,0,315,1)
+TNT1 A 0 A_JumpIf(user_height<5,5)
+TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(user_height)*3-32,0,0,0,45,1)
+TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(user_height)*3-32,0,0,0,135,1)
+TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(user_height)*3-32,0,0,0,225,1)
+TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(user_height)*3-32,0,0,0,315,1)
+TNT1 A 0 A_JumpIf(user_height<15,5)
+TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(user_height)*3-64,0,0,0,0,1)
+TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(user_height)*3-64,0,0,0,90,1)
+TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(user_height)*3-64,0,0,0,180,1)
+TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(user_height)*3-64,0,0,0,270,1)
+TNT1 A 0 A_JumpIf(user_height<25,5)
+TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(user_height)*3-96,0,0,0,45,1)
+TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(user_height)*3-96,0,0,0,135,1)
+TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(user_height)*3-96,0,0,0,225,1)
+TNT1 A 0 A_SpawnItemEX("IceBaF_SculptFX3",128,0,(user_height)*3-96,0,0,0,315,1)
 TNT1 A 0 A_SetAngle(angle+20)
+TNT1 A 0 A_SetUserVar("user_height",user_height+1)
 TNT1 A 2
 loop
 }
