@@ -378,7 +378,7 @@ JUCT B 0 A_SetUserVar("user_P",user_P+1)
 
 
 JUCT D 0 A_ChangeFlag("FLOORHUGGER",1)
-goto Spawn2G
+goto Spawn2GStart
 Spawn2:
 JUCT E 0 ACS_NamedExecuteAlways("cbm_JunkCubeGive",0)
 JUCT E 1 A_JumpIf(z-floorz==0,"Spawn2GStart")
@@ -407,7 +407,7 @@ JUCT G 1 A_JumpIf(z-floorz==0,"Spawn2GStart")
 JUCT G 0 DamageThing(7)
 loop
 Spawn2GStart:
-JUCT D 0 A_SetUserVar("user_P",user_P+1)
+JUCT D 0 A_SetUserVar("user_P",12)
 JUCT D 0 ThrustThingZ(0,0,0,1)
 JUCT D 0 //A_ChangeFlag("FLOORHUGGER",1)
 //JUCT D 0 A_ChangeFlag("MISSILE",1)
@@ -485,7 +485,7 @@ stop
 
 actor JunkmanCubePushed : JunkmanCube
 {
-Damage (14)
+Damage (16)
 +STEPMISSILE
 MaxStepHeight 24
 +THRUSPECIES
@@ -531,23 +531,23 @@ loop
 
 Launch:
 JUCT E 0 A_GiveInventory("JunkCube_P",1)
-JUCT E 1 A_JumpIfCloser(100,"Launch2")
+JUCT E 1 A_JumpIfCloser(150,"Launch2")
 JUCT E 0 A_GiveInventory("JunkCube_P",1)
-JUCT E 1 A_JumpIfCloser(100,"Launch2")
+JUCT E 1 A_JumpIfCloser(150,"Launch2")
 JUCT E 0 A_GiveInventory("JunkCube_P",1)
-JUCT E 1 A_JumpIfCloser(100,"Launch2")
+JUCT E 1 A_JumpIfCloser(150,"Launch2")
 JUCT F 0 A_GiveInventory("JunkCube_P",1)
-JUCT F 1 A_JumpIfCloser(100,"Launch2")
+JUCT F 1 A_JumpIfCloser(150,"Launch2")
 JUCT F 0 A_GiveInventory("JunkCube_P",1)
-JUCT F 1 A_JumpIfCloser(100,"Launch2")
+JUCT F 1 A_JumpIfCloser(150,"Launch2")
 JUCT F 0 A_GiveInventory("JunkCube_P",1)
-JUCT F 1 A_JumpIfCloser(100,"Launch2")
+JUCT F 1 A_JumpIfCloser(150,"Launch2")
 JUCT G 0 A_GiveInventory("JunkCube_P",1)
-JUCT G 1 A_JumpIfCloser(100,"Launch2")
+JUCT G 1 A_JumpIfCloser(150,"Launch2")
 JUCT G 0 A_GiveInventory("JunkCube_P",1)
-JUCT G 1 A_JumpIfCloser(100,"Launch2")
+JUCT G 1 A_JumpIfCloser(150,"Launch2")
 JUCT G 0 A_GiveInventory("JunkCube_P",1)
-JUCT G 1 A_JumpIfCloser(100,"Launch2")
+JUCT G 1 A_JumpIfCloser(150,"Launch2")
 JUCT G 0 DamageThing(7)
 Goto Spawn2
 Launch2:
@@ -578,7 +578,7 @@ damagefactor "JunkmanCube", 0.0
 
 actor JunkCubeAmmoDelay : Powerup
 {
-powerup.duration 1
+powerup.duration 3
 }
 
 actor JunkBits1 : ScrapMetalBase
@@ -755,13 +755,13 @@ States
 {
 Pickup:
 TNT1 A 0 A_JumpIfInventory("JunkBlockWasPushed_F",1,"PunchEnd")
-TNT1 A 0 A_JumpIfInventory("TrunkAmmo",35,"ThrowJunk")
+TNT1 A 0 A_JumpIfInventory("TrunkAmmo",40,"ThrowJunk")
 stop
 PunchEnd:
 TNT1 A 0
 stop
 ThrowJunk:
-TNT1 A 0 A_TakeInventory("TrunkAmmo",70)//14
+TNT1 A 0 A_TakeInventory("TrunkAmmo",80)//14
 TNT1 A 0 A_GiveInventory("JunkmanAlt2_CI",1)
 stop
 }
@@ -780,7 +780,7 @@ Species "JunkCubeThing"
 Damage (15)
 Radius 16
 Height 16
-Speed 42
+Speed 50
 scale 2.5
 States
 {

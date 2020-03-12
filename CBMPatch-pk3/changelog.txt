@@ -1,4 +1,77 @@
 ================
+Version 9 F Devpatch Hotfix
+================
+
+==General
+-Added the option to disable select class pickups in Server Options
+--Options and cvar name
+---Screws [CBM_Pickups_Screw]
+---Auto's big screw [CBM_Pickups_BigScrew]
+---Sniper Joe's score balls [CBM_Pickups_Scoreball]
+---Junk [CBM_Pickups_Junk]
+---RaThor's souls [CBM_Pickups_Soul]
+---Exodia parts [CBM_Pickups_Exodia]
+---Sinistar parts [CBM_Pickups_Sinistar]
+---Part transfer [CBM_Pickups_Transfer]
+
+==Oilman
+Slide high damage 8->10
+
+==Snakeman
+-Added stamina use on climb toggle off
+
+==Brightman
+-Fixed blind indicator?
+
+==Gravityman
+-Fixed charge not resetting correctly?
+-Gravity Hold damage 2->6
+-Gravity Well damage 2->12
+
+==Darkman3
+-Unscoped mainfire ammo use removed
+-Scoped shot partial charge damage scaling removed
+-Scoped shot damage 20->25
+-Scoped full charge shot base damage 25->40
+-Unscoped ring is now a spread of 3 rings
+-Unscoped ring damage 5->6
+-Scoped ring no longer requires full focus
+-Scoped ring damage 5->15
+-Scoped ring speed 90->120
+-Scoped ring end delay 28->24
+-Scoped speed penalty 0.43->0.6
+-Scoped jump penalty 7->10
+
+==Junkman
+-HP 125->135
+-Junk cube max damage 14->16
+--Now reaches full max at all times
+-Pushed junk cube damage 14->16
+-Punch detection range on pushed junk cubes 100->150
+-Junk cube ammo give/delay 1->3
+-Fixed junk cube ammo give stacking
+-Punch damage 15->25
+-Punch shot speed 42->50
+-Punch shot ammo use 70->80
+--Ammo required 35->40
+
+==EvilRobot
+-Evil Beam damage 9->6
+
+==Magmanman
+-Item now has a small cooldown between uses
+
+==Chillman
+-Slide ammo 126->168
+--Any ammo mentions are after adjustment
+-Slide ammo regen 8->4
+-Slide ammo regen during mainfire 0->7
+-Slide requires full ammo to activate
+-Slide speed 1.77->1.66
+--Initial speed 1.88->1.77
+-Slide ammo use in air 1.33->1
+
+================
 Version 9 F Devpatch
 ================
 

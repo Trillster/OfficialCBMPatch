@@ -157,6 +157,7 @@ switch (mode) {
 }
 }
 
+//LMS and Buckshot gradual ETL heal
 Script "cbm_ETankHeal" (int HealAmount, int ScaledHealth)
 {
 int Ratio;
@@ -180,6 +181,43 @@ while(TrueAmount > 0 && GetActorProperty(0,APROP_Health)<MaxHealth && GetActorPr
 	TrueAmount -= 1;
 	Delay(5);
     }
+}
+
+//Server class pickup options
+script "cbm_PickupSvar" (int which)
+{
+	int result = 1;
+	str svar = "";
+	switch (which)
+	{
+		case 1:
+			svar = "CBM_Pickups_Screw";
+			break;
+		case 2:
+			svar = "CBM_Pickups_BigScrew";
+			break;
+		case 3:
+			svar = "CBM_Pickups_Scoreball";
+			break;
+		case 4:
+			svar = "CBM_Pickups_Junk";
+			break;
+		case 5:
+			svar = "CBM_Pickups_Soul";
+			break;
+		case 6:
+			svar = "CBM_Pickups_Exodia";
+			break;
+		case 7:
+			svar = "CBM_Pickups_Sinistar";
+			break;
+		case 8:
+			svar = "CBM_Pickups_Transfer";
+		default:
+			break;
+	}
+	if(GetCvar(svar)){result = 0;}
+	SetResultValue(Result);
 }
 
 
@@ -539,9 +577,9 @@ script "cbm_JunkCubeGive" (void)
 {
 int JunkTID = ACS_ExecuteWithResult(257, 0);
 
-if(xyzDistance(0,JunkTID)<=196 && !GetActorProperty(JunkTID,"JunkCubeAmmoDelay") && GetActorProperty(JunkTID,APROP_Health)>0 && CheckActorInventory(JunkTID, "JunkShieldBoss"))
+if(xyzDistance(0,JunkTID)<=196 && !CheckActorInventory(JunkTID,"JunkCubeAmmoDelay") && GetActorProperty(JunkTID,APROP_Health)>0 && CheckActorInventory(JunkTID, "JunkShieldBoss"))
   {
-  GiveActorInventory(JunkTID,"TrunkAmmo",1);
+  GiveActorInventory(JunkTID,"TrunkAmmo",3);
   GiveActorInventory(JunkTID,"JunkCubeAmmoDelay",1);
   }
 }

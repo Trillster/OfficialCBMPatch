@@ -681,7 +681,7 @@ OptionValue CBM_ClassMainfire
 52, "\cdCan be charged\nMore charge adds more bits when split\nSplits in the direction you're facing"//Crystal
 53, "\cdShots get faster at lower health"//Darkman1
 54, "\cdShield toss travels forward/back"//Darkman2
-55, "\cdFires a powerful shot when scoped"//Darkman3
+55, "\cdFires a powerful shot while scoped\nHas knockback at max focus"//Darkman3
 56, "\cdNo shield shots get stronger\nCan fire shots with shield up"//Darkman4
 
 57, "\cdBits home for a short time"//Blizzard
@@ -825,7 +825,7 @@ OptionValue CBM_ClassAltfire
 52, "\cdBit shot with limited bounces"//Crystal
 53, "\cdLike mainfire shots, but with gravity"//Darkman1
 54, "\cdSummons Dark Shield\nShield is able to block missiles\nTossing spins it around user"//Darkman2
-55, "\cdRing that stuns on hit\nIncreased speed and range at max focus"//Darkman3
+55, "\cdRings stun on hit\nUnscoped: Spread of 3 rings\nScoped: Increased speed and range"//Darkman3
 56, "\cdSummons Dark Shield\nShield is able to block missiles\nTossing spins it around user"//Darkman4
 
 57, "\cdBowls forward at high speeds\nRecoil on successful damage or walls"//Blizzard

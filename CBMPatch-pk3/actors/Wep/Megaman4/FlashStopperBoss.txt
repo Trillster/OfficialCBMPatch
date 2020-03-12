@@ -306,7 +306,7 @@ stop
 }
 }
 
-actor BrightmanBlind : OnceC {}
+actor BrightmanBlind : Powerup { Powerup.Duration 3 }
 
 actor BrightmanBlindPickup : CustomInventory
 {
@@ -333,6 +333,9 @@ States
 Spawn:
 FSTB U 0
 FSTB U 0 A_TakeFromTarget("BrightmanBlind",1)
+FSTB U 1 A_Warp(AAPTR_TARGET,0,0,120,0,24)
+FSTB U 0 A_FadeOut(1.0*meleerange/accuracy)
+Goto Spawn2+4
 Spawn2:
 FSTB U 0 A_JumpIfInTargetInventory("IsDead",1,"Death")
 FSTB U 0 A_JumpIfInTargetInventory("BrightmanBlind",1,"Death")

@@ -579,8 +579,8 @@ str MainWepList[I_TOTAL_CLASSES][3]={
 "Summons Dark Shield, which does damage on hit, along with blocking projectiles. When the shield is fired, it spins around the field.",
 ""},
 //Darkman3
-{"Fires a burst of weak shots. While scoped, fires a faster, precise shot. Shots become stronger as focus builds.\nAt max focus, the shot increases in damage as it travels and has slight knockback.",
-"Fires a ring with limited range that stuns enemies. At max focus, the ring becomes faster and has increased range.",
+{"Fires a burst of weak shots. While scoped, fires a faster, precise shot. At max focus, the shot increases in damage as it travels and has slight knockback.",
+"Fires a spread of rings that stun enemies. While scoped, fires a singlular ring that's faster and has increased range.",
 "Toggles your scope, slowing your movement and zooming your view. You gain focus while scoped. The less health you have, the faster you gain focus."},
 //Darkman4
 {"Fires a shot that gains damage with distance. When the shield is up, fires a basic shot at a slower rate of fire. The less health the user has the faster the rate of fire is for the shield shot.",

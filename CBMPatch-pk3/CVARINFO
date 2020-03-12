@@ -1,0 +1,8 @@
+server noarchive bool CBM_Pickups_Screw = true;
+server noarchive bool CBM_Pickups_BigScrew = true;
+server noarchive bool CBM_Pickups_Scoreball = true;
+server noarchive bool CBM_Pickups_Junk = true;
+server noarchive bool CBM_Pickups_Soul = true;
+server noarchive bool CBM_Pickups_Exodia = true;
+server noarchive bool CBM_Pickups_Sinistar = true;
+server noarchive bool CBM_Pickups_Transfer = true;

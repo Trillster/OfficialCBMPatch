@@ -1,5 +1,6 @@
 This patch is a preview of version 9f released by current developers
 To be used with classes-v9eh.pk3
+CBM Discord: discord.gg/395EPXP
 
 ==Credits List
 Trillster - Coding

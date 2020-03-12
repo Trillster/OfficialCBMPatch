@@ -2,7 +2,7 @@ actor DarkSniperBoss : BaseMM8BDMWep_CBM
 {
 tag "$TAGC_5K"
 dropitem "DarkShieldWepCDropped"
-Weapon.AmmoUse1 4
+Weapon.AmmoUse1 0
 Weapon.AmmoGive1 64
 Obituary "$OB_DARK3SNIPE"
 Inventory.Pickupmessage "maybe"
@@ -21,22 +21,11 @@ goto Ready0
 Ready0:
 DKC3 A 0 A_GiveInventory("Darkman3ChargeFlag",1)
 Ready1:
-DKC3 A 0 A_JumpIfInventory("Darkman3SniperAmmo",16,"Ready2")
-DKC3 A 0 A_JumpIfInventory("Darkman3RingAmmo",28,"Ready3")
-DKC3 A 4 A_WeaponReady(12)
-DKC3 A 0 A_GiveInventory("Darkman3Ammo_P",1)
-loop
-Ready2:
-DKC3 A 0 A_JumpIfInventory("Darkman3RingAmmo",28,"Ready4")
+DKC3 A 0 A_JumpIfInventory("Darkman3RingAmmo",28,"Ready2")
 DKC3 A 4 A_WeaponReady(8)
 DKC3 A 0 A_GiveInventory("Darkman3Ammo_P",1)
 loop
-Ready3:
-DKC3 A 0 A_JumpIfInventory("Darkman3SniperAmmo",16,"Ready4")
-DKC3 A 4 A_WeaponReady(4)
-DKC3 A 0 A_GiveInventory("Darkman3Ammo_P",1)
-loop
-Ready4:
+Ready2:
 DKC3 A 4 A_WeaponReady
 DKC3 A 0 A_GiveInventory("Darkman3Ammo_P",1)
 loop
@@ -48,14 +37,13 @@ Select:
 TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
 DKC3 A 1 A_Raise
 Loop
+
 Fire:
 DKC3 A 0 A_TakeInventory("Darkman3ChargeFlag",1)
-DKC3 A 0 A_JumpIfInventory("DarkSniperCharge",700,"FireX")
-DKC3 A 0 A_JumpIfInventory("DarkSniperCharge",525,"Fire4")
-DKC3 A 0 A_JumpIfInventory("DarkSniperCharge",350,"Fire3")
-DKC3 A 0 A_JumpIfInventory("DarkSniperCharge",175,"Fire2")
-DKC3 A 0 A_JumpIfInventory("DarkSniperZoom",1,"Fire1")
+DKC3 A 0 A_JumpIfInventory("DarkSniperZoom",1,"AmmoCheck")
+Goto Fire0
 
+Fire0:
 DKC3 A 0 A_PlaySoundEx("weapon/enemyweapon","Weapon")
 DKC3 A 2 OffSet(10,42)A_GiveInventory("Darkman3Main0_CI",1)
 DKC3 A 2 OffSet(20,52)
@@ -72,10 +60,15 @@ DKC3 A 2 OffSet(10,42)
 DKC3 A 14 A_WeaponReady(14)
 Goto Ready0
 
-Fire1:DKC3 A 0 A_GiveInventory("Darkman3Main1_CI",1)Goto ChargeFire
-Fire2:DKC3 A 0 A_GiveInventory("Darkman3Main2_CI",1)Goto ChargeFire
-Fire3:DKC3 A 0 A_GiveInventory("Darkman3Main3_CI",1)Goto ChargeFire
-Fire4:DKC3 A 0 A_GiveInventory("Darkman3Main4_CI",1)Goto ChargeFire
+AmmoCheck:
+DKC3 A 0 A_JumpIfInventory("Darkman3SniperAmmo",16,1)
+Goto NoAmmo
+DKC3 A 0 A_JumpIfInventory("DarkSniperCharge",700,"FireX")
+Goto Fire1
+
+Fire1:
+DKC3 A 0 A_GiveInventory("Darkman3Main1_CI",1)
+Goto ChargeFire
 FireX:
 DKC3 A 0 A_GiveInventory("Darkman3MainX_CI",1)
 DKC3 A 0 A_PlaySoundEx("weapon/Dark3Rail","Weapon")
@@ -91,9 +84,14 @@ DKC3 A 2 OffSet(10,42)
 DKC3 A 10 A_WeaponReady(14)
 Goto Ready0
 
+NoAmmo:
+DKC3 A 4 A_WeaponReady(4)
+DKC3 A 0 A_GiveInventory("Darkman3Ammo_P")
+Goto Ready1
+
 AltFire:
 DKC3 A 0 A_TakeInventory("Darkman3ChargeFlag",1)
-DKC3 A 0 A_JumpIfInventory("DarkSniperCharge",700,"AltfireX")
+DKC3 A 0 A_JumpIfInventory("DarkSniperZoom",1,"AltfireX")
 DKC3 A 0 A_PlaySoundEx("weapon/sparkalt","Weapon")
 DKC3 A 0 A_GiveInventory("Darkman3Alt_CI",1)
 DKC3 A 16 OffSet(40,32)
@@ -104,9 +102,9 @@ goto Ready0
 AltfireX:
 DKC3 A 0 A_PlaySoundEx("weapon/sparkalt","Weapon")
 DKC3 A 0 A_GiveInventory("Darkman3AltX_CI",1)
-DKC3 A 16 OffSet(20,52)
-DKC3 A 2 OffSet(10,42)
-DKC3 A 10 A_WeaponReady(14)
+DKC3 A 16 OffSet(40,32)
+DKC3 A 4 OffSet(20,32)
+DKC3 A 4 A_WeaponReady(14)
 Goto Ready0
 
 Flash:
@@ -115,8 +113,8 @@ TNT1 A 0 A_JumpIfInventory("DarkSniperZoom",1,"Flash.ZoomIn")
 TNT1 A 1 A_ZoomFactor(1.0,1)
 loop
 Flash.ZoomIn:
-TNT1 A 0 ACS_ExecuteAlways(CORE_ACS_191,0,APROP_Speed,3,7)
-TNT1 A 0 ACS_ExecuteAlways(CORE_ACS_191,0,APROP_JumpZ,6,1)
+TNT1 A 0 ACS_ExecuteAlways(CORE_ACS_191,0,APROP_Speed,3,5)
+TNT1 A 0 ACS_ExecuteAlways(CORE_ACS_191,0,APROP_JumpZ,10,1)
 Flash.Zoomed:
 TNT1 A 0 A_JumpIfInventory("IsDead",1,"NoFlash")
 TNT1 A 0 A_GiveInventory("DarkSniper_RC",1)
@@ -129,9 +127,6 @@ TNT1 A 0 ACS_ExecuteAlways(CORE_ACS_191,0,APROP_Speed,1,1)
 TNT1 A 0 ACS_ExecuteAlways(CORE_ACS_191,0,APROP_JumpZ,12,1)
 Goto Flash
 
-NoAmmo:
-DKC3 A 0
-Goto Ready1
 }
 }
 
@@ -262,7 +257,7 @@ Translation "202:202=216:216"
 PROJECTILE
 damagetype "DarkShot"
 Obituary "$OB_DARK3SNIPE"
-Damage (20)
+Damage (25)
 radius 11
 height 11
 speed 180
@@ -278,66 +273,25 @@ wait
 }
 }
 
-actor Darkman3Shot2 : Darkman3Shot1
-{
-States
-{
-Spawn2:
-DSHO A 1 A_SpawnItemEx("Darkman3ShotFX2",0,0,0,0,0,0,0,1)
-wait
-}
-}
-actor Darkman3Shot3 : Darkman3Shot1
-{
-States
-{
-Spawn2:
-DSHO A 1 A_SpawnItemEx("Darkman3ShotFX3",0,0,0,0,0,0,0,1)
-wait
-}
-}
-actor Darkman3Shot4 : Darkman3Shot1
-{
-States
-{
-Spawn2:
-DSHO A 1 A_SpawnItemEx("Darkman3ShotFX4",0,0,0,0,0,0,0,1)
-wait
-}
-}
-
 actor Darkman3Shot1B : Darkman3Shot1{translation "202:202=205:205"}
 actor Darkman3Shot1R : Darkman3Shot1{translation "202:202=171:171"}
 actor Darkman3Shot1O : Darkman3Shot1{translation "202:202=104:104"}
 actor Darkman3Shot1P : Darkman3Shot1{translation "202:202=229:229"}
-actor Darkman3Shot2B : Darkman3Shot2{translation "202:202=205:205"}
-actor Darkman3Shot2R : Darkman3Shot2{translation "202:202=171:171"}
-actor Darkman3Shot2O : Darkman3Shot2{translation "202:202=104:104"}
-actor Darkman3Shot2P : Darkman3Shot2{translation "202:202=229:229"}
-actor Darkman3Shot3B : Darkman3Shot3{translation "202:202=205:205"}
-actor Darkman3Shot3R : Darkman3Shot3{translation "202:202=171:171"}
-actor Darkman3Shot3O : Darkman3Shot3{translation "202:202=104:104"}
-actor Darkman3Shot3P : Darkman3Shot3{translation "202:202=229:229"}
-actor Darkman3Shot4B : Darkman3Shot4{translation "202:202=205:205"}
-actor Darkman3Shot4R : Darkman3Shot4{translation "202:202=171:171"}
-actor Darkman3Shot4O : Darkman3Shot4{translation "202:202=104:104"}
-actor Darkman3Shot4P : Darkman3Shot4{translation "202:202=229:229"}
 
 actor Darkman3ShotX : Darkman3Shot1
 {
 Obituary "$OB_DARK3SNIPEX"
 damagetype "DarkSniper"
 var int user_P;
-Damage (25+user_P/2)
-speed 180
+Damage (40+user_P/2)
 States
 {
 Spawn:
 DSHO A 0
-DSHO A 0 A_SpawnItemEx("Darkman3ShotFX5",0,0,0,0,0,0,0,1)
-DSHO A 0 A_SpawnItemEx("Darkman3ShotFX4",0,0,0,0,cos(pitch+30)*2.5,-sin(pitch+30)*2.5,0,1)
-DSHO A 0 A_SpawnItemEx("Darkman3ShotFX4",0,0,0,0,cos(pitch+150)*2.5,-sin(pitch+150)*2.5,0,1)
-DSHO A 1 A_SpawnItemEx("Darkman3ShotFX4",0,0,0,0,cos(pitch+270)*2.5,-sin(pitch+270)*2.5,0,1)
+DSHO A 0 A_SpawnItemEx("Darkman3ShotFX2",0,0,0,0,0,0,0,1)
+DSHO A 0 A_SpawnItemEx("Darkman3ShotFX1",0,0,0,0,cos(pitch+30)*2.5,-sin(pitch+30)*2.5,0,1)
+DSHO A 0 A_SpawnItemEx("Darkman3ShotFX1",0,0,0,0,cos(pitch+150)*2.5,-sin(pitch+150)*2.5,0,1)
+DSHO A 1 A_SpawnItemEx("Darkman3ShotFX1",0,0,0,0,cos(pitch+270)*2.5,-sin(pitch+270)*2.5,0,1)
 DSHO A 0 A_SetUserVar("user_P",user_P+1)
 DSHO A 0 A_SetPitch(pitch%360+30)
 loop
@@ -353,8 +307,8 @@ actor Darkman3ShotFX1 : BasicClientSide
 {
 +FORCEXYBILLBOARD
 RenderStyle "translucent"
-Alpha 0.6
-ReactionTime 4
+Alpha 0.9
+ReactionTime 7
 States
 {
 Spawn:
@@ -365,10 +319,8 @@ DSHO A 0 A_SetScale(scaleX-0.2)
 Goto Spawn+1
 }
 }
-actor Darkman3ShotFX2 : Darkman3ShotFX1{Alpha 0.7 ReactionTime 5}
-actor Darkman3ShotFX3 : Darkman3ShotFX1{Alpha 0.8 ReactionTime 6}
-actor Darkman3ShotFX4 : Darkman3ShotFX1{Alpha 0.9 ReactionTime 7}
-actor Darkman3ShotFX5 : Darkman3ShotFX1{Alpha 1.0 ReactionTime 8}
+
+actor Darkman3ShotFX2 : Darkman3ShotFX1{Alpha 1.0 ReactionTime 8}
 
 actor DarkRing
 {
@@ -376,7 +328,7 @@ Translation "202:202=216:216"
 PROJECTILE
 damagetype "NeutralShock"
 Obituary "$OB_DARK3RING"
-damage (5)
+damage (6)
 radius 13
 height 18
 speed 40
@@ -395,8 +347,8 @@ stop
 actor DarkRingX : DarkRing
 {
 Obituary "$OB_DARK3RINGX"
-//damage (10)
-speed 90
+damage (15)
+speed 120
 States
 {
 Spawn:
@@ -433,19 +385,19 @@ actor Darkman3Main0_CI : TeamColor_CI
 states
 {
 FireX:
-TNT1 A 0 A_FireCustomMissile("Darkman3SMG",frandom(-2,2),1,8,0,0,frandom(-2,2))
+TNT1 A 0 A_FireCustomMissile("Darkman3SMG",frandom(-2,2),0,8,0,0,frandom(-2,2))
 goto Done
 FireB:
-TNT1 A 0 A_FireCustomMissile("Darkman3SMGB",frandom(-2,2),1,8,0,0,frandom(-2,2))
+TNT1 A 0 A_FireCustomMissile("Darkman3SMGB",frandom(-2,2),0,8,0,0,frandom(-2,2))
 goto Done
 FireR:
-TNT1 A 0 A_FireCustomMissile("Darkman3SMGR",frandom(-2,2),1,8,0,0,frandom(-2,2))
+TNT1 A 0 A_FireCustomMissile("Darkman3SMGR",frandom(-2,2),0,8,0,0,frandom(-2,2))
 goto Done
 FireO:
-TNT1 A 0 A_FireCustomMissile("Darkman3SMGO",frandom(-2,2),1,8,0,0,frandom(-2,2))
+TNT1 A 0 A_FireCustomMissile("Darkman3SMGO",frandom(-2,2),0,8,0,0,frandom(-2,2))
 goto Done
 FireP:
-TNT1 A 0 A_FireCustomMissile("Darkman3SMGP",frandom(-2,2),1,8,0,0,frandom(-2,2))
+TNT1 A 0 A_FireCustomMissile("Darkman3SMGP",frandom(-2,2),0,8,0,0,frandom(-2,2))
 goto Done
 }
 }
@@ -468,72 +420,6 @@ TNT1 A 0 A_FireCustomMissile("Darkman3Shot1O",0,0,0,0)
 goto Done
 FireP:
 TNT1 A 0 A_FireCustomMissile("Darkman3Shot1P",0,0,0,0)
-goto Done
-}
-}
-
-actor Darkman3Main2_CI : TeamColor_CI
-{
-states
-{
-FireX:
-TNT1 A 0 A_FireCustomMissile("Darkman3Shot2",0,0,0,0)
-goto Done
-FireB:
-TNT1 A 0 A_FireCustomMissile("Darkman3Shot2B",0,0,0,0)
-goto Done
-FireR:
-TNT1 A 0 A_FireCustomMissile("Darkman3Shot2R",0,0,0,0)
-goto Done
-FireO:
-TNT1 A 0 A_FireCustomMissile("Darkman3Shot2O",0,0,0,0)
-goto Done
-FireP:
-TNT1 A 0 A_FireCustomMissile("Darkman3Shot2P",0,0,0,0)
-goto Done
-}
-}
-
-actor Darkman3Main3_CI : TeamColor_CI
-{
-states
-{
-FireX:
-TNT1 A 0 A_FireCustomMissile("Darkman3Shot3",0,0,0,0)
-goto Done
-FireB:
-TNT1 A 0 A_FireCustomMissile("Darkman3Shot3B",0,0,0,0)
-goto Done
-FireR:
-TNT1 A 0 A_FireCustomMissile("Darkman3Shot3R",0,0,0,0)
-goto Done
-FireO:
-TNT1 A 0 A_FireCustomMissile("Darkman3Shot3O",0,0,0,0)
-goto Done
-FireP:
-TNT1 A 0 A_FireCustomMissile("Darkman3Shot3P",0,0,0,0)
-goto Done
-}
-}
-
-actor Darkman3Main4_CI : TeamColor_CI
-{
-states
-{
-FireX:
-TNT1 A 0 A_FireCustomMissile("Darkman3Shot4",0,0,0,0)
-goto Done
-FireB:
-TNT1 A 0 A_FireCustomMissile("Darkman3Shot4B",0,0,0,0)
-goto Done
-FireR:
-TNT1 A 0 A_FireCustomMissile("Darkman3Shot4R",0,0,0,0)
-goto Done
-FireO:
-TNT1 A 0 A_FireCustomMissile("Darkman3Shot4O",0,0,0,0)
-goto Done
-FireP:
-TNT1 A 0 A_FireCustomMissile("Darkman3Shot4P",0,0,0,0)
 goto Done
 }
 }
@@ -565,7 +451,9 @@ actor Darkman3Alt_CI : TeamColor_CI
 states
 {
 FireX:
+TNT1 A 0 A_FireCustomMissile("DarkRing",-15,0,8,0)
 TNT1 A 0 A_FireCustomMissile("DarkRing",0,0,8,0)
+TNT1 A 0 A_FireCustomMissile("DarkRing",15,0,8,0)
 goto Done
 FireB:
 TNT1 A 0 A_FireCustomMissile("DarkRingB",0,0,8,0)

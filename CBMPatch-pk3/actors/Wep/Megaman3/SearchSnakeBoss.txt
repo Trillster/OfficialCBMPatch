@@ -134,6 +134,7 @@ TNT1 A 0 A_GiveInventory("SnakeClimbing",1)
 fail
 Use2:
 TNT1 A 0 A_TakeInventory("SnakeClimbing",1)
+TNT1 A 0 A_TakeInventory("SnakeClamberAmmo",10)
 fail
 }
 }

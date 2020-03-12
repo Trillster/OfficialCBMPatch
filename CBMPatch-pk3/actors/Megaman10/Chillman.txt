@@ -6,7 +6,7 @@ player.soundclass "chillManc"
 
 player.startitem "ChillSpikeBoss"
 player.startitem "SpikesAndChillAmmo", 84
-player.startitem "ChillSlideAmmo", 95
+player.startitem "ChillSlideAmmo", 168
 player.startitem "ChillmanSpawnStart_P", 1
 player.startitem "ChillmanSuperItem"
 Player.StartItem "CanWallJump"

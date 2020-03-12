@@ -1,0 +1,355 @@
+LISTMENU "MainMenu"//Edit from MM8BDM-v5b [v5b edit]
+{
+	IfGame(Doom, Chex)
+	{
+		StaticPatch 94, 2, "M_DOOM"
+		Position 97, 72
+	}
+	IfGame(Strife)
+	{
+		StaticPatch 84, 2, "M_STRIFE"
+		Position 97, 45
+	}
+	IfGame(Heretic)
+	{
+		StaticPatch 88, 0, "M_HTIC"
+		StaticPatch 40, 10, "M_SKL01"
+		StaticPatch 232, 10, "M_SKL00"
+		Position 110, 56
+	}
+	IfGame(Hexen)
+	{
+		StaticPatch 88, 0, "M_HTIC"
+		StaticPatch 37, 80, "FBULB0"
+		StaticPatch 278, 80, "FBULA0"
+		Position 110, 56
+	}
+	
+	IfGame(Doom, Strife, Chex)
+	{
+		Font "DBIGFONT", "MenuWhite"
+		TextItem "SinglePlayer", "s", "PlayerclassMenu"
+		TextItem "Multiplayer", "m", "ZA_MultiplayerOptions" // [Lego]
+		TextItem "Player Setup", "p", "PlayerMenu"
+		TextItem "Options", "o", "OptionsMenu"
+		Font "DBIGFONT", "MenuBlue"
+		TextItem "CBM Menu", "c", "CBM_MainMenu"
+		Font "DBIGFONT", "MenuGreen"
+		TextItem "Help", "h", "ReadThisMenu"
+		Font "DBIGFONT", "MenuWhite"
+		TextItem "Quit Game", "q", "QuitMenu"
+	}
+	
+	IfGame(Heretic, Hexen)
+	{
+		TextItem "$MNU_NEWGAME", "n", "PlayerclassMenu"
+		TextItem "$MNU_OPTIONS", "o", "OptionsMenu"
+		TextItem "$MNU_GAMEFILES", "g", "GameFilesMenu"
+		TextItem "$MNU_INFO", "i", "ReadThisMenu"
+		TextItem "$MNU_QUITGAME", "q", "QuitMenu"
+	}
+}
+
+
+OptionMenu "OptionsMenu"//[v5c edit]
+{
+	Title "OPTIONS"
+	// [Lego] These were moved to the main menu.
+	//Submenu "Multiplayer Options",		"ZA_MultiplayerOptions" // [TP]
+	//StaticText " " // [TP]
+	Submenu "Customize Controls",		"CustomizeControls"
+	Submenu "Mouse options",			"MouseOptions"
+	Submenu "Joystick options",			"JoystickOptions"
+	StaticText " "
+	Submenu "Message Options", 			"MessageOptions"
+	StaticText " "
+	Submenu "Sound Options",			"SoundOptions"
+	Submenu "Display Options",			"VideoOptions"
+	Submenu "Set video mode",			"VideoModeMenu"
+	Submenu "Advanced Options",			"8BDMAdvancedOptions"
+	
+	StaticText " "
+	
+	StaticText	"MM8BDM Options", 1
+	StaticText " "
+	Option "Display Health Number",			"mm8bdm_healthnumber", "OnOff"
+	Option "Display Ammo Number (Maestro)",			"mm8bdm_ammonumber", "OnOff"
+	Option "Pickup Weapon Colors",			"mm8bdm_noenergycolors", "OffOn"
+	Option "Show Map Creator Cards",		"mm8bdm_mapcards", "8BDM_MapCards"
+	Option "CTF Objective Compass",			"mm8bdm_noctfradar", "OffOn"
+}
+
+ListMenu "PlayerMenu"//[v5c edit]
+{
+	StaticTextCentered 160, 6, "$MNU_PLAYERSETUP"
+	Font "SmallFont"//, "White", "Cyan"
+	Linespacing 14
+	Position 48, 36
+	IfGame(Doom, Heretic, Strife, Chex)
+	{
+		MouseWindow 0, 220
+		//PlayerDisplay 220, 75, "20 00 00", "80 00 40", 1, "PlayerDisplay"
+		//PlayerDisplay 220, 55, "00 00 00", "00 AA AA", 1, "PlayerDisplay"
+		PlayerDisplay 220, 55, "20 00 00", "20 FF 40", 1, "PlayerDisplay"
+	}
+	IfGame(Hexen)
+	{
+		MouseWindow 0, 220
+		PlayerDisplay 220, 75, "00 07 00", "40 53 40", 1, "PlayerDisplay"
+	}
+	
+	IfGame (Doom, Strife, Chex)
+	{
+		PlayerNameBox "Name", 0, "Playerbox"
+		Selector "-", -16, -1
+	}
+	IfGame(Heretic, Hexen)
+	{
+		PlayerNameBox "Name", 5, "Playerbox"
+		Selector "-", -16, 1
+	}
+	
+	// [TP] Zandronum does not store team in userinfo
+	// ValueText "Team", "Team"
+	// [TP] For now Zandronum doesn't support colorsets either.
+	// ValueText "Color", "Color"
+	Linespacing 14
+	//Slider "Red", "Red", 0, 255, 16
+	//Slider "Green", "Green", 0, 255, 16
+	//Linespacing 14
+	//Slider "Blue", "Blue", 0, 255, 16
+	ValueText "Class", "Class"
+	ValueText "Skin", "Skin"
+	ValueText "Gender", "Gender", "Gender"
+	ValueText "Autoaim", "Autoaim", "Autoaim"
+	//Slider "Handicap", "Handicap", 0, 200, 5 // [TP]
+	// [TP] This is moved to weapon setup
+	// ValueText "Switch on pickup", "Switch", "OffOn"
+	ValueText "Always Run", "AlwaysRun", "OnOff"
+	//ValueText "Chat Substitution", "chat_substitution", "OnOff" (doesn't work :/)
+	TextItem "Weapon Setup", "w", "ZA_WeaponSetup" // [TP]
+	//Font "SmallFont", "MenuGreen" // [C]
+	TextItem "Copy Weapon Loadout", "c", "CBM_UserOptionsMenu" // [C]
+
+	Class "PlayerMenu"
+}
+
+LISTMENU "CBM_MainMenu"
+{
+	StaticPatch 108,31, "CBMTITLE"//94,2
+	Position 97,72
+	Font "DBIGFONT", "MenuOrange"
+	TextItem "Class Information", "c", "CBM_ClassHelpMenu"
+	Font "DBIGFONT", "MenuYellow"
+	TextItem "User Options", "u", "CBM_UserOptionsMenu"
+	Font "DBIGFONT", "MenuGreen"
+	TextItem "Server Options", "s", "CBM_ServerOptionsMenu"
+	Font "DBIGFONT", "MenuCyan"
+	TextItem "The Changelog", "s", "CBM_ChangelogMenu"
+	Font "DBIGFONT", "MenuPurple"
+	TextItem "Previous Changelog", "s", "CBM_ChangelogMenuOld"
+}
+
+OptionMenu "CBM_UserOptionsMenu"
+{
+	Title "CBM User Options"
+
+	StaticText " "
+	StaticText "User Options", 1
+	StaticText " "
+	Option "Alternate Auto Hud", "CBM_AutoAltHud", "OnOff"
+	StaticText " "
+	Option "Old Galaxy Hud", "CBM_OldGalaxyHud", "OnOff"
+	StaticText " "
+	StaticText "User Commands", 1
+	StaticText " "
+	Command "Console ClassHelp", "menuclasshelp"
+	StaticText " "
+	StaticText " "
+	StaticText "Copy Weapon Loadout", 1
+	StaticText " "
+	StaticText "LMS Loadouts must be enabled", 1
+	StaticText " "
+	Option "Range", "LO_range", "LO_RangeOptions"
+	StaticText     "(LO_range)",1
+	StaticText " "
+	Option "Rapid", "LO_rapid", "LO_RapidOptions"
+	StaticText     "(LO_rapid)",1
+	StaticText " "
+	Option "Close", "LO_close", "LO_CloseOptions"
+	StaticText     "(LO_close)",1
+	StaticText " "
+	Option "Power", "LO_power", "LO_PowerOptions"
+	StaticText     "(LO_power)",1
+	StaticText " "
+	Option "Guard", "LO_guard", "LO_GuardOptions"
+	StaticText     "(LO_guard)",1
+	StaticText " "
+	StaticText "Menu Dimming Options", 1
+	StaticText " "
+	Slider "Dim Amount", "dimamount", 0.0, 1.0, 0.05, 2
+	Command "Use default Dim settings", "menu_CBM_ResetDim"
+	ColorPicker "Dim Color", "dimcolor"
+}
+
+OptionMenu "CBM_ServerOptionsMenu"
+{
+	Title "CBM Server Options"
+	StaticText " "
+	StaticText "Server Options", 1
+	StaticText " "
+	Option "Class Weaknesses", "YD_WeaknessSetting", "CBMWeaknessOptions"
+	Option "CTF Pickup Morph", "YD_NoCTFMorph", "NoYes"
+	Option "Pit Protection", "YD_NoPitProtect", "NoYes"
+	Option "Scaled Healing", "YD_NoHealingScale", "NoYes"
+	Option "LMS Loadouts", "YD_LMSLoadouts", "YesNo"
+	StaticText " "
+	StaticText "Class Pickups", 1
+	StaticText " "
+	Option "Screws", "CBM_Pickups_Screw", "YesNo"
+	Option "Auto's Big Screws", "CBM_Pickups_BigScrew", "YesNo"
+	Option "Score Balls", "CBM_Pickups_Scoreball", "YesNo"
+	Option "Junk", "CBM_Pickups_Junk", "YesNo"
+	Option "RaThor Souls", "CBM_Pickups_Soul", "YesNo"
+	Option "Exodia Parts", "CBM_Pickups_Exodia", "YesNo"
+	Option "Sinistar Parts", "CBM_Pickups_Sinistar", "YesNo"
+	Option "Part Transfer", "CBM_Pickups_Transfer", "YesNo"
+}
+
+OptionValue CBMWeaknessOptions
+{
+0, "No"
+1, "Sounds Only"
+2, "Yes"
+}
+
+OptionValue LO_RangeOptions
+{
+-1, "(-1) Random"
+0, "(0) Fire Storm"
+1, "(1) Thunder Beam"
+2, "(2) Magnet Missile"
+3, "(3) Gemini Laser"
+4, "(4) Search Snake"
+5, "(5) Spark Shock"
+6, "(6) Dust Crusher"
+7, "(7) Skull Sniper"
+8, "(8) Gyro Attack"
+9, "(9) Blizzard Attack"
+10, "(10) Silver Tomahawk"
+11, "(11) Freeze Cracker"
+12, "(12) Thunder Bolt"
+13, "(13) Noise Crush"
+14, "(14) Mega Ball"
+15, "(15) Homing Sniper"
+16, "(16) Ice Wave"
+17, "(17) Copy Vision"
+18, "(18) Dynamo Tendril"
+19, "(19) Laser Trident"
+20, "(20) Fake Repeater"
+21, "(21) Grab Buster"
+}
+OptionValue LO_RapidOptions
+{
+-1, "(-1) Random"
+0, "(0) Wave Buster"
+1, "(1) Ice Slasher"
+2, "(2) Metal Blade"
+3, "(3) Quick Boomerang"
+4, "(4) Needle Cannon"
+5, "(5) Top Twist"
+6, "(6) Water Wave"
+7, "(7) Plant Trapper"
+8, "(8) Yamato Spear"
+9, "(9) Water Balloon"
+10, "(10) Wave Burner"
+11, "(11) Plug Ball"
+12, "(12) Rainbow Galaxy"
+13, "(13) Screw Crusher"
+14, "(14) Buster Rod Pole"
+}
+OptionValue LO_CloseOptions
+{
+-1, "(-1) Random"
+0, "(0) Roll Sweep"
+1, "(1) Rising Fist"
+2, "(2) Rolling Cutter"
+3, "(3) Oil Slider"
+4, "(4) Air Shooter"
+5, "(5) Bubble Lead"
+6, "(6) Shadow Blade"
+7, "(7) Ring Boomerang"
+8, "(8) Power Stone"
+9, "(9) Charge Kick"
+10, "(10) Flame Blast"
+11, "(11) Knight Crush"
+12, "(12) Wind Storm"
+13, "(13) Wild Coil"
+14, "(14) Slash Claw"
+15, "(15) Tornado Hold"
+16, "(16) Flame Sword"
+17, "(17) Thunder Claw"
+18, "(18) Tengu Blade"
+19, "(19) Magic Card"
+20, "(20) Concrete Shot"
+21, "(21) Hornet Chaser"
+22, "(22) Magma Bazooka"
+23, "(23) Triple Blade"
+24, "(24) Chill Spike"
+25, "(25) Wheel Cutter"
+26, "(26) Bubble Bomb"
+27, "(27) Electric Shock"
+28, "(28) Break Dash"
+29, "(29) Salt Water"
+30, "(30) Sakugarne"
+31, "(31) Hyper Storm Blaster"
+}
+OptionValue LO_PowerOptions
+{
+-1, "(-1) Random"
+0, "(0) Frag Bomber"
+1, "(1) Super Arm"
+2, "(2) Hyper Bomb"
+3, "(3) Crash Bomb"
+4, "(4) Atomic Fire"
+5, "(5) Hard Knuckle"
+6, "(6) Drill Bomb"
+7, "(7) Pharaoh Shot"
+8, "(8) Gravity Sphere"
+9, "(9) Napalm Bomb"
+10, "(10) Crystal Eye"
+11, "(11) Centaur Arrow"
+12, "(12) Danger Wrap"
+13, "(13) Flash Bomb"
+14, "(14) Spread Drill"
+15, "(15) Remote Mine"
+16, "(16) Commando Bomb"
+17, "(17) Photon Missile"
+18, "(18) Deep Digger"
+19, "(19) Ballade Cracker"
+}
+OptionValue LO_GuardOptions
+{
+-1, "(-1) Random"
+0, "(0) Time Slow"
+1, "(1) Time Bender"
+2, "(2) Boobeam Barrier"
+3, "(3) Leaf Shield"
+4, "(4) Doc Scanner"
+5, "(5) Flash Bulb"
+6, "(6) Rain Flush"
+7, "(7) Dive Sonar"
+8, "(8) Skull Barrier"
+9, "(9) Star Crash"
+10, "(10) Dark Shield"
+11, "(11) Centaur Flash"
+12, "(12) Junk Shield"
+13, "(13) Scorch Wheel"
+14, "(14) Ice Wall"
+15, "(15) Tornado Blow"
+16, "(16) Jewel Satellite"
+17, "(17) Water Shield"
+18, "(18) Mirror Buster"
+19, "(19) Mega Water Barrier"
+}
+
