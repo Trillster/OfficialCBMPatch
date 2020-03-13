@@ -144,7 +144,7 @@ OptionValue CL_General10
 {0,"--Part transfer [CBM_Pickups_Transfer]"}
 
 OptionValue CL_Iceman1
-{0,"-Fixed fog FX"}
+{0,"-Fixed statue fog FX"}
 
 OptionValue CL_Oilman1
 {0,"Slide high damage 8->10"}

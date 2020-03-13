@@ -15,7 +15,7 @@ Version 9 F Devpatch 2
 --Part transfer [CBM_Pickups_Transfer]
 
 ==Iceman
--Fixed fog FX
+-Fixed statue fog FX
 
 ==Oilman
 Slide high damage 8->10
