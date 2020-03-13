@@ -68,7 +68,7 @@ Slide high damage 8->10
 ==Concreteman
 -Updated skin by FTX6004 added
 
-==Magmanman
+==Magmaman
 -Item now has a small cooldown between uses
 
 ==Chillman
