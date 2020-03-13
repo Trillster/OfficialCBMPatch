@@ -28,6 +28,7 @@ Slide high damage 8->10
 
 ==Ringman
 -Rings now share protection
+-Now plays a sound on player when a ring starts to gleam
 
 ==Gravityman
 -Fixed charge not resetting correctly?

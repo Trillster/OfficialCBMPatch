@@ -39,6 +39,8 @@ Option "", "CBM_Null_Menu", "CL_Brightman1"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Ringman"
 Option "", "CBM_Null_Menu", "CL_Ringman1"
+Option "", "CBM_Null_Menu", "CL_Ringman2"
+Option "", "CBM_Null_Menu", "CL_Ringman2a"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Gravityman"
 Option "", "CBM_Null_Menu", "CL_Gravityman1"
@@ -151,10 +153,14 @@ OptionValue CL_Snakeman1
 {0,"-Added stamina use on climb toggle off"}
 
 OptionValue CL_Brightman1
-{0,"-Fixed blind indicator?"}
+{0,"-Blind indicator removed"}
 
 OptionValue CL_Ringman1
 {0,"-Rings now share protection"}
+OptionValue CL_Ringman2
+{0,"-Now plays a sound on player when a ring"}
+OptionValue CL_Ringman2a
+{0,"starts to gleam"}
 
 OptionValue CL_Gravityman1
 {0,"-Fixed charge not resetting correctly?"}
