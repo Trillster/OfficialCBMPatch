@@ -1,5 +1,27 @@
 ================
-Version 9 F Devpatch 2
+Version 9 - F Devpatch 2 A Hotfix
+================
+
+==General
+-Fixed some actors that caused load errors
+
+==Airman
+-Item ammo requirement 1->2
+-Item ammo use on toggle off 0->1
+
+==Gravityman
+-Gravity Hold damage 6->4
+-Gravity Hold end delay 17->21
+
+================
+Version 9 - F Devpatch 2 Hotfix
+================
+
+==Darkman3
+-Fixed unscoped rings in teamgames
+
+================
+Version 9 - F Devpatch 2
 ================
 
 ==General

@@ -10,6 +10,8 @@ OptionMenu "CBM_ChangelogMenu"
 	StaticText"$MNU_CHELP_EQUALLINE"
 	StaticText ""
 
+Option "", "CBM_Null_Menu", "CL_HotfixNote"
+StaticText""
 Option "", "CBM_Null_Menu", "CL_General"
 Option "", "CBM_Null_Menu", "CL_General1"
 Option "", "CBM_Null_Menu", "CL_General1a"
@@ -24,12 +26,18 @@ Option "", "CBM_Null_Menu", "CL_General7"
 Option "", "CBM_Null_Menu", "CL_General8"
 Option "", "CBM_Null_Menu", "CL_General9"
 Option "", "CBM_Null_Menu", "CL_General10"
+Option "", "CBM_Null_Menu", "CL_General11"
+Option "", "CBM_Null_Menu", "CL_General11a"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Iceman"
 Option "", "CBM_Null_Menu", "CL_Iceman1"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Oilman"
 Option "", "CBM_Null_Menu", "CL_Oilman1"
+StaticText""
+Option "", "CBM_Null_Menu", "CL_Airman"
+Option "", "CBM_Null_Menu", "CL_Airman1"
+Option "", "CBM_Null_Menu", "CL_Airman2"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Snakeman"
 Option "", "CBM_Null_Menu", "CL_Snakeman1"
@@ -46,6 +54,7 @@ Option "", "CBM_Null_Menu", "CL_Gravityman"
 Option "", "CBM_Null_Menu", "CL_Gravityman1"
 Option "", "CBM_Null_Menu", "CL_Gravityman2"
 Option "", "CBM_Null_Menu", "CL_Gravityman3"
+Option "", "CBM_Null_Menu", "CL_Gravityman4"
 StaticText""
 Option "", "CBM_Null_Menu", "CL_Darkman3"
 Option "", "CBM_Null_Menu", "CL_Darkman31"
@@ -116,6 +125,9 @@ OptionValue CL_
 //Nothing longer than 40 characters per line
 //---------------------------------------
 
+OptionValue CL_HotfixNote
+{0," -Hotfix specific changes are \cdgreen\c--"}
+
 OptionValue CL_General1
 {0,"-Added the option to disable select"}
 OptionValue CL_General1a
@@ -142,12 +154,21 @@ OptionValue CL_General9
 {0,"--Sinistar parts [CBM_Pickups_Sinistar]"}
 OptionValue CL_General10
 {0,"--Part transfer [CBM_Pickups_Transfer]"}
+OptionValue CL_General11
+{0,"\cd-Fixed some actors that caused"}
+OptionValue CL_General11a
+{0,"\cdload errors"}
 
 OptionValue CL_Iceman1
 {0,"-Fixed statue fog FX"}
 
 OptionValue CL_Oilman1
 {0,"Slide high damage 8->10"}
+
+OptionValue CL_Airman1
+{0,"\cd-Item ammo requirement 1->2"}
+OptionValue CL_Airman2
+{0,"\cd-Item ammo use on toggle off 0->1"}
 
 OptionValue CL_Snakeman1
 {0,"-Added stamina use on climb toggle off"}
@@ -165,8 +186,10 @@ OptionValue CL_Ringman2a
 OptionValue CL_Gravityman1
 {0,"-Fixed charge not resetting correctly?"}
 OptionValue CL_Gravityman2
-{0,"-Gravity Hold damage 2->6"}
+{0,"-Gravity Hold damage 2->\cd4"}
 OptionValue CL_Gravityman3
+{0,"\cd-Gravity Hold end delay 17->21"}
+OptionValue CL_Gravityman4
 {0,"-Gravity Well damage 2->12"}
 
 OptionValue CL_Darkman31
@@ -184,7 +207,7 @@ OptionValue CL_Darkman34a
 OptionValue CL_Darkman35
 {0,"-Unscoped ring is now a spread of"}
 OptionValue CL_Darkman35a
-{0,"3 rings"}
+{0,"3 rings\cd*"}
 OptionValue CL_Darkman36
 {0,"-Unscoped ring damage 5->6"}
 OptionValue CL_Darkman37

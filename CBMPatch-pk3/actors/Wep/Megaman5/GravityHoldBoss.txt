@@ -136,7 +136,7 @@ Altfire1Quick:
 5A_H H 3 Offset(-47,-21)ACS_ExecuteAlways(998,0,DYE_GRAVITYMAN,1)
 5A_H G 3 Offset(-47,-21)ACS_ExecuteAlways(998,0,DYE_GRAVITYMAN,1)
 5A_H G 3 Offset(-20,6)
-5A_H G 3 A_WeaponReady(14)
+5A_H G 7 A_WeaponReady(14)
 5A_H A 0 ACS_ExecuteAlways(998,0,DYE_GRAVITYMAN,1)
 goto Ready1
 
@@ -154,7 +154,7 @@ Altfire2Quick:
 5A_H J 3 Offset(47,85)ACS_ExecuteAlways(998,0,DYE_GRAVITYMAN,1)
 5A_H I 3 Offset(47,85)ACS_ExecuteAlways(998,0,DYE_GRAVITYMAN,1)
 5A_H I 3 Offset(20,58)
-5A_H I 3 A_WeaponReady(14)
+5A_H I 7 A_WeaponReady(14)
 5A_H D 0 ACS_ExecuteAlways(998,0,DYE_GRAVITYMAN,1)
 goto ReadyUp1
 
@@ -585,7 +585,7 @@ States
 {
 Spawn:
 TNT1 A 0
-TNT1 A 0 A_Explode(6,490,0,0,490)//98
+TNT1 A 0 A_Explode(4,490,0,0,490)//98
 TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("GravityManHoldFX2",random(392,490),0,random(245,490),0,0,-40,random(0,359),129)
 TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("GravityManHoldFX2",random(294,392),0,random(245,490),0,0,-40,random(0,359),129)
 TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("GravityManHoldFX2",random(196,294),0,random(245,490),0,0,-40,random(0,359),129)
@@ -616,7 +616,7 @@ States
 {
 Spawn:
 TNT1 A 0
-TNT1 A 0 A_Explode(6,490,0,0,490)//98
+TNT1 A 0 A_Explode(4,490,0,0,490)//98
 TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("GravityManHoldFX3",random(392,490),0,random(-245,-490),0,0,40,random(0,359),129)
 TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("GravityManHoldFX3",random(294,392),0,random(-245,-490),0,0,40,random(0,359),129)
 TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("GravityManHoldFX3",random(196,294),0,random(-245,-490),0,0,40,random(0,359),129)

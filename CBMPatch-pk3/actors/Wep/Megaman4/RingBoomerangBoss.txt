@@ -279,7 +279,8 @@ Powerup.Duration 12
 DamageFactor "RingBoomerangB", 0.225
 }
 
-actor RingBoomerangB1Protect : OnceC {} //Load error fixes
+//Load error
+actor RingBoomerangB1Protect : OnceC {}
 actor RingBoomerangB2Protect : OnceC {}
 
 actor RingBoomerangB

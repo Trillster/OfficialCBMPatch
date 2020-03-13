@@ -155,6 +155,8 @@ inventory.maxamount 3
 
 actor TenguWasThrusted : OnceC {}
 
+actor TenguIsHovering : OnceC {}//Load error
+
 actor TenguTHeld_End : Powerup
 {
 powerup.duration 3

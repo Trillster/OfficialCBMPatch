@@ -127,10 +127,11 @@ loop
 Use:
 TNT1 A 0 A_JumpIfInventory("AirTurbineNotActive",1,"ChangeState")
 TNT1 A 0 A_TakeInventory("AirTurbineCounter",999)
+TNT1 A 0 A_TakeInventory("Can'tDefeatAmmo",1)
 TNT1 A 0 A_GiveInventory("AirTurbineNotActive",1)
 fail
 ChangeState:
-TNT1 A 0 A_JumpIfInventory("Can'tDefeatAmmo",1,1)
+TNT1 A 0 A_JumpIfInventory("Can'tDefeatAmmo",2,1)
 goto UseNope
 TNT1 A 0 A_PlaySoundEx("class/windstart","SoundSlot6")
 TNT1 A 0 A_TakeInventory("Can'tDefeatAmmo",1)
