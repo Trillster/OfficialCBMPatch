@@ -171,7 +171,7 @@ inventory.maxamount 336
 }
 
 actor HornetFireFlag :OnceC{}
-actor HornetIsHovering :OnceC{}//Load error
+//HornetIsHovering moved to DECORATE
 actor BeeFlag1 :OnceC{}
 actor BeeFlag2 :OnceC{}
 

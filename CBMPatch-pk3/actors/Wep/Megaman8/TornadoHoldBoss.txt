@@ -155,7 +155,7 @@ inventory.maxamount 3
 
 actor TenguWasThrusted : OnceC {}
 
-actor TenguIsHovering : OnceC {}//Load error
+//TenguIsHovering moved to DECORATE
 
 actor TenguTHeld_End : Powerup
 {

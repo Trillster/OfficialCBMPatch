@@ -576,7 +576,7 @@ IsSelected TornadoHoldBoss{Drawbar"BARAMM40","BAREMPTY",Ammo1,vertical,16,8;
 IsSelected AstroCrushBoss{Drawbar"BARAMM52","BAREMPTY",Ammo1,vertical,16,8;
 	Drawbar"BARAMM41","BAREMPTY",Ammo2,vertical,8,8;}
 IsSelected FlameSwordBoss{Drawbar"BARAMM42","BAREMPTY",Ammo1,vertical,16,8;
-	Drawbar"08_3_VAR","0V_G2VAR",Ammo2,vertical,8,8;}
+	Drawbar"08_3_BAR","0V_G2BAR",Ammo2,vertical,8,8;}
 WeaponAmmo YoGeekyAmmo{Drawbar"BARAMM43","BAREMPTY",Ammo1,vertical,16,8;}
 
 IsSelected HomingSniperBoss{
