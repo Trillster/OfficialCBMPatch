@@ -3,3 +3,5 @@ classes/icemanfog STATSNOW
 classes/shocklob SHOCKLOB
 classes/ringchime RNGCHIME
 classes/junkshieldloop JNKSHLDL
+weapon/SlashDash2 SLASDAS2 $limit weapon/SlashDash2 0
+body/SwordDetach MM6JUMP

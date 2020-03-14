@@ -1,0 +1,45 @@
+actor Swordman : SturdyClassBase
+{
+Player.ScoreIcon "C_08C0X"
+player.displayname "Swordman"
+player.soundclass "swordmanc"
+
+player.startitem "FlameSwordBoss"
+player.startitem "OrdersAmmo", 21
+
+player.forwardmove 0.7, 0.7
+player.sidemove 0.68, 0.68
+
+player.startitem "WaterBalloonWeakness2", 1
+
+player.startitem "BubbleLeadWeakness", 1
+player.startitem "RainFlushWeakness", 1
+player.startitem "WaterWaveWeakness", 1
+player.startitem "WaterBalloonWeakness", 1
+player.startitem "WaterShieldWeakness", 1
+player.startitem "SaltWaterWeakness", 1
+States
+{
+Spawn:
+SWOM A 0
+SWOM B 1
+SWOM A 1
+Wait
+See:
+SWOM BCDE 5
+Goto Spawn
+Missile:
+SWOM F 5
+SWOM G 4
+goto Spawn
+ClassPain:
+SWOM HHH 0
+goto PainContinue
+DeathFix:
+SWOM H 0
+goto DeathContinue
+ClassDeath:
+SWOM H 1
+goto MegaDeathEnd
+}
+}

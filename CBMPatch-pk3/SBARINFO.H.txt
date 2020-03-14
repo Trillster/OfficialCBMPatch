@@ -573,7 +573,7 @@ IsSelected TornadoHoldBoss{Drawbar"VARAMM40","VAREMPTY",Ammo1,horizontal,58,184;
 IsSelected AstroCrushBoss{Drawbar"VARAMM52","VAREMPTY",Ammo1,horizontal,58,184;
 	Drawbar"VARAMM41","VAREMPTY",Ammo2,horizontal,58,176;}
 IsSelected FlameSwordBoss{Drawbar"VARAMM42","VAREMPTY",Ammo1,horizontal,58,184;
-	InInventory SwordLegCramp,1{DrawImage"SWRDICON",286,8;}}
+	Drawbar"08_3_VAR","0V_G2VAR",Ammo2,horizontal,58,176;}
 WeaponAmmo YoGeekyAmmo{Drawbar"VARAMM43","VAREMPTY",Ammo1,horizontal,58,184;}
 
 IsSelected HomingSniperBoss{
