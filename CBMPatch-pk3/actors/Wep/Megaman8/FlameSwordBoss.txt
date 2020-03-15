@@ -444,7 +444,10 @@ States
 {
 Spawn:
 X_8C E 0
-X_8C EFGEFGEFGEFGEFGEFGEFG 2
+X_8C EFGEFGEFGEFGEFGEFGEFGEFGEFGEFGEFG 1 A_JumpIf(velz<=0,"Die") 
+stop
+Die:
+X_8C E 0
 stop
 }
 }
