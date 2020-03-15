@@ -154,9 +154,7 @@ inventory.maxamount 3
 }
 
 actor TenguWasThrusted : OnceC {}
-
-//TenguIsHovering moved to DECORATE
-
+actor TenguIsHovering : OnceC {}
 actor TenguTHeld_End : Powerup
 {
 powerup.duration 3

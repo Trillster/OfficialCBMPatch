@@ -1,8 +1,0 @@
-actor DarkSniperCharge : Ammo
-{
-inventory.amount 1
-inventory.maxamount 700
-+INVENTORY.IGNORESKILL
-}
-actor TenguIsHovering : OnceC {}
-actor HornetIsHovering :OnceC{}
